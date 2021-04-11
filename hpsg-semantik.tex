@@ -1,0 +1,720 @@
+
+\section{Semantik}
+
+
+\iftoggle{teil1}{
+\outline{
+
+\begin{itemize}
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item \blaubf{Semantik}
+\item Adjunktion und Spezifikation
+\item Das Lexikon: Typen und Lexikonregeln
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\item Relativsätze
+\item Lokalität
+%\item Komplexe Prädikate: Der Verbalkomplex
+\end{itemize}
+}
+} % \end{teil1}
+
+\iftoggle{teil2}{
+\outline{
+\begin{itemize}
+\item Wiederholung
+      \begin{itemize}
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item \blau{Semantik}
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\end{itemize}
+\item Kongruenz
+\item Kasus
+\item Der Verbalkomplex
+\item Kohärenz, Inkohärenz, Anhebung und Kontrolle
+\item Passiv
+\item Partikelverben
+\item Morphologie
+\end{itemize}
+}
+} % \end{teil2}
+
+\frame{
+\frametitle{Semantik}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~5]{MuellerLehrbuch3}
+\end{itemize}
+
+\vspace{1cm}
+
+\rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+   nächsten Mal lesen sollen!!!!}
+}
+
+
+\iftoggle{teil1}{
+\frame{
+\frametitle{\hypertarget{semantics-t}{Semantik}}
+
+\begin{itemize}
+\item \citet{ps} und \citet{GSag2000a-u} nehmen Situationssemantik an
+      \citep*{BP83a,CMP90,Devlin92}\nocite{BP87a}.
+\pause
+\item Einige aktuellere Arbeiten benutzen \emph{Minimal Recursion Semantics} \citep*{CFPS2005a}.
+\pause
+\item Im Folgenden werden wir Situationssemantik nutzen.
+\end{itemize}
+
+}
+} % \end{teil1}
+
+\subsection{Die Situationssemantik}
+
+
+\frame{
+
+\frametitle{Individuen, Sachverhalte und Situationen}
+
+\begin{itemize}[<+->]
+\item beschreiben Situationen
+\item Situationen sind durch Sachverhalte charakterisiert
+\item Dinge von einer gewissen zeitlichen Dauer, die zur kausalen Ordnung der
+Welt gehö\-ren, die man wahrnehmen kann, auf die man reagieren kann: Individuen ({\em Karl\/}, {\em die Frau\/},
+{\em die Angst\/}, {\em das Versprechen\/})
+\item Sachverhalte = Relationen zwischen Individuen
+\end{itemize}
+}
+
+\frame{
+\frametitle{Relationen und semantische Rollen}
+
+\begin{itemize}
+\item Relationen
+      \begin{itemize}
+      \item nullstellig: {\em regnen\/} ({\em Es regnet.\/}) \citep[Kapitel~2.8]{Kunze93}
+\pause
+      \item einstellig: {\em  sterben\/} ({\em Es stirbt.\/})
+\pause
+      \item zweistellig: {\em lieben\/}  ({\em Es liebt ihn.\/})
+\pause
+      \item dreistellig: {\em geben\/}   ({\em Es gibt ihm den Aufsatz.\/})
+\pause
+      \item vierstellig: {\em kaufen\/}  ({\em Es kauft den Mantel vom Händler für fünf Mark.\/})
+      \end{itemize}
+\pause
+\item semantische Rollen:  \citet{Fillmore68,Fillmore77}, \citet*{Kunze91}\\
+      {\sc agens}, {\sc patiens}, {\sc experiencer}, {\sc source}, {\sc goal}, 
+      {\sc thema}, {\sc location}, {\sc trans-obj}, {\sc instrument}, {\sc means} und {\sc proposition}
+\pause
+\item Rollen wichtig für Generalisierungen:\\
+      Verbindung zwischen Syntax und Semantik ({\it Linking\/})
+\end{itemize}
+}
+
+\frame{
+\frametitle{Sachverhalte}
+
+
+
+\begin{itemize}
+\item Sachverhalt: {\it state of affairs\/} ({\it soa\/})\\
+\begin{tabular}{@{}ll}
+Verb:     & $\ll schlagen, agens:X, patiens:Y\gg$\\
+Adjektiv: & $\ll interessant, thema: X\gg$\\
+Nomen:    & $\ll mann, instance: X\gg$\\
+\end{tabular}
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Parametrisierte Sachverhalte}
+
+\begin{itemize}
+\item parametrisierter Sachverhalt: {\it parmetrized state of affairs\/} ({\it psoa\/})
+\begin{itemize}
+\item Verb:
+\ea
+Der Mann schlägt den Hund.
+\z
+$\ll schlagen, agens:X, patiens:Y\gg$\\
+$X|\ll mann, instance:X\gg,$\\
+$Y|\ll hund, instance:Y\gg$
+\pause
+\medskip
+\item Adjektiv:
+\ea
+Das Buch ist interessant.
+\z
+$\ll interessant, thema:X\gg$\\
+$X|\ll buch, instance:X\gg$
+\end{itemize}
+\end{itemize}
+
+}
+
+\subsection{Die Repräsentation parametrisierter Sachverhalte mit Hilfe von Merkmalstrukturen}
+
+\frame{
+\frametitle{Sachverhalte und Repräsentation mit Merkmalstrukturen}
+
+
+$\ll schlagen, agens:X, patiens:Y\gg$\\
+\ms[schlagen]
+{ 
+ agens & X \\
+ patiens & Y\\
+}
+
+\pause
+$\ll mann, in\-stance\!: X\gg$\\
+\ms[mann]
+{ 
+ inst & X \\
+}
+
+
+}
+
+\subsection{Repräsentation des CONT-Wertes}
+
+\frame[shrink]{
+\frametitlefit{Repräsentation in Merkmalsbeschreibungen: der \contw}
+
+\begin{itemize}
+\item mögliche Datenstruktur ({\sc cont} = {\sc content}):\\
+      \ms{ phon   & list~of~phoneme strings\\
+           head   & head \\
+           subcat & list\\
+           cont   & cont\\
+         }\\
+\pause
+\item stärkere Gliederung, Unterteilung in syntaktische und semantische Information
+      ({\sc cat} = {\sc category})\\
+      \ms{ phon & list~of~phoneme strings\\
+           cat  & \ms[cat]{ head   & head\\
+                            subcat & list\\
+                          } \\
+           cont & cont\\
+         }
+\item $\to$ möglich, nur syntaktische Information zu teilen
+\end{itemize}
+}
+
+\frame{
+\frametitle{Teilung syntaktischer Information in Koordinationen}
+
+\begin{itemize}
+\item symmetrische Koordination: der \catw ist identisch
+      \ms{ phon & list~of~phoneme strings\\
+           cat  & \ms[cat]{ head   & head\\
+                            subcat & list\\
+                          } \\
+           cont & cont\\
+         }
+\item Beispiele:
+      \eal
+      \ex {}[der Mann und die Frau]
+      \ex Er [kennt und liebt] diese Schallplatte.
+      \ex Er ist [dumm und arrogant].
+      \zl
+\end{itemize}
+}
+
+
+\subsection{Nominale Objekte}
+\frame{
+\frametitle{Semantischer Beitrag nominaler Objekte}
+
+\small
+\begin{itemize}
+\item semantischer Index + zugehörige Restriktionen
+
+\mbox{{\it Buch\/}:}\\
+\ms
+{ cat & \ms{ head   & noun \\
+             subcat & \liste{ det } \\
+           } \\
+  cont &  \ms
+           { ind & \ibox{1} \ms{ per & 3 \\
+                                 num & sg \\
+                                 gen & neu \\
+                               } \\
+             restr & \liste{ \ms[buch]{ inst & \ibox{1} \\ }} \\
+           } \\
+}
+\pause
+\item Person, Numerus und Genus sind für die Bestimmung der Referenz/Koreferenz wichtig:
+      \ea
+      Die Frau$_i$ kauft ein Buch$_j$. Sie$_i$ liest es$_j$.
+      \z
+\end{itemize}
+
+}
+
+\begin{comment}
+\frame{
+
+\frametitle{Typen nominaler Objekte}
+
+\bigskip
+\begin{figure}[htbp]
+\epsfxsize=0.5\textwidth
+\centerline{\mbox{\epsffile{types-nom-obj.eps}}}
+\end{figure}
+{\footnotesize
+\begin{itemize}
+\item nom-obj
+\begin{itemize}
+\item npro = nicht-pronominal ({\em Frau\/}, {\em Hütte\/})
+\item pro = pronominal
+\begin{itemize}
+\item ppro = Personalpronomina ({\em er\/}, {\em sie\/})
+\item ana = Anaphren
+\begin{itemize}
+\item refl = Reflexiva ({\em sich\/})
+\item recp = Reziprok ({\em einander\/})
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+}
+
+}
+
+\frame{
+
+\frametitle{Referentielle und expletive Indizes}
+
+\bigskip
+\begin{itemize}
+\item ind
+\begin{itemize}
+\item expl = Expletiva ({\em es\/}, {\em das\/})
+\item ref = referentiell
+\end{itemize}
+\end{itemize}
+Expletiva sind bedeutungsleer, ohne Referenz
+
+expletives {\em es\/}:
+\eal
+\label{bsp-expletiva-subcat}
+\ex Es regnet.
+\ex Es gibt einen Weihnachtsmann.
+\ex Es trug ihn aus der Kurve. \citep{Uszkoreit87a}
+\ex Es schüttelte mich vor Ekel.
+\ex Er hat es weit / zum Professor gebracht. \citep{Puetz82a}
+\ex Er nimmt es mit zehn Gegnern auf.
+%\item Beim Hören diese Gitarrensolos lief es mir kalt den Rücken hinunter.
+%\item Es kam zu Handgreiflichkeiten.
+\zl
+
+auch {\em das\/}:
+\ea
+Das regnet ja wieder.
+\z
+}
+
+\frame{
+\frametitle{Abkürzungen}
+
+
+\begin{tabular}{@{}lp{3.5cm}@{~~~}l@{}p{4cm}@{}}
+NP$_{[3,sg,fem]}$     & \onems{ cat \onems{ head \type{noun} \\
+                                            subcat \liste{} \\
+                                          } \\
+                                cont$|$ind \ms{ per & 3 \\
+                                                num & sg \\
+                                                gen & fem \\
+                                              } \\
+                              }  &
+NP$_{\ibox{1}}$ & \ms{ cat & \onems{ head \type{noun} \\
+		                     subcat \liste{} \\
+                                   } \\
+                       cont & \ms
+                              { ind & \ibox{1} {\it ref\/} \\
+                              } \\
+                     }\\\\
+NP$_{expl}$ & \ms{ cat & \ms{ head & noun \\
+                              subcat & \liste{} \\
+                            } \\
+                   cont & \ms{ ind & \ms[expl]{} \\
+                             }\\
+                 } &
+\is{:}%
+\baro{N}: \ibox{1} & \ms{ cat & \ms{ head & noun \\
+                                     subcat & \sliste{ det} \\
+                                   } \\
+                          cont & \ibox{1} \\
+                        } \\
+\end{tabular}
+
+}
+\end{comment}
+\frame{
+\frametitle{Abkürzungen}
+
+
+\begin{tabular}{@{}lp{3.5cm}@{\hspace{14mm}}l@{}p{4cm}@{}}
+NP$_{[3,sg,fem]}$     & \onems{ cat \onems{ head \type{noun} \\
+                                            subcat \liste{} \\
+                                          } \\
+                                cont$|$ind \ms{ per & 3 \\
+                                                num & sg \\
+                                                gen & fem \\
+                                              } \\
+                              }  &
+\pause
+NP$_{\ibox{1}}$ & \ms{ cat & \onems{ head \type{noun} \\
+		                     subcat \liste{} \\
+                                   } \\
+                       cont & \ms
+                              { ind & \ibox{1}\\
+                              } \\
+                     }\\\\
+\pause
+\baro{N}: \ibox{1} & \ms{ cat & \ms{ head & noun \\
+                                     subcat & \liste{ det} \\
+                                   } \\
+                          cont & \ibox{1} \\
+                        } \\
+\end{tabular}
+
+}
+
+\subsection{Repräsentation parametrisierter Sachverhaltet mit Merkmalstrukturen}
+
+\frame[shrink]{
+\frametitle{Sachverhalte und Repräsentation mit Merkmalstrukturen}
+
+
+$\ll schlagen, agens:X, patiens:Y\gg$\\
+$X|\ll mann, instance:X\gg,$\\
+$Y|\ll hund, instance:Y\gg$\\
+\bigskip
+\ms[schlagen]
+{ 
+ agens & \ibox{1} \\
+ patiens & \ibox{2} \\
+}
+\medskip
+
+\ms{
+ind & \ibox{1} \ms{ per & 3 \\
+                    num & sg \\
+                    gen & mas \\
+                  } \\
+restr & \liste{ \ms[mann]{ 
+                inst & \ibox{1} \\
+                }
+        }\\
+}
+\hspace{1.5cm}
+\ms{
+ind & \ibox{2} \ms{ per & 3 \\
+                    num & sg \\
+                    gen & mas \\
+                  }\\
+restr & \liste{ \ms[hund]{
+                inst & \ibox{2} \\
+                }
+        } \\
+}
+
+}
+
+\subsection{Linking}
+
+\frame{
+\frametitle{Repräsentation in Merkmalsbeschreibungen und Linking}
+
+\begin{itemize}
+\item Linking zwischen Valenz und semantischem Beitrag\\
+
+\psset{nodesep=1pt}
+
+\label{le-geben}
+\mbox{{\it gibt\/} (finite Form):}\\
+\ms
+{ cat & \ms{ head & \ms[verb]
+                     { vform & fin \\} \\
+             subcat & \liste{ NP[{\it nom\/}]\rnode{11}{\ind{1}}, NP[{\it acc}]\rnode{21}{\ind{2}}, NP[{\it dat}]\rnode{31}{\ind{3}}   } \\
+           } \\
+  cont &  \ms[geben]{ agens & \rnode{12}{\ibox{1}} \\
+                      thema & \rnode{22}{\ibox{2}} \\
+                      goal  & \rnode{32}{\ibox{3}} \\
+           } \\
+}
+\pause
+\item Die referentiellen Indizes der Nominalphrasen sind mit den semantischen Rollen identifiziert.
+
+\rot<beamer>{
+% \aanodeconnect[bl]{11}[r]{12}
+% \aanodeconnect[bl]{21}[r]{22}
+% \aanodeconnect[bl]{31}[r]{32}
+\ncline{<->}{11}{12}
+\ncline{<->}{21}{22}
+\ncline{<->}{31}{32}
+}
+\end{itemize}
+
+}
+
+\iftoggle{teil1}{
+\frame{
+
+\frametitle{Generalisierungen für Verbklassen}
+
+\begin{itemize}
+\item typbasiert: Verben mit Agens, mit Agens und Thema, mit Agens und Patiens
+\item verschiedene Valenz/Linking-Muster\\
+\ea
+\onems
+{ cat$|$subcat \liste{ []\ind{1}, []\ind{2}, []\ind{3}  }\\[1mm]
+  cont  \ms[agens-thema-goal-rel~]{ agens & \ibox{1} \\
+                      thema & \ibox{2} \\
+                      goal  & \ibox{3} \\
+           } \\
+}
+\z
+\pause
+\item Der Typ für die Relation {\it geben\/} ist Untertyp von {\it agens-thema-goal-rel\/}.\\
+      Lexikoneintrag für \stem{geb} hat das Linking-Muster in (\mex{0}).
+\pause
+\item Generalisierungen darüber, wie welche Argumente realisiert werden können,
+      lassen sich ebenfalls erfassen.
+%\item zu Linkingtheorien in HPSG siehe 
+\nocite{Davis96a-u,Wechsler91a-u}
+\end{itemize}
+}
+} % \end{teil1}
+
+\subsection{Der semantische Beitrag von Phrasen}
+\frame{
+
+\frametitle{Projektion des semantischen Beitrags des Kopfes}
+
+\centering%
+\scalebox{0.75}{\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
+\multicolumn{3}{l}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
+  {\it fin\/}, {\sc subcat} \sliste{ }]\\
+  \end{tabular}}
+}\\
+\\
+\hspace{2mm}C                     & \hspace{15mm}H\\*[3ex]
+\rnode{2}{\ibox{1} NP[{\it nom\/}]} & \multicolumn{2}{l}{\rnode{3}{V[\begin{tabular}[t]{@{}l}
+                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1} }]\\
+                                                                    \end{tabular}}
+                                                       }\\
+\\
+& \hspace{5mm}C                     & \hspace{18mm}H\\*[3ex]
+& \rnode{4}{\ibox{2} NP[{\it acc\/}]} & \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
+                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2} }]\\
+                                                                    \end{tabular}}
+                                                       }\\
+\\
+&                                   & \hspace{4mm}C                     & \hspace{-5mm}H & \hspace{2mm} $geben(e,b,m)$\\*[3ex]
+&                                   & \rnode{6}{\ibox{3} NP[{\it dat\/}]}& \rnode{7}{V[\begin{tabular}[t]{@{}l}
+                                                                                   {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]\\
+%                                                                                   {\sc vcomp} \sliste{  }, \\
+                                                                                   \end{tabular}}\\
+\\*[6ex]
+\rnode{8}{er} & d\rnode{9}{as Buc}h                     & d\rnode{10}{em Man}n              & \rnode{11}{gibt}\\
+\end{tabular}
+\ncline{1}{2}\ncline{1}{3}%
+\ncline{3}{4}\ncline{3}{5}%
+\ncline{5}{6}\ncline{5}{7}%
+\ncline{7}{11}%
+\ncline{2}{8}%
+%\nodetriangle{6}{10}%
+%\nodetriangle{4}{9}%
+%\aanodecurve[r]{7}[r]{5}{2cm}%
+%\anodecurve[r]{5}[r]{3}{2cm}%
+%\anodecurve[r]{3}[r]{1}{2cm}%
+}
+
+}
+
+\iftoggle{teil1}{
+
+\frame{
+\frametitle{Semantikprinzip (Ausschnitt)}
+
+
+% In Strukturen mit Kopf, die keine Kopf-Adjunkt-Strukturen sind, ist der
+% semantische Beitrag der Mutter identisch mit dem der Kopftochter.
+
+In Strukturen, in denen es eine Kopftochter gibt,\\
+ist der semantische Beitrag der Mutter identisch mit dem der Kopftochter.
+
+\(
+\ms{
+cont & \ibox{1} \\
+head-dtr$|$cont & \ibox{1} \\
+}
+\)
+
+Anmerkung:\\
+Diese Beschränkung gilt nicht für Kopf-Adjunkt-Strukturen.
+Kopf-Adjunkt-Strukturen werden später behandelt.
+
+}
+} % \end{teil1}
+
+\iftoggle{teil2}{
+\frame{
+
+\frametitle{Semantikprinzip (Ausschnitt)}
+
+
+% In Strukturen mit Kopf, die keine Kopf-Adjunkt-Strukturen sind, ist der
+% semantische Beitrag der Mutter identisch mit dem der Kopftochter.
+
+In Strukturen, in denen es eine Kopftochter gibt, ist der
+semantische Beitrag der Mutter identisch mit dem der Kopftochter.
+
+\(
+\ms{
+cont & \ibox{1} \\
+head-dtr$|$cont & \ibox{1} \\
+}
+\)
+
+%% Anmerkung:\\
+%% Diese Beschränkung gilt nicht für Kopf-Adjunkt-Strukturen.
+%% Kopf-Adjunkt-Strukturen werden später behandelt.
+
+}
+} % \end{teil2}
+
+
+\iftoggle{teil1}{
+\frame{
+\frametitle{Typhierarchie für {\it sign\/}}
+
+
+\centerline{
+\begin{forest}
+type hierarchy
+[sign
+  [word]
+  [phrase
+    [non-headed-phrase]
+    [headed-phrase
+      [\ldots]
+      [head-non-adjunct-phrase
+        [head-argument-phrase]]
+      [\ldots]]]]
+\end{forest}}
+
+
+}
+} % \end{teil1}
+
+\begin{comment}
+\frame{
+\frametitle{Typhierarchie für {\it sign\/} (Überblick)}
+
+
+
+\epsfxsize=0.9\textwidth
+\centerline{\mbox{\epsffile{types-sign-hc-hna.eps}}}
+
+
+\centerline{Betrachteter Ausschnitt {\bf fett} markiert}
+
+
+}
+\end{comment}
+
+
+\iftoggle{teil1}{
+\frame{
+\frametitle{Kopf-Komplement-Schema + HFP + SemP}
+
+
+\onems[head-argument-phrase~]{
+cat  \ms{ head   & \ibox{1} \\
+           subcat & \ibox{2} \\ 
+         }\\
+\blau{cont  \ibox{3}}\\[2mm]
+head-dtr   \ms{ cat & \ms{ head   & \ibox{1} \\
+                            subcat & \ibox{2} $\oplus$ \sliste{ \ibox{4} } \\
+                          } \\
+                 \blau{cont} & \blau{\ibox{3}} \\
+               }\\
+non-head-dtrs  \sliste{ \ibox{4} } \\
+} 
+
+Typ {\it head-argument-phrase\/} mit von {\it headed-phrase\/} und 
+{\it head-non-adjunct-phrase\/} ererbter Information
+
+
+}
+
+\if 0
+\frame{
+
+\frametitle{Perkolation der Indizes}
+
+
+\begin{itemize}
+\item Bisher ist nur Semantik des Kopfes am obersten Knoten repräsentiert.
+\pause
+\item Jede NP führt einen Index/Quantor ein.
+\scalebox{0.85}{\onems
+{   cont \blau<1>{\ibox{1}} \ms{ ind & \ibox{2} \ms{  per & 3 \\
+                                            num & sg \\
+                                            gen & mas \\
+                                         } \\
+                       restr & \liste{\ms[mann]{
+                                      instance & \ibox{2} \\
+                                      }} \\
+                              } \\
+   \blau<1>{context$|$inds   {\rm \sliste{ \ibox{1} }}} \\
+ }
+}
+\pause
+\item Indizes werden projiziert.
+
+\type{headed-phrase} $\to$\\
+\scalebox{0.85}{\onems{
+context$|$inds  \ibox{1} $\oplus$ \ibox{2} \\
+head-dtr$|$context$|$inds \ibox{1} \\
+non-head-dtrs \liste{ \onems{
+                       context$|$inds \ibox{2} \\
+                      }}\\
+}
+}
+
+\end{itemize}
+
+}
+\fi
+
+} % \end{teil1}
+
+\subsection{Übungsaufgaben}
+
+\frame{
+\frametitle{Übungsaufgaben}
+
+\begin{enumerate}
+\item Wie kann man den semantischen Beitrag von \emph{lacht} repräsentieren?
+\item Geben Sie eine Merkmalstruktur für \emph{er lacht} in (\mex{1}) an:
+      \ea
+      {}[dass] er lacht
+      \z
+\end{enumerate}
+
+}
