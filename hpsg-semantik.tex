@@ -1,4 +1,9 @@
 
+\subtitle{Semantik}
+
+\huberlintitlepage[22pt]
+
+
 \section{Semantik}
 
 
@@ -49,28 +54,38 @@
 } % \end{teil2}
 
 \frame{
-\frametitle{Semantik}
+\frametitle{Literaturhinweis}
 %
 \begin{itemize}
-\item Literatur: \citew[Kapitel~5]{MuellerLehrbuch3}
+\item Lesestoff: \citew[Kapitel~5]{MuellerLehrbuch3}
+\item Außerdem: 
+\begin{itemize}
+\item Überblickskapitel Semantik im HPSG-Handbuch \citep{KoenigRichter2021a}
+\item Überblickskapitel Linking im HPSG-Handbuch \citep{DavisKoenigWechsler2021a}
+\end{itemize}
 \end{itemize}
 
-\vspace{1cm}
+% \vspace{1cm}
 
-\rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
-   nächsten Mal lesen sollen!!!!}
+% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%    nächsten Mal lesen sollen!!!!}
 }
 
+\subsection{Ansätze}
 
 \iftoggle{teil1}{
 \frame{
-\frametitle{\hypertarget{semantics-t}{Semantik}}
+\frametitle{\hypertarget{semantics-t}{Semantik}: Überblick über verwendete Ansätze}
 
 \begin{itemize}
 \item \citet{ps} und \citet{GSag2000a-u} nehmen Situationssemantik an
       \citep*{BP83a,CMP90,Devlin92}\nocite{BP87a}.
 \pause
-\item Einige aktuellere Arbeiten benutzen \emph{Minimal Recursion Semantics} \citep*{CFPS2005a}.
+\item aktuellere Arbeiten verwenden:
+\begin{itemize}
+\item \emph{Minimal Recursion Semantics} \citep*{CFPS2005a}
+\item \emph{Lexical Resource Semantics} \citep*{RichterSailer2004a-u}
+\end{itemize}
 \pause
 \item Im Folgenden werden wir Situationssemantik nutzen.
 \end{itemize}
@@ -117,7 +132,10 @@ Welt gehö\-ren, die man wahrnehmen kann, auf die man reagieren kann: Individuen
       {\sc thema}, {\sc location}, {\sc trans-obj}, {\sc instrument}, {\sc means} und {\sc proposition}
 \pause
 \item Rollen wichtig für Generalisierungen:\\
-      Verbindung zwischen Syntax und Semantik ({\it Linking\/})
+      Verbindung zwischen Syntax und Semantik (\emph{Linking})
+\pause
+\item Rollentheorien sind problematisch, deswegen oft Bündelung in Proto-Rollen:
+      \citep{Dowty91a,VanValin99a-u}
 \end{itemize}
 }
 
@@ -456,15 +474,15 @@ restr & \liste{ \ms[hund]{
            } \\
 }
 \pause
-\item Die referentiellen Indizes der Nominalphrasen sind mit den semantischen Rollen identifiziert.
+\item Referentielle Indizes der NPen sind mit den semantischen Rollen identifiziert.
 
 \rot<beamer>{
 % \aanodeconnect[bl]{11}[r]{12}
 % \aanodeconnect[bl]{21}[r]{22}
 % \aanodeconnect[bl]{31}[r]{32}
-\ncline{<->}{11}{12}
-\ncline{<->}{21}{22}
-\ncline{<->}{31}{32}
+\ncdiag[arm=0,angleA=-135]{<->}{11}{12}
+\ncdiag[arm=0,angleA=-135]{<->}{21}{22}
+\ncdiag[arm=0,angleA=-135]{<->}{31}{32}
 }
 \end{itemize}
 
@@ -504,43 +522,25 @@ restr & \liste{ \ms[hund]{
 
 \frametitle{Projektion des semantischen Beitrags des Kopfes}
 
-\centering%
-\scalebox{0.75}{\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
-\multicolumn{3}{l}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-  {\it fin\/}, {\sc subcat} \sliste{ }]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{2mm}C                     & \hspace{15mm}H\\*[3ex]
-\rnode{2}{\ibox{1} NP[{\it nom\/}]} & \multicolumn{2}{l}{\rnode{3}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-& \hspace{5mm}C                     & \hspace{18mm}H\\*[3ex]
-& \rnode{4}{\ibox{2} NP[{\it acc\/}]} & \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-&                                   & \hspace{4mm}C                     & \hspace{-5mm}H & \hspace{2mm} $geben(e,b,m)$\\*[3ex]
-&                                   & \rnode{6}{\ibox{3} NP[{\it dat\/}]}& \rnode{7}{V[\begin{tabular}[t]{@{}l}
-                                                                                   {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]\\
-%                                                                                   {\sc vcomp} \sliste{  }, \\
-                                                                                   \end{tabular}}\\
-\\*[6ex]
-\rnode{8}{er} & d\rnode{9}{as Buc}h                     & d\rnode{10}{em Man}n              & \rnode{11}{gibt}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{7}{11}%
-\ncline{2}{8}%
-%\nodetriangle{6}{10}%
-%\nodetriangle{4}{9}%
-%\aanodecurve[r]{7}[r]{5}{2cm}%
-%\anodecurve[r]{5}[r]{3}{2cm}%
-%\anodecurve[r]{3}[r]{1}{2cm}%
+\centerline{
+\begin{forest}
+sm edges, for tree={l sep+=\baselineskip}
+[{V[\type{fin}, \subcat \sliste{ } ]}, name=1
+  [ {\ibox{1} NP[\type{nom}]}
+    [er]]
+  [{V[\type{fin}, \subcat \sliste{ \ibox{1} } ]}, name=2
+    [ {\ibox{2} NP[\type{acc}]}
+      [das Buch, roof]]
+    [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2} } ]}, name=3
+      [ {\ibox{3} NP[\type{dat}]}
+        [dem Mann, roof]]
+      [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} } ]}, name=4
+        [gibt]]]]]
+\draw[<->] (4) to[out=east,in=east] (3);
+\draw[<->] (3) to[out=east,in=east] (2);
+\draw[<->] (2) to[out=east,in=east] (1);
+\node()[above right of=4,xshift=6em,yshift=\baselineskip]{$geben(e,b,m)$};
+\end{forest}
 }
 
 }

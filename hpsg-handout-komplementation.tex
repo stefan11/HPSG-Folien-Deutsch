@@ -1,12 +1,13 @@
+%% -*- coding:utf-8 -*-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%   $RCSfile: hpsg-include.tex,v $
+%%   $RCSfile: hpsg-handout.tex,v $
 %%  $Revision: 1.4 $
 %%      $Date: 2007/05/27 13:27:12 $
-%%     Author: Stefan Mueller (CL Uni-Bremen)
+%%     Author: Stefan Mueller (DFKI)
 %%    Purpose: 
 %%   Language: LaTeX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% $Log: hpsg-include.tex,v $
+%% $Log: hpsg-handout.tex,v $
 %% Revision 1.4  2007/05/27 13:27:12  stefan
 %% Umstellung auf Unicode + Fixes in Lokalitaet
 %%
@@ -19,7 +20,7 @@
 %% Revision 1.1  2004/06/21 19:14:48  stefan
 %% alte Version vor LaTeX-Beamer
 %%
-%% Revision 1.1  2003/04/22 10:13:29  stefan
+%% Revision 1.1  2002/01/09 20:06:23  stefan
 %% Initial revision
 %%
 %% Revision 1.1  2001/10/21 17:01:35  stefan
@@ -27,30 +28,30 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\documentclass[blackandwhite,slidestop,handout,10pt]{beamer}
+
+
+\usepackage{hu-beamer-includes-pdflatex} %,beamer-movement}
+
 \input{localpackages.tex}
+\newtoggle{loesungen}\togglefalse{loesungen}
+
 
 \title{Head-Driven Phrase Structure Grammar für das Deutsche}
 
 \begin{document}
 \hypersetup{bookmarksopen=false}
 
-\huberlintitlepage[22pt]
-
-%\part{Einleitung}
-
-\exewidth{(35)}
 
 
-\include{hpsg-organisatorisches}
-\include{geteilte-Folien/einleitung-syntax}
-\iftoggle{hpsglight}{
-\include{hpsg-light}
-}
-\include{hpsg-formalismus}
+%\include{hpsg-organisatorisches}
+%\include{geteilte-Folien/einleitung-syntax}
+%\include{hpsg-light}
+% \include{hpsg-formalismus}
 \include{hpsg-valenz-grammatikregeln}
 \include{hpsg-komplementation}
-\include{hpsg-semantik}
-\include{hpsg-adjunktion-spezifikation}
+%\include{hpsg-semantik}
+% \include{hpsg-adjunktion-spezifikation}
 % \include{hpsg-lexikon}
 % \include{hpsg-topologie}
 % \include{hpsg-konstituentenreihenfolge}
@@ -70,3 +71,21 @@
 % Local variables:
 % mode: lazy-lock
 % End:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

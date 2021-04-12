@@ -1,0 +1,55 @@
+%% -*- coding:utf-8 -*-
+
+%\includecomment{handout}
+%\excludecomment{backup}
+%\provideboolean{handout}\setboolean{handout}{true}
+
+
+\usepackage{epsfig}
+\usepackage{tabularx}
+
+%% \usepackage{ifthen}
+
+\newtoggle{hpsglight}\togglefalse{hpsglight} 
+\newtoggle{hpsgvorlesung}\toggletrue{hpsgvorlesung}
+%\includecomment{biblio}
+\newtoggle{syntaxvorlesungen}\toggletrue{syntaxvorlesungen}
+
+\newtoggle{konstituentenprobleme}\togglefalse{konstituentenprobleme}
+\newtoggle{konstituentenprobleme-hinweis}\toggletrue{konstituentenprobleme-hinweis}
+\newtoggle{einfsprachwiss-include}\togglefalse{einfsprachwiss-include}
+\newtoggle{einfsprachwiss-exclude}\toggletrue{einfsprachwiss-exclude}
+
+%\excludecomment{freiers}
+%\includecomment{teil1}
+%\excludecomment{teil2}
+
+\newtoggle{teil1}\toggletrue{teil1}
+\newtoggle{teil2}\togglefalse{teil2}
+
+
+\newtoggle{psgbegriffe}\toggletrue{psgbegriffe}
+\newtoggle{gb-intro}\togglefalse{gb-intro}
+
+\provideboolean{hpsg-vorlesung}\setboolean{hpsg-vorlesung}{true}
+
+\selectlanguage{german}
+
+%\usepackage{pstricks}
+%\usepackage{pst-node}
+%\nodemargin5pt%\treelinewidth2pt\arrowwidth6pt\arrowlength10pt
+\psset{nodesep=5pt} %,linewidth=0.8pt,arrowscale=2}
+\psset{linewidth=0.5pt}
+
+\newcommand{\nodetriangle}[2]{}
+
+%\hypersetup{pdfauthor={Stefan Müller}}
+%\hypersetup{pdftitle={Head-Driven Phrase Structure Grammar für das Deutsche}}
+
+
+%\subject{Generative Grammatik für das Deutsche}
+
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\let\mc=\multicolumn

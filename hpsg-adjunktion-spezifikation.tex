@@ -1,0 +1,821 @@
+\subtitle{Adjunktion und Spezifikation}
+
+\huberlintitlepage[22pt]
+
+\section{Adjunktion und Spezifikation}
+
+
+\outline{
+
+\begin{itemize}
+%\item Ziele
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item Semantik
+\item \blau{Adjunktion und Spezifikation}
+\item Das Lexikon: Typen und Lexikonregeln
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\item Relativsätze
+\item Lokalität
+%\item Komplexe Prädikate: Der Verbalkomplex
+\end{itemize}
+}
+
+\frame{
+\frametitle{Adjunktion und Spezifikation}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~6.1--6.5]{MuellerLehrbuch3}
+\end{itemize}
+
+\vspace{1cm}
+
+%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%%   nächsten Mal lesen sollen!!!!}
+}
+
+\frame{
+\frametitle{Argumente und Adjunkte}
+\pause
+\begin{tabular}{@{\hspace{4mm}}ll}
+Adjektive                     & ein {\em interessantes\/} Buch \\
+Relativsätze\is{Relativsatz}  & der Mann, {\em den Maria liebt\/}, \\
+                              & der Mann, {\em der Maria liebt\/}, \\
+Adverbien\is{Adverb}          & Karl lacht {\em oft\/}. \\
+\end{tabular}
+
+\pause
+\medskip
+
+\begin{itemize}
+\item Adjunkte füllen keine semantische Rolle
+\item Adjunkte sind optional
+\item Adjunkte sind iterierbar
+\eal
+\ex[*]{
+Der Mann der Mann schläft.
+}
+\ex[]{
+ein interessantes neues Buch
+}
+\zl
+% \item Genitive?
+% \eal
+% \ex der Mantel des Versicherungsvertreters
+% \ex der Mantel des Vaters des Versicherungsvertreters
+% \zl
+% \ea
+% Ereignisse dieser Art der letzten Jahre \citep[S.\,257]{Heringer73a}
+% \z
+\end{itemize}
+
+}
+
+\subsection{Die Syntax von Kopf"=Adjunkt"=Strukturen}
+
+
+\frame{
+
+\frametitle{Adjunktion}
+
+\begin{itemize}
+\item Adjunkt selegiert Kopf via {\sc modified}
+%\item Bedeutung des Kopfes wird in Bedeutung des Adjunktes integriert
+%\item von dort projiziert
+\ea
+ein interessantes Buch
+\z
+~\\
+\resizebox{5cm}{!}{
+\ms{ 
+   phon & \phonliste{ interessantes }\\
+   cat & \ms{ head & \ms[adj]
+                      { %prd & $-$ \\
+                        \blau<1>{mod} &  \blau<2>{\rm $\overline{\mbox{\rm N}}$}\\
+                      } \\
+               subcat & \liste{} \\
+             } \\
+}
+}
+\pause
+\item Adjektive selegieren eine fast vollständige Nominalprojektion.
+\pause
+\item Elemente, die nicht modifizieren, haben \modw{} {\it none\/}.
+%% \item Alternative:\\
+%%         Kopf enthält Beschreibung möglicher Adjunkte \citep{ps}\\
+%%       wegen Iterierbarkeit nicht praktikabel \citep{ps2}
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Kopf"=Adjunkt"=Struktur (Selektion)}
+
+~
+
+\hfill\begin{tabular}[t]{@{}c@{\hspace{10mm}}c@{}}%llll}
+\multicolumn{2}{c}{\rnode{1}{\nbar}
+}\\
+\\
+\hspace{2mm}A                     & \hspace{-9mm}H\\*[3ex]
+\rnode{2}{AP[{\sc head$|$mod} \ibox{1}]} & \rnode{3}{\ibox{1} \nbar}\\
+\\[4ex]
+\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
+\end{tabular}
+\ncline{1}{2} \ncline{1}{3}
+\ncline{2}{4} \ncline{3}{5}\hfill\hfill\mbox{}
+
+
+}
+
+
+\frame{
+
+%\hspace{1cm}
+Kopf-Adjunkt-Schema (vorläufige Version)\\
+\label{ha-schema}
+{\it head-adjunct-phrase} \impl
+\ms{ 
+head-dtr      & \blau<1>{\ibox{1}} \\[2mm]
+non-head-dtrs & \liste{ \ms{ cat & \ms{ head$|$mod & \blau<1>{\ibox{1}} \\
+                                        subcat   & \blau<2>{\liste{}} \\
+                                      } \\
+                           }}\\
+}
+
+\begin{itemize}
+\item Der Wert des Selektionsmerkmals des Adjunkts (\ibox{1})\\
+      wird mit der Kopftochter identifiziert.
+\pause
+\item Das Adjunkt muß gesättigt sein ({\sc subcat} \liste{}):
+        \eal
+        \ex[]{
+        die Wurst in der Speisekammer
+        }
+        \ex[*]{
+        die Wurst in
+        }
+        \zl
+\end{itemize}
+}
+
+\frame{
+
+\frametitle{Warum ist {\sc mod} ein Kopfmerkmal?}
+
+\begin{itemize}[<+->]
+\item Genauso wie Adjektive können Präpositionalphrasen modifizieren.
+\item Adjunkte müssen gesättigt sein, damit sie modifizieren können.
+\item Das Merkmal, das den zu modifizierenden Kopf selegiert,\\
+      muß an der Maximalprojektion des Adjunkts vorhanden sein.
+\item P + NP = PP, PP kann \nbar modifizieren.
+\item {\sc mod} muß im Lexikon (P) und auf phrasaler Ebene (PP) vorhanden sein\\
+        $\to$ Kopfmerkmal (als einfachste Lösung)
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Beispieleintrag für Präposition, die Nomen modifiziert}
+
+\ea
+die Wurst in der Speisekammer
+\z
+
+\ms{
+phon & \phonliste{ in } \\
+cat & \ms{ head & \ms[prep]{
+                   mod &   {\rm $\overline{\mbox{\rm N}}$}\\
+                   } \\
+           subcat & \sliste{ NP[{\it dat}] } \\
+         } \\
+}
+
+\pause
+
+\ms{
+phon & \phonliste{ in, der, Speisekammer } \\
+cat & \ms{ head & \ms[prep]{
+                   mod &   {\rm $\overline{\mbox{\rm N}}$}\\
+                   } \\
+           subcat & \liste{ } \\
+         } \\
+}
+
+}
+
+\subsection{Die Semantik in Kopf"=Adjunkt"=Strukturen}
+
+\frame[shrink]{
+\frametitle{Der Bedeutungsbeitrag in Kopf"=Adjunkt"=Struktur (I)}
+
+\hfill\begin{tabular}[t]{@{}c@{\hspace{10mm}}c@{}}%llll}
+\multicolumn{2}{c}{\rnode{1}{\nbar}
+}\\
+\\
+\hspace{2mm}A                     & \hspace{-9mm}H\\*[3ex]
+\rnode{2}{AP[{\sc head$|$mod} \ibox{1}]} & \rnode{3}{\ibox{1} \nbar}\\
+\\[4ex]
+\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
+\end{tabular}
+\ncline{1}{2} \ncline{1}{3}
+\ncline{2}{4} \ncline{3}{5}\hfill\hfill\mbox{}
+
+\begin{itemize}[<+->]
+\item Woher kommt die Bedeutungsrepräsentation am Mutterknoten?
+\item die Bedeutung von {\em Buch\/} steht fest: buch(X)
+\item Möglichkeit: Teilbedeutungen beider Töchter einfach nach oben reichen
+\item {\em interessantes\/} (interessant(X)) + {\em Buch\/} (buch(Y)) =\\
+      interessant(X) \& buch(X)
+\end{itemize}
+}
+
+\frame{
+\frametitle{Der Bedeutungsbeitrag in Kopf"=Adjunkt"=Struktur (II)}
+\begin{itemize}
+\item {\em interessantes\/} (interessant(X)) + {\em Buch\/} (buch(Y)) =\\
+      interessant(X) \& buch(X)
+
+aber:
+      \ea
+      der angebliche Mörder
+      \z
+      {\em angebliche\/} (angeblich(X)) + {\em Mörder\/} (mörder(Y)) $\neq$\\
+        angeblich(X) \& mörder(X)
+\pause
+\item Alternative: machen Bedeutung am Adjunkt fest:\\
+      Im Lexikoneintrag für {\em interessantes\/} bzw.\ {\em angebliche\/} steht,\\
+      wie der Bedeutungsbeitrag der Mutter aussehen wird\\[1mm]
+      Bedeutung des modifizierten Kopfes wird im Lexikoneintrag\\
+      des Modifikators in die Bedeutung des Modifikators integriert
+\end{itemize}
+
+
+}
+
+\frame{
+
+\frametitle{Kopf"=Adjunkt"=Struktur (Selektion und Bedeutungsbeitrag)}
+
+\savespace
+~\vspace{1.5ex}
+
+\hfill\scalebox{0.75}{\begin{tabular}[t]{@{}c@{\hspace{10mm}}c@{}}%llll}
+\multicolumn{2}{c}{\rnode{1}{\nbar\visible<3->{[\begin{tabular}[t]{@{}l}
+                                              {\sc cont}   \rnode{cont1}{\ibox{1}}]\\
+                                              \end{tabular}}}
+}\\
+\\
+\hspace{5mm}A                     & \hspace{10mm}H\\*[3ex]
+\rnode{2}{AP[\begin{tabular}[t]{@{}l}
+  {\sc head$|$mod} \highlightbox<1>{\ibox{2}},\\
+  \visible<2->{\rnode{cont2}{\sc cont}   \ibox{1} [{\sc restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]]}\\
+  \end{tabular}} & \rnode{3}{\highlightbox<1>{\ibox{2}} \nbar\visible<2->{[{\sc cont$|$restr} \highlight<2>{\ibox{4} \nliste{ buch(\ibox{3}) }}]}}\\
+\\[4ex]
+\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
+\end{tabular}
+\ncline{1}{2} \ncline{1}{3}
+\ncline{2}{4} \ncline{3}{5}
+%\visible<3->{\highlight<3>{\aanodecurve[t]{cont1}[l]{cont2}{3.5cm}}}
+}\hfill\hfill\mbox{}
+\rot{todo}
+
+\begin{itemize}[<+->]
+\item Kopf"=Adjunkt"=Schema identifiziert Kopf mit dem {\sc mod}"=Wert\\der Adjunkttochter (\ibox{2})
+\item Modifikator hat gesamte Bedeutung unter {\sc cont}: \nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}
+\item semantischer Beitrag für die Phrase wird von dort projiziert (\ibox{1})
+\end{itemize}
+
+
+}
+
+
+\frame{
+\savespace
+\footnotesize
+\frametitle{Adjektiveintrag mit Bedeutungsrepräsentation}
+
+
+
+\resizebox{5cm}{!}{
+\ms
+ { phon & \phonliste{ interessantes }\\
+   cat & \ms{ head & \ms[adj]
+                      { %prd & $-$ \\
+                        mod &  \blau<1>{\rm $\overline{\mbox{\rm N}}$}\visible<2->{: \ms{ \visible<4->{ind   & \blau<4>{\ibox{1}}} \\
+                                                                                               restr & \blau<3>{\ibox{2}} \\
+                                                                                 }} \\
+                      } \\
+               subcat & \liste{} \\
+             } \\
+   \visible<3->{cont & \blau<5>{\ms{ \visible<4->{ind & \blau<4>{\ibox{1}} \ms{ per & 3 \\
+                                 num & sg \\
+                                 gen & neu \\
+                               }} \\
+                     restr & \liste{ \ms[interessant]{ 
+                                theme & \blau<4>{\ibox{1}} \\ 
+                               } 
+                             } $\oplus$ \blau<3>{\ibox{2}}  \\
+              }}} \\
+}
+}
+\begin{itemize}
+\item Adjektiv selegiert zu modifizierendes Nomen über {\sc mod} 
+\pause{}
+$\to$\\
+      Adjektiv kann auf den \contw und damit auf die Restriktionen des Nomens (\ibox{2}) zugreifen \pause $\to$
+      Adjektiv kann die Restriktionen des Nomens bei sich in {\sc restr} einbauen
+\pause
+\item Teilung des Indexes (\ibox{1}) sorgt dafür,\\daß Adjektiv und Nomen sich auf dasselbe Objekt beziehen
+\pause
+\item Bedeutungsbeitrag der gesamten Struktur wird vom Adjunkt projiziert
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Ergebnis der Kombination}
+
+
+
+\mbox{{\it interessantes Buch\/}:}\\
+\ms
+{ cat & \ms{ head & noun \\
+             subcat & \sliste{ det } \\
+           } \\
+  cont &  \ms
+           { ind & \ibox{1} \ms{ per & 3 \\
+                                 num & sg \\
+                                 gen & neu \\
+                               } \\
+             restr & \liste{ \ms[interessant]{ theme & \ibox{1} \\ },
+                             \ms[buch]{ inst & \ibox{1} \\ } 
+                           } \\
+           } \\
+}
+
+
+Bedeutung für {\em interessantes Buch\/} ist nicht in {\em Buch\/} sondern
+in {\em interessantes\/} repräsentiert $\to$ Projektion des {\sc cont}"=Wertes vom Adjunkt
+
+
+}
+
+\frame{
+
+\frametitle{Perkolation der Bedeutung in Kopf-Adjunkt-Strukturen}
+
+
+\textit{head-adjunct-phrase} \impl\\
+\ms{ 
+cont & \ibox{1} \\[2mm]
+non-head-dtrs & \liste{ \ms{ cont & \ibox{1} \\
+                           }}\\
+}
+
+
+}
+
+\frame{
+\frametitle{Das gesamte Kopf-Adjunkt-Schema}
+
+
+\textit{head-adjunct-phrase} \impl\\
+\ms{ 
+cont & \ibox{1} \\
+head-dtr      & \ibox{2} \\[2mm]
+non-head-dtrs & \liste{ \ms{ cat & \ms{ head$|$mod & \ibox{2} \\
+                                        subcat   & \liste{} \\
+                                      } \\
+                             cont & \ibox{1} \\
+                           }}\\
+}
+
+
+
+}
+
+\subsection{Prinzipien}
+
+\subsubsection{Das Semantikprinzip}
+\frame{
+\frametitle{Das Semantikprinzip}
+
+%\small
+
+In Strukturen mit Kopf, die keine Kopf-Adjunkt-Strukturen sind, ist der
+semantische Beitrag der Mutter identisch mit dem der Kopftochter.
+
+\type{head-non-adjunct-phrase} \impl
+\ms{
+cont & \ibox{1} \\
+head-dtr$|$cont & \ibox{1} \\
+}
+\medskip
+\pause
+
+In Kopf-Adjunkt-Strukturen ist der semantische Beitrag der Mutter
+identisch mit dem der Adjunkttochter.
+
+\type{head-adjunct-phrase} \impl
+\ms{ 
+cont & \ibox{1} \\[2mm]
+non-head-dtrs & \liste{ \ms{ cont & \ibox{1} \\
+                           }}\\
+}
+
+\bigskip
+\pause
+Strukturen mit Kopf ({\it headed-phrase\/}) sind entweder Untertypen von
+{\em head-non-adjunct-phrase\/} oder von {\em head-adjunct-phrase\/}.
+
+}
+
+
+\subsubsection{Das Valenzprinzip}
+
+\frame{
+\frametitle{Argumentvererbung in Kopf-Adjunkt-Strukturen}
+
+
+\begin{itemize}[<+->]
+\item {\em Buch\/} hat gleiche Valenz wie {\em interessantes Buch\/}:\\
+      Artikel muß noch gesättigt werden
+
+\item Adjunktion verändert Valenz nicht $\to$\\
+Valenzinformation der Mutter muß der der Kopftochter entsprechen.
+
+\item formal:
+
+\type{head-non-argument-phrase} \impl \onems{
+      cat$|$subcat \ibox{1} \\
+      head-dtr$|$cat$|$subcat \ibox{1}\\
+      }
+
+In Strukturen vom Typ {\it head-non-argument-phrase\/} werden
+keine Komplemente gesättigt. Der \subcatw der Mutter ist identisch mit dem der Kopftochter.
+
+
+%% \item Anmerkung:\\
+%% {\it head-non-argument-phrase\/} und {\it head-argument-phrase\/} sind in der Typhierarchie
+%% komplementär definiert.
+
+%% D.\,h., alle Strukturen, die vom Typ {\it headed-phrase\/} sind und nicht vom Typ {\em head-argument-phrase\/},
+%% sind vom Typ {\it head-non-argument-phrase\/}.
+\end{itemize}
+
+}
+
+
+\frame{
+\small
+\frametitle{\normalsize Subkategorisierungsprinzip}
+
+
+
+
+In Strukturen mit Kopf entspricht die Subcat-Liste des Mutterknotens der \subcatl der Kopftochter
+minus den als Nicht-Kopftochter realisierten Argumenten.
+
+
+\type{head-argument-phrase} \impl
+\onems{
+cat$|$subcat \ibox{1} \\[2mm]
+head-dtr$|$cat$|$subcat \ibox{1} $\oplus$ \liste{ \ibox{2} } \\
+non-head-dtrs  \liste{\ibox{2}} \\
+} 
+
+\pause
+\type{head-non-argument-phrase} \impl
+\onems{
+      cat$|$subcat \ibox{1} \\
+      head-dtr$|$cat$|$subcat \ibox{1}\\
+      }
+
+\pause
+\bigskip
+
+Strukturen mit Kopf ({\it headed-phrase\/}) sind entweder Untertypen von
+{\em head-argument-phrase\/} oder von {\em head-non-argument-phrase\/}.
+
+}
+
+
+\frame{
+\frametitle{Typhierarchie für {\it sign\/}}
+
+\centerline{%
+\scalebox{0.78}{%
+\begin{pspicture}(0.6,-2)(15.2,6.4)
+%\psgrid
+\rput[B](4,6){\rnode{sign}{\it sign}}
+%
+\rput[B](1,4){\rnode{word}{\it word}}
+\rput[B](7,4){\rnode{phrase}{\it phrase}}
+%
+\rput[B](4,2){\rnode{nhs}{\it non-headed-phrase}}
+\rput[B](10,2){\rnode{hs}{\it headed-phrase}}
+%
+\rput[B](7,0){\rnode{hnas}{\type{head"=non-adjunct-phrase}}}
+\rput[B](13,0){\rnode{hnars}{\type{head"=non"=argument"=phrase}}}
+\rput[B](7,-2){\rnode{hars}{\it head"=argument-phrase}}
+\rput[B](10,-2){\rnode{hfs}{\ldots\rule{0cm}{1ex}}}
+\rput[B](13,-2){\rnode{has}{\it head"=adjunct-phrase}}
+%
+\psset{angleA=-90,angleB=90,arm=0pt}
+%
+\ncdiag{sign}{word}\ncdiag{sign}{phrase}
+\ncdiag{phrase}{hs}\ncdiag{phrase}{nhs}
+\ncdiag{hs}{hnas}\ncdiag{hnas}{hars}
+\ncdiag{hs}{hnars}\ncdiag{hnars}{has}
+\ncdiag{hnars}{hfs}\ncdiag{hnas}{hfs}
+%
+\end{pspicture}}}
+
+
+}
+
+
+
+%% \frame{
+%% \frametitle{Typhierarchie für {\it sign\/} (Überblick)}
+
+
+%% \epsfxsize=0.9\textwidth
+%% \centerline{\mbox{\epsffile{types-sign-hc-ha.eps}}}
+
+
+%% \centerline{Betrachteter Ausschnitt {\bf fett} markiert}
+
+
+%% }
+
+\frame{
+
+\frametitle{Kopf"=Adjunkt"=Struktur (HFP, Selektion, Semantik, \ldots)}
+
+\resizebox{\linewidth}{!}{
+%\nodemargin5pt
+\begin{tabular}[t]{@{\hspace{8mm}}c@{\hspace{10mm}}c@{}}%llll}
+\multicolumn{2}{c}{\rnode{1}{\nbar[\begin{tabular}[t]{@{}l}
+  {\sc head}   \rnode{h1}{\ibox{1}},\\
+  {\sc subcat} \rnode{sc1}{\ibox{2}},\\
+  \rnode{cont1}{\sc cont}   \ibox{3}]\\
+  \end{tabular}}
+}\\
+\\
+\hspace{8mm}A                     & \hspace{-13mm}H\\*[3ex]
+\rnode{2}{AP[\begin{tabular}[t]{@{}l}
+  {\sc head$|$mod} \ibox{4},\\
+  \rnode{cont2}{\sc cont}   \ibox{3} [{\sc restr} \nliste{ interessant(\ibox{5}) } $\oplus$ \ibox{6}]]\\
+  \end{tabular}} & \rnode{3}{\ibox{4} \nbar[\begin{tabular}[t]{@{}l}
+                                       {\sc head}   \rnode{h2}{\ibox{1}},\\
+                                       {\sc subcat} \rnode{sc2}{\ibox{2}} \sliste{ det },\\
+                                       {\sc cont$|$restr} \ibox{6} \nliste{ buch(\ibox{5}) }]
+                                                         \end{tabular}
+                                                       }\\
+\\[4ex]
+\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
+\end{tabular}
+\ncline{1}{2}\ncline{1}{3}%
+\ncline{2}{4}\ncline{3}{5}%
+%
+%\visible<2->{\highlight<2>{\aanodecurve[r]{h1}[tr]{h2}{1.5cm}}}%
+%\visible<3->{\highlight<3>{\aanodecurve[r]{sc1}[tr]{sc2}{1.5cm}}}%
+%\visible<4->{\highlight<4>{\aanodecurve[l]{cont1}[l]{cont2}{3.5cm}}}%
+\rot{todo}
+}
+
+}
+
+\subsection{Kapselnde Modifikation}
+
+\frame{
+
+{\footnotesize
+\frametitle{Kapselnde Modifikation}
+
+\ea
+Jeder Soldat ist ein potentieller Mörder.
+\z
+
+\ea
+$\ll m"order, instance:X \gg$  %;1
+\z
+\pause
+\ea
+$\ll potentiell, arg : ~\{ \ll m"order, instance:X \gg \} \gg$  % ; 1
+\z
+
+\pause
+{\em mutmaßlich-}, {\em an\-geb\-lich-}, {\em potentiell-}  nach \citep*{ps2}:\\
+%
+\resizebox{5cm}{!}{\ms{
+  cat & \ms{ head & \ms[adj]
+                     { %prd & $-$ \\
+                       mod & \baro{N}{\rm :} \ms{ ind & \ibox{1} \\
+                                                  restr & \ibox{2} \\
+                                                                        } \\
+                     } \\
+             subcat & \liste{ } \\
+           } \\
+  cont & \ms{ ind & \ibox{1} \\
+                    restr & \liste{ \ms[mutmaßlich]{ 
+                                      psoa-arg & \ibox{2} \\ 
+                                      } 
+                                  } \\
+                   } \\
+}
+}\\
+
+nur Annäherung, zu Einzelheiten siehe \citep{Kasper95} bzw.\ \citep{Mueller99a}
+}
+}
+
+
+% \frame{
+% 
+% \frametitle{Interpretation von Adjektiven}
+% 
+
+
+% \ea
+% das rote Buch
+% \z
+% \(
+% x_1|\sliste{ \ll buch, instance: x_1; 1 \gg, \ll rot, instance: x_1; 1 \gg }
+% \)
+
+% \citet*[Kapitel~8.3]{ps2}\ia{Pollard}: {\sc standard}
+
+% \eal
+% \ex Karl ist ein guter Arzt.
+% \ex Das ist ein gutes Buch.
+% \ex Frank möchte eine gute Zensur bekommen.
+% \zl
+
+% McConnell-Ginet:
+% \ea
+% Heute spielt die Mannschaft der Computerlinguistik-Abteilung gegen die Mannschaft
+% der Informatiker Basketball. In unserer Mannschaft fehlt noch ein Spieler.
+% Der Kapitän hat Peter beauftragt, noch einen guten Linguisten zu finden, der
+% mitspielen will.
+% \z
+
+% {\sc standard} durch Kontext bereitgestellt
+% 
+
+% }
+
+
+\begin{comment}
+\frame{
+
+\frametitle{Typen oder Implikationen?}
+
+\begin{itemize}
+\item Kodierung der Prinzipien im Typsystem: \citet{Krieger94a} und \citet{Sag97a}
+\item alternativ: Implikationen mit evtl.\ komplexen Antezedentien
+\item \citet{ps2}:\\
+      (alte Notation mit expliziter Erwähnung der Töchter)
+\begin{prinzip-break}[Kopfmerkmalprinzip]
+$
+\\
+\begin{array}{@{}l}
+ \ms{ dtrs & \ms[head\-ed-phrase]{} \\ } \Rightarrow \\ \\
+ \ms{
+   synsem$|$loc$|$cat$|$head & \ibox{1} \\
+   dtrs$|$head-dtr$|$synsem$|$loc$|$cat$|$head & \ibox{1} \\
+ }
+\end{array}$
+\end{prinzip-break}
+\end{itemize}
+
+}
+
+
+
+\frame{
+
+
+{\small
+\begin{prinzip}[Subkategorisierungsprinzip~({\it Subcat~Principle\/})]
+\label{prinzip-subcat}
+$
+\\
+$
+In einem phrasalen Zeichen, dessen {\sc dtrs}-Wert vom Typ {\it head\-ed-phrase\/} ist, ist
+der {\sc sub\-cat}-Wert der Kopf"|tochter die Verknüpfung der Sub\-cat"=Liste des phrasalen Zeichens
+mit der Liste der {\sc synsem}-Werte der Elemente in der {\sc comp-dtrs}"=Liste.
+\end{prinzip}
+
+
+Mit der Markmalsgeometrie von 1987:
+$
+\\
+\\
+\begin{array}{l}
+ \ms
+ { dtrs & \ms[head\-ed-phrase]{} \\
+ } \Rightarrow \\
+ \ms
+ { synsem & \ms{ loc$|$cat$|$subcat & \ibox{1} \\ } \\
+   dtrs & \ms{ head-dtr &  \ms{ synsem$|$loc$|$cat$|$subcat & \ibox{1} $\oplus$ \ibox{2} \\ } \\
+               comp-dtrs & \ibox{2}  \\
+             } \\
+ }
+\end{array}
+\\
+$
+\begin{itemize}
+\item Nicht-Kopf-Komplement-Strukturen sind: {\sc comp-dtrs} = $\liste{}$
+\item $\to$ {\it head-non-argument-phrase\/} Untertyp von {\it headed-phrase\/}
+\item $\to$ ähnliche Typen in beiden Ansätzen erforderlich
+\end{itemize}
+}
+
+}
+
+\end{comment}
+
+
+\subsection{Spezifikator-Kopf-Strukturen}
+\frame{
+
+\frametitle{Das Spezifikatorprinzip -- Possessivkonstruktionen}
+
+
+Nominalstrukturen: NP = Det, \nbar
+
+\eal
+\ex Karls Geschenk
+\ex seine Frau
+\zl
+Kopfnomen füllt semantische Rolle in der Relation des Possesivums:\\
+besitzen(karl, geschenk)
+
+\pause
+\begin{prinzip-break}[Spezifikatorprinzip ({\sc spec}-Principle)] 
+\label{prinzip-spec}\is{Prinzip!Spezifikator-}
+Wenn eine Tochter, die keine Kopf"|tochter ist,\\
+in einer Kopf"|struktur einen von {\it none\/} verschiedenen {\sc spec}-Wert besitzt,\\
+so ist dieser token-identisch mit
+%dem {\sc synsem}-Wert 
+der Kopf"|tochter.
+\end{prinzip-break}
+
+
+}
+
+\frame{
+
+\mbox{{\it seine\/}:} \\
+\ms{
+cat & \ms{ head & \ms[det]{
+%                       cas & nom $\vee$ acc \\
+%                       gen & fem \\
+%                       dtype & 3 \\
+                       spec & {\rm N\ind{1}} \\
+                      } \\
+            subcat & \liste{} \\
+           } \\
+cont & \ms{ ind & \ibox{2} \ms{ 
+                                     per & 3 \\
+                                     num & sg \\
+                                     gen & mas $\vee$ neu \\
+                                    } \\
+                          restr & \liste{ \ms[besitzen]{ 
+                                           location & \ibox{2} \\
+                                           thema    & \ibox{1} \\
+                                           }} \\
+                        }  \\
+%context$|$inds \liste{ \ibox{2} }  \\  % N'-Index fehlt
+}
+
+Der Index des Nomens in der NP (\iboxt{1}) ist über {\sc spec} erreichbar.
+
+}
+
+\subsection{Übungsaufgaben}
+
+
+\frame{
+\frametitle{Übungsaufgaben}
+
+\begin{enumerate}
+\item Wie sieht der Lexikoneintrag für das Adjektiv \emph{großem}, wie es in (\mex{1})
+vorkommt, aus?
+\eal
+\ex mit großem Tamtam
+\ex mit großem Eifer
+\zl
+\end{enumerate}
+
+}
