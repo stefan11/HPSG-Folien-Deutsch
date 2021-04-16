@@ -1,0 +1,91 @@
+%% -*- coding:utf-8 -*-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   $RCSfile: hpsg-handout.tex,v $
+%%  $Revision: 1.4 $
+%%      $Date: 2007/05/27 13:27:12 $
+%%     Author: Stefan Mueller (DFKI)
+%%    Purpose: 
+%%   Language: LaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% $Log: hpsg-handout.tex,v $
+%% Revision 1.4  2007/05/27 13:27:12  stefan
+%% Umstellung auf Unicode + Fixes in Lokalitaet
+%%
+%% Revision 1.3  2006/05/17 12:19:27  stefan
+%% *** empty log message ***
+%%
+%% Revision 1.2  2004/08/14 15:44:44  stefan
+%% konstituentenreihenfolge
+%%
+%% Revision 1.1  2004/06/21 19:14:48  stefan
+%% alte Version vor LaTeX-Beamer
+%%
+%% Revision 1.1  2002/01/09 20:06:23  stefan
+%% Initial revision
+%%
+%% Revision 1.1  2001/10/21 17:01:35  stefan
+%% Initial revision
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[blackandwhite,slidestop,handout,10pt]{beamer}
+
+
+\usepackage{hu-beamer-includes-pdflatex} %,beamer-movement}
+
+\input{localpackages.tex}
+\newtoggle{loesungen}\togglefalse{loesungen}
+
+
+\title{Head-Driven Phrase Structure Grammar für das Deutsche}
+
+\begin{document}
+\hypersetup{bookmarksopen=false}
+
+
+
+%\include{hpsg-organisatorisches}
+%\include{geteilte-Folien/einleitung-syntax}
+%\include{hpsg-light}
+% \include{hpsg-formalismus}
+% \include{hpsg-valenz-grammatikregeln}
+% \include{hpsg-komplementation}
+%\include{hpsg-semantik}
+% \include{hpsg-adjunktion-spezifikation}
+% \include{hpsg-lexikon}
+% \include{hpsg-topologie}
+% \include{hpsg-konstituentenreihenfolge}
+\include{hpsg-nla}
+% %%\include{hpsg-relativsaetze}
+% \include{lokalitaet-hpsg-folien}
+% %\include{hpsg-komplexe-praedikate}
+
+\appendix
+% muss immer geladen werden, wegen Referenzen
+\input{hu-literatur-biber}
+
+
+\end{document}
+
+
+% Local variables:
+% mode: lazy-lock
+% End:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
