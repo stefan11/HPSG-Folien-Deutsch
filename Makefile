@@ -25,7 +25,7 @@ handout: 1-handout
 o-public: knoppix o-public-copy
 
 # hpsg-slides-2.pdf hpsg-handout-2.pdf hpsg-slides.pdf hpsg-handout.pdf 
-o-public-copy: hpsg-handout-einleitung.pdf hpsg-handout-formalismus.pdf hpsg-handout-komplementation.pdf hpsg-handout-hpsg-light.pdf hpsg-handout-semantik.pdf
+o-public-copy: hpsg-handout-einleitung.pdf hpsg-handout-formalismus.pdf hpsg-handout-komplementation.pdf hpsg-handout-adjunktion-spezifikation.pdf hpsg-handout-lexicon.pdf hpsg-handout-topologie.pdf hpsg-handout-hpsg-light.pdf hpsg-handout-semantik.pdf
 	scp -p $? hpsg.hu-berlin.de:/home/stefan/public_html/PS/
 
 

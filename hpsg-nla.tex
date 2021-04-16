@@ -1,0 +1,1148 @@
+\subtitle{Nichtlokale Abhängigkeiten}
+
+\huberlintitlepage[22pt]
+
+\section{Nichtlokale Abhängigkeiten}
+
+\iftoggle{teil1}{
+\outline{
+
+\begin{itemize}
+%\item Ziele
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item Semantik
+\item Adjunktion und Spezifikation
+\item Das Lexikon: Typen und Lexikonregeln
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item \blau{Nichtlokale Abhängigkeiten}
+\item Relativsätze
+\item Lokalität
+%\item Komplexe Prädikate: Der Verbalkomplex
+\end{itemize}
+}
+} % \end{teil1}
+
+\iftoggle{teil2}{
+\outline{
+
+\begin{itemize}
+\item Wiederholung
+      \begin{itemize}
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item \blau{Nichtlokale Abhängigkeiten}
+\item Lokalität
+\end{itemize}
+\item Kongruenz
+\item Kasus
+\item Der Verbalkomplex
+\item Kohärenz, Inkohärenz, Anhebung und Kontrolle
+\item Passiv
+\item Partikelverben
+\item Morphologie
+\end{itemize}
+}
+} % \end{teil2}
+
+\frame{
+\frametitle{Literaturhinweise}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~10.1--10.2]{MuellerLehrbuch3}
+\item Außerdem Handbuchartikel zu Fernabhängigkeiten: \citew{BC2021a}
+\end{itemize}
+
+\vspace{1cm}
+
+%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%%   nächsten Mal lesen sollen!!!!}
+}
+
+
+\subsection{Verschiedene Arten von Fernabhängigkeiten}
+
+\frame[shrink]{
+\frametitle{Das Deutsche als V2-Sprache}
+
+Vorfeld kann mit einer Konstituente (Adjunkt, Subjekt o.\ Komplement) besetzt sein (\citealp{Erdmann1886a};
+\citealp{Paul1919a}) $\to$ Verbzweitsprache
+
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{@{}l@{~}ll@{}}
+a. & Schläft Karl?                                        & Karl schläft.\\
+\pause
+b. & Kauft Karl diese Jacke?                              & Karl kauft diese Jacke.\\
+\pause
+   &                                                      & Diese Jacke kauft Karl.\\
+\pause
+c. & Kauft Karl morgen diese Jacke?                       & Morgen kauft Karl diese Jacke.\\
+\pause
+d. & Wird die Jacke von Karl gekauft?                     & Von Karl wird die Jacke gekauft.\\
+\pause
+e. & Ist Maria schön?                                     & Schön ist Maria.\\
+\pause
+f. & Muß man sich kämmen?                                 & Man muss sich kämmen.\\
+\pause
+   &                                                      & Sich kämmen muss man.\\
+\pause
+g. & Glaubt Karl, dass Maria ihn liebt?                    & Daß Maria ihn liebt, glaubt Karl.\\
+\pause
+h. & Lacht Karl, weil er den Trick kennt?   & Weil er den Trick kennt, lacht Karl.\\
+\pause
+i. & Schlaf jetzt endlich!                                & Jetzt schlaf endlich!\\
+\end{tabular}
+}
+
+}
+
+
+\frame[label=nla]{
+\frametitle{Vorfeldbesetzung als nichtlokale Abhängigkeit}
+
+\savespace\smallexamples
+\begin{itemize}
+\item Linearisierungsansätze: \\
+      \citet*{NSW94a} (für Voranstellung von Idiomteilen)\\ 
+      \citet[Kapitel~6.3]{Kathol95a} für einfache Voranstellungen
+\pause
+\item keine Lösung für alle Fälle:
+\eal
+\ex
+{}[Um zwei Millionen Mark]$_i$ soll er versucht haben,\\{}[eine Versicherung \_$_i$ zu betrügen].\footnote{
+         taz, 04.05.2001, S.\,20.
+}
+\pause
+\ex
+"`Wer$_i$, glaubt\iw{glauben} er, dass er \_$_i$ ist?"' erregte sich ein Politiker vom Nil.\footnote{
+        Spiegel, 8/1999, S.\,18.
+}
+\pause
+\ex Wen$_i$ glaubst du, dass ich \_$_i$ gesehen habe.\footnote{
+    \citew[S.\,84]{Scherpenisse86a}.
+    }
+\zl
+\pause
+\item Zusammengehörigkeit wird durch Indizes gekennzeichnet.\\
+\_$_i$ steht für die Lücke bzw.\ \blau{Spur} ({\it gap\/} bzw.\ {\it trace\/})\\
+{}[\emph{um zwei Millionen Mark}]$_i$ ist \blau{Füller}
+
+\end{itemize}
+
+}
+
+\iftoggle{teil1}{
+
+\frame{
+\frametitle{Andere Fernabhängigkeiten: Extraposition} 
+
+
+\savespace
+\begin{itemize}
+\item {\it unbounded dependencies\/} vs.\ {\it long distance dependencies\/}
+\pause
+\item durch Satzgrenze beschränkt:
+\eal
+\ex Der Mann hat [der Frau \_$_i$] den Apfel gegeben,\\
+    {}[die er am schönsten fand]$_i$.
+\ex Der Mann hat \_$_i$ behauptet,\\
+    {}[einer Frau den Apfel gegeben zu haben]$_i$.
+\zl
+\pause
+\item aber wirklich nicht lokal:
+\ea
+Karl hat mir\\
+{}[von [der Kopie [einer Fälschung [eines Bildes [einer \blau{Frau}]]]]] erzählt, \blau{die} schon lange tot ist.
+\z
+Zur Nichtlokalität der Extraposition siehe auch \citet{Mueller2004d}.
+\pause
+\item Zur Extraposition in HPSG: \citew{Keller95b,Bouma96,Mueller99a}.
+\end{itemize}
+
+}
+} % \end{teil1}
+
+\subsection{Vorfeldbesetzung}
+
+
+\frame{
+
+%\frametitle{Repräsentationen und Lexikonregeln: 
+\frametitle{Überblick: Vorfeldbesetzung}
+
+\vfill
+\hfill%
+\scalebox{0.7}{
+%\small
+\psset{xunit=1cm,yunit=5.4mm}
+%
+% node labels for moving elements will be typeset by the \tmove command
+% here we have to provide invisible boxes to get the line drawing right.
+\begin{pspicture}(-.1,0.8)(9.4,12)
+%
+%\psgrid
+%
+\only<2->{\pscurve[%showpoints=true,%
+%arrows=<->](6.6,2.8)(6.7,2.4)(7.0,2.4)(7.4,3.2)(8.3,5.2)(6.8,7.3)(5.1,9.2)(3,10.2)(1.3,9.6)
+linecolor=green,arrows=<->](4.6,4.8)(4.7,4.4)(5.0,4.4)(5.3,5.2)(6.8,7.3)(5.1,9.2)(3,10.2)(1.3,9.6)
+}
+%
+\rput[B](1,1){\rnode{speccp}{\blau<1>{diesen Mann$_i$}}}
+\rput[B](3,1){\rnode{cleer}{{kennt}}}
+\rput[B](5,1){\rnode{jeder}{\blau<1>{[ \_ ]$_i$}}}
+\rput[B](7,1){\rnode{ihnmf}{jeder}}
+\rput[B](9,1){\rnode{kennt}{{[ \_ ]$_k$}}}
+%
+\rput[B](7,3){\rnode{np1}{{NP}}}
+\rput[B](9,3){\rnode{v}{V}}
+%
+\rput[B](5,5){\rnode{np2}{\blau<1>{NP/NP}}}
+\rput[B](8,5){\rnode{vs1}{V$'$}}
+%
+\rput[B](6.5,7){\rnode{vp}{VP/NP}}
+%
+%
+\rput[B](3,5){\rnode{vlex}{V}}
+%
+\rput[B](3,7){\rnode{c}{V}}
+%
+\rput[B](1,9){\rnode{np3}{\blau<1>{NP}}}
+\rput[B](4.75,9){\rnode{cs}{VP/NP}}
+%
+%
+\rput[B](3.0625,11){\rnode{cp}{VP}}
+%
+%
+%
+%
+\psset{angleA=-90,angleB=90,arm=0pt}
+%
+\ncdiag{v}{kennt}
+\ncdiag{vs1}{np1}\ncdiag{vs1}{v}
+\ncdiag{vs2}{np2}\ncdiag{vs2}{vs1}
+\ncdiag{vp}{vs2}
+%
+\ncdiag{np3}{t1}
+%
+\ncdiag{i}{t2}
+\ncdiag{is}{i}\ncdiag{is}{vp}
+\ncdiag{vp}{np2}\ncdiag{ip}{is}
+%
+\alt<1>{\pstriangle[linecolor=blue](1,1.6)(2.0,7.2)}{\pstriangle(1,1.6)(2.0,7.2)}
+\alt<1>{\ncdiag[linecolor=blue]{np2}{jeder}}{\ncdiag{np2}{jeder}}
+\ncdiag{np1}{ihnmf}
+\ncdiag{vp}{vs1}
+\ncdiag{c}{vlex}
+\ncdiag{vlex}{cleer}
+\ncdiag{cs}{c}\ncdiag{cs}{vp}
+\ncdiag{cp}{np3}
+\ncdiag{cp}{cs}
+%
+\end{pspicture}
+}
+\hfill\hfill\mbox{}
+\vfill
+\begin{itemize}
+\item Wie bei Verbbewegung: Spur an ursprünglicher "`normaler"' Position.
+\pause
+\item Weiterreichen der Information im Baum
+\pause
+\item Konstituentenbewegung ist nicht lokal, Verbbewegung ist lokal\\
+      mit zwei verschiedenen Merkmalen modelliert ({\sc slash} vs.\ {\sc dsl})
+\end{itemize}
+
+%\handoutspace
+}
+
+\subsubsection{Eigenschaften der Analyse}
+
+\frame{
+\frametitle{Eigenschaften der Analyse}
+
+\savespace
+
+\begin{itemize}[<+->]
+\item Perkolation nichtlokaler Information
+\item Strukturteilung
+\item Information ist gleichzeitig an jedem Knoten präsent.
+\item Knoten in der Mitte einer Fernabhängigkeit können darauf zugreifen\\
+      (\citet*{BMS2001a}: Irisch, Chamorro, Palauan, Isländisch,\\
+      \hspaceThis{(}Kikuyu, Ewe, Thompson Salish, Moore, Französisch, Spanisch, Jiddisch)
+\end{itemize}
+
+}
+
+\subsubsection{Datenstruktur: Unterteilung lokale/nichtlokale Information}
+
+\frame{
+\frametitle{Datenstruktur: Unterteilung lokale/nichtlokale Information}
+
+\begin{itemize}
+\item Unterteilung in Information, die lokal relevant ist ({\sc local})\\
+      und solche, die in Fernabhängigkeiten eine Rolle spielt ({\sc nonlocal})
+
+\bigskip
+\ms[sign]{
+phon   & list~of~phoneme strings\\
+ loc & \ms[loc]{ cat  & \ms[cat]{ head   & head \\
+                                                       subcat & list of synsem objects\\
+                                                     } \\
+                                      cont & cont\\
+                                    }\\
+                      nonloc & nonloc\\
+}
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Datenstruktur für nichtlokale Information}
+
+\begin{itemize}
+\item \nonlocw ist weiter strukturiert:
+\medskip
+
+\ms[nonloc]{
+ que & \type{list~of~npros} \\
+ \visible<2->{rel & \type{list~of~indices}} \\
+ \visible<3->{slash & \type{list~of~local~phrases}} \\ %\\
+ %extra & \ms[list~of~local~phrases]{} \\
+}
+\medskip
+
+\item {\sc que}: Liste von Indizes von Fragewörtern (Interrogativsätze)
+\pause
+\item {\sc rel}: Liste von Indizes von Relativpronomina (Relativsätze)
+\pause
+\item {\sc slash}: Liste von {\it local\/}"=Objekten (Vorfeldbesetzung, Relativsätze)
+\pause
+\item {\sc que} wird im folgenden weggelassen.
+\end{itemize}
+
+}
+
+\subsubsection{Die Spur für das Akkusativobjekt}
+
+\frame{
+\frametitle{Spur für das Akkusativobjekt von \emph{kennen}}
+
+\hspace{1em}\ms[word]{
+ phon & \blau<2>{\phonliste{}} \\
+ loc & \blau<4>{\ibox{1}} \blau<3>{\ms{ cat \ms{ head & \ms[noun]{
+                                                     cas & acc\\
+                                                     } \\
+                                              subcat & \sliste{}\\
+                                            } \\
+                                   }}\\
+               nonloc & \ms{ %que   & \sliste{} \\
+%                               rel & \sliste{} \\
+                                slash & \sliste{ \blau<4>{\ibox{1}} } \\
+                                %extra & \liste{} \\
+                             } \\
+}
+
+\pause
+
+\begin{itemize}
+\item Die Spur hat keinen phonologischen Beitrag.
+\pause
+\item Die Spur hat die lokalen Eigenschaften, die \emph{kennen} verlangt.
+\pause
+\item Diese werden auch in \slasch eingeführt.
+\end{itemize}
+
+}
+
+
+\subsubsection{Die Perkolation nichtlokaler Information}
+
+\frame{
+\frametitlefit{Die Perkolation nichtlokaler Information (vereinfacht $\to$ falsche Verbstellung!)}
+
+
+\centerline{%
+\begin{forest}
+sm edges
+[{V[\begin{tabular}[t]{@{}l@{}}
+    \subcat \eliste\alt<1>{]}{,}\\
+    \visible<2->{\blau<3>{\slasch \eliste}]}\end{tabular}}, s sep+=2ex 
+  [\blau<3>{NP\ibox{1}[\type{acc}]} [das Buch,roof]]
+  [{V[\begin{tabular}[t]{@{}l@{}}
+      \subcat \sliste{ }\alt<1>{]}{,}\\
+      \visible<2->{\blau<2-3>{\slasch \sliste{ \ibox{1} }}]}\end{tabular}}
+    [{V[\begin{tabular}[t]{@{}l@{}}
+      \subcat \sliste{ \ibox{2} }\alt<1>{]}{,}\\
+      \visible<2->{\blau<2-3>{\slasch \sliste{ \ibox{1} }}]}\end{tabular}}
+      [{V[\begin{tabular}[t]{@{}l@{}}
+      \subcat \sliste{ \ibox{2}, \blau<1>{\ibox{3}} }\alt<1>{]}{,}\\
+      \visible<2->{\slasch \sliste{ }]}\end{tabular}}
+        [kennt]]
+      [{\blau<1>{\ibox{3} NP}[\begin{tabular}[t]{@{}l@{}}\type{acc}\alt<1>{]}{,}\\
+                                      \visible<2->{\blau<2>{\slasch \sliste{ \ibox{1} }}]}\end{tabular}}
+        [\trace]]]
+    [{\ibox{2} NP[\type{nom}]}
+      [jeder]]]]
+\end{forest}}
+\pause
+
+%\alt<1>{]}{,}
+}
+
+
+\subsubsection{Das Kopf-Füller-Schema}
+
+\frame{
+\frametitle{Das Kopf"=Füller"=Schema}
+\smallframe
+%\savespace
+\scalebox{0.9}{%
+\begin{tabular}{@{}l@{}}
+\type{head-filler-phrase} $\to$\\
+\ms{ 
+nonloc$|$slash &   \eliste\\
+head-dtr      & \highlight<1>{\onems{ loc$|$cat \onems{ head \ms[verb]{vform & fin\\
+                                                                 initial & {\rm +}\\
+                                                                }\\
+                                                  subcat \liste{}\\
+                                               }\\
+                             \visible<2->{\highlight<2>{nonloc$|$slash   \sliste{ \highlight<3>{\ibox{1}} }}}}}\\
+\visible<3->{non-head-dtrs & \liste{ \onems{ \highlight<3>{loc \ibox{1}}\\
+                                           \visible<4->{\highlight<4>{nonloc$|$slash \liste{}}} \\
+                                 }}}\\
+   }
+\end{tabular}}
+
+\begin{itemize}
+\item Kopftochter ist ein finiter Satz mit Verb in Verberststellung ({\sc initial}+) 
+\pause
+      und\\ einem Element in {\sc slash}
+\pause
+\item {\sc local}"=Wert der Nicht-Kopftochter ist identisch mit Element in {\sc slash}
+\pause
+\item Aus Nicht-Kopftochter kann nichts extrahiert werden.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Eigenschaften von Kopf"=Füller"=Strukturen}
+
+\begin{itemize}[<+->]
+\item Es werden keine Argumente gesättigt.\\
+      {\it head-filler-phrase\/} ist Untertyp von {\it head-non-argument-phrase\/}.
+\item Semantischer Beitrag kommt vom Verb (der Kopftochter).\\
+      {\it head-filler-phrase\/} ist Untertyp von {\it head-non-adjunct-phrase\/}.
+\end{itemize}
+
+}
+
+
+
+\iftoggle{teil1}{
+\subsubsection{Typhierarchie für \type{sign}}
+
+
+
+\frame{
+\frametitle{Typhierarchie für \type{sign}}
+
+\vfill
+\centerline{
+\begin{forest}
+type hierarchy
+[sign,s sep+=4em
+  [word]
+  [phrase
+    [non-headed-phrase]
+    [headed-phrase
+      [head-non-adjunct-phrase
+        [head-argument-phrase]
+        [head-filler-phrase]]
+      [head-non-argument-phrase
+       [,identify=!r2212]
+       [head-adjunct-phrase]]]]]
+\end{forest}}
+\vfill
+
+}
+} % \end{teil1}
+
+
+\subsubsection{Die Extraktionsspur}
+
+\frame{
+\frametitle{Die Extraktionsspur}
+
+
+\hspace{1em}\ms[word]{
+ phon   & \phonliste{} \\
+ loc    & \ibox{1} \\
+ nonloc & \ms{ %que   & \sliste{} \\
+ %                                               rel & \sliste{} \\
+                                                slash & \sliste{ \ibox{1} } \\ 
+                                                %extra & \sliste{} \\
+                                              } \\ 
+}
+\begin{itemize}
+\item Wie bei der Verbbewegung können wir abstrahieren.
+\pause
+\item Über den \localw müssen wir in der Spur nichts sagen,\\
+      denn das Verb weiß ja, was es will\\
+      und stellt Anforderungen an den \localw seines Arguments.
+\end{itemize}
+
+
+}
+
+\iftoggle{teil1}{
+
+\subsubsection{Extraktion zusammen mit Verbbewegung}
+\frame{
+\frametitle{Extraktion zusammen mit Verbbewegung}
+
+% \hfill\scalebox{0.55}{%
+% \begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{}}%llll}
+% \multicolumn{2}{@{}c}{\rnode{3all}{V[\begin{tabular}[t]{@{}l}
+%                                  {\sc subcat} \rnode{3}{\eliste},\\
+%                                  {\sc slash} \eliste]\\
+%                                  \end{tabular}}
+%                                           }\\
+% \\
+% \hspace{0mm}F                     & \hspace{28mm}H\\*[3ex]
+% \rnode{npbuch}{NP\ibox{1}[{\it acc\/}]} & \multicolumn{2}{c}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
+%                                           {\sc subcat} \sliste{},\\
+%                                           {\sc slash} \sliste{ \ibox{1} }]\\
+%                                           \end{tabular}}
+%                                           }\\
+% \\
+% &\hspace{7mm}H                     & \hspace{19mm}C\\*[3ex]
+% &\rnode{2}{V[{\sc subcat} \sliste{ \ibox{2} }]} & \multicolumn{3}{l}{\rnode{3}{\ibox{2} V[\begin{tabular}[t]{@{}l}
+%                                                                     {\sc subcat} \sliste{ },
+%                                            {\sc slash} \sliste{ \ibox{1} }]
+%                                                                     \end{tabular}}
+%                                                        }\\
+% \\
+% & \hspace{8ex}V1-LR                             & \hspace{0mm}C                   & \hspace{15mm}H\\*[3ex]
+% & \rnode{kennt-vl}{V[{\sc subcat} \sliste{ \ibox{3}, \ibox{4} }]}  & \rnode{4}{\ibox{3} NP[{\it nom\/}]}& \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
+%                                                                                                        {\sc subcat} \sliste{ \ibox{3} },
+%                                            {\sc slash} \sliste{ \ibox{1} }]\\
+%                                                                                                        \end{tabular}}
+%                                                                                            }\\
+% \\
+% &                                   &                                   & C                                & \hspace{-5mm}H\\*[3ex]
+% &                                   &                                   & \rnode{6}{\ibox{4} [\begin{tabular}[t]{@{}l@{}}
+%                                                                         {\sc loc} \ibox{1},\\
+%                                                                         {\sc slash} \sliste{ \ibox{1} }] \\
+%                                                                         \end{tabular}} & \rnode{7}{V[\begin{tabular}[t]{@{}l@{}}
+%                                                                                                  {\sc subcat} \sliste{ \ibox{3}, \ibox{4} }] \\
+%                                                                                                  \end{tabular}}\\
+% \\*[3ex]
+% d\rnode{buch}{as Buc}h & \rnode{8}{kennt}                     & \rnode{9}{jeder}                  & \rnode{10}{$-$} & \rnode{11}{$-$}\\
+% \end{tabular}
+% \ncline{3all}{npbuch}\ncline{3all}{1}%
+% \ncline{1}{2}\ncline{1}{3}%
+% \ncline{3}{4}\ncline{3}{5}%
+% \ncline{5}{6}\ncline{5}{7}%
+% \ncline{2}{kennt-vl}\ncline{kennt-vl}{8}%
+% \ncline{4}{9}%
+% \ncline{6}{10}%
+% \ncline{7}{11}%
+% \nodetriangle{npbuch}{buch}%
+% }\hfill\hfill\mbox{}
+
+}
+
+} % \end{teil1}
+
+\iftoggle{teil1}{
+\subsection{Probleme mit Spuren}
+
+\frame{
+\frametitle{Linguistische Probleme mit Spuren}
+
+\begin{itemize}
+\item Koordination
+      \begin{itemize}
+      \item {\sc cat}"=Werte und {\sc nonloc}"=Werte der Konjunkte werden unifiziert
+      \item Mutter hat dieselben {\sc nonloc}"=Werte wie Töchter
+      \item
+        Across the Board"=Extraktion (ATB)
+\ea
+Bagels$_i$ [[I like \_$_i$] and [Alison hates \_$_i$]].
+\z
+\item aber nicht mit Spuren
+\ea[*]{
+Bagels$_i$ I like [\_$_i$ and \_$_i$].
+}
+\z
+%      \item Selektion der Phonologie nicht möglich ({\it synsem}) $\to$ Merkmal stipulieren
+      \end{itemize}
+\end{itemize}
+
+}
+\frame{
+
+\smallframe
+\frametitle{Linguistische Probleme mit Spuren}
+\begin{itemize}
+\item Linearisierung (in Abhängigkeit von anderen Annahmen in der Grammatik)
+      \ea
+      Dem Mann$_i$ hilft eine Frau \_$_i$. ~~~vs.~~ Dem Mann$_i$ hilft \_$_i$ eine Frau.\\
+      \z
+\pause
+\medskip
+\item Restriktion auf Nicht"=Köpfe
+      \eal
+\ex[]{
+{}[Der kluge Mann]$_i$ hat \_$_i$ geschlafen.
+}
+\ex[*]{
+{}[Mann]$_i$ hat der kluge \_$_i$ geschlafen.
+}
+\zl
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Verarbeitungsprobleme bei der Annahme von Spuren}
+
+
+
+\begin{itemize}
+\item In Abhängigkeit vom Parser:\\
+      Hypothesen für leere Elemente, die nie benutzt werden\\
+      der \_ Mann
+\end{itemize}
+
+
+}
+
+\subsection{Einführung nichtlokaler Abhängigkeiten}
+
+\frame{
+\frametitle{Einführung nichtlokaler Abhängigkeiten}
+
+
+
+\begin{itemize}
+\item Spur
+\item Unäre Projektion
+\item Lexikonregel
+\item unterspezifizierte Lexikoneinträge und relationale Beschränkungen
+\end{itemize}
+
+
+}
+
+\subsection{Grammatiktransformation}
+\frame{
+%
+\frametitle{Grammatiktransformation}
+
+\citet*{BHPS61a}:
+
+\begin{tabular}{@{}l@{\hspace{1cm}}c@{\hspace{1cm}}l}
+\baro{v}   $\to$ \mbox{v}, \mbox{np}        &                & \baro{v}   $\to$ \mbox{v}, \mbox{np}\\
+\mbox{np}  $\to$ $\epsilon$                 & $\Rightarrow$  & \baro{v}   $\to$ \mbox{v}\\
+\baro{v}   $\to$ \baro{v}, \mbox{adv}       &                & \baro{v}   $\to$ \baro{v}, \mbox{adv}\\
+\mbox{adv} $\to$ $\epsilon$                 &                & \baro{v}   $\to$ \baro{v}\\
+\end{tabular}
+
+\pause
+\bigskip
+
+H[{\sc subcat} X]   $\to$ H[{\sc subcat} X $\oplus$ \sliste{Y}], Y\\
+Y  $\to$ $\epsilon$
+
+$\Rightarrow$
+
+
+H[{\sc subcat} X]   $\to$ H[{\sc subcat} X $\oplus$ \sliste{Y}], Y\\
+H[{\sc subcat} X]   $\to$ H[{\sc subcat} X $\oplus$ \sliste{Y}]
+
+}
+
+\subsection{Das \texorpdfstring{{\sc slash}}{SLASH}-Einführungsschema für Komplemente}
+
+\frame{
+\frametitle{{\sc slash}"=Einführungsschema für Komplemente}
+\smallframe
+
+%\resizebox{6cm}{!}{%
+\type{head-comp-slash-phrase} $\to$\\
+\onems{
+   \visible<3->{loc$|$cat$|$subcat \highlight<3>{\ibox{1}}} \\
+   \visible<4->{nonloc$|$slash \highlight<4>{\sliste{ \ibox{4} } $\oplus$ \ibox{5}}} \\
+  head-dtr  \onems{
+                           loc$|$cat$|$subcat \highlight<3>{\ibox{1}} $\oplus$ \sliste{ \highlight<2>{\onems{ loc \ibox{4} \\
+                                                                                 nonloc$|$slash  \highlight<4>{\sliste{ \ibox{4} }} \\ %\\
+                                                                               }}
+                                                                       } \\
+                           \visible<4->{nonloc$|$slash \highlight<4>{\ibox{5}}}\\
+                   } \\
+}
+%}
+%
+\begin{itemize}[<+->]
+\item Es gibt keine Nicht-Kopftochter. (Die würde durch Spur gefüllt)
+\item Letztes Element der \subcatl der Kopftochter entspricht der Spur.
+\item Restliche Argumente werden zur Mutter hochgegeben.
+\item \slashw der Mutter ist \slasch der Kopftochter + \slasch der "`Spur"'.
+\end{itemize}
+
+}
+
+
+\subsection{Lexikontransformation}
+
+\frame{
+\frametitle{Lexikontransformation}
+
+\begin{tabular}[t]{@{}ll@{}}
+\baro{v}   $\to$ \mbox{v-ditrans}, \mbox{np}, \mbox{np}, \mbox{np}\hspace{0.5cm} & \mbox{v-ditrans} $\to$ geben\\  
+\baro{v}   $\to$ \mbox{v-trans},   \mbox{np}, \mbox{np}                        & \mbox{v-trans} $\to$ lieben\\  
+\baro{v}   $\to$ \mbox{v-intrans}, \mbox{np}                                   & \mbox{v-intrans} $\to$ schlafen\\
+\baro{v}   $\to$ \mbox{v-subjless}\\
+\mbox{np}  $\to$ $\epsilon$\\   
+\end{tabular}
+
+$\Rightarrow$
+
+\begin{tabular}[t]{@{}ll@{}}
+\baro{v}   $\to$ \mbox{v-ditrans}, \mbox{np}, \mbox{np}, \mbox{np}\hspace{0.5cm} & \mbox{v-ditrans} $\to$ geben\\
+\baro{v}   $\to$ \mbox{v-trans},   \mbox{np}, \mbox{np}                        & \mbox{v-trans} $\to$ lieben $\vee$ geben\\  
+\baro{v}   $\to$ \mbox{v-intrans}, \mbox{np}                                   & \mbox{v-intrans} $\to$ schlafen $\vee$ lieben $\vee$ geben\\
+\baro{v}   $\to$ \mbox{v-subjless}                                             & \mbox{v-subjless} $\to$ schlafen $\vee$ lieben $\vee$ geben \\
+\end{tabular}
+
+
+}
+
+\frame{
+
+\small
+\frametitle{Lexikontransformation}
+
+
+V[\subcat \liste{ NP$_1$, NP$_2$, NP$_3$ }] $\to$ geben\\
+V[\subcat \liste{ NP$_1$, NP$_2$ }] $\to$ lieben\\
+V[\subcat \liste{ NP$_1$ }] $\to$ schlafen\\
+
+$\Rightarrow$
+
+\begin{multicols}{2}
+V[\subcat \liste{ NP$_1$, NP$_2$, NP$_3$ }] $\to$ geben\\
+V[\subcat \liste{ NP$_1$, NP$_2$ }] $\to$ geben\\
+V[\subcat \liste{ NP$_1$, NP$_3$ }] $\to$ geben\\
+V[\subcat \liste{ NP$_2$, NP$_3$ }] $\to$ geben\\
+V[\subcat \liste{ NP$_1$ }] $\to$ geben\\
+V[\subcat \liste{ NP$_2$ }] $\to$ geben\\
+V[\subcat \liste{ NP$_3$ }] $\to$ geben\\
+V[\subcat \liste{ }] $\to$ geben\\
+V[\subcat \liste{ NP$_1$, NP$_2$ }] $\to$ lieben\\
+V[\subcat \liste{ NP$_1$ }] $\to$ lieben\\
+V[\subcat \liste{ NP$_2$ }] $\to$ lieben\\
+V[\subcat \liste{ }] $\to$ lieben\\~\\~\\
+V[\subcat \liste{ NP$_1$ }] $\to$ schlafen\\
+V[\subcat \liste{ }] $\to$ schlafen
+\end{multicols}
+
+}
+
+\frame{
+\frametitle{Argumentextraktionslexikonregel}
+
+\hspace{\leftmargini}\onems[word]{
+ loc$|$cat \onems{ \visible<3>{\highlight<3>{head$|$mod  \type{none}}} \\
+                             subcat \ibox{1} $\oplus$ \liste{ \highlight<1>{\ms{
+                                                                loc & \ibox{4}\\
+                                                                nonloc$|$slash & \sliste{ \highlight<2>{\ibox{4}} } \\ % \\
+                                                                   }} } $\oplus$ \ibox{3} \\
+                           } \\
+ nonloc$|$slash \sliste{} \\
+ } $\to$ \\~\\
+\hspace{\leftmargini}\onems[word]{
+ loc$|$cat$|$subcat \ibox{1} $\oplus$ \ibox{3} \\
+ nonloc$|$slash \sliste{ \highlight<2>{\ibox{4}} } \\
+ }
+
+\begin{itemize}[<+->]
+\item Ein Argument wird mit "`Spur"' identifiziert.
+\item \slasch der "`Spur"' wird zum \slashw des Ausgabezeichens.
+\item Aus Adjunkten kann nicht extrahiert werden.
+\end{itemize}
+
+}
+
+\frame{
+
+
+\frametitle{Unterspezifikation im Lexikon}
+
+\citet*{BMS2001a}
+
+\begin{itemize}
+\item zwei Listen:
+      \begin{itemize}
+      \item Argumentstruktur
+      \item abhängige Elemente
+      \end{itemize}
+\item Realisierungsbeschränkungen bilden die eine Liste auf die andere ab.\\
+      "`Spuren"' werden nicht in die Liste der abhängigen Argumente aufgenommen.
+\end{itemize}
+
+}
+
+} % \end{teil1}
+
+% definition für Folien: Maximal 999 Beispiele
+\exewidth{\exnrfont (234)}
+
+\if 0
+\subsection{Extraktionsinseln}
+
+\frame{
+
+\frametitle{Extraktionsverbot / Extraktionsinseln (I)}
+
+\begin{itemize}
+\item nicht alle Komplemente/Adjunkte können extrahiert werden
+\item Artikel
+      \eal
+      \ex[]{
+      Kennt er den Mann?
+      }
+      \ex[*]{
+      Den kennt er Mann?
+      }
+      \zl 
+\item Sätze, die durch Komplementierer eingeleitet werden
+\eal
+\ex[]{
+"`Wer, glaubt\iw{glauben} er, dass er ist?"' erregte sich ein Politiker vom Nil. (Spiegel, 8/1999)
+}
+\ex[*]{
+{}[Er ein mächtiger Mann ist]$_i$, glaubt er, [dass \_$_i$].
+}
+\zl
+\item \citet{Wegener85b}: ethische Dative (sind Adjunkte)
+\eal
+\ex[]{
+Der fährt dir glatt an den Baum.
+}
+\ex[*]{
+Dir fährt der glatt an den Baum.
+}
+\ex[*]{
+Wem fährt er glatt an den Baum?
+}
+\zl
+\end{itemize}
+
+}
+\frame{
+\frametitle{Extraktionsverbot / Extraktionsinseln (II)}
+
+\begin{itemize}
+\item Reflexivpronomina inhärent reflexiver Verben
+\eal
+\ex[*]{
+Sich\iw{sich|(} hat er gut erholt.\iw{erholen}
+}
+\ex[*]{
+Dir bist du immer gleichgeblieben. \citep*{Hoberg81a}
+}
+\zl
+keine Eigenschaft des Pronomens,\\da Reflexiva bei nicht inhärent refl.\ Verben voranstellbar:
+\eal
+\ex Sich sah er im Spiegel.
+\ex Mit sich\iw{sich|)} bringt\iw{bringen!mit sich $\sim$} dieser Ansatz große Probleme.
+\zl
+\item bestimmte Adverbien sind nicht vorfeldfähig \citep{Hoberg81a}:
+\eal
+\ex[]{
+Einfach$_{43}$\iw{einfach} geht das nicht! (adverbial gebrauchtes Satzadjektiv)
+}
+\ex[]{
+Er ging einfach$_{18}$ nicht. (pragmatische\is{Pragmatik} Angabe)
+}
+\ex[*]{
+Einfach$_{18}$ ging er nicht.
+}
+\zl
+
+\end{itemize}
+}
+
+\subsection{Irregularitäten}
+
+\frame{
+\frametitle{Irregularitäten}
+
+
+\begin{itemize}
+\item idiosynkratisches Verhalten des Akkusativ"={\em es\/} (Kürze, Betonbarkeit):
+\eal
+\ex[*]{
+Es (das Kind) liebt der Vater.
+}
+\ex[]{
+Ihn (den Sohn) liebt der Vater.
+}
+\ex[]{
+Seine Freundin liebt der Vater.
+}
+\zl
+\item {\em es\/} als Prädikat \citep{Askedal90}:
+\eal
+\ex[]{
+Er ist es (tüchtig).
+}
+\ex[*]{
+Es (tüchtig) ist er.
+}
+\zl
+%\item nicht betonbar
+% \item Grund funktionale Überladung des {\em es\/} (positionales {\em es\/},
+%       Korrelat-{\em es\/}, \ldots)
+\end{itemize}
+
+}
+
+\frame[shrink]{
+
+\frametitle{Sind Nominalphrasen Extraktionsinseln? (I)}
+
+Extraktion aus Objekts-NPen
+\eal
+\ex {}[Über England]$_i$ hat ja wohl jeder schon mal [einen Film \_$_i$] gesehen.\iw{Film}\iw{sehen}
+\ex {}[Von Maria]$_i$ hat Karl [ein Bild \_$_i$] gemalt.\iw{Bild}
+\ex {}[Von dieser Puppe]$_i$ sucht Maria noch heute [den linken Arm \_$_i$].
+\ex {}[Gegen diese Behauptung]$_i$ ist ihm [ein Argument \_$_i$] eingefallen.\iw{Argument}
+\ex {}[Mit den geschundenen Kreaturen]$_i$ hat keiner [Mitleid \_$_i$].\iw{Mitleid}
+\ex {}[An einer Auf"|klärung]$_i$ bestand [kein Interesse \_$_i$].\iw{Interesse} % mich interessiert X -> Interesse an ...
+\ex {}[Von Stuttgart]$_i$ kenne ich nur [den Bahnhof \_$_i$].\iw{Bahnhof}
+%\ex {}[Mit wem]$_i$ hast du [keine Lust [ \_$_i$ zu verreisen]]?\iw{Lust}  % Funktionsverbgefüge ??
+\ex Stasi-Material, [an dem]$_i$ die Bundesregierung vorgibt, [ein Sicherheitsinteresse \_$_i$] zu haben, (taz, 14.01.95)
+\ex {}[Über eine Polizistin in der US"=Kleinstadt High Point] regnete es letzte Woche [Beschwerden \_$_i$]: (taz, 25.01.99)
+\zl
+
+}
+
+\frame{
+
+\small
+\frametitle{\small Sind Nominalphrasen Extraktionsinseln? (II)}
+
+Extraktion aus NPen in Objekts-PPen
+\eal
+\ex
+{}[Mit Norwegen]$_i$ befinden\iw{befinden} wir uns allerdings 
+      [in [einem langfristigen Stellungskrieg\iw{Stellungskrieg}\iw{Krieg} \_$_i$]]. (Wochenpost 26/95)
+\ex
+{}[Für ihren aus Altersgründen ausgeschiedenen Bundestagsvize Burkhard Hirsch]$_i$ hat sie sich noch
+        [auf [keinen Nachfolger \_$_i$]] einigen\iw{einigen auf} können. (taz, 01.09.98)
+\zl
+
+Extraktion oder nicht? \citet{Loetscher85}:
+\eal
+\ex Von diesen 109 Belegen fallen bei 57 (52\,\%) Topic, Thema und Subjekt zusammen. %van de Velde 1980
+\ex Aus dem Barock sollten sie sich auf die wichtigsten Lyriker konzentrieren.
+\ex Von den Nebensätzen ist mir für zwei Typen bisher keine systematische Beschreibung gelungen.
+\zl
+bezeichnet Sätze als Ausnahmen, 
+PPen in ihrer textgrammatischen Funktion sehr nahe mit diskursbereichsdefinierenden
+Angaben vom Typ \emph{was x betrifft}, \emph{x betreffend} verwandt
+
+\ea[?]{
+{}[Von Maria]$_i$ denke\iw{nachdenken} ich [über [Bilder\iw{Bild} \_$_i$]] nach.
+}
+\z
+
+
+}
+
+
+\frame{
+
+\small
+\frametitle{\small Sind Nominalphrasen Extraktionsinseln? (III)}
+
+Extraktion aus Subjekts-NPen
+\eal
+\ex {}[Über Strauß]$_i$ hat [ein Witz \_$_i$] die Runde gemacht. \citep{Haider93a}
+\ex {}[Zu drastischeren Maß\-nah\-men]$_i$ hat ihm [der Mut \_$_i$] gefehlt. \citep{Haider93a}
+\ex {}[Zu diesem Problem]$_i$ haben uns noch [einige Briefe\iw{Brief} \_$_i$] erreicht. \citep{Oppenrieder91a}
+\ex {}[Von den Gefangenen]$_i$ hatte eigentlich [keine \_$_i$ ] die Nacht der Bomben überleben sollen. (Bernhard Schink, {\em Der Vorleser\/})
+\ex {}[Von der HVA]$_i$ hielten sich [etwa 120 Leute \_$_i$ ] dort in ihren Gebäuden auf. (Spiegel, 3/1999)
+\ex {}[Von wem]$_i$ lag [ein Bild \_$_i$] auf dem Tisch. \citep{Suchsland97a}
+%\ex Was$_i$ würde [mit ihm \_$_i$ zu besprechen sich denn noch lohnen?\footnote{
+%        \citep[S.\,92]{Haider97a}\iafdata{Haider}
+\zl
+aus Subjekts-NP in Medialkonstruktion
+\ea
+{}[Von Kontrollverben]$_i$ lassen sich [Perfektformen \_$_i$] bilden, (Im Haupttext von \citep{Suchsland97a})
+\z
+aus Subjekts-NP eines Zustandspassiv
+\ea
+{}[Auch zum Schumann"=Platz, wo die EU"=Kommision sitzt,]$_i$ waren [die Zufahrtswege \_$_i$] versperrt. (taz, 18.09.2000)
+\z
+
+}
+
+\frame{
+
+
+\frametitle{Sind "`bewegte"' Phrasen Extraktionsinseln?}
+
+\eal
+\ex {}[Von wem]$_i$ hast du [Bilder \_$_i$] niemandem gezeigt?
+\ex {}[Von wem]$_i$ hast du niemandem [Bilder \_$_i$] gezeigt?
+\zl
+\eal
+\ex {}[Zum Gartenvereinsvorsitzenden]$_i$ hätte er [das Talent \_$_i$].\iw{Talent}
+\ex {}[Zum Gartenvereinsvorsitzenden]$_i$ hätte [das Talent \_$_i$] wohl nur dieser Mann.\label{bsp-gartenvereinsvorsitzender}
+\zl
+
+\citet{Jacobs91a} behauptet: Extraktion nur aus verbadjazenten Elementen\\
+aber Partitivaufspaltung:
+\eal
+\ex {}[Von diesen Männern]$_i$ habe ich nur [einem \_$_i$ ] die Hand gegeben.
+\ex {}[Von den Gefangenen]$_i$ hatte eigentlich [keine \_$_i$ ] die Nacht der Bomben überleben sollen. (Bernhard Schink, {\em Der Vorleser\/})
+\zl
+genauso:
+\ea
+{}[Zum Gartenvereinsvorsitzenden]$_i$ hätte [das Talent \_$_i$] wohl nur dieser Mann gehabt.
+\z
+
+}
+
+\frame{
+
+\small
+\frametitle{\small Extraktionsverbot und Nominalphrasen}
+
+\eal
+\ex[*]{
+[Des Studenten]$_i$ hat [der Sohn \_$_i$] die Masern.
+}
+\ex[*]{
+[Daß Rauchen schädlich ist]$_i$ hat Maria [das Argument \_$_i$] gekannt.
+}
+\zl
+
+Relativsätze auch über Extraktion:
+\ea
+die Cousine, [von der]$_i$ [\sub{S} du [ein Bild \_$_i$] ins Photoalbum geklebt hast]?
+\z
+
+Zwischenstellung: von Nomina abhängige Infinitive
+\eal
+\ex[]{
+ein Maler, der sie um jeden Preis heiraten will und [den auszuschlagen]$_i$ sie [die geradezu heupferdmäßige Dummheit \_$_i$] hat\iw{Dummheit}
+}
+\ex[]{
+bis ins Schlafzimmer, [das abzuschließen]$_i$ ihr [der Wille \_$_i$] fehlte\label{bsp-bis-ins-schlafzimmer}\iw{Wille}
+}
+\ex[*]{
+ein Angebot, das$_i$ sie [die geradezu heupferdmäßige Dummheit [~\_$_i$~auszuschlagen]] hat
+}
+\ex[*]{
+bis ins Schlafzimmer, das$_i$ ihr [der Wille [ \_$_i$ abzuschließen]] fehlte
+}
+\zl
+
+gesamter Infinitiv kann extrahiert werden, Teile des Infinitivs jedoch nicht
+
+}
+
+\frame{
+\frametitle{Der pränominale Bereich und Adjunktinseln}
+
+keine Extraktion aus dem pränominalen Bereich
+\eal
+\ex[*]{
+{}[Ihre Mutter]$_i$ liebt Maria [den \_$_i$ achtenden Mann].\label{bsp-extraktion-achtenden}
+}
+\ex[*]{
+{}[Den Mann] schläft [die \_$_i$ lieben wollende Frau].\label{bsp-lieben-wollende}
+}
+\ex[\#]{
+{}Oft$_i$ schläft [die den Hund \_$_i$ schlagende Frau].\label{bsp-oft-schlagende}
+}
+\ex[*]{
+{}[Schöne]$_i$ kennt Peter [eine \_$_i$ Frau].\label{bsp-extraktion-schoene}% PS94: 388
+}
+\zl
+
+Adjunkte sind Inseln:
+
+\eal
+\ex[*]{
+{}[Dem Tisch]$_i$ steht die Flasche [auf \_$_i$].
+}
+\ex[*]{
+{}[Ihre Mutter]$_i$ liebt Maria den Mann, [der \_$_i$ achtet].\label{bsp-extraktion-aus-rs}
+}
+\ex[*]{
+{}[Ein Lied]$_i$ kam Karl [ \_$_i$ singend] herein.
+}
+\ex[*]{
+{}[Das Kind]$_i$ sind wir gekommen, [um \_$_i$ abzuholen].
+}
+\ex[*]{
+{}[Das Kind]$_i$ sind wir gekommen [ \_$_i$ abzuholen].
+}
+\zl
+
+
+}
+
+\frame{
+\frametitle{Zusammenfassung}
+
+
+
+\begin{itemize}
+\item Nominalphrasen sind keine Extraktionsinseln
+\item Umstellung im \mf ist nicht ausschlaggebend
+\item Adjazenz ist nicht ausschlaggebend
+\item Informationsstruktur, Gliederung
+\item Es gibt jedoch harte Bedingungen (Adjunkte, Genitive, u.s.w.)!
+\end{itemize}
+
+
+
+}
+
+\frame{
+
+
+\frametitle{Formale Umsetzung der Restriktionen}
+
+\begin{itemize}
+\item nicht"=extrahierbare Komplemente in Subcat"=Liste als {\sc slash} \liste{}
+\item damit gleichzeitiger Ausschluß der Extraktion des Komplements und im Komplement tiefer eingebetteter Konstituenten
+\item ansonsten nur disjunktive Spezifikation möglich:\\
+      {}[{\sc loc} \ibox{1}, {\sc slash} \liste{ \ibox{1} }] $\vee$ [{\sc loc} \ibox{1}, {\sc slash} \liste{ }]
+\item damit Extraktion aus Adjunkten nicht blockierbar (es sei denn Adjunkte in Subcat)
+\item Blockade im Kopf"=Adjunkt"=Schema (Adjunkttochter = {\sc slash} \liste{ }) nicht möglich
+\ea
+Da$_i$ hat Karl [ \_$_i$ drin] geschlafen.\iw{drin}
+\z
+\item Spur sagt: das Element mit dem es kombiniert wird ist {\sc mod} {\it none\/}
+\item gegenseitige Selektion $\to$ ?
+\item Alternative: Restriktion im {\sc slash}"=Einführungsschema für Adjunkte
+\end{itemize}
+
+}
+
+\fi
