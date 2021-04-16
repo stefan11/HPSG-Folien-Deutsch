@@ -1,0 +1,447 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   $RCSfile: hpsg-valenz-grammatikregeln.tex,v $
+%%  $Revision: 1.3 $
+%%      $Date: 2007/05/27 13:27:12 $
+%%     Author: Stefan Mueller (CL Uni-Bremen)
+%%    Purpose: 
+%%   Language: LaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subtitle{Valenz, Grammatikregeln und Komplementation}
+
+\huberlintitlepage[22pt]
+
+\section{Valenz und Grammatikregeln}
+
+\iftoggle{teil1}{
+\outline{
+
+\begin{itemize}
+%\item Ziele
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item \blau{Valenz und Grammatikregeln}
+\item Komplementation
+\item Semantik
+\item Adjunktion und Spezifikation
+\item Das Lexikon: Typen und Lexikonregeln
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\item Relativsätze
+\item Lokalität
+%\item Komplexe Prädikate: Der Verbalkomplex
+\end{itemize}
+}
+} % \end{teil1}
+
+\iftoggle{teil2}{
+\outline{
+\begin{itemize}
+\item Wiederholung
+      \begin{itemize}
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item \blau{Valenz und Grammatikregeln}
+\item Komplementation
+\item Semantik
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\end{itemize}
+\item Kongruenz
+\item Kasus
+\item Der Verbalkomplex
+\item Kohärenz, Inkohärenz, Anhebung und Kontrolle
+\item Passiv
+\item Partikelverben
+\item Morphologie
+\end{itemize}
+}
+} % \end{teil2}
+
+
+\frame{
+\frametitle{Valenz und Grammatikregeln}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~3.1]{MuellerLehrbuch3}
+\end{itemize}
+
+\vspace{1cm}
+
+
+\vspace{1cm}
+
+\rotbf{Bitte zum nächsten Mal lesen}
+
+\vspace{1cm}
+
+\iftoggle{hpsglight}{%
+Damit alles kompatibel zum Lehrbuch bleibt,\\
+nehmen wir hier auch das \subcatm für die Valenz an.
+
+\subcat = \spr + \comps
+
+}
+
+%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%%   nächsten Mal lesen sollen!!!!}
+}
+
+\iftoggle{hpsglight}{}{%
+\frame{
+\frametitle{Valenz in der Chemie und in der Linguistik}
+
+\vfill
+
+\centerline{
+\begin{forest}
+[O
+  [H] 
+  [H] ]
+\end{forest}
+\hspace{5em}
+\begin{forest}
+[helfen
+ [Peter]
+ [Maria] ]
+\end{forest}
+}
+
+
+\vfill
+
+}
+
+\frame{
+\frametitle{Valenz und Grammatikregeln: PSG}
+
+
+\begin{itemize}
+\item große Anzahl von Regeln:\\
+      \begin{tabular}[t]{l@{~$\to$~}l@{\hspace{6em}}l}
+      S &  NP, V               & \emph{X schläft}\\
+      S &  NP, NP, V           & \emph{X Y liebt}\\
+      S &  NP, PP[\type{über}], V           & \emph{X über y spricht}\\
+      S &  NP, NP, NP, V       & \emph{X Y Z gibt}\\
+      S &  NP, NP, PP[\type{mit}], V       & \emph{X Y mit Z dient}\\
+      \end{tabular}
+\pause
+\item Verben müssen mit passender Regel verwendet werden.
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Valenz und Grammatikregeln: HPSG}
+
+\begin{itemize}
+\item Argumente als komplexe Kategorien in der lexikalischen Repräsentation
+      eines Kopfes repräsentiert\\
+      (wie Kategorialgrammatik)
+\pause
+\item \begin{tabular}[t]{@{}lll}
+      Verb             & \subcat\\
+      \emph{schlafen} & \sliste{ NP }\\
+      \emph{lieben}   & \sliste{ NP, NP }\\
+      \emph{sprechen} & \sliste{ NP, PP[\type{über}] }\\
+      \emph{geben}    & \sliste{ NP, NP, NP }\\
+      \emph{dienen}   & \sliste{ NP, NP, PP[\type{mit}] }\\  
+      \end{tabular}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Beispielstruktur mit Valenzinformation (I)}
+
+\vfill
+\hfill\begin{forest}
+sm edges
+[{V[\subcat \sliste{} ]}
+  [\ibox{1} NP
+    [Aicke]]
+  [{V[\subcat \sliste{ \ibox{1} }]}
+    [schläft]]]
+\end{forest}\hfill\hfill\mbox{}
+\vfill
+V[\subcat \sliste{ }] entspricht hierbei einer vollständigen Phrase\\
+(VP oder auch S)
+\vfill
+}
+
+\frame{
+\frametitle{Beispielstruktur mit Valenzinformation (II)}
+
+\vfill
+\centerline{%
+\begin{forest}
+sm edges
+[{V[\subcat \sliste{} ]}
+  [\ibox{1} NP
+    [Aicke]]
+  [{V[\subcat \sliste{ \ibox{1} }]}
+    [\ibox{2} NP 
+      [Conny]]
+    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]}
+      [erwartet]]]]
+\end{forest}}
+\vfill
+
+}
+
+\frame{
+
+\frametitle{Valenz und Grammatikregeln: HPSG}
+
+\begin{itemize}
+\item spezifische Regeln für Kopf-Argument-Kombination:\\
+      \begin{tabular}[t]{@{}lll}
+      V[SUBCAT \ibox{A}] & $\to$ & \ibox{B}\hspace{2em} V[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      \end{tabular}
+\pause
+\item Dabei ist $\oplus$ eine Relation zur Verknüpfung zweier Listen:\\
+      \begin{tabular}{@{}l@{~}l@{}}
+      \phonliste{ a, b } =& \phonliste{ a } $\oplus$ \phonliste{ b } oder\\
+                    & \phonliste{} $\oplus$ \phonliste{ a, b } oder\\
+                    & \phonliste{ a, b } $\oplus$ \phonliste{}\\
+      \end{tabular}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Valenz und Grammatikregeln (II)}
+
+\centerline{
+\begin{forest}
+sm edges, for tree={l sep+=\baselineskip}
+[{V[\subcat \sliste{} ]}
+  [\ibox{1} NP
+    [Aicke]]
+  [{V[\subcat \sliste{ \ibox{1} }]},name=v2
+    [\ibox{2} NP 
+      [Conny]]
+    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]},name=v3
+      [erwartet]]]]
+\node()[above right of=v2,xshift=12em,yshift=0\baselineskip]{\small \begin{tabular}{@{}l}
+                                    V[SUBCAT \ibox{A}] $\to$ \ibox{B} V[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ] \\ 
+                                    A = \sliste{ }, B = \ibox{1}
+                                    \end{tabular}};
+\node()[above right of=v3,xshift=12em,yshift=0\baselineskip]{\small \begin{tabular}{@{}l}
+                                    V[SUBCAT \ibox{A}] $\to$ \ibox{B} V[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ] \\ 
+                                    A = \sliste{ \ibox{1} }, B = \ibox{2}
+                                    \end{tabular}};
+\end{forest}}
+
+}
+
+
+\frame{
+%
+\frametitle{Generalisierung der Regeln}
+
+\begin{itemize}
+\item spezifische Regeln für Kopf-Komplement-Kombination:\\
+      \begin{tabular}[t]{@{}lll}
+      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{V}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      \blau{A}[SUBCAT \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{A}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      \blau{N}[SUBCAT \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{N}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      \blau{P}[SUBCAT \ibox{A}] & $\to$ & \blau{P}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \end{tabular}
+\pause
+\item Abstraktion von der Abfolge:
+      \begin{tabular}[t]{@{}lll}
+      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{V}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{A}[SUBCAT \ibox{A}] & $\to$ & \blau{A}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{N}[SUBCAT \ibox{A}] & $\to$ & \blau{N}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{P}[SUBCAT \ibox{A}] & $\to$ & \blau{P}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \end{tabular}
+\pause
+\item generalisiertes, abstraktes Schema (H = Kopf):\\
+      \begin{tabular}[t]{@{}lll}
+      \blau{H}[SUBCAT \ibox{A}] & $\to$ & \blau{H}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \end{tabular}
+
+\end{itemize}
+}
+
+\frame{
+%
+\frametitle{Verwendung der Regeln}
+
+\begin{itemize}
+\item generalisiertes, abstraktes Schema (H = Kopf):\\
+      \begin{tabular}[t]{@{}lll}
+      \blau{H}[SUBCAT \ibox{A}] & $\to$ & \blau{H}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]~~~~ \blau{\ibox{B}}\\
+      \end{tabular}
+\pause
+\item mögliche Instantiierungen des Schemas:
+      \begin{tabular}[t]{@{}llll@{}}
+      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{V}[SUBCAT \ibox{A} \eliste{} $\oplus$ \sliste{ \ibox{B} NP } ] & \blau{\ibox{B} NP}\\
+                                &       & Conny erwartet & Aicke\\
+                                &       & schläft        & Aicke\\\\
+\pause
+      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{V}[SUBCAT \ibox{A} \sliste{ NP } $\oplus$ \sliste{ \ibox{B} NP } ] & \blau{\ibox{B} NP}\\
+                                &       & erwartet       & Conny\\\\
+\pause
+      \blau{N}[SUBCAT \ibox{A}] & $\to$ & \blau{N}[SUBCAT \ibox{A} \eliste{} $\oplus$ \sliste{ \ibox{B} Det } ] & \blau{\ibox{B} Det}\\
+                                &       & Kind & das\\
+      \end{tabular}
+\end{itemize}
+}
+
+
+% Head ist hier noch nicht eingeführt
+% \begin{comment}
+% \frame{
+
+% {\footnotesize
+% \frametitle{Abkürzungen (unvollständige Strukturen)}
+
+
+% \begin{tabular}{@{}lp{4cm}@{\hspace{8mm}}l@{}p{4cm}}
+% DET    & $\ms{ head & \ms[det]{} \\
+%                subcat & \liste{} \\                     
+%              }$ & 
+% VP     & $\ms{ head & \ms[verb]{ subj & \liste{ $[~]$ } \\ 
+%                                } \\
+%                subcat & \liste{ } \\
+%              }$\\ \\
+% $\overline{\mbox{N}}$ & $\ms{ head & \ms[noun]{} \\
+%                               subcat & \liste{ DET }\\
+%              }$ &
+% S      & $\ms{ head & \ms[verb]{ vform & fin \\ } \\
+%                subcat & \liste{} \\
+%              }$\\ \\
+% NP & $\ms{ head & \ms[noun]{} \\
+%            subcat & \liste{} \\
+%              }$ &
+% NP[\type{nom}]~~ & $\ms{ head & \ms[noun]{cas & nom \\ } \\
+%                       subcat & \liste{ } \\
+%              }$ \\
+% \end{tabular}
+
+% }
+
+% }
+% \end{comment}
+}% else hpsglight
+
+\frame{
+\frametitle{Repräsentation der Valenz in Merkmalsbeschreibungen}
+
+
+\mbox{\emph{gibt} (finite Form):}\\
+\ms{ phon & \phonliste{ gibt } \\
+     part-of-speech & verb\\
+     subcat & \liste{ NP[\type{nom}], NP[\type{dat}], NP[\type{acc}]   } \\
+}
+
+\medskip
+
+NP[\type{nom}], NP[\type{acc}] und NP[\type{dat}] stehen für komplexe Merkmalsbeschreibungen.
+
+% \(
+% \ms{ phon & \phonliste{ gibt } \\
+%      p-o-s & verb\\
+%              subcat & \liste{ \onems{ head   \ms[noun]{cas & nom \\ } \\
+%                                       subcat \liste{ } \\
+%                                  }, 
+%                               \onems{ head \ms[noun]{cas & acc \\ } \\
+%                                    subcat \liste{ } \\
+%                               }, 
+%                               \onems{ head \ms[noun]{cas & dat \\ } \\
+%                                       subcat \liste{ } \\
+%                                  }   } \\
+% }
+% \)
+
+}
+
+\iftoggle{hpsglight}{}{
+
+%% \iftoggle{teil1}{
+%% \frame{
+
+%% \frametitle{Reihenfolge der Elemente in der Subcat-Liste}
+
+%% Obliqueness-Hierarchie:\\
+%% \citet{KC77a}\ia{Keenan}\ia{Comrie}, \citet{Pullum77a}\ia{Pullum},
+%% \citet{ps}\ia{Pollard}\ia{Sag} und Grewendorf (\citeyear{Grewendorf85a}; 
+%% \citeyear{Grewendorf88a})\ia{Grewendorf}
+%% \begin{table}[H]
+%% \resizebox{\linewidth}{!}{
+%% \begin{tabular}{@{}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1ex}}l}
+%% SUBJECT $=>$ & DIRECT $=>$ & INDIRECT $=>$ & OBLIQUES $=>$ & GENITIVES $=>$  & OBJECTS OF \\
+%%              & OBJECT      & OBJECT        &               &                 & COMPARISON 
+%% \end{tabular}%
+%% }\label{page-obliquen-h}
+%% \end{table}
+
+%% \begin{itemize}
+%% \item syntaktische Aktivität der grammatischen Funktion
+%% \item höhere Elemente kommen eher in syntaktischen Konstruktionen vor
+%%       \begin{itemize}
+%%       \item Ellipse \citep{Klein85}
+%%       \item Vorfeldellipse\is{Vorfeldellipse@\type{Vorfeldellipse}} \citep{Fries88b}\ia{Fries}
+%%       \item freie Relativsätze
+%%             \citep{Bausewein90,Pittner95b,Mueller99c}\ia{Bausewein}\ia{Pittner}\ia{Müller}
+%%       \item Passiv\is{passive} \citep{KC77a}
+%%       \item Zustandsprädikate \citep{Mueller2000d,Mueller2001c}
+%%       \item Bindungstheorie (\citealp{Grewendorf85a}\ia{Grewendorf}; \citealp{ps2})\ia{Pollard}\ia{Sag}
+%%       \end{itemize}
+%% \end{itemize}
+
+%% }
+
+%% \frame{
+
+%% \frametitle{Alternative Anordnung begründet mit "`Verbnähe"'}
+
+%% \begin{tabular}{@{}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1ex}}l@{\hspace{1ex}}l}
+%% Nominativ $=>$ & Dativ $=>$ & Akkusativ\\
+%% \end{tabular}
+
+%% \begin{itemize}
+%% \item Konstituentenstellung
+%% \item angeblich Voranstellung mit Dativ nicht möglich\\
+%%       (\citealt{Haftka81}; \citealt{Haider82};
+%%       \citet{Wegener90}; \citet{Zifonun92a})
+%% \item aber: \citet{Uszkoreit87a}, \citet{SS88a}, %zitieren Thiersch82a-unread
+%%       \citet{Oppenrieder91a} und \citet{Grewendorf93}
+%% \end{itemize}
+
+%% \eal
+%% %\label{bsp-syntax-pvp-besonders}
+%% \ex Besonders Einsteigern empfehlen\iw{empfehlen} möchte ich Quarterdeck Mosaic, dessen gelungene grafische 
+%%       Oberfläche und Benutzerführung auf angenehme Weise über die ersten Hürden 
+%%       hinweghilft, obwohl sich die Funktionalität auch nicht zu verstecken braucht. (c't, 9/95, S.\,156)
+%% \ex Der Nachwelt hinterlassen\iw{hinterlassen} hat sie eine aufgeschlagene \emph{Hör zu} und einen kurzen
+%%       Abschiedsbrief: \ldots{} (taz, 18.11.98, S.\,20)
+%% \zl
+%% \ea Viel anfangen\iw{anfangen mit} konnte er damit nicht. (Wochenpost, 41/95, S.\,34)
+%% \z
+
+%% }
+%% } % \end{teil1}
+
+\subsection{Übungsaufgaben}
+
+\frame{
+\frametitle{Übungsaufgaben}
+
+\begin{enumerate}
+\item Geben Sie die Valenzlisten der für folgende Wörter an:
+      \eal
+      \ex er
+      \ex seine (in \emph{seine Ankündigung})
+      \ex schnarcht
+      \ex denkt
+      \zl
+\end{enumerate}
+
+
+}
+
+}% end hpsglight

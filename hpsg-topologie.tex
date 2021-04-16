@@ -1,0 +1,211 @@
+\subtitle{Topologie des deutschen Satzes}
+
+\huberlintitlepage[22pt]
+
+\section{Topologie des deutschen Satzes}
+
+\iftoggle{teil1}{
+\outline{
+
+\begin{itemize}
+\item Ziele
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item Semantik
+\item Adjunktion und Spezifikation
+\item Das Lexikon: Typen und Lexikonregeln
+\item \blau{Topologie des deutschen Satzes}
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\item Relativsätze
+\item Lokalität
+%\item Komplexe Prädikate: Der Verbalkomplex
+\end{itemize}
+}
+} % \end{teil1}
+
+\iftoggle{teil2}{
+\outline{
+\begin{itemize}
+\item Wiederholung
+      \begin{itemize}
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item Semantik
+\item \blau{Topologie des deutschen Satzes}
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\end{itemize}
+\item Kongruenz
+\item Kasus
+\item Der Verbalkomplex
+\item Kohärenz, Inkohärenz, Anhebung und Kontrolle
+\item Passiv
+\item Partikelverben
+\item Morphologie
+\end{itemize}
+}
+} % \end{teil2}
+
+\frame{
+\frametitle{Literaturhinweis}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~8]{MuellerLehrbuch3}
+\end{itemize}
+
+\vspace{1cm}
+
+%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%%   nächsten Mal lesen sollen!!!!}
+}
+
+
+\subsection{Verbstellungstypen, Satzklammern und topologische Felder}
+
+\frame{
+\frametitle{Topologie des deutschen Satzes}
+
+\savespace
+\begin{itemize}
+\item Verbendstellung
+      \ea
+      Peter hat erzählt, \rot<5->{dass} er das Eis \braun<5->{\gruen<4>{gegessen} \blauit<-4>{hat}}.
+      \z
+\pause
+\item Verberststellung
+        \ea
+      \rot<4->{\blauit<-3>{Hat}} Peter das Eis \braun<5->{\gruen<4>{gegessen}}?
+      \z
+\pause
+\item Verbzweitstellung
+      \ea
+      Peter \rot<4->{\blauit<-3>{hat}} das Eis \braun<5->{\gruen<4>{gegessen}}.
+      \z
+\end{itemize}
+
+\pause
+\begin{itemize}[<+->]
+\item verbale Elemente nur in (\mex{-2}) kontinuierlich
+\item \rot<5->{linke} und \braun<5->{rechte} Satzklammer
+\item Komplementierer (\emph{weil}, \emph{dass}, \emph{ob}) in der linken Satzklammer
+\item Komplementierer und finites Verb sind komplementär verteilt
+\item Bereiche vor, zwischen u.\ nach Klammern: Vorfeld, Mittelfeld, Nachfeld
+\end{itemize}
+
+
+}
+
+\frame{
+
+\resizebox{\textwidth}{!}{
+\begin{tabular}{@{}lllll@{}}
+\rowcolor{structure!15}Vorfeld & linke Klammer & Mittelfeld                             & rechte Klammer & Nachfeld                   \\ 
+\\
+\rowcolor{structure!10}Karl    & schläft.      &                                        &                &                            \\
+                       Karl    & hat           &                                        & geschlafen.    &                            \\
+\rowcolor{structure!10}Karl    & erkennt       & Maria.                                 &                &                            \\
+                       Karl    & färbt         & den Mantel                             & um             & den Maria kennt.           \\
+\rowcolor{structure!10}Karl    & hat           & Maria                                  & erkannt.       &                             \\
+                       Karl    & hat           & Maria als sie aus dem Zug stieg sofort & erkannt.       &                             \\
+\rowcolor{structure!10}Karl    & hat           & Maria sofort                           & erkannt        & als sie aus dem Zug stieg. \\
+                       Karl    & hat           & Maria zu erkennen                      & behauptet.     &            \\
+\rowcolor{structure!10}Karl    & hat           &                                        & behauptet      & Maria zu erkennen.         \\ 
+\\
+\rowcolor{structure!10}        & Schläft       & Karl?                                  &                &                            \\
+                               & Schlaf!       &                                        &                &                             \\
+\rowcolor{structure!10}        & Iß            & jetzt dein Eis                         & auf!           &                             \\
+        & Hat           & er doch das ganze Eis alleine          & gegessen.            &      \\  \\
+\rowcolor{structure!10}        & weil          & er das ganze Eis alleine               & gegessen hat   & ohne sich zu schämen.\\
+        & weil          & er das ganze Eis alleine               & essen können will    & ohne gestört zu werden.    \\
+%\rowcolor{structure!10}        & wer           & das ganze Eis alleine                  & gegessen hat.  &                             \\
+\end{tabular}
+}
+
+}
+
+\subsection{Zuordnung zu den Feldern}
+
+\frame{
+
+\begin{itemize}
+\item mehrere Verben in der rechten Satzklammer: Verbalkomplex
+\pause
+%\iftoggle{teil1}{
+\item manchmal wird auch von diskontinuierlichen Verbalkomplexen
+      gesprochen (Initialstellung das Finitums)
+\pause
+\item auch prädikative Adjektive, Resultativprädikate:
+      \eal
+      \ex dass Karl seiner Frau treu ist.
+      \ex dass Karl das Glas leer trinkt.
+      \zl
+\pause
+%} % \end{teil1}
+\item Felder nicht immer besetzt
+      \ea
+      \field{Der Mann}{VF} \field{gibt}{LS} \field{der Frau das Buch,}{MF} \field{die er kennt}{NF}.
+      \z
+\pause
+\item Test: Rangprobe \citep[S.\,72]{Bech55a}
+\eal
+\ex[]{
+Der Mann hat der Frau das Buch gegeben, die er kennt.
+}
+\ex[*]{
+Der Mann hat der Frau das Buch, die er kennt, gegeben.
+}
+\zl
+\end{itemize}
+}
+
+\subsection{Rekursion}
+
+\frame{
+\frametitle{Rekursives Auf"|tauchen der Felder}
+
+\begin{itemize}
+\item \citet*[S.\,82]{Reis80a}: Rekursion\\
+      Vorfeld kann in Felder unterteilt sein:
+\eal
+\ex Die Möglichkeit, etwas zu verändern, ist damit \braun{verschüttet} \goldenrod{für lange lange Zeit}.
+\ex {}[\braun{Verschüttet} \goldenrod{für lange lange Zeit}] ist damit die Möglichkeit, 
+      etwas zu ver"-ändern.
+\pause
+\ex Wir haben schon seit langem \braun{gewußt}, \goldenrod{dass du kommst}.
+\ex {}[\braun{Gewußt}, \goldenrod{dass du kommst},] haben wir schon seit langem.
+\zl
+\braun{rechte Satzklammer} und \goldenrod{Nachfeld} innerhalb das Vorfelds
+\pause
+\item im Mittelfeld beobachtbare Permutationen auch im Vorfeld
+
+\eal
+\ex Seiner Tochter ein Märchen erzählen wird er wohl müssen.
+\ex Ein Märchen seiner Tochter erzählen wird er wohl müssen.
+\zl
+\end{itemize}
+
+}
+
+\subsection{Übungsaufgaben}
+
+
+\frame{
+\frametitle{Übungsaufgaben}
+
+\begin{enumerate}
+\item Bestimmen Sie Vorfeld, Mittelfeld und Nachfeld in den folgenden Sätzen:
+\eal
+\ex Karl ißt.
+\ex Der Mann liebt eine Frau, den Peter kennt.
+\ex Der Mann liebt eine Frau, die Peter kennt.
+\ex Die Studenten behaupten, nur wegen der Hitze einzuschlafen.
+\ex Die Studenten haben behauptet, nur wegen der Hitze einzuschlafen.
+\zl
+\end{enumerate}
+
+}

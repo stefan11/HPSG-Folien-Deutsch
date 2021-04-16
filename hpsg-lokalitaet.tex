@@ -1,0 +1,129 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   $RCSfile: lokalitaet-hpsg-folien.tex,v $
+%%  $Revision: 1.2 $
+%%      $Date: 2007/05/27 13:27:12 $
+%%     Author: Stefan Mueller (CL Uni-Bremen)
+%%    Purpose: 
+%%   Language: LaTeX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Lokalität}
+
+\begin{itemize}
+%\item Ziele
+\item Wozu Syntax? / Phrasenstrukturgrammatiken
+\item Formalismus
+\item Valenz und Grammatikregeln
+\item Komplementation
+\item Semantik
+\item Adjunktion und Spezifikation
+\item Das Lexikon: Typen und Lexikonregeln
+\item Topologie des deutschen Satzes
+\item Konstituentenreihenfolge
+\item Nichtlokale Abhängigkeiten
+\item Relativsätze
+\item \blau{Lokalität}
+%\item Komplexe Prädikate: Der Verbalkomplex
+\end{itemize}
+
+
+\frame{
+\frametitle{Lokalität}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~12.1]{MuellerLehrbuch3}
+\end{itemize}
+
+\vspace{1cm}
+
+%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%%   nächsten Mal lesen sollen!!!!}
+}
+
+
+\frame{
+\frametitle{Lokalität der Selektion}
+
+\begin{itemize}[<+->]
+\item mit aktueller Merkmalsgeometrie Zugriff auf die phonologische Form und die interne Struktur von Komplementen und
+      von Köpfen\\
+      in Kopf-Adjunkt-Strukturen
+\item Kopf kann sagen: ich möchte etwas, dessen Komplementtochter etwas mit {\sc phon}"=Wert {\em dem Mann\/} ist
+\item Sowas soll ausgeschlossen werden. $\to$
+      entsprechende Merkmalsgeometrie
+\item Gruppierung aller Merkmale, die selegiert werden können,\\
+      unter einem Pfad
+\item Sowohl syntaktische als auch semantische Information kann selegiert werden.
+\end{itemize}
+}
+
+\subsection{Die Die Datenstruktur}
+
+\frame[shrink=25]{
+\frametitle{Lokalität der Selektion: Die Datenstruktur}
+
+\begin{tabular}{@{}l@{\hspace{3em}}l@{}}
+bisherige Datenstruktur:                                  & \visible<2->{neue Datenstruktur:}\\
+\scalebox{0.73}{\ms{ phon & list~of~phoneme strings\\
+     loc  & \ms[loc]{  cat  & \ms[cat]{ head   & head \\
+                                        subcat & list\\
+                                      } \\
+                       cont & cont\\
+                    }\\
+     nonloc & \ms[nonloc]{
+              que & \type{list~of~npros} \\
+              rel & \type{list~of~indices} \\
+              slash & \type{list~of~local~structures} \\ %\\
+              %extra & \ms[list~of~local~structures]{} \\
+              }\\
+     head-dtr & sign\\
+     non-head-dtrs & list~of~signs\\ 
+         }} &
+\visible<2->{\scalebox{0.73}{\ms{ phon & list~of~phoneme strings\\
+     syntax-semantics & \highlight{\ms[synsem]{
+     loc  & \ms[loc]{  cat  & \ms[cat]{ head   & head \\
+                                        subcat & list\\
+                                      } \\
+                       cont & cont\\
+                    }\\
+     nonloc & \ms[nonloc]{
+              que & \type{list~of~npros} \\
+              rel & \type{list~of~indices} \\
+              slash & \type{list~of~local~structures} \\ %\\
+              %extra & \ms[list~of~local~structures]{} \\
+              }\\
+     }} \\
+     head-dtr & sign\\
+     non-head-dtrs & list~of~signs\\ 
+}}}\\
+\end{tabular}
+\begin{itemize}
+\pause
+\item {\sc synsem} steht für {\sc syntax-sematics}.
+\pause
+\item nur markierter Bereich kann selegiert werden $\to$ keine Töchter oder {\sc phon}
+\pause
+\item Elemente in {\sc subcat}"=Listen sind {\it synsem\/}-Objekte.
+\end{itemize}
+}
+
+\subsection{Das angepaßte Kopf-Argument-Schema}
+
+\frame[label=schema-head-arg]{
+\frametitle{Das angepaßte Kopf-Argument-Schema}
+
+{\it head-argument-phrase\/} \impl\\
+\ms{
+      synsem & \onems{ loc$|$cat$|$subcat {\rm del(\ibox{1},\ibox{2})}\\
+                     }\\
+      head-dtr & \onems{ synsem$|$loc$|$cat$|$subcat \ibox{2} \\
+                       }\\
+      non-head-dtrs & \sliste{\onems{ synsem \ibox{1}  \\ }}
+}
+
+
+
+
+}
+
