@@ -26,7 +26,7 @@
 }
 
 \frame{
-\frametitle{Adjunktion und Spezifikation}
+\frametitle{Literaturhinweis}
 %
 \begin{itemize}
 \item Literatur: \citew[Kapitel~6.1--6.5]{MuellerLehrbuch3}
@@ -118,18 +118,16 @@ ein interessantes Buch
 
 ~
 
-\hfill\begin{tabular}[t]{@{}c@{\hspace{10mm}}c@{}}%llll}
-\multicolumn{2}{c}{\rnode{1}{\nbar}
-}\\
-\\
-\hspace{2mm}A                     & \hspace{-9mm}H\\*[3ex]
-\rnode{2}{AP[{\sc head$|$mod} \ibox{1}]} & \rnode{3}{\ibox{1} \nbar}\\
-\\[4ex]
-\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
-\end{tabular}
-\ncline{1}{2} \ncline{1}{3}
-\ncline{2}{4} \ncline{3}{5}\hfill\hfill\mbox{}
-
+\centerline{%
+\begin{forest}
+sm edges
+[\nbar
+  [{AP[{\sc head$|$mod} \ibox{1}]}
+    [interessantes]]
+  [\ibox{1} \nbar
+    [Buch]]]
+\end{forest}
+}
 
 }
 
@@ -139,7 +137,7 @@ ein interessantes Buch
 %\hspace{1cm}
 Kopf-Adjunkt-Schema (vorläufige Version)\\
 \label{ha-schema}
-{\it head-adjunct-phrase} \impl
+{\it head-adjunct-phrase} \impl\\
 \ms{ 
 head-dtr      & \blau<1>{\ibox{1}} \\[2mm]
 non-head-dtrs & \liste{ \ms{ cat & \ms{ head$|$mod & \blau<1>{\ibox{1}} \\
@@ -152,7 +150,7 @@ non-head-dtrs & \liste{ \ms{ cat & \ms{ head$|$mod & \blau<1>{\ibox{1}} \\
 \item Der Wert des Selektionsmerkmals des Adjunkts (\ibox{1})\\
       wird mit der Kopftochter identifiziert.
 \pause
-\item Das Adjunkt muß gesättigt sein ({\sc subcat} \liste{}):
+\item Das Adjunkt muss gesättigt sein ({\sc subcat} \liste{}):
         \eal
         \ex[]{
         die Wurst in der Speisekammer
@@ -172,9 +170,9 @@ non-head-dtrs & \liste{ \ms{ cat & \ms{ head$|$mod & \blau<1>{\ibox{1}} \\
 \item Genauso wie Adjektive können Präpositionalphrasen modifizieren.
 \item Adjunkte müssen gesättigt sein, damit sie modifizieren können.
 \item Das Merkmal, das den zu modifizierenden Kopf selegiert,\\
-      muß an der Maximalprojektion des Adjunkts vorhanden sein.
+      muss an der Maximalprojektion des Adjunkts vorhanden sein.
 \item P + NP = PP, PP kann \nbar modifizieren.
-\item {\sc mod} muß im Lexikon (P) und auf phrasaler Ebene (PP) vorhanden sein\\
+\item {\sc mod} muss im Lexikon (P) und auf phrasaler Ebene (PP) vorhanden sein\\
         $\to$ Kopfmerkmal (als einfachste Lösung)
 \end{itemize}
 
@@ -215,17 +213,16 @@ cat & \ms{ head & \ms[prep]{
 \frame[shrink]{
 \frametitle{Der Bedeutungsbeitrag in Kopf"=Adjunkt"=Struktur (I)}
 
-\hfill\begin{tabular}[t]{@{}c@{\hspace{10mm}}c@{}}%llll}
-\multicolumn{2}{c}{\rnode{1}{\nbar}
-}\\
-\\
-\hspace{2mm}A                     & \hspace{-9mm}H\\*[3ex]
-\rnode{2}{AP[{\sc head$|$mod} \ibox{1}]} & \rnode{3}{\ibox{1} \nbar}\\
-\\[4ex]
-\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
-\end{tabular}
-\ncline{1}{2} \ncline{1}{3}
-\ncline{2}{4} \ncline{3}{5}\hfill\hfill\mbox{}
+\centerline{%
+\begin{forest}
+sm edges
+[\nbar
+  [{AP[{\sc head$|$mod} \ibox{1}]}
+    [interessantes]]
+  [\ibox{1} \nbar
+    [Buch]]]
+\end{forest}
+}
 
 \begin{itemize}[<+->]
 \item Woher kommt die Bedeutungsrepräsentation am Mutterknoten?
@@ -264,27 +261,22 @@ aber:
 \frametitle{Kopf"=Adjunkt"=Struktur (Selektion und Bedeutungsbeitrag)}
 
 \savespace
-~\vspace{1.5ex}
+~\vspace{2ex}
 
-\hfill\scalebox{0.75}{\begin{tabular}[t]{@{}c@{\hspace{10mm}}c@{}}%llll}
-\multicolumn{2}{c}{\rnode{1}{\nbar\visible<3->{[\begin{tabular}[t]{@{}l}
-                                              {\sc cont}   \rnode{cont1}{\ibox{1}}]\\
-                                              \end{tabular}}}
-}\\
-\\
-\hspace{5mm}A                     & \hspace{10mm}H\\*[3ex]
-\rnode{2}{AP[\begin{tabular}[t]{@{}l}
-  {\sc head$|$mod} \highlightbox<1>{\ibox{2}},\\
-  \visible<2->{\rnode{cont2}{\sc cont}   \ibox{1} [{\sc restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]]}\\
-  \end{tabular}} & \rnode{3}{\highlightbox<1>{\ibox{2}} \nbar\visible<2->{[{\sc cont$|$restr} \highlight<2>{\ibox{4} \nliste{ buch(\ibox{3}) }}]}}\\
-\\[4ex]
-\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
-\end{tabular}
-\ncline{1}{2} \ncline{1}{3}
-\ncline{2}{4} \ncline{3}{5}
-%\visible<3->{\highlight<3>{\aanodecurve[t]{cont1}[l]{cont2}{3.5cm}}}
-}\hfill\hfill\mbox{}
-\rot{todo}
+
+\centerline{%
+\small
+\begin{forest}
+sm edges
+[{\nbar[\cont \rnode{cont1}{\ibox{1}}]}
+  [AP\feattab{\textsc{head$|$mod} \ibox{2},\\
+              \visible<2->{\rnode{cont2}{\cont} \ibox{1} [{\sc restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]}}
+    [interessantes]]
+  [{\highlightbox<1>{\ibox{2}} \nbar\visible<2->{[{\sc cont$|$restr} \highlight<2>{\ibox{4} \nliste{ buch(\ibox{3}) }}]}}
+    [Buch]]]
+\end{forest}
+}
+\visible<3->{\highlight<3>{\nccurve[angleA=90,angleB=175,ncurvB=1]{<->}{cont1}{cont2}}}
 
 \begin{itemize}[<+->]
 \item Kopf"=Adjunkt"=Schema identifiziert Kopf mit dem {\sc mod}"=Wert\\der Adjunkttochter (\ibox{2})
@@ -332,7 +324,7 @@ $\to$\\
       Adjektiv kann auf den \contw und damit auf die Restriktionen des Nomens (\ibox{2}) zugreifen \pause $\to$
       Adjektiv kann die Restriktionen des Nomens bei sich in {\sc restr} einbauen
 \pause
-\item Teilung des Indexes (\ibox{1}) sorgt dafür,\\daß Adjektiv und Nomen sich auf dasselbe Objekt beziehen
+\item Teilung des Indexes (\ibox{1}) sorgt dafür,\\dass Adjektiv und Nomen sich auf dasselbe Objekt beziehen
 \pause
 \item Bedeutungsbeitrag der gesamten Struktur wird vom Adjunkt projiziert
 \end{itemize}
@@ -447,10 +439,10 @@ Strukturen mit Kopf ({\it headed-phrase\/}) sind entweder Untertypen von
 
 \begin{itemize}[<+->]
 \item {\em Buch\/} hat gleiche Valenz wie {\em interessantes Buch\/}:\\
-      Artikel muß noch gesättigt werden
+      Artikel muss noch gesättigt werden
 
 \item Adjunktion verändert Valenz nicht $\to$\\
-Valenzinformation der Mutter muß der der Kopftochter entsprechen.
+Valenzinformation der Mutter muss der der Kopftochter entsprechen.
 
 \item formal:
 
@@ -512,36 +504,23 @@ Strukturen mit Kopf ({\it headed-phrase\/}) sind entweder Untertypen von
 \frametitle{Typhierarchie für {\it sign\/}}
 
 \centerline{%
-\scalebox{0.78}{%
-\begin{pspicture}(0.6,-2)(15.2,6.4)
-%\psgrid
-\rput[B](4,6){\rnode{sign}{\it sign}}
-%
-\rput[B](1,4){\rnode{word}{\it word}}
-\rput[B](7,4){\rnode{phrase}{\it phrase}}
-%
-\rput[B](4,2){\rnode{nhs}{\it non-headed-phrase}}
-\rput[B](10,2){\rnode{hs}{\it headed-phrase}}
-%
-\rput[B](7,0){\rnode{hnas}{\type{head"=non-adjunct-phrase}}}
-\rput[B](13,0){\rnode{hnars}{\type{head"=non"=argument"=phrase}}}
-\rput[B](7,-2){\rnode{hars}{\it head"=argument-phrase}}
-\rput[B](10,-2){\rnode{hfs}{\ldots\rule{0cm}{1ex}}}
-\rput[B](13,-2){\rnode{has}{\it head"=adjunct-phrase}}
-%
-\psset{angleA=-90,angleB=90,arm=0pt}
-%
-\ncdiag{sign}{word}\ncdiag{sign}{phrase}
-\ncdiag{phrase}{hs}\ncdiag{phrase}{nhs}
-\ncdiag{hs}{hnas}\ncdiag{hnas}{hars}
-\ncdiag{hs}{hnars}\ncdiag{hnars}{has}
-\ncdiag{hnars}{hfs}\ncdiag{hnas}{hfs}
-%
-\end{pspicture}}}
-
-
+\begin{forest}
+type hierarchy
+[sign,s sep+=4em
+  [word]
+  [phrase
+    [non-headed-phrase]
+    [headed-phrase
+      [head-non-adjunct-phrase, calign=first
+        [head-argument-phrase]
+        [\ldots]]
+      [head-non-argument-phrase, calign=last
+       [,identify=!r2212]
+       [head-adjunct-phrase]]]]]
+\end{forest}
 }
 
+}
 
 
 %% \frame{
@@ -558,42 +537,30 @@ Strukturen mit Kopf ({\it headed-phrase\/}) sind entweder Untertypen von
 %% }
 
 \frame{
-
 \frametitle{Kopf"=Adjunkt"=Struktur (HFP, Selektion, Semantik, \ldots)}
 
-\resizebox{\linewidth}{!}{
-%\nodemargin5pt
-\begin{tabular}[t]{@{\hspace{8mm}}c@{\hspace{10mm}}c@{}}%llll}
-\multicolumn{2}{c}{\rnode{1}{\nbar[\begin{tabular}[t]{@{}l}
-  {\sc head}   \rnode{h1}{\ibox{1}},\\
-  {\sc subcat} \rnode{sc1}{\ibox{2}},\\
-  \rnode{cont1}{\sc cont}   \ibox{3}]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{8mm}A                     & \hspace{-13mm}H\\*[3ex]
-\rnode{2}{AP[\begin{tabular}[t]{@{}l}
-  {\sc head$|$mod} \ibox{4},\\
-  \rnode{cont2}{\sc cont}   \ibox{3} [{\sc restr} \nliste{ interessant(\ibox{5}) } $\oplus$ \ibox{6}]]\\
-  \end{tabular}} & \rnode{3}{\ibox{4} \nbar[\begin{tabular}[t]{@{}l}
-                                       {\sc head}   \rnode{h2}{\ibox{1}},\\
-                                       {\sc subcat} \rnode{sc2}{\ibox{2}} \sliste{ det },\\
-                                       {\sc cont$|$restr} \ibox{6} \nliste{ buch(\ibox{5}) }]
-                                                         \end{tabular}
-                                                       }\\
-\\[4ex]
-\rnode{4}{interessantes}                     & \rnode{5}{Buch}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{2}{4}\ncline{3}{5}%
-%
-%\visible<2->{\highlight<2>{\aanodecurve[r]{h1}[tr]{h2}{1.5cm}}}%
-%\visible<3->{\highlight<3>{\aanodecurve[r]{sc1}[tr]{sc2}{1.5cm}}}%
-%\visible<4->{\highlight<4>{\aanodecurve[l]{cont1}[l]{cont2}{3.5cm}}}%
-\rot{todo}
+~\vspace{2ex}
+
+\small
+
+\hspace{2ex}\begin{forest}
+sm edges
+[\nbar\feattab{\head   \rnode{h1}{\ibox{1}},\\
+               \subcat \rnode{sc1}{\ibox{2}},\\
+               \rnode{cont1}{\cont} \ibox{3}}
+  [AP\feattab{\textsc{head$|$mod} \ibox{2},\\
+              \rnode{cont2}{\cont} \ibox{3} [{\sc restr} \nliste{ interessant(\ibox{4}) } $\oplus$ \ibox{5}]}
+    [interessantes]]
+  [\ibox{2} \nbar\feattab{\head   \rnode{h2}{\ibox{1}},\\
+                          \subcat \rnode{sc2}{\ibox{2}} \sliste{ det },\\
+                          {\sc cont$|$restr} \ibox{5} \nliste{ buch(\ibox{4}) }}
+    [Buch]]]
+\end{forest}
+\visible<2->{\highlight<2>{\nccurve[angleA=0,angleB=45]{<->}{h1}{h2}}}
+\visible<3->{\highlight<3>{\nccurve[angleA=0,angleB=45]{<->}{sc1}{sc2}}}
+\visible<4->{\highlight<4>{\nccurve[angleA=170,angleB=175,ncurvB=1.2]{<->}{cont1}{cont2}}}
 }
 
-}
 
 \subsection{Kapselnde Modifikation}
 
