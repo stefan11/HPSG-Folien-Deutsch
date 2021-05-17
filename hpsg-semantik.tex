@@ -1,10 +1,11 @@
 
+\section{Semantik}
+
 \subtitle{Semantik}
 
 \huberlintitlepage[22pt]
 
 
-\section{Semantik}
 
 
 \iftoggle{teil1}{
@@ -118,11 +119,11 @@ Welt gehö\-ren, die man wahrnehmen kann, auf die man reagieren kann: Individuen
       \begin{itemize}
       \item nullstellig: {\em regnen\/} ({\em Es regnet.\/}) \citep[Kapitel~2.8]{Kunze93}
 \pause
-      \item einstellig: {\em  sterben\/} ({\em Es stirbt.\/})
+      \item einstellig: {\em  schnarchen\/} ({\em Es schnarcht.\/})
 \pause
-      \item zweistellig: {\em lieben\/}  ({\em Es liebt ihn.\/})
+      \item zweistellig: {\em lesen\/}  ({\em Es liest ihn.\/})
 \pause
-      \item dreistellig: {\em geben\/}   ({\em Es gibt ihm den Aufsatz.\/})
+      \item dreistellig: {\em geben\/}   ({\em Es gibt ihr den Aufsatz.\/})
 \pause
       \item vierstellig: {\em kaufen\/}  ({\em Es kauft den Mantel vom Händler für fünf Mark.\/})
       \end{itemize}
@@ -147,9 +148,9 @@ Welt gehö\-ren, die man wahrnehmen kann, auf die man reagieren kann: Individuen
 \begin{itemize}
 \item Sachverhalt: {\it state of affairs\/} ({\it soa\/})\\
 \begin{tabular}{@{}ll}
-Verb:     & $\ll schlagen, agens:X, patiens:Y\gg$\\
-Adjektiv: & $\ll interessant, thema: X\gg$\\
-Nomen:    & $\ll mann, instance: X\gg$\\
+Verb:     & $\ll schlagen, agens:~X, patiens:~Y\gg$\\
+Adjektiv: & $\ll interessant, thema:~X\gg$\\
+Nomen:    & $\ll frau, instance:~X\gg$\\
 \end{tabular}
 \end{itemize}
 
@@ -163,31 +164,31 @@ Nomen:    & $\ll mann, instance: X\gg$\\
 \begin{itemize}
 \item Verb:
 \ea
-Der Mann schlägt den Hund.
+Die Frau schlägt den Weltmeister.
 \z
-$\ll schlagen, agens:X, patiens:Y\gg$\\
-$X|\ll mann, instance:X\gg,$\\
-$Y|\ll hund, instance:Y\gg$
+$\ll schlagen, agens:~X, patiens:~Y\gg$\\
+$X|\ll frau, instance:~X\gg,$\\
+$Y|\ll weltmeister, instance:~Y\gg$
 \pause
 \medskip
 \item Adjektiv:
 \ea
 Das Buch ist interessant.
 \z
-$\ll interessant, thema:X\gg$\\
-$X|\ll buch, instance:X\gg$
+$\ll interessant, thema:~X\gg$\\
+$X|\ll buch, instance:~X\gg$
 \end{itemize}
 \end{itemize}
 
 }
 
-\subsection{Die Repräsentation parametrisierter Sachverhalte mit Hilfe von Merkmalstrukturen}
+\subsection{Die Repräsentation parametrisierter Sachverhalte mit Hilfe von Merkmalbeschreibungen}
 
 \frame{
-\frametitle{Sachverhalte und Repräsentation mit Merkmalstrukturen}
+\frametitlefit{Sachverhalte und Repräsentation mit Merkmalbeschreibungen}
 
 
-$\ll schlagen, agens:X, patiens:Y\gg$\\
+$\ll schlagen, agens:~X, patiens:~Y\gg$\\
 \ms[schlagen]
 { 
  agens & X \\
@@ -195,8 +196,8 @@ $\ll schlagen, agens:X, patiens:Y\gg$\\
 }
 
 \pause
-$\ll mann, in\-stance\!: X\gg$\\
-\ms[mann]
+$\ll frau, instance:~X\gg$\\
+\ms[frau]
 { 
  inst & X \\
 }
@@ -207,7 +208,7 @@ $\ll mann, in\-stance\!: X\gg$\\
 \subsection{Repräsentation des CONT-Wertes}
 
 \frame[shrink]{
-\frametitlefit{Repräsentation in Merkmalsbeschreibungen: der \contw}
+\frametitlefit{Repräsentation mit Merkmalsbeschreibungen: der \contw}
 
 \begin{itemize}
 \item mögliche Datenstruktur ({\sc cont} = {\sc content}):\\
@@ -410,15 +411,17 @@ NP$_{\ibox{1}}$ & \ms{ cat & \onems{ head \type{noun} \\
 
 }
 
-\subsection{Repräsentation parametrisierter Sachverhaltet mit Merkmalstrukturen}
+\subsection{Repräsentation parametrisierter Sachverhaltet mit Merkmalbeschreibungen}
 
 \frame[shrink]{
-\frametitle{Sachverhalte und Repräsentation mit Merkmalstrukturen}
+\frametitlefit{Sachverhalte und Repräsentation mit Merkmalbeschreibungen}
 
+\vfill
 
-$\ll schlagen, agens:X, patiens:Y\gg$\\
-$X|\ll mann, instance:X\gg,$\\
-$Y|\ll hund, instance:Y\gg$\\
+\medskip
+$\ll schlagen, agens:~X, patiens:~Y\gg$\\
+$X|\ll frau, instance:~X\gg,$\\
+$Y|\ll weltmeister, instance:~Y\gg$\\
 \bigskip
 \ms[schlagen]
 { 
@@ -430,9 +433,9 @@ $Y|\ll hund, instance:Y\gg$\\
 \ms{
 ind & \ibox{1} \ms{ per & 3 \\
                     num & sg \\
-                    gen & mas \\
+                    gen & fem \\
                   } \\
-restr & \liste{ \ms[mann]{ 
+restr & \liste{ \ms[frau]{ 
                 inst & \ibox{1} \\
                 }
         }\\
@@ -443,18 +446,20 @@ ind & \ibox{2} \ms{ per & 3 \\
                     num & sg \\
                     gen & mas \\
                   }\\
-restr & \liste{ \ms[hund]{
+restr & \liste{ \ms[weltmeister]{
                 inst & \ibox{2} \\
                 }
         } \\
 }
+
+\vfill
 
 }
 
 \subsection{Linking}
 
 \frame{
-\frametitle{Repräsentation in Merkmalsbeschreibungen und Linking}
+\frametitle{Repräsentation mit Merkmalsbeschreibungen und Linking}
 
 \begin{itemize}
 \item Linking zwischen Valenz und semantischem Beitrag\\
@@ -524,19 +529,19 @@ restr & \liste{ \ms[hund]{
 sm edges, for tree={l sep+=\baselineskip}
 [{V[\type{fin}, \subcat \sliste{ } ]}, name=1
   [ {\ibox{1} NP[\type{nom}]}
-    [er]]
+    [Aicke]]
   [{V[\type{fin}, \subcat \sliste{ \ibox{1} } ]}, name=2
     [ {\ibox{2} NP[\type{acc}]}
-      [das Buch, roof]]
+      [die Nuss, roof]]
     [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2} } ]}, name=3
       [ {\ibox{3} NP[\type{dat}]}
-        [dem Mann, roof]]
+        [dem Eichhörnchen, roof]]
       [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} } ]}, name=4
         [gibt]]]]]
 \draw[<->] (4) to[out=east,in=east] (3);
 \draw[<->] (3) to[out=east,in=east] (2);
 \draw[<->] (2) to[out=east,in=east] (1);
-\node()[above right of=4,xshift=6em,yshift=\baselineskip]{$geben(e,b,m)$};
+\node()[above right of=4,xshift=6em,yshift=\baselineskip]{$geben(a,n,e)$};
 \end{forest}
 }
 
@@ -603,17 +608,31 @@ head-dtr$|$cont & \ibox{1} \\
 \centerline{
 \begin{forest}
 type hierarchy
-[sign
+[sign,
+ for tree={
+   calign=fixed angles,
+   calign angle=60
+ } 
   [word]
   [phrase
     [non-headed-phrase]
-    [headed-phrase
+    [headed-phrase, l sep+=\baselineskip
       [\ldots]
-      [head-non-adjunct-phrase
+      [head-non-adjunct-phrase, calign with current
         [head-argument-phrase]]
       [\ldots]]]]
 \end{forest}}
 
+\medskip
+\centerline{%
+\type{head-non-adjunct-phrase} \impl 
+\(
+\ms{
+cont & \ibox{1} \\
+head-dtr$|$cont & \ibox{1} \\
+}
+\)
+}
 
 }
 } % \end{teil1}
@@ -708,7 +727,7 @@ non-head-dtrs \liste{ \onems{
 
 \begin{enumerate}
 \item Wie kann man den semantischen Beitrag von \emph{lacht} repräsentieren?
-\item Geben Sie eine Merkmalstruktur für \emph{er lacht} in (\mex{1}) an:
+\item Geben Sie eine Merkmalbeschreibung für \emph{er lacht} in (\mex{1}) an:
       \ea
       {}[dass] er lacht
       \z

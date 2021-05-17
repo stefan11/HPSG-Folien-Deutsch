@@ -1,8 +1,9 @@
+\section{Adjunktion und Spezifikation}
+
 \subtitle{Adjunktion und Spezifikation}
 
 \huberlintitlepage[22pt]
 
-\section{Adjunktion und Spezifikation}
 
 
 \outline{
@@ -32,7 +33,7 @@
 \item Literatur: \citew[Kapitel~6.1--6.5]{MuellerLehrbuch3}
 \end{itemize}
 
-\vspace{1cm}
+%\vspace{1cm}
 
 %% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
 %%   nächsten Mal lesen sollen!!!!}
@@ -213,6 +214,8 @@ cat & \ms{ head & \ms[prep]{
 \frame[shrink]{
 \frametitle{Der Bedeutungsbeitrag in Kopf"=Adjunkt"=Struktur (I)}
 
+~
+\vfill
 \centerline{%
 \begin{forest}
 sm edges
@@ -228,23 +231,23 @@ sm edges
 \item Woher kommt die Bedeutungsrepräsentation am Mutterknoten?
 \item die Bedeutung von {\em Buch\/} steht fest: buch(X)
 \item Möglichkeit: Teilbedeutungen beider Töchter einfach nach oben reichen
-\item {\em interessantes\/} (interessant(X)) + {\em Buch\/} (buch(Y)) =\\
+\item {\em interessantes\/} (interessant(X)) + {\em Buch\/} (buch(Y)) =
       interessant(X) \& buch(X)
 \end{itemize}
+
+\vfill
 }
 
 \frame{
 \frametitle{Der Bedeutungsbeitrag in Kopf"=Adjunkt"=Struktur (II)}
 \begin{itemize}
-\item {\em interessantes\/} (interessant(X)) + {\em Buch\/} (buch(Y)) =\\
-      interessant(X) \& buch(X)
+\item {\em interessantes\/} (interessant(X)) + {\em Buch\/} (buch(Y)) = interessant(X) \& buch(X)
 
 aber:
       \ea
       der angebliche Mörder
       \z
-      {\em angebliche\/} (angeblich(X)) + {\em Mörder\/} (mörder(Y)) $\neq$\\
-        angeblich(X) \& mörder(X)
+      {\em angebliche\/} (angeblich(X)) + {\em Mörder\/} (mörder(Y)) $\neq$  angeblich(X) \& mörder(X)
 \pause
 \item Alternative: machen Bedeutung am Adjunkt fest:\\
       Im Lexikoneintrag für {\em interessantes\/} bzw.\ {\em angebliche\/} steht,\\
@@ -269,9 +272,10 @@ aber:
 \begin{forest}
 sm edges
 [{\nbar[\cont \rnode{cont1}{\ibox{1}}]}
-  [AP\feattab{\textsc{head$|$mod} \ibox{2},\\
-              \visible<2->{\rnode{cont2}{\cont} \ibox{1} [{\sc restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]}}
-    [interessantes]]
+  [AP{\begin{tabular}[t]{@{}l@{}}
+      [\textsc{head$|$mod} \highlight<1>{\ibox{2}},\\
+              \visible<2->{\rnode{cont2}{\cont} \ibox{1} [{\sc restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]]}
+      \end{tabular}} [interessantes]]
   [{\highlightbox<1>{\ibox{2}} \nbar\visible<2->{[{\sc cont$|$restr} \highlight<2>{\ibox{4} \nliste{ buch(\ibox{3}) }}]}}
     [Buch]]]
 \end{forest}
@@ -279,7 +283,7 @@ sm edges
 \visible<3->{\highlight<3>{\nccurve[angleA=90,angleB=175,ncurvB=1]{<->}{cont1}{cont2}}}
 
 \begin{itemize}[<+->]
-\item Kopf"=Adjunkt"=Schema identifiziert Kopf mit dem {\sc mod}"=Wert\\der Adjunkttochter (\ibox{2})
+\item Kopf"=Adjunkt"=Schema identifiziert {\sc mod}"=Wert der Adjunkttochter mit dem Kopf (\ibox{2})
 \item Modifikator hat gesamte Bedeutung unter {\sc cont}: \nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}
 \item semantischer Beitrag für die Phrase wird von dort projiziert (\ibox{1})
 \end{itemize}
@@ -300,7 +304,7 @@ sm edges
  { phon & \phonliste{ interessantes }\\
    cat & \ms{ head & \ms[adj]
                       { %prd & $-$ \\
-                        mod &  \blau<1>{\rm $\overline{\mbox{\rm N}}$}\visible<2->{: \ms{ \visible<4->{ind   & \blau<4>{\ibox{1}}} \\
+                        mod &  \blau<1>{\rm $\overline{\mbox{\rm N}}$}\visible<2->{{\upshape :} \ms{ \visible<4->{ind   & \blau<4>{\ibox{1}}} \\
                                                                                                restr & \blau<3>{\ibox{2}} \\
                                                                                  }} \\
                       } \\
@@ -390,7 +394,7 @@ non-head-dtrs & \liste{ \ms{ cat & \ms{ head$|$mod & \ibox{2} \\
                            }}\\
 }
 
-
+Typ \type{head-adjunct-phrase} mit allen Beschränkungen, die zum Typ gehören
 
 }
 
@@ -402,8 +406,8 @@ non-head-dtrs & \liste{ \ms{ cat & \ms{ head$|$mod & \ibox{2} \\
 
 %\small
 
-In Strukturen mit Kopf, die keine Kopf-Adjunkt-Strukturen sind, ist der
-semantische Beitrag der Mutter identisch mit dem der Kopftochter.
+In Strukturen mit Kopf, die keine Kopf-Adjunkt-Strukturen sind,\\
+ist der semantische Beitrag der Mutter identisch mit dem der Kopftochter.
 
 \type{head-non-adjunct-phrase} \impl
 \ms{
@@ -503,22 +507,26 @@ Strukturen mit Kopf ({\it headed-phrase\/}) sind entweder Untertypen von
 \frame{
 \frametitle{Typhierarchie für {\it sign\/}}
 
+
 \centerline{%
 \begin{forest}
-type hierarchy
-[sign,s sep+=4em
+type hierarchy,
+ for tree={
+   calign=fixed angles,
+   calign angle=60
+ } 
+[sign %,s sep+=4em
   [word]
   [phrase
     [non-headed-phrase]
-    [headed-phrase
+    [headed-phrase, for tree={l sep+=\baselineskip}
       [head-non-adjunct-phrase, calign=first
         [head-argument-phrase]
         [\ldots]]
       [head-non-argument-phrase, calign=last
        [,identify=!r2212]
        [head-adjunct-phrase]]]]]
-\end{forest}
-}
+\end{forest}}
 
 }
 
@@ -602,7 +610,7 @@ $\ll potentiell, arg : ~\{ \ll m"order, instance:X \gg \} \gg$  % ; 1
 }
 }\\
 
-nur Annäherung, zu Einzelheiten siehe \citep{Kasper95} bzw.\ \citep{Mueller99a}
+nur Annäherung, zu Einzelheiten siehe \citew{Kasper97a} bzw.\ \citew{Mueller99a}
 }
 }
 

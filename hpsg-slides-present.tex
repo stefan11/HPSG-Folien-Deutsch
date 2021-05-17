@@ -27,17 +27,23 @@
 \documentclass[10pt]{beamer}
 
 
-\usepackage{hu-beamer-includes} %,beamer-movement}
+\usepackage{hu-beamer-includes-pdflatex} %,beamer-movement}
 
 
-\includecomment{completed}
-\includecomment{loesungen}
-\includecomment{backup}
+%\includecomment{completed}
+%\includecomment{loesungen}
+%\includecomment{backup}
 
-\excludecomment{handout}
+%\excludecomment{handout}
 %\provideboolean{handout}\setboolean{handout}{false}
-\newtoggle{hpsglight}\toggletrue{hpsglight} 
+%\newtoggle{hpsglight}\toggletrue{hpsglight} 
 \newtoggle{loesungen}\toggletrue{loesungen}
+
+%\includeonly{hpsg-valenz-grammatikregeln,hpsg-komplementation}
+
+%\includeonly{hpsg-semantik}
+\includeonly{hpsg-adjunktion-spezifikation}
+
 
 \input hpsg-include.tex
 

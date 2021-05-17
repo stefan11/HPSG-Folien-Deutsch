@@ -7,11 +7,12 @@
 %%   Language: LaTeX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{Valenz und Grammatikregeln}
+
 \subtitle{Valenz, Grammatikregeln und Komplementation}
 
 \huberlintitlepage[22pt]
 
-\section{Valenz und Grammatikregeln}
 
 \iftoggle{teil1}{
 \outline{
@@ -62,28 +63,45 @@
 
 
 \frame{
-\frametitle{Valenz und Grammatikregeln}
+\frametitle{Literaturhinweise}
 %
 \begin{itemize}
 \item Literatur: \citew[Kapitel~3.1]{MuellerLehrbuch3}
 \end{itemize}
 
-\vspace{1cm}
+\pause
 
-
-\vspace{1cm}
-
-\rotbf{Bitte zum nächsten Mal lesen}
-
-\vspace{1cm}
-
-\iftoggle{hpsglight}{%
 Damit alles kompatibel zum Lehrbuch bleibt,\\
 nehmen wir hier auch das \subcatm für die Valenz an.
 
 \subcat = \spr + \comps
 
-}
+Zu neueren Versionen der HPSG, die \subcat in \spr und \comps unterteilen,\\ siehe
+\citew{Sag97a,HPSGHandbook,MuellerGermanic}.
+
+Deutsch: Argumente von finiten Verben sind alle auf \comps,\\
+so dass die Verwendung von \subcat hier keinen Unterschied macht.
+
+\pause
+Ebenfalls aus Kompatibilitätsgründen:\\
+Reihenfolge in der \subcatl: \type{nom}, \type{acc}, \type{dat}.
+
+In neueren Arbeiten \citep{MuellerLFGphrasal,MuellerGermanic}: \type{nom}, \type{dat},
+\type{acc}.
+
+
+% \vspace{1cm}
+% \vspace{1cm}
+% \rotbf{Bitte zum nächsten Mal lesen}
+% \vspace{1cm}
+
+% \iftoggle{hpsglight}{%
+% Damit alles kompatibel zum Lehrbuch bleibt,\\
+% nehmen wir hier auch das \subcatm für die Valenz an.
+
+% \subcat = \spr + \comps
+
+% }
 
 %% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
 %%   nächsten Mal lesen sollen!!!!}
@@ -104,8 +122,8 @@ nehmen wir hier auch das \subcatm für die Valenz an.
 \hspace{5em}
 \begin{forest}
 [helfen
- [Peter]
- [Maria] ]
+ [Aicke]
+ [Conny] ]
 \end{forest}
 }
 
@@ -123,12 +141,37 @@ nehmen wir hier auch das \subcatm für die Valenz an.
       \begin{tabular}[t]{l@{~$\to$~}l@{\hspace{6em}}l}
       S &  NP, V               & \emph{X schläft}\\
       S &  NP, NP, V           & \emph{X Y liebt}\\
-      S &  NP, PP[\type{über}], V           & \emph{X über y spricht}\\
+      S &  NP, PP[\type{über}], V           & \emph{X über Y spricht}\\
       S &  NP, NP, NP, V       & \emph{X Y Z gibt}\\
       S &  NP, NP, PP[\type{mit}], V       & \emph{X Y mit Z dient}\\
       \end{tabular}
 \pause
 \item Verben müssen mit passender Regel verwendet werden.
+\pause
+\item Valenz doppelt kodiert: In Regeln und in Lexikoneinträgen.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Phrasale vs.\ lexikalische Ansätze}
+
+\begin{itemize}
+\item Phrasale Ansätze der 70er und 80er wurden für lexikon-orientierte Ansätze aufgegeben.\\
+  \parencites{Jacobson87b}[Section~5.5]{MuellerGT-Eng1}{MWArgSt}
+\pause
+\item Gründe: 
+\begin{itemize}
+\item Voranstellung von Teilphrasen (Partial VP Fronting)\\ \citep{Nerbonne86a,Johnson86a} 
+\pause
+\item Interaktionen mit Morphologie \citep[Section~5.5.1]{MuellerGT-Eng1}
+\end{itemize}
+\pause
+\item Come Back der phrasalen Ansätze in Construction Grammar \citep{Goldberg95a}, diese
+  funktionieren aber nicht.
+
+\parencites{Mueller2006d,MuellerPersian,MuellerUnifying,MWArgSt,MWArgStReply,MuellerFCG,MuellerLFGphrasal,MuellerPotentialStructure,MuellerGT-Eng4,MuellerCxG}
+
+
 \end{itemize}
 
 }
@@ -159,8 +202,8 @@ nehmen wir hier auch das \subcatm für die Valenz an.
 \vfill
 \hfill\begin{forest}
 sm edges
-[{V[\subcat \sliste{} ]}
-  [\ibox{1} NP
+[{V[\subcat \sliste{}]}
+  [{\ibox{1} NP[\type{nom}]}
     [Aicke]]
   [{V[\subcat \sliste{ \ibox{1} }]}
     [schläft]]]
@@ -178,18 +221,51 @@ V[\subcat \sliste{ }] entspricht hierbei einer vollständigen Phrase\\
 \centerline{%
 \begin{forest}
 sm edges
-[{V[\subcat \sliste{} ]}
-  [\ibox{1} NP
-    [Aicke]]
-  [{V[\subcat \sliste{ \ibox{1} }]}
-    [\ibox{2} NP 
+[{V[\subcat \sliste{}]},visible on=4-
+  [{\ibox{1} NP[\type{nom}]},visible on=3-
+    [Aicke,visible on=3-]]
+  [{V[\subcat \sliste{ \ibox{1} }] },visible on=2-
+    [{\ibox{2} NP[\type{acc}]} 
       [Conny]]
-    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]}
+    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }] }
       [erwartet]]]]
 \end{forest}}
 \vfill
 
 }
+
+
+\frame{
+\frametitle{Beschränkungsbasierte Theorien und Psycholinguistik}
+
+\centerfit{
+\begin{forest}
+sm edges
+[{V[\subcat \sliste{}]},visible on=4-
+  [{NP[\type{nom}]},visible on=3- 
+    [Aicke,visible on=3-] ]
+  [{V[\subcat \sliste{ NP[\type{nom}] }] },visible on=4-
+    [{NP[\type{acc}]},visible on=5- 
+      [Conny,visible on=5-] ]
+    [{V[\subcat \sliste{ NP[\type{nom}], NP[\type{acc}] } ] },visible on=6- [erwartet,visible on=7-]] ] ]
+\end{forest}}
+
+\begin{itemize}
+\item Erklärungen im Folgenden immer von unten nach oben.
+\pause
+\item Das ist in Theorien wie HPSG aber nicht zwingend. 
+
+Sehr wichtig aus psycholinguistischer Sicht, denn Verarbeitung ist inkrementell.\\
+\parencites{Marslen-Wilson75a,TSKES96a,SW2011a,Wasow2021a}
+\pause
+
+\end{itemize}
+
+
+
+
+}
+
 
 \frame{
 
@@ -216,7 +292,7 @@ sm edges
 \centerline{
 \begin{forest}
 sm edges, for tree={l sep+=\baselineskip}
-[{V[\subcat \sliste{} ]}
+[{V[\subcat \sliste{}]}
   [\ibox{1} NP
     [Aicke]]
   [{V[\subcat \sliste{ \ibox{1} }]},name=v2
@@ -335,7 +411,7 @@ sm edges, for tree={l sep+=\baselineskip}
 \mbox{\emph{gibt} (finite Form):}\\
 \ms{ phon & \phonliste{ gibt } \\
      part-of-speech & verb\\
-     subcat & \liste{ NP[\type{nom}], NP[\type{dat}], NP[\type{acc}]   } \\
+     subcat & \liste{ NP[\type{nom}], NP[\type{acc}], NP[\type{dat}]   } \\
 }
 
 \medskip
@@ -426,6 +502,7 @@ NP[\type{nom}], NP[\type{acc}] und NP[\type{dat}] stehen für komplexe Merkmalsb
 %% }
 %% } % \end{teil1}
 
+
 \subsection{Übungsaufgaben}
 
 \frame{
@@ -443,5 +520,6 @@ NP[\type{nom}], NP[\type{acc}] und NP[\type{dat}] stehen für komplexe Merkmalsb
 
 
 }
+
 
 }% end hpsglight

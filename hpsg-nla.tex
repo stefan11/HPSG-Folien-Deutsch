@@ -1,8 +1,9 @@
+\section{Nichtlokale Abhängigkeiten}
+
 \subtitle{Nichtlokale Abhängigkeiten}
 
 \huberlintitlepage[22pt]
 
-\section{Nichtlokale Abhängigkeiten}
 
 \iftoggle{teil1}{
 \outline{
@@ -454,15 +455,19 @@ head-dtr      & \highlight<1>{\onems{ loc$|$cat \onems{ head \ms[verb]{vform & f
 \frametitle{Typhierarchie für \type{sign}}
 
 \vfill
-\centerline{
+\oneline{
 \begin{forest}
-type hierarchy
-[sign,s sep+=4em
+type hierarchy,
+ for tree={
+   calign=fixed angles,
+   calign angle=50
+ } 
+[sign
   [word]
   [phrase
     [non-headed-phrase]
     [headed-phrase
-      [head-non-adjunct-phrase
+      [head-non-adjunct-phrase%, for current and siblings={l sep*=4}, 
         [head-argument-phrase]
         [head-filler-phrase]]
       [head-non-argument-phrase

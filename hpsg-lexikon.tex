@@ -228,12 +228,68 @@ cont &  \ms[\highlight{helfen}]{ agens       & \ibox{1} \\
 % \ncline{tr-dat-v-root}{helf}\ncline{cn-root}{frau}}%
 % }\hfill\hfill\mbox{}
 
+~\vfill
+\oneline{%
+\begin{forest}
+type hierarchy
+[sign, l sep*=3
+  [root,name=root]
+  [{\begin{tabular}[t]{@{}c@{}}
+   verb-sign\\
+   \upshape [\head \type{verb}]\end{tabular}}, l sep+=8\baselineskip
+    [nom-dat-verb-root, edge to= root, edge to=nom-dat-arg, edge to=agens-exp, l sep+=2\baselineskip
+      [helf, instance]]]
+  [{\begin{tabular}[t]{@{}c@{}}
+   noun-sign\\
+   \upshape [\head \type{noun}]\end{tabular}}, l sep+=8\baselineskip
+    [count-noun-root, edge to=root, edge to=det-sc, edge to=3rd, l sep+=2\baselineskip
+      [Frau, instance]]]
+  [{\begin{tabular}[t]{@{}c@{}}
+    saturated\\
+   \upshape [\subcat \eliste]\end{tabular}}]
+  [{\begin{tabular}[t]{@{}c@{}}
+    unsaturated\\
+   \upshape [\subcat \sliste{ [], \ldots }]\end{tabular}}
+    [{\begin{tabular}[t]{@{}c@{}}
+     det-sc\\
+     \upshape [\subcat \sliste{ Det }]\end{tabular}},name=det-sc]
+    [{\begin{tabular}[t]{@{}c@{}}
+     nom-arg\\
+     \upshape [\subcat \sliste{ NP[\type{nom}] }]\end{tabular}}]
+    [{\begin{tabular}[t]{@{}c@{}}
+     nom-dat-arg\\
+     \upshape [\subcat \sliste{ NP[\type{nom}], NP[\type{acc}] }]\end{tabular}},name=nom-dat-arg]]
+  [nominal-sem-sign
+    [1]
+    [2]
+    [{\begin{tabular}[t]{@{}c@{}}
+     3\\
+     \upshape [\textsc{ind|per} \type{3}]\end{tabular}},name=3rd]]
+  [{\begin{tabular}[t]{@{}c@{}}
+    verbal-sem-sign\\
+    \upshape [\cont \type{psoa}]\end{tabular}}
+    [{\begin{tabular}[t]{@{}c@{}}
+     agens\\
+    \upshape [\cont \type{agens-rel}]\end{tabular}}
+    [agens-exp, edge to=!un, name=agens-exp %before drawing tree={x/.option=!r.x}
+    ]]
+    [{\begin{tabular}[t]{@{}c@{}}
+     experiencer\\
+    \upshape [\cont \type{exp-rel}]\end{tabular}}
+      ]]]
+\end{forest}}
+
+
+%\centerline{\includegraphics[width=.8\linewidth]{typehierarchie-lexikon}}
+\vfill
+
 \begin{itemize}[<+->]
 \item bei Merkmalsspezifikationen entsprechende Pfade dazudenken:\\
       {}[ {\sc subcat} \liste{}] steht für [{\sc cat$|$subcat} \liste{} ]
 \item Beschränkungen für Typen gelten auch für Untertypen (Vererbung)
 \item Instanzen mit Strichlinie verbunden
 \end{itemize}
+
 }
 
 
@@ -248,7 +304,7 @@ cont$|$restr  \liste{ \ms[frau]{}} \\
 }
 
 
-\ms[trans-dat-verb-root]{
+\ms[nom-dat-verb-root]{
 phon & \phonliste{ helf } \\
 cont & helfen \\
 }
@@ -296,6 +352,8 @@ cont & helfen \\
 \citet*{SURT83a}, \\
 \citet*{FPW85a}, \citet{Flickinger87},\\
 \citet{CB92a}, \citet{Meurers2000b}
+
+Handbuchartikel: \citew{DavisKoenig2021a}
 \pause
 \item Beispiel Passiv:
       Eine Lexikonregel setzt die Beschreibung eines Stamms zur Beschreibung einer Passivform in Beziehung.
@@ -320,16 +378,17 @@ Description Level Lexical Rules (DLR)\\
                      subcat & \liste{ NP[{\it nom\/}], NP[{\it acc\/}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
                    } \\
 }   $\mapsto$ \\
-\onems[word]{
+\hfill\onems[word]{
   cat \ms{ head & \ms{ vform & passiv-part \\
                               } \\
            subcat & \liste{ NP[{\it nom\/}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
          } \\
 }
 
+
 \eal
-\ex Der Mann schlägt den Hund.
-\ex Der Hund wird geschlagen.
+\ex Judit schlägt den Weltmeister.
+\ex Der Weltmeister wird geschlagen.
 \zl
 
 }
@@ -419,7 +478,8 @@ lex-dtr \onems[stem]{
 \begin{itemize}
 \item $f$ ist Funktion, die für den {\sc phon}"=Wert der {\sc lex-dtr} die Partizipform liefert\\ ({\em red\/} $\to$ {\em geredet\/})
 \pause
-\item alternativ Kopf-Affix-Strukturen (ähnlich zu binär verzweigenden syntaktischen Strukturen)
+\item alternativ Kopf-Affix-Strukturen\\
+      (ähnlich zu binär verzweigenden syntaktischen Strukturen)
 \end{itemize}
 
 }
@@ -432,11 +492,11 @@ lex-dtr \onems[stem]{
 \item Description"=Level Lexikonregeln\\
       (\citealp{Orgun96a}; 
 \citealp{Riehemann98a}; \citealp{AW98a};
-\citealp{Koenig99a}; \citealp{Mueller2002b})\nocite{Dowty79a}
+\citealp{Koenig99a}; \citealp{Mueller2002b,Mueller2003a,MuellerPersian})\nocite{Dowty79a}
 \pause
 \item Kopf-Affix-Ansätze\\
       (\citealp{KN93a}\iaright{Krieger}\iaright{Nerbonne};
-\citealp{Krieger94a}\ia{Krieger}; \citealp{Eynde94}\ia{van Eynde};\\\citealp{Lebeth94}\ia{Lebeth})
+\citealp{Krieger94a}\ia{Krieger}; \citealp{Eynde94}\ia{van Eynde}; \citealp{Lebeth94})
 \bigskip
 \pause
 \item In vielen Fällen sind die Ansätze ineinander überführbar \citep{Mueller2002b}.
@@ -444,7 +504,9 @@ lex-dtr \onems[stem]{
 \item Manchmal als Vorteil betrachtet, dass man bei Ansatz mit Lexikonregeln ohne hunderte von leeren Affixen
       für Nullflexion und Konversion auskommt.
 \pause
-\item Morpheme, die Stämme verkürzen, werden bei Verwendung von LR nicht gebraucht.
+\item Morpheme, die Stämme verkürzen, werden bei LR-Ansätzen nicht gebraucht.
+\pause
+\item Zu Morphologie siehe auch \citew{Crysmann2021a}.
 \end{itemize}
 
 }
