@@ -2,7 +2,7 @@
 
 \huberlintitlepage[22pt]
 
-
+%\if0
 \section{Konstituentenreihenfolge}
 
 \iftoggle{teil1}{
@@ -51,6 +51,36 @@
 }
 } % \end{teil2}
 
+%\if0
+\frame{
+\frametitle{Literaturhinweise}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~9.1--9.4]{MuellerLehrbuch3} %sowie \citew[Kapitel~9.5.1]{MuellerLehrbuch3}
+
+\item Handbuchartikel: \citew{MuellerOrder}
+
+\item Buch zur deutschen Satzstruktur:\\
+      \citew{MuellerGS} auf der Grundlage von \citew{Mueller2005c,Mueller2005d}
+\end{itemize}
+
+% \vspace{1cm}
+
+% Damit alles kompatibel zum Lehrbuch bleibt,\\
+% nehmen wir hier auch das \subcatm für die Valenz an.
+
+% \subcat = \spr + \comps
+
+% Zu neueren Versionen der HPSG, die \subcat in \spr und \comps unterteilen,\\ siehe
+% \citew{Sag97a,HPSGHandbook,MuellerGermanic}.
+
+% Deutsch: Argumente von finiten Verben sind alle auf \comps,\\
+% so dass die Verwendung von \subcat hier keinen Unterschied macht.
+
+
+%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%%   nächsten Mal lesen sollen!!!!}
+}
 
 
 \iftoggle{teil1}{
@@ -60,8 +90,8 @@
 \savespace
 \begin{itemize}[<+->]
 \item Deutsch ist eine Sprache mit relativ freier Konstituentenstellung.
-\item Das Deutsche wird typologisch zu den Verbletztsprachen (SOV) gezählt.
-In deklarativen Hauptsätzen und in Fragesätzen steht das Verb jedoch an zweiter
+\item Das Deutsche wird typologisch zu den Verbletztsprachen (SOV) gezählt.\\
+In deklarativen Hauptsätzen und in Fragesätzen steht das Verb jedoch\\an zweiter
 bzw.\ an erster Stelle. 
 \item Wie kann man die Umstellung von Argumenten erklären?
 \item Wie lassen sich die verschiedenen Verbstellungen erfassen?
@@ -70,30 +100,6 @@ bzw.\ an erster Stelle.
 }
 } % \end{teil1}
 
-\frame{
-\frametitle{Literaturhinweise}
-%
-\begin{itemize}
-\item Literatur: \citew[Kapitel~9.1--9.2]{MuellerLehrbuch3}
-\end{itemize}
-
-\vspace{1cm}
-
-Damit alles kompatibel zum Lehrbuch bleibt,\\
-nehmen wir hier auch das \subcatm für die Valenz an.
-
-\subcat = \spr + \comps
-
-Zu neueren Versionen der HPSG, die \subcat in \spr und \comps unterteilen,\\ siehe
-\citew{Sag97a,HPSGHandbook,MuellerGermanic}.
-
-Deutsch: Argumente von finiten Verben sind alle auf \comps,\\
-so dass die Verwendung von \subcat hier keinen Unterschied macht.
-
-
-%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
-%%   nächsten Mal lesen sollen!!!!}
-}
 
 
 \subsection{Anordnung von Konstituenten im Mittelfeld}
@@ -106,12 +112,12 @@ so dass die Verwendung von \subcat hier keinen Unterschied macht.
 \begin{itemize}
 \item Im \mf können Argumente in nahezu beliebiger Abfolge angeordnet werden.
 \eal
-\ex weil \rot{der Mann} \gruen{der Frau} \blau{das Buch} gibt
-\ex weil \rot{der Mann} \blau{das Buch} \gruen{der Frau} gibt
-\ex weil \blau{das Buch} \rot{der Mann} \gruen{der Frau} gibt
-\ex weil \blau{das Buch} \gruen{der Frau} \rot{der Mann} gibt
-\ex weil \gruen{der Frau} \rot{der Mann} \blau{das Buch} gibt
-\ex weil \gruen{der Frau} \blau{das Buch} \rot{der Mann} gibt
+\ex weil \rot{der Delphin} \gruen{dem Kind} \blau{den Ball} gibt
+\ex weil \rot{der Delphin} \blau{den Ball} \gruen{dem Kind} gibt
+\ex weil \blau{den Ball} \rot{der Delphin} \gruen{dem Kind} gibt
+\ex weil \blau{den Ball} \gruen{dem Kind} \rot{der Delphin} gibt
+\ex weil \gruen{dem Kind} \rot{der Delphin} \blau{den Ball} gibt
+\ex weil \gruen{dem Kind} \blau{den Ball} \rot{der Delphin} gibt
 \zl
 \pause
 \item In (\mex{0}b--f) muss man die Konstituenten anders betonen
@@ -132,10 +138,10 @@ Abfolge in (\mex{0}a) = \blau{Normalabfolge} bzw.\ die \blau{unmarkierte Abfolge
 \pause
 \item Diese können an beliebigen Positionen zwischen Argumenten stehen:
 \eal
-\ex weil \blau{morgen} der Mann das Buch der Frau gibt
-\ex weil der Mann \blau{morgen} das Buch der Frau gibt
-\ex weil der Mann das Buch \blau{morgen} der Frau gibt
-\ex weil der Mann das Buch der Frau \blau{morgen} gibt
+\ex weil \blau{morgen} der Delphin den Ball dem Kind gibt
+\ex weil der Delphin \blau{morgen} den Ball dem Kind gibt
+\ex weil der Delphin den Ball \blau{morgen} dem Kind gibt
+\ex weil der Delphin den Ball dem Kind \blau{morgen} gibt
 \zl
 \pause
 \item Skopustragende Adjunkte kann man im Mittelfeld nicht umordnen,\\
@@ -165,15 +171,15 @@ ohne die Bedeutung des Satzes zu ändern:
 \begin{itemize}
 \item Sätze wie (\mex{1}) sind kein Problem:
 \ea
-weil [der Mann [das Buch [der Frau gibt]]]
+weil [der Delphin [den Ball [dem Kind gibt]]]
 \z
 \pause
 \item Die Integration von Adjunkten ist ebenfalls unproblematisch:
 \eal
-\ex weil [\blau{morgen} [der Mann [das Buch [der Frau gibt]]]]
-\ex weil [der Mann [\blau{morgen} [das Buch [der Frau gibt]]]]
-\ex weil [der Mann [das Buch [\blau{morgen} [der Frau gibt]]]]
-\ex weil [der Mann [das Buch [der Frau [\blau{morgen} gibt]]]]
+\ex weil [\blau{morgen} [der Delphin [den Ball [dem Kind gibt]]]]
+\ex weil [der Delphin [\blau{morgen} [den Ball [dem Kind gibt]]]]
+\ex weil [der Delphin [den Ball [\blau{morgen} [dem Kind gibt]]]]
+\ex weil [der Delphin [den Ball [dem Kind [\blau{morgen} gibt]]]]
 \zl
 \pause
 \item Die unterschiedliche Bedeutung der Sätze in (\mex{1})
@@ -237,44 +243,23 @@ ergibt sich aus Unterschied in Einbettung.
 \frame{
 \frametitle{Beispiel: Normalabfolge}
 \eal
-\ex weil jeder das Buch kennt
-\ex weil das Buch jeder kennt
+\ex weil niemand den Roman kennt
+\ex weil den Roman niemand kennt
 \zl
 
-\psset{xunit=1cm,yunit=7mm}%
+
 \centerline{%
-\begin{pspicture}(4.3,1)(12.4,7.6)
-\rput[B](5,1){\rnode{jeder}{jeder}}
-\rput[B](7,1){\rnode{ihnmf}{das Buch}}
-\rput[B](9,1){\rnode{kennt}{kennt}}
-%
-\rput[B](7,3){\rnode{np1}{\ibox{2} NP[\textit{acc}]}}
-\rput[B](9,3){\rnode{v}{V[\subcat}}\nput[labelsep=2pt]{0}{v}{ \nliste{\ibox{1}, \ibox{2}}]}
-%
-\rput[B](5,5){\rnode{np2}{\ibox{1} NP[\textit{nom}]}}
-\rput[B](8,5){\rnode{vs1}{V[\subcat \nliste{\ibox{1}}]}}
-%
-\rput[B](6.5,7){\rnode{vp}{V[\subcat \nliste{ }]}}
-%
-\psset{angleA=-90,angleB=90,arm=0pt}
-%
-\ncdiag{v}{kennt}
-\ncdiag{vs1}{np1}\ncdiag{vs1}{v}
-\ncdiag{vs2}{np2}\ncdiag{vs2}{vs1}
-\ncdiag{vp}{vs2}
-%
-%
-\ncdiag{i}{t2}
-\ncdiag{is}{i}\ncdiag{is}{vp}
-\ncdiag{vp}{np2}\ncdiag{ip}{is}
-%
-\ncdiag{np2}{jeder}
-%\ncdiag{np1}{ihnmf}
-\ncdiag{vp}{vs1}
-%
-\pstriangle(7,1.5)(1.4,1.2)
-%\psgrid
-\end{pspicture}}%
+\begin{forest}
+sm edges
+[{V[\subcat \eliste]}
+  [{\ibox{1} NP[\textit{nom}]}
+    [niemand]]
+  [{V[\subcat \nliste{ \ibox{1} }]}
+    [{\ibox{2} NP[\type{acc}]}
+       [den Roman,roof]]
+    [{V[\subcat \nliste{ \ibox{1}, \ibox{2} } ]}
+      [kennt]]]]
+\end{forest}}
 
 }
 
@@ -282,40 +267,18 @@ ergibt sich aus Unterschied in Einbettung.
 \frametitle{Beispiel: Umstellung}
 
 
-\psset{xunit=1cm,yunit=8mm}%
 \centerline{%
-\begin{pspicture}(4.3,1)(12.4,7.6)
-\rput[B](7,1){\rnode{jeder}{jeder}}
-\rput[B](5,1){\rnode{ihnmf}{das Buch}}
-\rput[B](9,1){\rnode{kennt}{kennt}}
-%
-\rput[B](7,3){\rnode{np1}{\ibox{1} NP[\textit{nom}]}}
-\rput[B](9,3){\rnode{v}{V[\subcat}}\nput[labelsep=2pt]{0}{v}{ \nliste{\ibox{1}, \ibox{2}}]}
-%
-\rput[B](5,5){\rnode{np2}{\ibox{2} NP[\textit{acc}]}}
-\rput[B](8,5){\rnode{vs1}{V[\subcat \nliste{\ibox{2}}]}}
-%
-\rput[B](6.5,7){\rnode{vp}{V[\subcat \nliste{ }]}}
-%
-\psset{angleA=-90,angleB=90,arm=0pt}
-%
-\ncdiag{v}{kennt}
-\ncdiag{vs1}{np1}\ncdiag{vs1}{v}
-\ncdiag{vs2}{np2}\ncdiag{vs2}{vs1}
-\ncdiag{vp}{vs2}
-%
-%
-\ncdiag{i}{t2}
-\ncdiag{is}{i}\ncdiag{is}{vp}
-\ncdiag{vp}{np2}\ncdiag{ip}{is}
-%
-\ncdiag{np1}{jeder}
-%\ncdiag{np1}{ihnmf}
-\ncdiag{vp}{vs1}
-%
-\pstriangle(5,1.5)(1.4,3.2)
-%\psgrid
-\end{pspicture}}%
+\begin{forest}
+sm edges
+[{V[\subcat \eliste]}
+  [{\ibox{2} NP[\type{acc}]}
+     [den Roman,roof]]
+  [{V[\subcat \nliste{ \ibox{2} }]}
+    [{\ibox{1} NP[\textit{nom}]}
+      [niemand]]
+    [{V[\subcat \nliste{ \ibox{1}, \ibox{2} } ]}
+      [kennt]]]]
+\end{forest}}
 
 \medskip
 Unterschied nur in Abbindungsreihenfolge der Elemente in \subcat
@@ -331,7 +294,7 @@ Unterschied nur in Abbindungsreihenfolge der Elemente in \subcat
 %\smallframe
 \savespace
 \begin{itemize}
-\item Regelschemata sind abstrakte Repräsentationen, 
+\item Regelschemata sind abstrakte Repräsentationen,\\
       die nur etwas über die Bestandteile einer Phrase (unmittelbare Dominanz) aussagen,\\
       nicht jedoch über die Abfolge von Töchtern (lineare Präzendenz\is{Präzedenz}) 
 \pause
@@ -341,7 +304,7 @@ und \emph{linear precedence} (LP) schon in der \gpsg \citep*{GKPS85a}
 \item Motivation: Permutation mit Phrasenstrukturregeln $\to$\\
 braucht für ditransitive Verben sechs Phrasenstrukturregeln für Verbletztstellung:
 \ea
-\begin{tabular}[t]{@{}l@{ }l@{ }l@{ }l@{ }l@{ }}
+\begin{tabular}[t]{l@{ }l@{ }l@{ }l@{ }l@{ }}
 S  & $\to$ NP[nom],& NP[acc], & NP[dat], & V\\
 S  & $\to$ NP[nom],& NP[dat], & NP[acc], & V\\
 S  & $\to$ NP[acc],& NP[nom], & NP[dat], & V\\
@@ -359,6 +322,7 @@ S  & $\to$ NP[dat],& NP[acc], & NP[nom], & V\\
 
 \begin{itemize}
 \item Plus sechs Regeln für Verberststellung:
+\medskip
 
 \begin{tabular}[t]{@{}l@{ }l@{ }l@{ }l@{ }l}
 S  & $\to$ V, NP[nom],& NP[acc], & NP[dat]\\
@@ -368,6 +332,8 @@ S  & $\to$ V, NP[acc],& NP[dat], & NP[nom]\\
 S  & $\to$ V, NP[dat],& NP[nom], & NP[acc]\\
 S  & $\to$ V, NP[dat],& NP[acc], & NP[nom]\\
 \end{tabular}
+
+\medskip
 
 Die Regeln erfassen eine Generalisierung nicht.
 \pause
@@ -401,7 +367,7 @@ S  & $\to$ V NP[nom] NP[acc] NP[dat]\\
 \medskip
 Die Regel lässt Abfolgen mit dem Verb zwischen NPen zu:
 \ea[*]{
-Der Mann der Frau gibt ein Buch.
+Der Delphin dem Kind gibt einen Ball.
 }
 \z
 \pause
@@ -429,7 +395,7 @@ non-head-dtrs & \phonliste{ \onems{ phon \phonliste{ Karl } }} \\
 \end{tabular}
 \pause
 \item \begin{tabular}[t]{@{}ll@{}}
-der Kopf kommt zum Schluß:                            & Beispiel:\\
+der Kopf kommt zum Schluss:                            & Beispiel:\\
 %
 \ms{
 phon & \blau{\ibox{2} $\oplus$ \ibox{1}}\\
@@ -531,28 +497,169 @@ non-head-dtrs \sliste{ \ibox{5} [ \phon \ibox{2} ] }\\
 
 }
 
-
-
-\subsection{Verberststellung}
-
+\subsection{Spezifikator-Kopf-Strukturen}
 
 \frame{
-\frametitle{Verberststellung}
-%
-\begin{itemize}
-\item Literatur: \citew[Kapitel~9.4]{MuellerLehrbuch3}
-\end{itemize}
+\frametitle{Spezifikator-Kopf-Strukturen: NP-Strukturen?}
 
+\ea
+\label{ex-die-zerstoerung-der-stadt-dds}
+die Zerstörung der Stadt durch die Soldaten
+\z
 
-\vspace{1cm}
+Kopf-Argument-Schema würde eine der Anordnungen in (\mex{1}) erzwingen: 
+\eal
+\ex[*]{
+Zerstörung die der Stadt durch die Soldaten
+}
+\ex[*]{
+die der Stadt durch die Soldaten Zerstörung
+}
+\zl
 
-%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
-%%   nächsten Mal lesen sollen!!!!}
+Argumente, die von \emph{Zerstörung} abhängen müssen rechts stehen.
+ 
+Nomina sind \textsc{initial}"=Wert `+'. Aber die Determinatoren?
+
+DP-Analyse? 
+\ea
+{}[\sub{DP} [\sub{Det} die] [\sub{NP} [\sub{N} Zerstörung] [\sub{DP} der Stadt] [\sub{PP} durch die Soldaten]]]
+\z
+Nein, funktioniert nicht für Possessiva. \citep{MyPM2021a}
+
+Englisch: Subjekt vor Verb + Objekten.
+
+NP und Satz parallel mit Spezifikator-Kopf-Strukturen. 
+
+}
+
+\frame{
+\frametitle{Komplexe NP-Struktur}
+
+\vfill
+\centerline{
+\begin{forest}
+sm edges
+[N\feattab{\spr \eliste,\\
+           \subcat \eliste}
+  [\ibox{1} Det [die]]
+  [N\feattab{\spr \sliste{ \ibox{1} },\\
+           \subcat \eliste}
+    [N\feattab{\spr \sliste{ \ibox{1} },\\
+           \subcat \sliste{ \ibox{2} }}
+      [N\feattab{\spr \sliste{ \ibox{1} },\\
+           \subcat \sliste{ \ibox{2}, \ibox{3} }}
+         [Zerstörung]]
+      [\ibox{3} {NP[\type{gen}]}
+        [der Stadt,roof]]]
+    [\ibox{2} {PP[\type{durch}]}
+      [durch die Soldaten,roof]]]]
+\end{forest}}
+\vfill
+
+}
+
+\frame[shrink]{
+\frametitle{Spezifikator-Kopf-Schema}
+
+\begin{schema}[Spezifikator-Kopf-Schema]\is{Schema!Spezifikator"=Kopf"=}
+\label{schema-spr-h}
+\type{head-specifier"=phrase}\istype{head"=specifier"=phrase} \impl\\
+\onems{
+      cat$|$spr \ibox{1} \\
+      head-dtr$|$cat  \ms{ spr    & \ibox{1} $\oplus$ \sliste{ \ibox{2} } \\
+                           subcat & \eliste \\
+                         }\\
+      non-head-dtrs \sliste{ \ibox{2} }\\
+      }
+\end{schema}
+
+\noindent
+\ea
+\catw von \emph{Zerstörung}:\\
+\ms{ head & \ms[noun]{ initial & $+$\\
+                     }\\
+     spr & \sliste{ Det }\\
+           subcat & \sliste{ NP[\type{gen}], PP[\type{durch}] }\\[2mm]
+         }
+\z
+
+Linearisierungsregel:
+\ea
+Specifier $<$ Head
+\z
+
 }
 
 
 \frame{
-\frametitle{Das Deutsche als SOV-Sprache}
+\frametitle{Valenzprinzip}
+
+Gegenstück zum Typ \type{head"=non"=argument"=phrase}: Typ \type{head"=non"=specifier"=phrase}:
+\ea
+\label{def-head-non-spr-phrase}
+\type{head"=non"=specifier"=phrase}\istype{head"=non"=specifier"=phrase} \impl
+\onems{
+      cat$|$spr \ibox{1} \\
+      head"=dtr$|$cat$|$spr \ibox{1}\\
+      }
+\z
+
+}
+
+
+
+\frame{
+\frametitle{Typhierarchie}
+
+\type{head"=argument"=phrase} und \type{head"=adjunct"=phrase} sind
+Untertypen von \type{head"=non"=specifier"=phrase}:\\
+\sprw der Kopf"|tochter ist mit dem \sprw der Mutter identisch.
+
+\vfill
+\centerline{\scalebox{.8}{%
+\begin{forest}
+type hierarchy,
+% for tree={
+%   calign=fixed angles,
+%   calign angle=60,
+% }, 
+ for tree={l+=\baselineskip},
+ for level={3}{l+=\baselineskip},
+[phrase
+    [non-headed-phrase]
+    [headed-phrase
+      [head-non-adjunct-phrase
+        [head-adjunct-phrase,edge to=!uu2,edge to=!uu3,no edge]]
+      [head-non-argument-phrase
+       [head-argument-phrase,edge to=!uu1,edge to=!uu3, no edge]]
+      [head-non-specifier-phrase
+       [head-specifier-phrase,edge to=!uu1,edge to=!uu2, no edge]]]]
+\end{forest}}}
+\vfill
+
+}
+
+\subsection{Verberststellung}
+
+
+% \frame{
+% \frametitle{Verberststellung}
+% %
+% \begin{itemize}
+% \item Literatur: \citew[Kapitel~9.4]{MuellerLehrbuch3}
+% \end{itemize}
+
+
+% \vspace{1cm}
+
+% %% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+% %%   nächsten Mal lesen sollen!!!!}
+% }
+
+
+\frame{
+\frametitle{Verberststellung: Das Deutsche als SOV-Sprache}
 
 \savespace
 \begin{itemize}
@@ -563,15 +670,15 @@ non-head-dtrs \sliste{ \ibox{5} [ \phon \ibox{2} ] }\\
 \item V1- und V2-Sätze gelten als aus Verbletztsätzen durch Umstellung\\
       des finiten Verbs abgeleitet:
 \eal
-\ex dass er ihr gestern das Buch gegeben \highlight{hat}.
-\ex \highlight{Hat} er ihr gestern das Buch gegeben?
-\ex Er \highlight{hat} ihr gestern das Buch gegeben.
+\ex dass er ihr gestern den Ball gegeben \highlight{hat}
+\ex \highlight{Hat} er ihr gestern den Ball gegeben?
+\ex Er \highlight{hat} ihr gestern den Ball gegeben.
 \zl
 (Wobei V2 = V1 + Voranstellung einer Konstituente)
 \pause
 \item Ähnliche Ansätze gibt es auch innerhalb der \gpsg \citep{Jacobs86a}\ia{Jacobs}
 und innerhalb der HPSG (\citealp*{KW91a}\iaf{Kiss}\iaf{Wesche}; \citealp*{Netter92}\iaf{Netter}; \citealp{Oliva92a}; 
-\citealp*{Kiss93}; \citealp*{Frank94}\iaf{Frank}; \citealp*{Kiss95a}).
+\citealp*{Kiss93}; \citealp*{Frank94}\iaf{Frank}; \citealp*{Kiss95a}; \citealp{Meurers2000b}; \citealp{Mueller2005c,Mueller2005d,MuellerGS}).
 \end{itemize}
 }
 
@@ -581,14 +688,12 @@ und innerhalb der HPSG (\citealp*{KW91a}\iaf{Kiss}\iaf{Wesche}; \citealp*{Netter
 \frametitlefit{Motivation der Verbletztstellung als Grundstellung: Partikeln}
 
 \citew%[S.\,34--36]
-{Bierwisch63a}: Sogenannte Verbzusätze oder Verbpartikel\\
-bilden mit dem Verb eine enge Einheit.
+{Bierwisch63a}: Verbpartikel bilden mit dem Verb eine enge Einheit.
 \eal
 \ex weil er morgen \blau{anfängt}
 \ex Er \blau{fängt} morgen \blau{an}.
 \zl
-Diese Einheit ist nur in der Verbletzstellung zu sehen, was dafür spricht, diese
-Stellung als Grundstellung anzusehen.
+Diese Einheit ist nur in Verbletztstellung zu sehen: Argument für Grundstellung
 }
 
 
@@ -705,7 +810,7 @@ Index markiert.
 
 
 \ea
-Kennt$_i$ er das Buch \_$_i$?\label{bsp-kennt-er-das-buch}
+Kennt$_i$ niemand den Roman \_$_i$?\label{bsp-kennt-er-das-buch}
 \z
 
 Verbspur für \emph{kennt}:\\
@@ -713,7 +818,7 @@ Verbspur für \emph{kennt}:\\
 phon & \phonliste{}\\
 cat  & \ms{ head & \ms[verb]{ vform & fin\\
                             }\\
-            subcat & \sliste{ \npnom\ind{1}, \npacc\ind{2} }\\
+            subcat & \sliste{ \npnom{}\ind{1}, \npacc{}\ind{2} }\\
           }\\
 cont & \ms[kennen]{
        experiencer & \ibox{1}\\
@@ -724,39 +829,31 @@ cont & \ms[kennen]{
 Dieser Eintrag unterscheidet sich vom normalen Verb nur im \phonw.
 }
 
-\frame[shrink=5]{
+\frame{
 \frametitle{Eine erste Skizze der Analyse}
 
-\savespace
+~\vfill
 \centerline{
-\scalebox{0.7}{
-%\nodemargin5pt
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{}}%llll}
-\multicolumn{2}{c}{\rnode{1}{\highlight<2>{V[\subcat \eliste]}}}\\
-\\*[3ex]
-\rnode{2}{\highlight<2>{V}} & \multicolumn{2}{c}{\rnode{3}{V[\subcat \eliste]}}\\
-\\
-\hspace{0ex}                         & \hspace{0mm}C                   & \hspace{10mm}H\\*[3ex]
-                                     & \rnode{4}{\ibox{3} NP[{\it nom\/}]}& \multicolumn{2}{l}{\rnode{5}{V[\subcat \sliste{ \ibox{3} }]}}\\
-\\
-                                   &                                   & C                                & \hspace{-5mm}H\\*[3ex]
-                                   &                                   & \rnode{6}{\ibox{4} NP[{\it acc}]} & \rnode{7}{V[\subcat \sliste{ \ibox{3}, \ibox{4} }]} \\
-\\*[3ex]
-\rnode{8}{kennt}                     & \rnode{9}{er}                  & d\rnode{10}{as Buc}h & \rnode{11}{$-$}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{2}{8}%
-\ncline{4}{9}%
-\nodetriangle{6}{10}%
-\ncline{7}{11}%
-}}
+\begin{forest}
+sm edges
+[\blau<2>{V[\subcat \eliste]}
+  [\blau<2>{V} [kennt]]
+  [{V[\subcat \eliste]}
+    [{\ibox{1} NP[\type{nom}]}
+      [niemand]]
+    [{V[\subcat \sliste{ \ibox{1} } ]}
+      [{\ibox{2} NP[\type{acc}]}
+        [den Roman, roof]]
+      [{V[\subcat \sliste{ \ibox{1}, \ibox{2} } ]}
+        [\trace]]]]]
+\end{forest}}
 \begin{itemize}
 \item Kombination der Spur mit Argumenten folgt normalen Gesetzmäßigkeiten
 \pause
 \item Aber wodurch ist das Verb in Initialstellung lizenziert?
 \end{itemize}
+
+\vfill
 
 }
 
@@ -765,10 +862,10 @@ Dieser Eintrag unterscheidet sich vom normalen Verb nur im \phonw.
 
 \savespace
 \begin{itemize}
-\item Parallelität zwischen Komplementierer und Verb:
+\item Parallelität zwischen Komplementierer und Verb \citep{Hoehle97a}:
 \eal
-\ex \highlight{dass} [er das Buch kennt]
-\ex \highlight{Kennt} [er das Buch \_$_i$]?
+\ex \highlight{dass} [niemand den Roman kennt]
+\ex \highlight{Kennt} [niemand den Roman \_$_i$]?
 \zl
 \emph{kennt} hat Kopfstatus und selegiert eine gesättigte Verbalprojektion mit Verbletztstellung.
 \pause
@@ -781,7 +878,7 @@ muss genau die zu \emph{kennt} gehörige Verbspur enthalten.
 
 Mit Verbspur für \emph{gibt} könnte man (\mex{1}) analysieren:
 \ea[*]{
-Kennt dem Mann die Frau das Buch.
+Kennt dem Kind der Delphin den Ball?
 }
 \z
 \end{itemize}
@@ -800,7 +897,7 @@ Kennt dem Mann die Frau das Buch.
 dass die Spur genau die Eigenschaften des Verbs hat,\\
 die das Verb hätte, wenn es sich in Letztstellung befände.
 \ea
-\highlight{Kennt} [er das Buch \highlight{\_$_i$}]?
+\highlight{Kennt} [niemand den Roman \highlight{\_$_i$}]?
 \z
 \pause
 \item Die Information, die geteilt werden muss,\\
@@ -840,7 +937,7 @@ Verbspur für \emph{kennt}:\\
 phon & \phonliste{}\\
 loc  & \ms{ cat  & \ms{ head & \ms[verb]{ vform & fin\\
                                         }\\
-                        subcat & \sliste{ \npnom\ind{1}, \npacc\ind{2} }\\
+                        subcat & \sliste{ \npnom{}\ind{1}, \npacc{}\ind{2} }\\
                       }\\
             cont & \ms[kennen]{
                     experiencer & \ibox{1}\\
@@ -879,13 +976,14 @@ ist Verbbewegung lokal.
 \frametitle{Verbspur mit Strukturteilung der {\sc local}"=Information}
 
 \savespace\small
-Verbspur für \emph{kennt}:\\
-\ms{
+%\centerline{
+\hspace{1em}Verbspur für \emph{kennt}:\\
+\hspace{1em}\ms{
 phon & \phonliste{}\\
 loc  & \highlightbox{\ibox{1}} \ms{ cat  & \ms{ head & \ms[verb]{ vform & fin\\
                                                    dsl   & \highlightbox{\ibox{1}}\\
                                         }\\
-                        subcat & \sliste{ \npnom\ind{2}, \npacc\ind{3} }\\
+                        subcat & \sliste{ \npnom{}\ind{2}, \npacc{}\ind{3} }\\
                       }\\
             cont & \ms[kennen]{
                     experiencer & \ibox{2}\\
@@ -904,83 +1002,28 @@ auch an ihrer Maximalprojektion verfügbar.
 
 
 \frame{
-\smallframe\itemsep0pt\parskip0pt
-\frametitle{\large Überblick über die Verbbewegungsanalyse}
+\frametitle{Überblick über die Verbbewegungsanalyse}
 
-\vfill
-\hfill%
-\scalebox{0.9}{%
-%\small
-\psset{xunit=1cm,yunit=5.4mm}%
-\psset{nodesep=4pt}
-%
-% node labels for moving elements will be typeset by the \tmove command
-% here we have to provide invisible boxes to get the line drawing right.
-\begin{pspicture}(2.6,1)(9.4,9.8)
-%\psgrid
-
-\only<4->{\pscurve[%showpoints=true,%
-linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(3.6,7.2)(3.1,5.5)}
-
-%\rput[B](1,1){\rnode{speccp}{\visible<1->{diesen Mann$_i$}}}
-\rput[B](3,1){\rnode{cleer}{kennt$_k$}}
-\rput[B](5,1){\rnode{jeder}{er}}
-\rput[B](7,1){\rnode{ihnmf}{ihn}}
-\rput[B](9,1){\rnode{kennt}{[ \_ ]$_k$}}
-
-\rput[B](7,3){\rnode{np1}{NP}}
-\rput[B](9,3){\rnode{v}{V\only<4->{\!/\!/V}}}
-
-\rput[B](5,5){\rnode{np2}{NP}}
-\rput[B](8,5){\rnode{vs1}{V'\only<4->{/\!/V}}}
-
-\rput[B](6.5,7){\rnode{vp}{VP\only<4->{/\!/V}}}
+%\vfill
+%\hfill%
 
 
-\rput[B](3,5){\rnode{vlex}{V}}
-
-\rput[B](3,7){\rnode{c}{\blau<2-3>{V \nliste{ VP\only<4->{/\!/V} }}}}
-
-%\rput[B](1,9){\rnode{np3}{NP}}
-\rput[B](4.75,9){\rnode{cs}{VP}}
-
-
-%\rput[B](3.0625,11){\rnode{cp}{VP}}
-
-
-
-
-\psset{angleA=-90,angleB=90,arm=0pt}
-
-\ncdiag{v}{kennt}
-\ncdiag{vs1}{np1}\ncdiag{vs1}{v}
-\ncdiag{vs2}{np2}\ncdiag{vs2}{vs1}
-\ncdiag{vp}{vs2}
-
-%\ncdiag{np3}{t1}
-
-\ncdiag{i}{t2}
-\ncdiag{is}{i}\ncdiag{is}{vp}
-\ncdiag{vp}{np2}\ncdiag{ip}{is}
-
-\ncdiag{np3}{speccp}
-\ncdiag{np2}{jeder}
-\ncdiag{np1}{ihnmf}
-\ncdiag{vp}{vs1}
-\only<-2,4->{
-\ncdiag{c}{vlex}
+\centerfit{
+\scalebox{.8}{%
+\begin{forest}
+sm edges
+%,for level={2}{l+=\baselineskip},
+[S
+  [\blau<2>{V \sliste{ S\only<4>{$/\!/$V} }} 
+    [V,edge label={node[midway,left]{V1-LR}}, l+=\baselineskip
+      [kennt$_j$] ] ]
+    [{S\only<4>{$/\!/$V}}
+        [NP [niemand] ]
+        [{V$'$\only<4>{$\!/\!/$V}}
+          [NP [den Roman, roof] ]
+          [{\mybox[v1]{\blau<1>{V}}\only<4>{$\!/\!/$\mybox[v2]{V}}} [\blau<1>{\_$_j$}] ] ] ] ] ]
+\end{forest}}
 }
-\ncdiag{vlex}{cleer}
-\ncdiag{cs}{c}\ncdiag{cs}{vp}
-\ncdiag{cp}{np3}
-\ncdiag{cp}{cs}
-
-\only<beamer| beamer:3>{
-\ncline[arrows=->,linecolor=red]{vlex}{c}
-}
-
-\end{pspicture}%
-}\hfill\hfill\mbox{}
 \vfill
 
 \begin{itemize}[<+->]
@@ -995,7 +1038,6 @@ linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(
 
 
 \frame{
-\parskip0pt
 \frametitle{Lexikonregel zur Lizenzierung des Verbs in Erststellung}
 
 \scalebox{0.88}{%
@@ -1022,52 +1064,31 @@ loc$|$cat & \ms{ head & \ms[verb]{vform & fin\\
 \end{tabular}
 }
 
-Verb in Letztstellung\pause{} lizenziert Verb in Erststellung\pause, das eine VP selegiert\pause,
+Verb in Letztstellung\pause{} lizenziert Verb in Erststellung\pause, das eine VP selegiert\pause,\\
 die eine Spur enthält, deren \dslw den \local-Eigenschaften des Eingabeverbs entsprechen.
 
 }
 
 
 \frame{
+\frametitle{Analyse der Verberststellung: Valenzinformation}
 
-\hfill\scalebox{0.7}{%
-%\nodemargin5pt
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{}}%llll}
-\multicolumn{3}{c}{\rnode{1}{V[\begin{tabular}[t]{@{}l@{}}
-  {\sc subcat} \sliste{ }]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{10mm}H                     & \hspace{19mm}C\\*[3ex]
-\rnode{2}{V[{\sc subcat} \sliste{ \ibox{1} }]} & \multicolumn{3}{l}{\rnode{3}{\ibox{1} V[\begin{tabular}[t]{@{}l}
-                                                                    {\sc dsl$|$cat$|$subcat} \ibox{2},\\
-                                                                    {\sc subcat} \sliste{ }]
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-\hspace{8ex}V1-LR                    & \hspace{0mm}C                   & \hspace{15mm}H\\*[3ex]
-\rnode{2b}{V[{\sc subcat} \ibox{2} ]} & \rnode{4}{\ibox{3} NP[{\it nom\/}]}& \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-                                                                                                       {\sc dsl$|$cat$|$subcat} \ibox{2},\\
-                                                                                                       {\sc subcat} \sliste{ \ibox{3} }]\\
-                                                                                                       \end{tabular}}
-                                                                                           }\\
-\\
-                                   &                                   & C                                & \hspace{-5mm}H\\*[3ex]
-                                   &                                   & \rnode{6}{\ibox{4} NP[{\it acc}]} & \rnode{7}{V[\begin{tabular}[t]{@{}l}
-                                                                                                 {\sc dsl$|$cat$|$subcat} \ibox{2},\\
-                                                                                                 {\sc subcat} \ibox{2} \sliste{ \ibox{3}, \ibox{4} }] \\
-                                                                                                 \end{tabular}}\\
-\\*[3ex]
-\rnode{8}{kennt}                     & \rnode{9}{er}                  & d\rnode{10}{as Buc}h & \rnode{11}{$-$}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{2}{2b}\ncline{2b}{8}%
-\ncline{4}{9}%
-\nodetriangle{6}{10}%
-\ncline{7}{11}%
-}\hfill\hfill\mbox{}
+\centerline{
+\begin{forest}
+sm edges
+[S
+  [{V[\subcat \sliste{ \ibox{1} }]} 
+    [{V[\subcat \ibox{2} ]},tier=np,edge label={node[midway,right]{V1-LR}} 
+       [kennt$_j$] ] ]
+    [{\ibox{1} V\feattab{\textsc{dsl|subcat} \ibox{2},\\
+                 \subcat \eliste}}
+         [{\ibox{3} NP[\type{nom}]},tier=np [niemand] ]
+         [{V\feattab{\textsc{dsl|subcat} \ibox{2},\\
+                 \subcat \sliste{ \ibox{3} }}}
+           [{\ibox{4} NP[\type{acc}]} [den Roman, roof] ]
+           [{V\feattab{\textsc{dsl|subcat} \ibox{2},\\
+                 \subcat \ibox{2} \sliste{ \ibox{3}, \ibox{4} }}} [\_$_j$] ] ] ] ] ]
+\end{forest}}
 
 }
 
@@ -1075,9 +1096,9 @@ die eine Spur enthält, deren \dslw den \local-Eigenschaften des Eingabeverbs en
 \frame{
 \frametitle{Lexikonregel für V1 mit semantischem Beitrag}
 
-\smallframe
 
-\scalebox{0.7}{
+
+\hspace{1em}\scalebox{0.8}{
 \begin{tabular}[t]{@{}l@{}}
 \ms{
 loc & \highlight<1>{\ibox{1}} \ms{ cat$|$head & \ms[verb]{ vform & fin\\
@@ -1114,138 +1135,94 @@ loc \onems{ cat  \ms{ head & \ms[verb]{ vform & fin\\
 
 \end{itemize}
 }
+%\fi
 
 \frame{
+\frametitle{Semantik in der Verbbewegungsnalayse}
 
 \begin{tabularx}{\linewidth}{@{}l@{}X@{}}
-\scalebox{0.7}{
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{}}
-\multicolumn{3}{c}{\rnode{1}{V[\begin{tabular}[t]{@{}l@{}}
-  \cont \rnode{c8}{\ibox{2}}]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{10mm}H                     & \hspace{5ex}C\\*[3ex]
-\rnode{2}{V[\begin{tabular}[t]{@{}l@{}}
-\cont \rnode{c7}{\ibox{2}}]
-\end{tabular}} & \multicolumn{3}{l}{\rnode{3}{V[\begin{tabular}[t]{@{}l@{}}
-                                                                    {\sc dsl$|$cont} \rnode{c1}{\ibox{1}},\\
-                                                                    \cont \rnode{c6}{\ibox{2}}]
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-\hspace{8ex}V1-LR                         & \hspace{-1ex}C                   & \hspace{6ex}H\\*[3ex]
-\rnode{2b}{V[\cont \rnode{c9}{\ibox{1}}  kennen'(er,buch)]} & \rnode{4}{NP[{\it nom\/}]}& \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l@{}}
-                                                                                                       {\sc dsl$|$cont} \rnode{c2}{\ibox{1}},\\
-\cont \rnode{c5}{\ibox{2}}]\\
-                                                                                                       \end{tabular}}
-                                                                                           }\\
-\\
-                                   &                                   & C                                & \hspace{-5mm}H\\*[3ex]
-                                   &                                   & \rnode{6}{NP[{\it acc}]} & \rnode{7}{V[\begin{tabular}[t]{@{}l@{}}
-                                                                                                 {\sc dsl$|$cont} \rnode{c3}{\ibox{1}},\\
-\cont \rnode{c4}{\ibox{2}} = \ibox{1}] \\
-                                                                                                 \end{tabular}}\\
-\\*[3ex]
-\rnode{8}{kennt}                     & \rnode{9}{er}                  & d\rnode{10}{as Buc}h & \rnode{11}{$-$}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{2}{2b}\ncline{2b}{8}%
-\ncline{4}{9}%
-\nodetriangle{6}{10}%
-\ncline{7}{11}%
-%\nodemargin2pt
-% \rot{
-% \aanodecurve[t]{c9}[tl]{c1}{16mm}%
-% }
-% \visible<2->{
-% \gruen{%
+\scalebox{0.8}{
+\begin{forest}
+sm edges
+[V{[\textsc{cont} \rnode{c1}{\ibox{2}}\,]}, baseline
+	[V{[\textsc{cont} \rnode{c2}{\ibox{2}}\,]}
+		[V{[\textsc{cont} \rnode{c3}{\ibox{1}} kennen(sie, roman)]}, tier=np,edge label={node[midway,right]{V1-LR}}
+			[kennt]]]
+	[V\feattab{\textsc{dsl}|\textsc{cont} \rnode{c4}{\ibox{1}},\\
+                   \textsc{cont} \rnode{c5}{\ibox{2}}\,}
+		[NP{[\textit{nom}]}, tier=np
+			[sie]]
+		[V\feattab{\textsc{dsl}|\textsc{cont} \rnode{c6}{\ibox{1}},\\
+                           \textsc{cont} \rnode{c7}{\ibox{2}}\,}
+			[NP{[\textit{acc}]}
+				[den Roman, roof]]
+			[V\feattab{\textsc{dsl}|\textsc{cont} \rnode{c8}{\ibox{1}},\\
+                                   \textsc{cont} \rnode{c9}{\ibox{2}} $=$ \ibox{1}\,}
+				[\trace]]]]]
+\end{forest}
+} & ~\newline\setlength{\fboxsep}{1pt}%
+  \raisebox{0.5ex}{\colorbox{red!75!black}{~~~}} Selektion\newline
+  \visible<2->{\raisebox{0.5ex}{\colorbox{green!60!black}{~~~}} Kopfmerkmal \textsc{dsl}}\newline
+  \visible<3->{\raisebox{0.5ex}{\colorbox{blue!70}{~~~}} Semantikp.}\\
+\end{tabularx}
+%\aanodecurve[t]{c9}[tl]{c1}{16mm}%
+\nccurve[angleA=135,angleB=125,ncurvA=1,ncurvB=1,linecolor=red]{<->}{c3}{c4}
+\visible<2->{
 % \aanodecurve[r]{c1}[t]{c2}{1cm}%
 % \aanodecurve[r]{c2}[t]{c3}{1cm}%
-% }
-% }
-% \visible<3->{
-% \blau{%
+\nccurve[angleA=0,angleB=90,ncurvB=1,linecolor=green]{<->}{c4}{c6}
+\nccurve[angleA=0,angleB=90,ncurvB=1,linecolor=green]{<->}{c6}{c8}
+}
+\visible<3->{
 % \aanodecurve[bl]{c4}[b]{c5}{2cm}%
 % \aanodecurve[bl]{c5}[b]{c6}{18mm}%
-% }
-% }
-% \visible<4->{
-% \rot{
-% \aanodecurve[bl]{c6}[b]{c7}{13mm}%
-% }
-% }
-% \visible<5->{
-% \blau{%
-% \aanodeconnect[t]{c7}[b]{c8}%
-% }
-% }
+\nccurve[angleA=225,angleB=230,ncurvB=1.5,linecolor=blue]{<->}{c9}{c7}
+\nccurve[angleA=210,angleB=225,ncurvA=1,ncurvB=1.5,linecolor=blue]{<->}{c7}{c5}
 }
- & \setlength{\fboxsep}{1pt}\raisebox{0.5ex}{\colorbox{red!75!black}{~~~}} Selektion\newline
-   \visible<2->{\raisebox{0.5ex}{\colorbox{green!60!black}{~~~}} Kopfmerkmal}\newline
-   \visible<3->{\raisebox{0.5ex}{\colorbox{blue!70}{~~~}} Semantikp.}\\
-\end{tabularx}
+\visible<4->{
+% \aanodecurve[bl]{c6}[b]{c7}{13mm}%
+\nccurve[angleA=210,angleB=325,ncurvB=1,linecolor=red]{<->}{c5}{c2}
+}
+\visible<5->{
+% \aanodeconnect[t]{c7}[b]{c8}%
+\nccurve[angleA=0,angleB=270,ncurvB=1,linecolor=blue]{<->}{c2}{c1}
+}
+
  
+
 Nur aus Darstellungsgründen \iboxt{1} und \iboxt{2} verschieden. Identifikation in Spur 
 }
 
 \frame{
-\parskip0pt
 \frametitle{Semantik in V1-Sätzen mit Adjunkt}
 
-\vfill
-\hfill\scalebox{0.5}{
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{}}%llll}
-\multicolumn{3}{c}{\rnode{1}{V[\begin{tabular}[t]{@{}l@{}}
-  \cont \ibox{1}]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{10mm}H                     & \hspace{8ex}C\\*[3ex]
-\rnode{2}{V[\begin{tabular}[t]{@{}l@{}}
-\cont \ibox{1}]
-\end{tabular}} & \multicolumn{3}{l}{\rnode{3}{V[\begin{tabular}[t]{@{}l@{}}
-                                                                    {\sc dsl$|$cont} \ibox{2},\\
-                                                                    \cont \ibox{1}]
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-\hspace{8ex}V1-LR                              & \hspace{-1ex}C                   & \hspace{5ex}H\\*[3ex]
-\rnode{2b}{V[\cont \ibox{2} kennen'(er,buch)]} & \rnode{4}{NP[{\it nom\/}]}& \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l@{}}
-                                                                                                       {\sc dsl$|$cont} \ibox{2},\\
-\cont \ibox{1}]\\
-                                                                                                       \end{tabular}}
-                                                                                           }\\
-\\
-                                   &                                   & C                                & \hspace{-5mm}H\\*[3ex]
-                                   &                                   & \rnode{6}{NP[{\it acc}]} & \rnode{7}{V[\begin{tabular}[t]{@{}l@{}}
-                                                                                                 {\sc dsl$|$cont} \ibox{2},\\
-\cont \ibox{1}] \\
-                                                                                                 \end{tabular}}\\
-\\
-                                   &                          &                                  & \hspace{-5mm}A           & \hspace{-5mm}H\\*[3ex]
-                                   &                                  &                          & \rnode{8}{Adv[\begin{tabular}[t]{@{}l@{}}
-                                                                             {\sc mod} \ibox{3} [{\sc loc}$|$\cont \ibox{2}],\\
-                                                                             \blau{\cont \ibox{1} $\neg$ \ibox{2}}]
-                                                                             \end{tabular}}                 & \rnode{9}{\ibox{3} V[\begin{tabular}[t]{@{}l@{}}
-                                                                                                    {\sc dsl$|$cont} \ibox{2},\\
-                                                                                                    \cont \ibox{2}]
-                                                                                                    \end{tabular}}\\
-\\*[3ex]
-\rnode{10}{kennt}                     & \rnode{11}{er}                  & d\rnode{12}{as Buc}h & \rnode{13}{nicht} & \rnode{14}{$-$}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{7}{8}\ncline{7}{9}%
-\ncline{2}{2b}\ncline{2b}{10}%
-\ncline{4}{11}%
-%\nodetriangle{6}{12}%
-\ncline{8}{13}%
-\ncline{9}{14}%
-}\hfill\hfill\mbox{}
+\oneline{
+\begin{forest}
+sm edges
+[V{[\textsc{cont} \ibox{1}\,]}
+	[V{[\textsc{cont} \ibox{1}\,]}
+		[V{[\textsc{cont} \ibox{2} kennen(sie, roman)]}, tier=np,edge label={node[midway,right]{V1-LR}}
+			[kennt]]]
+	[V\feattab{\textsc{dsl}|\textsc{cont} \ibox{2},\\
+                   \textsc{cont} \ibox{1}\,}
+		[NP{[\textit{nom}]}, tier=np
+			[sie]]
+		[V\feattab{\textsc{dsl}|\textsc{cont} \ibox{2},\\ 
+                           \textsc{cont} \ibox{1}\,}
+			[NP{[\textit{acc}]}, fit=band
+				[den Roman, roof]]
+			[V\feattab{\textsc{dsl}|\textsc{cont} \ibox{2},\\
+                                   \textsc{cont} \ibox{1}\,}
+				[Adv\feattab{\textsc{mod} \ibox{3} {[\textsc{loc}|\textsc{cont} \ibox{2}\,]},\\
+                                             \textsc{cont} \ibox{1} $\neg$ \ibox{2}}
+					[nicht]]
+				[\ibox{3} V\feattab{\textsc{dsl}|\textsc{cont} \ibox{2},\\
+                                                    \textsc{cont} \ibox{2}\,}
+					[\trace]]]]]]
+\end{forest}
+
+
+}
 
 \vfill
 \small
@@ -1253,23 +1230,24 @@ Hier unterschiedet sich die Gesamtbedeutung wirklich von der der Spur.
 \vfill
 }
 
+%\if0
 \frame{
 \frametitle{Beschränkung für das Auf"|treten overter Verben}
 
 \begin{itemize}
 \item müssen Sätze wie (\mex{1}) ausschließen:
 \ea[*]{
-Kennt er das Buch kennt.
+Kennt niemand den Roman kennt.
 }
 \z
 \pause
-\item Beschränkung, die besagt, dass ein Verb, wenn es overt realisiert
-wird und in syntaktische Strukturen eintritt, den {\sc dsl}"=Wert \emph{none} haben muss:
+\item Beschränkung (Weiterentwicklung von \citealt[\page 207]{Meurers2000b}):\\
+      Overt realisiertes Verb muss {\sc dsl}"=Wert \emph{none} haben, wenn es in Struktur eintritt:
 
 \medskip
 \ms{ head-dtr & \ms[word]{ phon & non-empty-list \\
                          }
-} $\to$
+} \impl
 \onems{ loc$|$cat$|$head$|$dsl \textit{none}\\
             }
 
@@ -1325,7 +1303,6 @@ Zusammenfassung der wichtigsten Punkte:
 
 \frametitle{\large Zusammenfassung der Verbbewegungsanalyse}
 
-\parskip0pt\itemsep1pt
 \small
 
 \vfill
@@ -1345,7 +1322,7 @@ linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(
 
 %\rput[B](1,1){\rnode{speccp}{\visible<1->{diesen Mann$_i$}}}
 \rput[B](3,1){\rnode{cleer}{kennt$_k$}}
-\rput[B](5,1){\rnode{jeder}{er}}
+\rput[B](5,1){\rnode{niemand}{er}}
 \rput[B](7,1){\rnode{ihnmf}{ihn}}
 \rput[B](9,1){\rnode{kennt}{\blau<1>{[ \_ ]$_k$}}}
 
@@ -1385,7 +1362,7 @@ linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(
 \ncdiag{vp}{np2}\ncdiag{ip}{is}
 
 \ncdiag{np3}{speccp}
-\ncdiag{np2}{jeder}
+\ncdiag{np2}{niemand}
 \ncdiag{np1}{ihnmf}
 \ncdiag{vp}{vs1}
 \only<-2,4->{
@@ -1414,10 +1391,50 @@ linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(
 \item Verbindung Verb/Spur durch Informationsweitergabe im Baum
 \end{itemize}
 
+
+\pause\pause\pause
 }
 
 
+
+\subtitle{Konstituentenreihenfolge: Alternative HPSG-Ansätze}
+
+\huberlintitlepage[22pt]
+
+
 \subsection{Alternative HPSG-Ansätze}
+
+
+\frame{
+\frametitle{Literaturhinweise}
+%
+\begin{itemize}
+\item Literatur: \citew[Kapitel~9.5.1]{MuellerLehrbuch3}
+
+\item Handbuchartikel: \citew{MuellerOrder}
+
+\item Buch zur deutschen Satzstruktur:\\
+      \citew{MuellerGS} auf der Grundlage von \citew{Mueller2005c,Mueller2005d}
+\end{itemize}
+
+% \vspace{1cm}
+
+% Damit alles kompatibel zum Lehrbuch bleibt,\\
+% nehmen wir hier auch das \subcatm für die Valenz an.
+
+% \subcat = \spr + \comps
+
+% Zu neueren Versionen der HPSG, die \subcat in \spr und \comps unterteilen,\\ siehe
+% \citew{Sag97a,HPSGHandbook,MuellerGermanic}.
+
+% Deutsch: Argumente von finiten Verben sind alle auf \comps,\\
+% so dass die Verwendung von \subcat hier keinen Unterschied macht.
+
+
+%% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
+%%   nächsten Mal lesen sollen!!!!}
+}
+
 
 
 \frame{
@@ -1432,7 +1449,7 @@ linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(
             \citep{Uszkoreit87a,Pollard90a,Kasper94a}
 \pause
       \item Linearisierungsansätze\\
-            \citep{Reape94a,Kathol95a,Kathol2000a,KP95a,Mueller95c,Mueller99a,Mueller2002b}
+            \citep{Reape94a,Kathol95a,Kathol2000a,KP95a,Mueller95c,Mueller99a,Mueller2002b,Wetta2011a,Wetta2014a-u}
 \pause
       \item Variable Verzweigung\\
             \citep*{Crysmann2003b,KW91a,SRTD96a}.
@@ -1449,29 +1466,25 @@ linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(
 \vfill
 
 
-\hfill\scalebox{0.85}{\begin{tabular}[t]{@{}c@{\hspace{6mm}}c@{\hspace{6mm}}c@{\hspace{8mm}}c@{}}%llll}
-\multicolumn{4}{c}{\rnode{1}{V[{\it fin\/}, {\sc subcat} \liste{ }]}}\\
-\\[3ex]
-%\hspace{23mm}C & \hspace{12mm}C & \hspace{-5mm}C &\hspace{-14mm}H\\
-\\[3ex]
-\rnode{2}{\ibox{1} NP[{\it nom\/}]} & \rnode{4}{\ibox{3} NP[{\it dat\/}]}     & \rnode{6}{\ibox{2} NP[{\it acc\/}]} & \rnode{7}{V[{\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }] }\\
-\\
-\\*[5ex]
-d\rnode{8}{er Man}n & d\rnode{9}{er Fra}u  & d\rnode{10}{as Buc}h  & \rnode{11}{gibt}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{6}%
-\ncline{1}{4}\ncline{1}{7}%
-\ncline{7}{11}%
-\nodetriangle{2}{8}%
-\nodetriangle{4}{9}%
-\nodetriangle{6}{10}}%
-\hfill\hfill\mbox{}
+~~~~~~\hspace{2em}\begin{forest}
+sm edges, for tree={l sep=+2\baselineskip}
+[{V[\type{fin}, \subcat \eliste{}]}
+  [{\ibox{1} NP[\type{nom}]} 
+    [der Delphin,roof]]
+  [{\ibox{3} NP[\type{dat}]}
+    [dem Kind, roof]]
+  [{\ibox{2} NP[\type{acc}]} 
+    [den Ball, roof]]
+  [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }] }
+    [gibt]]]
+\end{forest}
+
 
 \vfill
 \begin{itemize}
 \item Komplemente sind Töchter desselben Knotens $\to$\\
       alle Permutationen sind möglich
-\item Verberst- und Verbletztstellung sind einfach alternative Anordnungen des finiten Verbs
+\item Verberst- und Verbletztstellung sind alternative Anordnungen des finiten Verbs
 \end{itemize}
 }
 
@@ -1484,9 +1497,60 @@ d\rnode{8}{er Man}n & d\rnode{9}{er Fra}u  & d\rnode{10}{as Buc}h  & \rnode{11}{
 \item \citet{Kasper94a} entwickelt Lösung, verwendet komplexe relationale Beschränkungen, die alle
 Adjunkttöchter nacheinander in die Berechnung der Gesamtbedeutung einbeziehen
 \item Relationale Beschränkungen sind ein sehr mächtiges Beschreibungsmittel.
-\item Ansätze, die sie vermeiden bzw.\ nur einfache Beschränkungen verwenden, sind vorzuziehen.
+\item Ansätze, die sie vermeiden bzw.\ nur einfache Beschränkungen verwenden,\\
+      sind vorzuziehen.
 \end{itemize}
 }
+
+\frame{
+\frametitle{And now for something completely different}
+
+\vfill
+
+\centerline{\href{run:./Mehrfach-VF-zum-ersten-Mal-Weltmeister-TV-20181204-2015-4401-webxl-h264.mp4}{\includegraphics[width=.7\textwidth]{Figures/Bildschirmfoto-Markus-Beyer.png}}}
+
+\vfill
+%\movie[options]{placeholder box}{movie filename}
+
+%\movie{\includegraphics[width=.7\textwidth]{Figures/Bildschirmfoto-Markus-Beyer.png}}{Mehrfach-VF-zum-ersten-Mal-Weltmeister-TV-20181204-2015-4401-webxl-h264.mp4}
+
+\pause
+\ea
+Zum ersten Mal Weltmeister wurde er vor 19 Jahren.\footnote{
+  tagesschau, 04.12.2018, 20:00.
+}
+\z
+
+\vfill
+
+}
+
+% \frame{
+% \frametitle{And now for something completely different}
+
+% \vfill
+
+% %\centerline{\href{run:./Mehrfach-VF-zum-ersten-Mal-Weltmeister-TV-20181204-2015-4401-webxl-h264.mp4}{\includegraphics[width=.7\textwidth]{Figures/Bildschirmfoto-Markus-Beyer.png}}}
+
+% % \includemovie{.85\textheight}{.85\textheight}{Mehrfach-VF-zum-ersten-Mal-Weltmeister-TV-20181204-2015-4401-webxl-h264.mp4}%
+
+% \vfill
+% %\movie[options]{placeholder box}{movie filename}
+
+% %\movie{\includegraphics[width=.7\textwidth]{Figures/Bildschirmfoto-Markus-Beyer.png}}{Mehrfach-VF-zum-ersten-Mal-Weltmeister-TV-20181204-2015-4401-webxl-h264.mp4}
+
+% \pause
+% \ea
+% Zum ersten Mal Weltmeister wurde er vor 19 Jahren.\footnote{
+%   tagesschau, 04.12.2018, 20:00.
+% }
+% \z
+
+% \vfill
+
+% }
+
+
 
 \frame{
 \frametitle{Probleme mit flachen Strukturen: Mehrfache VF-Besetzung}
@@ -1511,7 +1575,11 @@ Adjunkttöchter nacheinander in die Berechnung der Gesamtbedeutung einbeziehen
   taz nord, 19.02.2004, S.\,24
   }
 \zl
-Ohne leeren Kopf nicht erklärbar oder nur mit Stipulationen.
+\pause
+\item weitere Daten in \citew{Mueller2003b,Bildhauer2011a,MuellerGS}
+
+\pause
+\item Ohne leeren Kopf nicht erklärbar oder nur mit Stipulationen.
 \end{itemize}
 }
 
@@ -1525,81 +1593,39 @@ Ohne leeren Kopf nicht erklärbar oder nur mit Stipulationen.
 
 \medskip
 
-\alt<handout>{
-\hfill%
-\scalebox{0.5}{%
-%\nodemargin9pt
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
-\multicolumn{3}{@{}l@{}}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-  {\it fin\/}, {\sc subcat} \sliste{ }]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{-2ex}C                      & \hspace{3ex}H\\*[3ex]
-\psovalbox{\rnode{2}{\ibox{1} NP[{\it nom\/}]}} & \multicolumn{2}{@{}l@{}}{\rnode{3}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-& \hspace{0ex}C                     & \hspace{5ex}H\\*[3ex]
-& \psovalbox{\rnode{4}{\ibox{2} NP[{\it acc\/}]}} & \multicolumn{2}{@{}l@{}}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-&                                   & \hspace{1ex}C                     & \hspace{-5ex}H\\*[3ex]
-&                                   & \psovalbox{\rnode{6}{\ibox{3} NP[{\it dat\/}]}}& \psovalbox{\rnode{7}{V[\begin{tabular}[t]{@{}l}
-                                                                                   {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]\\
-%                                                                                   {\sc vcomp} \sliste{  }, \\
-                                                                                   \end{tabular}}}\\
-\\*[6ex]
-d\rnode{8}{er Man}n & d\rnode{9}{as Buc}h                     & d\rnode{10}{er Fra}u              & \rnode{11}{gibt}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{7}{11}%
-\nodetriangle{2}{8}%
-\nodetriangle{6}{10}%
-\nodetriangle{4}{9}%
-}\hfill\hfill\mbox{}
-}{
-\hfill%
-\scalebox{0.63}{%
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
-\multicolumn{3}{@{}l@{}}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-  {\it fin\/}, {\sc subcat} \sliste{ }]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{-2ex}C                      & \hspace{3ex}H\\*[3ex]
-\blau{\rnode{2}{\ibox{1} NP[{\it nom\/}]}} & \multicolumn{2}{@{}l@{}}{\rnode{3}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-& \hspace{0ex}C                     & \hspace{6ex}H\\*[3ex]
-& \blau{\rnode{4}{\ibox{2} NP[{\it acc\/}]}} & \multicolumn{2}{@{}l@{}}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-&                                   & \hspace{1ex}C                     & \hspace{-5ex}H\\*[3ex]
-&                                   & \blau{\rnode{6}{\ibox{3} NP[{\it dat\/}]}}& \blau{\rnode{7}{V[\begin{tabular}[t]{@{}l}
-                                                                                   {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]\\
-%                                                                                   {\sc vcomp} \sliste{  }, \\
-                                                                                   \end{tabular}}}\\
-\\*[6ex]
-d\rnode{8}{er Man}n & d\rnode{9}{as Buc}h                     & d\rnode{10}{er Fra}u              & \rnode{11}{gibt}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{7}{11}%
-\nodetriangle{2}{8}%
-\nodetriangle{6}{10}%
-\nodetriangle{4}{9}%
-}\hfill\hfill\mbox{}}
+
+\centerline{%
+\alt<handout>{%
+\begin{forest}
+sm edges
+[{V[\subcat \sliste{} ]}
+  [\blau{\ibox{1} NP[\type{nom}]},ellipse,draw
+    [Aicke]]
+  [{V[\subcat \sliste{ \ibox{1} }]}
+    [\blau{\ibox{2} NP[\type{acc}]},ellipse,draw 
+      [die Nuss, roof]]
+    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]}
+      [\blau{\ibox{3} NP[\type{dat}]},ellipse,draw
+        [dem Eichhörnchen,roof]]
+      [\blau{V[\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]},ellipse,draw
+        [gibt]]]]]
+\end{forest}}{
+\begin{forest}
+sm edges
+[{V[\subcat \sliste{} ]}
+  [\blau{\ibox{1} NP[\type{nom}]}
+    [Aicke]]
+  [{V[\subcat \sliste{ \ibox{1} }]}
+    [\blau{\ibox{2} NP[\type{acc}]}
+      [die Nuss, roof]]
+    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]}
+      [\blau{\ibox{3} NP[\type{dat}]}
+        [dem Eichhörnchen,roof]]
+      [\blau{V[\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]}
+        [gibt]]]]]
+\end{forest}}
+}
+
 
 \begin{itemize}[<+->]
 \item \alt<handout>{eingekreiste}{blaue} Knoten werden in eine Liste eingefügt: die Linearisierungsdomäne
@@ -1687,210 +1713,160 @@ $\phonliste{ a, b } \bigcirc \phonliste{ c, d } =
 
 \frame{
 
-\frametitle{\normalsize Beispiel: Kontinuierliche Konstituenten}
+\frametitle{Beispiel: Kontinuierliche Konstituenten}
 
-\hfill\scalebox{0.6}{%
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
-\multicolumn{3}{l}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-  {\it fin\/}, {\sc subcat} \sliste{ },\\
-                                                                                   {\sc dom} \phonliste{ der Mann, das Buch, der Frau, gibt }]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{8mm}C                     & \hspace{30mm}H\\*[3ex]
-\rnode{2}{\ibox{1} NP[{\it nom\/}]} & \multicolumn{2}{l}{\rnode{3}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1} },\\
-                                                                                   {\sc dom} \phonliste{ das Buch, der Frau, gibt }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-& \hspace{5mm}C                     & \hspace{18mm}H\\*[3ex]
-& \rnode{4}{\ibox{2} NP[{\it acc\/}]} & \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2} },\\
-                                                                                   {\sc dom} \phonliste{ der Frau, gibt }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-&                                   & \hspace{4mm}C                     & \hspace{-5mm}H\\*[3ex]
-&                                   & \rnode{6}{\ibox{3} NP[{\it dat\/}]}& \rnode{7}{V[\begin{tabular}[t]{@{}l}
-                                                                                   {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
-                                                                                   {\sc dom} \phonliste{ gibt }]\\
-%                                                                                   {\sc vcomp} \sliste{  }, \\
-                                                                                   \end{tabular}}\\
-\\*[6ex]
-d\rnode{8}{er Man}n & d\rnode{9}{as Buc}h                     & d\rnode{10}{er Fra}u              & \rnode{11}{gibt}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{7}{11}%
-\nodetriangle{2}{8}%
-\nodetriangle{6}{10}%
-\nodetriangle{4}{9}%
-}\hfill\hfill\mbox{}
+\begin{forest}
+sm edges
+[V\feattab{\subcat \sliste{},\\
+           \textsc{dom} \phonliste{ der Delphin, den Ball, dem Kind, gibt }}
+  [{\ibox{1} NP[\type{nom}]}
+    [der Delphin,roof]]
+  [V\feattab{\subcat \sliste{ \ibox{1} },\\
+             \textsc{dom} \phonliste{ den Ball, dem Kind, gibt }}
+    [{\ibox{2} NP[\type{acc}]} 
+      [den Ball, roof]]
+    [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
+               \textsc{dom} \phonliste{ dem Kind, gibt }}
+      [{\ibox{3} NP[\type{dat}]}
+        [dem Kind,roof]]
+      [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
+        \textsc{dom} \phonliste{ gibt }}
+        [gibt]]]]]
+\end{forest}
 
 
 }
 
 \frame{
 
-\frametitle{\normalsize Beispiel: Diskontinuierliche Konstituenten / Anordnung im \mf}
+\frametitlefit{Beispiel: Diskontinuierliche Konstituenten / Anordnung im \mf}
 
-\hfill\scalebox{0.6}{%
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
-\multicolumn{3}{l}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-  {\it fin\/}, {\sc subcat} \sliste{ },\\
-                                                                                   {\sc dom} \phonliste{ der Mann, \blau{der Frau}, das Buch, \blau{gibt} }]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{8mm}C                     & \hspace{30mm}H\\*[3ex]
-\rnode{2}{\ibox{1} NP[{\it nom\/}]} & \multicolumn{2}{l}{\rnode{3}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1} },\\
-                                                                                   {\sc dom} \phonliste{ \blau{der Frau}, das Buch, \blau{gibt} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-& \hspace{5mm}C                     & \hspace{18mm}H\\*[3ex]
-& \rnode{4}{\ibox{2} NP[{\it acc\/}]} & \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2} },\\
-                                                                                   {\sc dom} \phonliste{ der Frau, gibt }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-&                                   & \hspace{4mm}C                     & \hspace{-5mm}H\\*[3ex]
-&                                   & \rnode{6}{\ibox{3} NP[{\it dat\/}]}& \rnode{7}{V[\begin{tabular}[t]{@{}l}
-                                                                                   {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
-                                                                                   {\sc dom} \phonliste{ gibt }]\\
-                                                                                   \end{tabular}}\\
-\\*[6ex]
-d\rnode{8}{er Man}n & d\rnode{9}{as Buc}h                     & d\rnode{10}{er Fra}u              & \rnode{11}{gibt}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{7}{11}%
-\nodetriangle{2}{8}%
-\nodetriangle{6}{10}%
-\nodetriangle{4}{9}%
-}\hfill\hfill\mbox{}
-
+\begin{forest}
+sm edges
+[V\feattab{\subcat \sliste{},\\
+           \textsc{dom} \phonliste{ der Delphin, \blau{dem Kind}, den Ball, \blau{gibt} }}
+  [{\ibox{1} NP[\type{nom}]}
+    [der Delphin,roof]]
+  [V\feattab{\subcat \sliste{ \ibox{1} },\\
+             \textsc{dom} \phonliste{ \blau{dem Kind}, den Ball, \blau{gibt} }}
+    [{\ibox{2} NP[\type{acc}]} 
+      [den Ball, roof]]
+    [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
+               \textsc{dom} \phonliste{ dem Kind, gibt }}
+      [{\ibox{3} NP[\type{dat}]}
+        [dem Kind,roof]]
+      [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
+        \textsc{dom} \phonliste{ gibt }}
+        [gibt]]]]]
+\end{forest}
 }
 
 \frame{
 
-\frametitle{\normalsize Beispiel: Diskontinuierliche Konstituenten / Verberststellung}
+\frametitlefit{Beispiel: Diskontinuierliche Konstituenten / Verberststellung}
 
-\hfill\scalebox{0.6}{%
-\begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
-\multicolumn{3}{l}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-  {\it fin\/}, {\sc subcat} \sliste{ },\\
-                                                                                   {\sc dom} \phonliste{ \blau{gibt}, der Mann, das Buch, \blau{der Frau} }]\\
-  \end{tabular}}
-}\\
-\\
-\hspace{8mm}C                     & \hspace{30mm}H\\*[3ex]
-\rnode{2}{\ibox{1} NP[{\it nom\/}]} & \multicolumn{2}{l}{\rnode{3}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1} },\\
-                                                                                   {\sc dom} \phonliste{ \blau{gibt}, das Buch, \blau{der Frau} }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-& \hspace{5mm}C                     & \hspace{18mm}H\\*[3ex]
-& \rnode{4}{\ibox{2} NP[{\it acc\/}]} & \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-                                                                    {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2} },\\
-                                                                                   {\sc dom} \phonliste{ gibt, der Frau }]\\
-                                                                    \end{tabular}}
-                                                       }\\
-\\
-&                                   & \hspace{4mm}C                     & \hspace{-5mm}H\\*[3ex]
-&                                   & \rnode{6}{\ibox{3} NP[{\it dat\/}]}& \rnode{7}{V[\begin{tabular}[t]{@{}l}
-                                                                                   {\it fin\/}, {\sc subcat} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
-                                                                                   {\sc dom} \phonliste{ gibt }]\\
-%                                                                                   {\sc vcomp} \sliste{  }, \\
-                                                                                   \end{tabular}}\\
-\\*[6ex]
-d\rnode{8}{er Man}n & d\rnode{9}{as Buc}h                     & d\rnode{10}{er Fra}u              & \rnode{11}{gibt}\\
-\end{tabular}
-\ncline{1}{2}\ncline{1}{3}%
-\ncline{3}{4}\ncline{3}{5}%
-\ncline{5}{6}\ncline{5}{7}%
-\ncline{7}{11}%
-\nodetriangle{2}{8}%
-\nodetriangle{6}{10}%
-\nodetriangle{4}{9}%
-}\hfill\hfill\mbox{}
-
+\begin{forest}
+sm edges
+[V\feattab{\subcat \sliste{},\\
+           \textsc{dom} \phonliste{ \blau{gibt}, der Delphin, den Ball, \blau{dem Kind} }}
+  [{\ibox{1} NP[\type{nom}]}
+    [der Delphin,roof]]
+  [V\feattab{\subcat \sliste{ \ibox{1} },\\
+             \textsc{dom} \phonliste{ \blau{gibt}, den Ball, \blau{dem Kind} }}
+    [{\ibox{2} NP[\type{acc}]} 
+      [den Ball, roof]]
+    [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
+               \textsc{dom} \phonliste{ gibt, dem Kind }}
+      [{\ibox{3} NP[\type{dat}]}
+        [dem Kind,roof]]
+      [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
+        \textsc{dom} \phonliste{ gibt }}
+        [gibt]]]]]
+\end{forest}
 
 }
 
-
+%\fi
 \frame{
-\frametitle{\normalsize Verbstellung mit den Konstituenten in Oberflächenreihenfolge}
+\frametitlefit{Verbstellung mit den Konstituenten in Oberflächenreihenfolge}
 
-%\epsfysize=0.8\textheight
-%\centerline{\mbox{\epsffile{gab-der-mann-das-buch-der-frau-domain-disc-tree.eps}}}
 
-\hfill%
-\resizebox{0.53\textwidth}{!}{%
-%\nodemargin5pt
-\begin{tabular}[t]{@{}l@{~}c@{\hspace{4mm}}c@{\hspace{4mm}}c}%llll}
-\multicolumn{2}{@{}l}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-  \textit{fin}, {\sc subcat} \sliste{ },\\
-  {\sc dom} \phonliste{ \rnode{1bot}{gibt}, der Mann, das Buch, der Frau }]\\
-  \end{tabular}}}\\
-\\
-\multicolumn{2}{@{}l@{}}{\hspace{5ex}H  \hspace{25ex}C}\\*[3ex]
-\rnode{3}{V[\begin{tabular}[t]{@{}l}
-         \textit{fin}, {\sc subc\rnode{3top}{\rule{0cm}{1.5ex}}at} \sliste{ \ibox{1} },\\
-         {\sc dom} \phonliste{ \rnode{3bot}{gibt}, das Buch, der Frau }]\\
-         \end{tabular}}                                     & \rnode{2aux}{} \\
-\\
-\hspace{5ex}H                     & & \hspace{-10mm}C\\*[3ex]
-\rnode{5}{V[\begin{tabular}[t]{@{}l}
-         \textit{fin}, {\sc subc\rnode{5top}{\rule{0cm}{1.5ex}}at} \sliste{ \ibox{1}, \ibox{2} },\\
-         {\sc dom} \phonliste{ \rnode{5bot}{gibt}, der Frau }]\\
-         \end{tabular}} & & \rnode{4aux}{}\\
-\\
-\hspace{5ex}H &                                   &                     & \hspace{-10mm}C\\*[3ex]
-\rnode{7}{V[\begin{tabular}[t]{@{}l}
-            \textit{fin}, {\sc subc\rnode{7top}{\rule{0cm}{1.5ex}}at} \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
-            {\sc dom} \phonliste{ \rnode{7bot}{gibt} }]\\
-%            {\sc vcomp} \liste{  }, \\
-            \end{tabular}} & &                                   & \rnode{6aux}{}\\
-\\[2ex]
-&  \rnode{2}{\ibox{1} NP[\textit{nom}]} &  \rnode{4}{\ibox{2} NP[\textit{acc}]}           & \rnode{6}{\ibox{3} NP[\textit{dat}]}\\
-\\*[8ex]
-\hspace{9ex}\rnode{11}{gibt} & d\rnode{8}{er Man}n & d\rnode{9}{as Buc}h                   & d\rnode{10}{er Fra}u\\
-\end{tabular}
-\ncline{1bot}{2aux}\ncline{1bot}{3top}%
-\ncline{3bot}{4aux}\ncline{3bot}{5top}%
-\ncline{5bot}{6aux}\ncline{5bot}{7top}%
-\ncline{7bot}{11}%
-\nodetriangle{2}{8}%
-\nodetriangle{6}{10}% 
-\nodetriangle{4}{9}%
-% to do
-%\nodeconnect[t]{2aux}{2}%
-%\nodeconnect[t]{4aux}{4}%
-%\nodeconnect[t]{6aux}{6}%
-}\hfill\hfill\mbox{}
+% \forestset{
+%   default preamble'={}, % The default preamble makes a mess in this situation.
+%   % 
+%   % This style visually relates a complement to some subcat node. The argument
+%   % should be the intended SISTER.
+%   funky complement/.style={
+%     %tier=NP, % Horizontally align NPs ... not needed because they are all of the same height.
+%     for children={tier=word}, % Align the NP content with "gibt".
+%     for nodewalk/.process=Ow{#1.id}{id=##1}{% This monstrosity converts a relative node name (e.g. "!r1") to the id of that node.
+%       edge label={node[pos=0.5,left]{H}}, % Put "H" on the edge from the sister subcat.
+%     },
+%     % Draw the funky edge from a complement to its visual parent. The line is
+%     % broken at the north of the sister subcat, and also marked with "C" there.
+%     edge path'={(#1u.south) -- (.north |- {#1.north}) node[above]{C} -- (.north)},
+%   },
+% }
+% \begin{forest}
+%   % sn edges,   % note the s*n*, not s*m* // Can live without, as we draw the funky edges manually.
+%   for tree={l sep*=2}, % Let this tree be taller.
+%   [V\feattab{\subcat \sliste{},\\
+%       \textsc{dom} \phonliste{ gibt, der Mann, das Buch, der Frau }}
+%     [V\feattab{\subcat \sliste{ \ibox{1} },\\
+%         \textsc{dom} \phonliste{ gibt, bas Buch, der Frau }},
+%       [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
+%           \textsc{dom} \phonliste{ gibt, der Frau }}
+%         [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
+%             \textsc{dom} \phonliste{ gibt }},
+%           [gibt]]]]
+%     [,% This empty node holds all the complements. The idea is to put it next
+%       % to the subcat node that should determine the x (s) position of the
+%       % complements (so I put it next to the second subcat node). How does this
+%       % work? On its own, Forest squashes the complements close to "gibt", but
+%       % then the funky edge from NP [1] overlaps the second subcat node. But
+%       % then we adjust the "s" of this empty complement holder (in "before
+%       %   computing xy") to avoid that.
+%       no edge, % Phantom does not work here, because we need the empty
+%                % complement holder to be physically present.
+%       calign=first, % Put this empty node directly above the leftmost NP ...
+%       before computing xy={% ... and set its position manually:
+%         %s/.option={!s.max x}, % to the (right) width of its sibling (the second subcat)
+%         %s+/.option=!u.s sep,  % plus a bit more
+%       },
+%       tier=lowest subcat, % Vertically align it to the lowest subcat node (gibt).
+%       for parent={calign=first}, % The sister subcat (Buch, Frau) should be
+%                                  % directly below its parent.
+%       for sibling={where n children=0{% This finds "gibt".
+%           for parent={tier=lowest subcat}, % Mark the lowest subcat for alignment with the empty complement holder.
+%           tier=word, % Align "gibt" with the content of NPs.
+%         }{}},
+%       [{\ibox{1} NP[\type{nom}]}, funky complement=!r1 % the first child of the root
+%         [der Mann,roof]]
+%       [{\ibox{1} NP[\type{acc}]}, funky complement=!r11  % the first child of the first child of the root
+%         [das Buch,roof]]
+%       [{\ibox{1} NP[\type{dat}]}, funky complement=!r111
+%         [der Frau,roof]]]
+%   ]
+% \end{forest}
 
+\vfill
+\centerline{\includegraphics[scale=.7]{Figures/fig-domains-discont}}
+\vfill
 
 }
 
-
+%\if0
 \frame{
 \frametitle{Eine Anmerkung}
 
 
 
 \begin{itemize}
-\item die Dominanzstrukturen für die Sätze in (\mex{1}) sind identisch:
+\item die Dominanzstrukturen für die Folgen in (\mex{1}) sind identisch:
       \eal
-      \ex der Mann der Frau das Buch gibt.
-      \ex der Mann das Buch der Frau gibt.
-      \ex Gibt der Mann das Buch der Frau.
+      \ex der Delphin dem Kind den Ball gibt
+      \ex der Delphin den Ball dem Kind gibt
+      \ex Gibt der Delphin den Ball dem Kind?
       \zl
 \item Nur die Anordnung der Elemente in den Stellungsdomänen ist anders.
 \end{itemize}
@@ -1965,17 +1941,37 @@ Das Kopf"=Argument"=Schema läßt Kombination von Argumenten mit ihrem Kopf in b
 
 unterschiedliche Verzweigungen:
 \eal
-\ex {}[[[Gibt er] dem Mann] das Buch]?
-\ex {}[Hat [er [dem Mann [das Buch gegeben]]]]?
+\ex {}[[[Gibt er] dem Mann] den Ball]?
+\ex {}[Hat [er [dem Mann [den Ball gegeben]]]]?
 \zl
+\pause
 \item keinen leeren verbalen Kopf 
+\pause
 \item keine Möglichkeit, die scheinbar mehrfache
 Vorfeldbesetzung mit Hilfe eines leeren verbalen Kopfes zu erklären
 \end{itemize}
 
+}
+
+\subsubsection{Zusammenfassung}
+
+\frame{
+\frametitle{Zusammenfassung}
+
+\begin{itemize}[<+->]
+\item Es sieht so aus, als würde man wirklich eine GB-artige Analyse der deutschen Satzstellung
+  brauchen.
+\item Verbspur am Ende des Satzes.\\
+      Finites Verb analog zum Komplementierer in Erststellung.
+
+\end{itemize}
+
+\pause\pause\pause
 
 }
 
+
 } % \end{teil1}
 
+%\fi
 
