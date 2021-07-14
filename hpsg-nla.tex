@@ -373,20 +373,20 @@ phon   & list~of~phoneme strings\\
 \begin{forest}
 sm edges
 [{V[\begin{tabular}[t]{@{}l@{}}
-    \subcat \eliste\alt<1>{]}{,}\\
+    \subcat \eliste\alt<beamer|beamer:1>{]}{,}\\
     \visible<2->{\blau<3>{\slasch \eliste}]}\end{tabular}}, s sep+=2ex 
   [\blau<3>{NP\ibox{1}[\type{acc}]} [das Buch,roof]]
   [{V[\begin{tabular}[t]{@{}l@{}}
-      \subcat \sliste{ }\alt<1>{]}{,}\\
+      \subcat \sliste{ }\alt<beamer|beamer:1>{]}{,}\\
       \visible<2->{\blau<2-3>{\slasch \sliste{ \ibox{1} }}]}\end{tabular}}
     [{V[\begin{tabular}[t]{@{}l@{}}
-      \subcat \sliste{ \ibox{2} }\alt<1>{]}{,}\\
-      \visible<2->{\blau<2-3>{\slasch \sliste{ \ibox{1} }}]}\end{tabular}}
+      \subcat \sliste{ \ibox{2} }\alt<beamer|beamer:1>{]}{,}\\
+      \visible<2->{\blau<2>{\slasch \sliste{ \ibox{1} }}]}\end{tabular}}
       [{V[\begin{tabular}[t]{@{}l@{}}
-      \subcat \sliste{ \ibox{2}, \blau<1>{\ibox{3}} }\alt<1>{]}{,}\\
+      \subcat \sliste{ \ibox{2}, \blau<1>{\ibox{3}} }\alt<beamer|beamer:1>{]}{,}\\
       \visible<2->{\slasch \sliste{ }]}\end{tabular}}
         [kennt]]
-      [{\blau<1>{\ibox{3} NP}[\begin{tabular}[t]{@{}l@{}}\type{acc}\alt<1>{]}{,}\\
+      [{\blau<1>{\ibox{3} NP}[\begin{tabular}[t]{@{}l@{}}\type{acc}\alt<beamer|beamer:1>{]}{,}\\
                                       \visible<2->{\blau<2>{\slasch \sliste{ \ibox{1} }}]}\end{tabular}}
         [\trace]]]
     [{\ibox{2} NP[\type{nom}]}
@@ -499,7 +499,7 @@ type hierarchy,
 \item Wie bei der Verbbewegung können wir abstrahieren.
 \pause
 \item Über den \localw müssen wir in der Spur nichts sagen,\\
-      denn das Verb weiß ja, was es will\\
+      denn das Verb weiß ja, was es will,\\
       und stellt Anforderungen an den \localw seines Arguments.
 \end{itemize}
 
@@ -512,56 +512,30 @@ type hierarchy,
 \frame{
 \frametitle{Extraktion zusammen mit Verbbewegung}
 
-% \hfill\scalebox{0.55}{%
-% \begin{tabular}[t]{@{}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{\hspace{4mm}}c@{}}%llll}
-% \multicolumn{2}{@{}c}{\rnode{3all}{V[\begin{tabular}[t]{@{}l}
-%                                  {\sc subcat} \rnode{3}{\eliste},\\
-%                                  {\sc slash} \eliste]\\
-%                                  \end{tabular}}
-%                                           }\\
-% \\
-% \hspace{0mm}F                     & \hspace{28mm}H\\*[3ex]
-% \rnode{npbuch}{NP\ibox{1}[{\it acc\/}]} & \multicolumn{2}{c}{\rnode{1}{V[\begin{tabular}[t]{@{}l}
-%                                           {\sc subcat} \sliste{},\\
-%                                           {\sc slash} \sliste{ \ibox{1} }]\\
-%                                           \end{tabular}}
-%                                           }\\
-% \\
-% &\hspace{7mm}H                     & \hspace{19mm}C\\*[3ex]
-% &\rnode{2}{V[{\sc subcat} \sliste{ \ibox{2} }]} & \multicolumn{3}{l}{\rnode{3}{\ibox{2} V[\begin{tabular}[t]{@{}l}
-%                                                                     {\sc subcat} \sliste{ },
-%                                            {\sc slash} \sliste{ \ibox{1} }]
-%                                                                     \end{tabular}}
-%                                                        }\\
-% \\
-% & \hspace{8ex}V1-LR                             & \hspace{0mm}C                   & \hspace{15mm}H\\*[3ex]
-% & \rnode{kennt-vl}{V[{\sc subcat} \sliste{ \ibox{3}, \ibox{4} }]}  & \rnode{4}{\ibox{3} NP[{\it nom\/}]}& \multicolumn{2}{l}{\rnode{5}{V[\begin{tabular}[t]{@{}l}
-%                                                                                                        {\sc subcat} \sliste{ \ibox{3} },
-%                                            {\sc slash} \sliste{ \ibox{1} }]\\
-%                                                                                                        \end{tabular}}
-%                                                                                            }\\
-% \\
-% &                                   &                                   & C                                & \hspace{-5mm}H\\*[3ex]
-% &                                   &                                   & \rnode{6}{\ibox{4} [\begin{tabular}[t]{@{}l@{}}
-%                                                                         {\sc loc} \ibox{1},\\
-%                                                                         {\sc slash} \sliste{ \ibox{1} }] \\
-%                                                                         \end{tabular}} & \rnode{7}{V[\begin{tabular}[t]{@{}l@{}}
-%                                                                                                  {\sc subcat} \sliste{ \ibox{3}, \ibox{4} }] \\
-%                                                                                                  \end{tabular}}\\
-% \\*[3ex]
-% d\rnode{buch}{as Buc}h & \rnode{8}{kennt}                     & \rnode{9}{jeder}                  & \rnode{10}{$-$} & \rnode{11}{$-$}\\
-% \end{tabular}
-% \ncline{3all}{npbuch}\ncline{3all}{1}%
-% \ncline{1}{2}\ncline{1}{3}%
-% \ncline{3}{4}\ncline{3}{5}%
-% \ncline{5}{6}\ncline{5}{7}%
-% \ncline{2}{kennt-vl}\ncline{kennt-vl}{8}%
-% \ncline{4}{9}%
-% \ncline{6}{10}%
-% \ncline{7}{11}%
-% \nodetriangle{npbuch}{buch}%
-% }\hfill\hfill\mbox{}
-
+\centerline{
+\scalebox{.85}{\begin{forest}
+sm edges,
+for level={3}{l+=\baselineskip}
+[V\feattab{\subcat \eliste,\\
+           \slasch \eliste}, s sep+=1em
+  [{NP\ibox{1}[\type{acc}]}
+     [das Buch, roof]]
+  [V\feattab{\subcat \eliste,\\
+             \slasch  \sliste{ \ibox{1} }}
+     [{V[\subcat \sliste{ \ibox{2} }]}
+       [{V[\subcat \sliste{ \ibox{3}, \ibox{4} }]},edge label={node[midway,right]{V1-LR}}
+         [kennt]]]
+     [\ibox{2} V\feattab{\subcat \eliste, \slasch \sliste{ \ibox{1} }}
+         [\ibox{4} \feattab{\textsc{loc} \ibox{1},\\
+                            \slasch \sliste{ \ibox{1} } }
+         [\trace]]
+       [V\feattab{\subcat \sliste{ \ibox{3} }, \slasch \sliste{ \ibox{1} }}
+         [{\ibox{3} NP[\type{nom}]}
+           [jeder]]
+         [V\feattab{\subcat \sliste{ \ibox{3}, \ibox{4} }}
+           [\trace]]]]]]
+\end{forest}}
+}
 }
 
 } % \end{teil1}
@@ -792,7 +766,7 @@ V[\subcat \liste{ }] $\to$ schlafen
 
 \frametitle{Unterspezifikation im Lexikon}
 
-\citet*{BMS2001a}
+\citet*{BMS2001a} und \citet{GSag2000a-u}:
 
 \begin{itemize}
 \item zwei Listen:
@@ -805,6 +779,25 @@ V[\subcat \liste{ }] $\to$ schlafen
 \end{itemize}
 
 }
+
+\subsection{Zusammenfassung}
+
+\frame{
+\frametitle{Zusammenfassung}
+
+\begin{itemize}[<+->]
+\item An der Stelle der extrahierten Konstituente steht eine Spur.
+\item Spur ist Joker: macht, was im entsprechenden lokalen Kontext gebraucht wird
+\item Information wird nach oben über \slasch weitergegeben.
+\item Abhängigkeit kann Satzgrenzen kreuzen.
+\item Abhängigkeit durch Füller im Schema abgebunden.
+\item Alternativen ohne leere Elemente
+\end{itemize}
+
+\pause\pause\pause
+
+}
+
 
 } % \end{teil1}
 
