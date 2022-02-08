@@ -228,6 +228,7 @@ langsci-lgr,oneline}
 %\usepackage{pstricks}
 %\usepackage[usenames]{pstcol}
 \usepackage{pst-node}
+\psset{nodesep=4pt}
 
 \newboolean{colorprint}
 \mode<beamer>{
@@ -405,13 +406,13 @@ langsci-lgr,oneline}
   Sprachwissenschaft des Deutschen / Syntax\\
   Institut für deutsche Sprache und Linguistik\\
   Sprach- und literaturwissenschaftliche Fakultät\\
-  HU Berlin\\[2mm]
+  Humboldt-Universität zu Berlin\\[2mm]
 St.Mueller@hu-berlin.de}
 }{%
 \institute[HU Berlin, Institute for German Language and Linguistics]{
   Institute for German Language and Linguistics, Syntax Lab\\
   Sprach- und literaturwissenschaftliche Fakultät\\
-  HU Berlin\\[2mm]
+  Humboldt-Universität zu Berlin\\[2mm]
 St.Mueller@hu-berlin.de}
 }
 %\date[DLT 2003]{Developments in Language Theory Conference, 2003}
@@ -651,3 +652,7 @@ St.Mueller@hu-berlin.de}
 % avoid spacing before and after : 
 % for Situation Semantics
 \DeclareMathSymbol{:}{\mathord}{operators}{"3A}
+
+
+% for \hyp, which is used in the bibliography
+\usepackage{hyphenat}
