@@ -1,0 +1,680 @@
+\subsection{Phrasenstrukturgrammatiken}
+
+
+\subsubsection{Phrasenstrukturen}
+
+\frame{
+\frametitle{Phrasenstrukturen}
+
+\smallframe
+\hfill%
+\begin{tabular}{@{}l@{\hspace{1cm}}l@{}}
+\scalebox{.75}{%
+\begin{forest}
+sm edges
+[S
+  [NP [er] ]
+  [NP
+    [Det [das] ]
+    [N [Buch] ] 
+  ]
+  [NP
+    [Det [dem] ]
+    [N [Mann] ] 
+  ]
+  [V [gibt] ]
+]
+\end{forest}} &
+\scalebox{.75111111}{%
+\begin{forest}
+sm edges
+[V
+  [NP [er] ]
+  [V
+    [NP
+      [Det [das] ]
+      [N [Buch] ] ]
+    [V
+      [NP
+        [Det [dem] ]
+        [N [Mann] ] ]
+      [V [gibt] ] ] ] ]
+\end{forest}}
+\\
+\\[-0.4ex]
+\begin{tabular}{@{~}l@{ }l@{}}
+NP & $\to$ Det, N            \\
+S  & $\to$ NP, NP, NP, V  \\
+\end{tabular} & \begin{tabular}{@{~}l@{ }l@{}}
+NP & $\to$ Det, N  \\
+V  & $\to$ NP, V\\
+\end{tabular}\\
+\end{tabular}
+\hfill\mbox{}
+
+\medskip
+Das Eigentliche sind die Ersetzungsregeln! Die Bäume sind nur die Visualisierung.\\
+%
+\pause%
+%
+Aus Platzgründen auch Klammerschreibweise:\\
+{}[\sub{S} [\sub{NP} er] [\sub{NP} [\sub{Det} das] [\sub{N} Buch]]  [\sub{NP} [\sub{Det} dem] [\sub{N} Mann]] [\sub{V} gibt]]
+
+\handoutspace
+}
+
+\iftoggle{psgbegriffe}{
+\subsubsection{Begriffe}
+
+
+\frame{
+\frametitle{Knoten (\emph{node})}
+
+\vfill
+\psset{xunit=5mm,yunit=5mm,nodesep=8pt}
+\hfill
+\begin{pspicture}(0,0)(14,7.4)
+\rput(3,7){\rnode{xp}{A}}
+\rput(1,4){\rnode{up}{B}}\rput(5,4){\rnode{xs1}{C}}
+\rput(5,1){\rnode{vp}{D}}
+
+\psset{angleA=-90,angleB=90,arm=0pt}
+\ncdiag{xp}{up}\ncdiag{xp}{xs1}%
+\ncdiag{xs1}{vp}\ncdiag{xs1}{xs2}%
+\ncdiag{xs2}{wp}\ncdiag{xs2}{x}%
+\ncdiag{wp}{yp}\ncdiag{wp}{ws}%
+
+\pause
+
+%\mode<beamer>{
+\psset{linecolor=red}%radius=1em}
+%}
+%\pscircle(3,7){2ex}
+\cnode[linewidth=1.5pt](3,7){1.7ex}{nodeA}
+\pscircle[linewidth=1.5pt](1,4){1.7ex}\cnode[linewidth=1.5pt](5,4){1.7ex}{nodeC}
+\cnode[linewidth=1.5pt](5,1){1.7ex}{nodeD}
+
+\pause
+
+\rput[l](8,7){\rnode{verz}{verzweigend}}
+\rput[l](8,6){\rnode{nverz}{n}icht verzweigend}
+
+%\psset{angleA=180,angleB=0,arm=0pt,arrows=->}
+\only<3>{
+\ncline{->}{verz}{nodeA}
+}
+\pause
+\only<4>{
+\ncline{->}{nverz}{nodeC}
+}
+%\psgrid
+\end{pspicture}
+\hfill\hfill\mbox{}
+\vfill
+}
+
+\frame{
+
+\frametitle{Mutter, Tochter und Schwester}
+
+\vfill
+\psset{xunit=5mm,yunit=5mm,nodesep=8pt}
+\hspace{1cm}%
+%\begin{tabular}{@{}l@{\hspace{1cm}}l@{}}
+\begin{pspicture}(0,0)(7.4,7.4)
+\rput(3,7){\rnode{xp}{A}}
+\rput(1,4){\rnode{up}{B}}\rput(5,4){\rnode{xs1}{C}}
+\rput(5,1){\rnode{vp}{D}}
+
+\psset{angleA=-90,angleB=90,arm=0pt}
+\ncdiag{xp}{up}\ncdiag{xp}{xs1}%
+\ncdiag{xs1}{vp}\ncdiag{xs1}{xs2}%
+\ncdiag{xs2}{wp}\ncdiag{xs2}{x}%
+\ncdiag{wp}{yp}\ncdiag{wp}{ws}%
+
+%\psgrid
+\end{pspicture}
+\hspace{1cm}\raisebox{3cm}{\begin{tabular}[t]{@{}l@{}}
+A ist die Mutter von B und C\\
+C ist die Mutter von D\\
+B ist die Schwester von C\\
+\end{tabular}}
+
+
+Verhältnisse wie in Stammbäumen
+
+\vfill
+
+}
+
+\iftoggle{einfsprachwiss-exclude}{
+\frame{
+\frametitle{Dominanz (\emph{dominance})}
+
+\vfill
+\psset{xunit=5mm,yunit=5mm,nodesep=8pt}
+\hspace{1cm}
+\begin{pspicture}(0,0)(7.4,7.4)
+\rput(3,7){\rnode{xp}{A}}
+\rput(1,4){\rnode{up}{B}}\rput(5,4){\rnode{xs1}{C}}
+\rput(5,1){\rnode{vp}{D}}
+
+\psset{angleA=-90,angleB=90,arm=0pt}
+\ncdiag{xs1}{xs2}%
+\ncdiag{xs2}{wp}\ncdiag{xs2}{x}%
+\ncdiag{wp}{yp}\ncdiag{wp}{ws}%
+
+\alt<2>{
+\mode<beamer>{
+\psset{linecolor=red}
+}
+\ncdiag{->}{xp}{up}\ncdiag{->}{xp}{xs1}
+}{
+\ncdiag{xp}{up}\ncdiag{xp}{xs1}%
+}
+\alt<2,4>{
+\mode<beamer>{
+\psset{linecolor=red}
+}
+\ncdiag{->}{xs1}{vp}
+}{
+\ncdiag{xs1}{vp}
+}
+%\psgrid
+\end{pspicture}
+\hspace{1cm}\raisebox{3cm}{\begin{tabular}[t]{@{}l@{}}
+A dominiert \only<2->{B, C und D}\\
+\only<3->{C dominiert} \only<4->{D} \\
+\end{tabular}}
+
+\bigskip
+
+A dominiert B genau dann, wenn A höher im Baum steht und \\
+wenn es eine ausschließlich abwärts führende Linie von A nach B gibt.
+
+\pause\pause\pause
+
+\vfill
+
+}
+
+\frame{
+
+\frametitle{Unmittelbare Dominanz (\emph{immediate dominance})}
+
+\psset{xunit=5mm,yunit=5mm,nodesep=8pt}
+\hspace{1cm}
+\begin{pspicture}(0,0)(7.4,7.4)
+\rput(3,7){\rnode{xp}{A}}
+\rput(1,4){\rnode{up}{B}}\rput(5,4){\rnode{xs1}{C}}
+\rput(5,1){\rnode{vp}{D}}
+
+\psset{angleA=-90,angleB=90,arm=0pt}
+\ncdiag{xs1}{xs2}%
+\ncdiag{xs2}{wp}\ncdiag{xs2}{x}%
+\ncdiag{wp}{yp}\ncdiag{wp}{ws}%
+
+\alt<2>{
+\mode<beamer>{
+\psset{linecolor=red}
+}
+\ncdiag{->}{xp}{up}\ncdiag{->}{xp}{xs1}
+}{
+\ncdiag{xp}{up}\ncdiag{xp}{xs1}%
+}
+\alt<4>{
+\mode<beamer>{
+\psset{linecolor=red}
+}
+\ncdiag{->}{xs1}{vp}
+}{
+\ncdiag{->}{xs1}{vp}
+}
+%\psgrid
+\end{pspicture}
+\hspace{1cm}\raisebox{3cm}{\begin{tabular}[t]{@{}l@{}}
+A dominiert unmittelbar \only<2->{B und C}\\
+\only<3->{C dominiert unmittelbar} \only<4->{D} \\
+\end{tabular}}
+
+\bigskip
+
+A dominiert unmittelbar B genau dann, wenn \\
+A B dominiert und es keinen Knoten C zwischen A und B gibt.
+
+\pause\pause\pause
+
+
+}
+
+
+\frame{
+\frametitle{Präzedenz}
+
+\begin{description}[<+->]
+\item[Präzedenz (\textit{precedence})]~\\ A geht B voran, wenn A in einer Baumgrafik vor B steht und\\
+     keiner der beiden Knoten den anderen dominiert. 
+\item[Unmittelbare Präzedenz (\emph{immediate precedence})]~\\ Kein Element C zwischen A und B.
+\end{description}
+
+}
+}%\end{einfsprachwiss-exclude}
+}%psgbegriffe
+
+
+\subsubsection{Eine Beispielgrammatik}
+
+
+\frame[shrink=8]{
+\frametitle{Beispielableitung bei Annahme flacher Strukturen}
+
+\vfill
+
+\bigskip
+\parskip0pt
+\begin{tabular}[t]{@{}l@{ }l}
+\highlight{NP}<5,8> & \highlight{$\to$ Det N}<5,8>\\          
+\highlight{S}<10>  & \highlight{$\to$ NP NP NP V}<10>
+\end{tabular}\hspace{2cm}%
+\begin{tabular}[t]{@{}l@{ }l}
+\highlight{NP}<2> & \highlight{$\to$ er}<2>\\
+\highlight{Det}<3>  & \highlight{$\to$ das}<3>\\
+\highlight{Det}<6>  & \highlight{$\to$ dem}<6>\\
+\end{tabular}\hspace{8mm}
+\begin{tabular}[t]{@{}l@{ }l}
+\highlight{N}<4> & \highlight{$\to$ Buch}<4>\\
+\highlight{N}<7> & \highlight{$\to$ Mann}<7>\\
+\highlight{V}<9> & \highlight{$\to$ gibt}<9>\\
+\end{tabular}
+\vfill
+
+\begin{tabular}{@{}llllll@{\hspace{2.5cm}}l}
+er            & das          & Buch          & dem          & Mann & gibt                \pause\\
+\highlight{NP}<2> & das          & Buch          & dem          & Mann & gibt & \only<handout>{NP $\to$ er}  \pause\\
+NP            & \highlight{Det}<3> & Buch          & dem          & Mann & gibt & \only<handout>{Det $\to$ das}  \pause\\
+NP            & Det            & \highlight{N}<4>  & dem          & Mann & gibt & \only<handout>{N $\to$ Buch} \pause\\
+NP            &              & \highlight{NP}<5> & dem          & Mann & gibt & \only<handout>{NP $\to$ Det N}\pause\\
+NP            &              & NP            & \highlight{Det}<6> & Mann & gibt & \only<handout>{Det $\to$ dem}  \pause\\
+NP            &              & NP            & Det            & \highlight{N}<7>    & gibt & \only<handout>{N $\to$ Mann} \pause\\
+NP            &              & NP            &              & \highlight{NP}<8>       & gibt & \only<handout>{NP $\to$ Det N}\pause\\
+NP            &              & NP            &              & NP       & \highlight{V}<9>   & \only<handout>{V $\to$ gibt}  \pause\\
+              &              &               &              &      & \highlight{S}<10>   & \only<handout>{S $\to$ NP NP NP V}\\
+\end{tabular}
+
+\vfill
+}
+
+
+\begin{frame}[fragile]
+\frametitle{Do try this at home!}
+
+Sie können solche Grammatiken selbst ausprobieren.
+\begin{itemize}
+\item Gehen Sie auf \url{https://swish.swi-prolog.org/}.
+\item Klicken Sie "`Program"'.
+\item Geben Sie folgendes ein:
+\begin{verbatim}
+s --> np, v, np, np.
+np --> det, n.
+np --> [er].
+det --> [das].
+det --> [dem].
+n --> [buch].
+n --> [kind].
+v --> [gibt].
+\end{verbatim}
+\item Geben Sie in die untere rechte Box folgendes ein: \texttt{s([er,gibt,das,buch,dem,kind],[]).}
+\item Wenn in der Box darüber "`true"' erscheint, feiern Sie!
+\end{itemize}
+
+\end{frame}
+
+\frame{
+\frametitle{Eine Generative Grammatik}
+
+\begin{itemize}
+\item Die Grammatik, die Sie eingegeben haben, kann Sätze erzeugen:
+\pause
+\item Man kann testen, welche Sätze die Grammatik generiert, indem man folgendes eingibt:
+\texttt{s([X],[]),print(X),nl,fail.}
+
+\pause
+\item \texttt{s([X],[])} fordert Prolog auf, ein X zu finden, das ein "`s"' ist.
+\pause
+\item \texttt{print(X),nl} gibt das X und eine newline aus und
+\pause
+\item \texttt{fail} teilt Prolog mit, dass wir nicht zufrieden sind und dass es noch eine weitere
+  Lösung suchen soll.
+\pause
+\item Es versucht weiter, bis es keine weiteren Lösungen mehr gibt und failt dann.
+\pause
+\item Einige Grammatiken generieren unendlich viele Xe. Dieser Prozess würde also nie terminieren
+  (es sei denn, der Computer hat nicht genug Speicher \ldots).
+
+\end{itemize}
+
+}
+
+
+
+
+\frame{
+
+\frametitle{Von der Grammatik beschriebene Sätze}
+
+
+
+\begin{itemize}
+\item die Grammatik ist zu ungenau:\\
+\begin{tabular}{@{}l@{ }l}
+NP & $\to$ Det N\\
+S  & $\to$ NP NP NP V\\
+\end{tabular}
+\eal
+\ex[]{
+er das Buch dem Mann gibt
+}
+\ex[*]{
+ich das Buch dem Mann gibt\\
+\pause
+(Subjekt"=Verb"=Kongruenz {\em ich\/}, {\em gibt\/})}
+\pause
+\ex[*]{
+er das Buch den Mann gibt\\\pause
+(Kasusanforderungen des Verbs {\em gibt\/} verlangt Dativ)
+}
+\pause
+\ex[*]{
+er den Buch dem Mann gibt\\\pause
+(Determinator"=Nomen"=Kongruenz {\em den\/}, {\em Buch\/})
+}
+\zl
+\end{itemize}
+
+}
+
+% geht hier nicht, weil das von anderen eingebunden wird
+%\exewidth{\exnrfont(12)}
+
+\frame{
+
+\frametitle{Subjekt"=Verb"=Kongruenz (I)}
+
+
+\begin{itemize}
+\item Übereinstimmung in Person (1, 2, 3) und Numerus (sg, pl)
+\eal
+\ex Ich schlafe. (1, sg)
+\ex Du schläfst.  (2, sg)
+\ex Er schläft.  (3, sg)
+\ex Wir schlafen. (1, pl)
+\ex Ihr schlaft.  (2, pl)
+\ex Sie schlafen. (3,pl)
+\zl
+\item Wie drückt man das in Regeln aus?
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Subjekt"=Verb"=Kongruenz (II)}
+
+\begin{itemize}
+\item Verfeinerung der verwedenten Symbole\\
+            aus S $\to$ NP NP NP V wird\\[2ex]
+\begin{tabular}{@{}l@{ }l}
+S  & $\to$ NP\_1\_sg NP NP V\_1\_sg\\
+S  & $\to$ NP\_2\_sg NP NP V\_2\_sg\\
+S  & $\to$ NP\_3\_sg NP NP V\_3\_sg\\
+S  & $\to$ NP\_1\_pl NP NP V\_1\_pl\\
+S  & $\to$ NP\_2\_pl NP NP V\_2\_pl\\
+S  & $\to$ NP\_3\_pl NP NP V\_3\_pl\\
+\end{tabular}
+
+\item sechs Symbole für Nominalphrasen, sechs für Verben
+\item sechs Regeln statt einer
+\end{itemize}
+
+}
+
+\frame{
+
+\frametitle{Kasuszuweisung durch das Verb}
+
+\begin{itemize}
+\item Kasus muß repräsentiert sein:
+\begin{tabular}{@{}l@{ }l}
+S  & $\to$ NP\_1\_sg\_nom NP\_dat NP\_acc V\_1\_sg\_ditransitiv\\
+S  & $\to$ NP\_2\_sg\_nom NP\_dat NP\_acc V\_2\_sg\_ditransitiv\\
+S  & $\to$ NP\_3\_sg\_nom NP\_dat NP\_acc V\_3\_sg\_ditransitiv\\
+S  & $\to$ NP\_1\_pl\_nom NP\_dat NP\_acc V\_1\_pl\_ditransitiv\\
+S  & $\to$ NP\_2\_pl\_nom NP\_dat NP\_acc V\_2\_pl\_ditransitiv\\
+S  & $\to$ NP\_3\_pl\_nom NP\_dat NP\_acc V\_3\_pl\_ditransitiv\\
+\end{tabular}
+\item insgesamt 3 * 2 * 4 = 24 neue Kategorien für NP
+\item 3 * 2 * x  Kategorien für V (x = Anzahl der Valenzmuster)
+\end{itemize}
+
+}
+
+
+\frame[shrink=15]{
+
+\frametitle{Determinator"=Nomen"=Kongruenz}
+
+\begin{itemize}
+\item Übereinstimmung in Genus (fem, mas, neu), Numerus (sg, pl) und\\
+      Kasus (nom, gen, dat, acc)
+\eal
+\ex der Mann, die Frau, das Buch (Genus)
+\ex das Buch, die Bücher (Numerus)
+\ex des Buches, dem Buch (Kasus)
+\zl
+\pause
+\item aus NP $\to$ Det N wird\\[2ex]
+\resizebox{\linewidth}{!}{
+\begin{tabular}{@{}l@{ }l@{\hspace{4mm}}l@{ }l}
+NP\_3\_sg\_nom  & $\to$ Det\_fem\_sg\_nom N\_fem\_sg\_nom & NP\_gen  & $\to$ Det\_fem\_sg\_gen N\_fem\_sg\_gen\\
+NP\_3\_sg\_nom  & $\to$ Det\_mas\_sg\_nom N\_mas\_sg\_nom & NP\_gen  & $\to$ Det\_mas\_sg\_gen N\_mas\_sg\_gen\\
+NP\_3\_sg\_nom  & $\to$ Det\_neu\_sg\_nom N\_neu\_sg\_nom & NP\_gen  & $\to$ Det\_neu\_sg\_gen N\_neu\_sg\_gen\\
+NP\_3\_pl\_nom  & $\to$ Det\_fem\_pl\_nom N\_fem\_pl\_nom & NP\_gen  & $\to$ Det\_fem\_pl\_gen N\_fem\_pl\_gen\\
+NP\_3\_pl\_nom  & $\to$ Det\_mas\_pl\_nom N\_mas\_pl\_nom & NP\_gen  & $\to$ Det\_mas\_pl\_gen N\_mas\_pl\_gen\\
+NP\_3\_pl\_nom  & $\to$ Det\_neu\_pl\_nom N\_neu\_pl\_nom & NP\_gen  & $\to$ Det\_neu\_pl\_gen N\_neu\_pl\_gen\\[2mm]
+
+
+\ldots & \hspaceThis{$\to$} Dativ                                                             & \ldots & \hspaceThis{$\to$} Akkusativ\\[2mm]
+\end{tabular}
+}
+\item 24 Symbole für Determinatoren, 24 Symbole für Nomen
+\item 24 Regeln statt einer
+\end{itemize}
+}
+
+\subsubsection{Erweiterung der PSG durch Merkmale}
+
+
+\frame{
+
+\frametitle{Probleme dieses Ansatzes}
+
+\begin{itemize}
+\item Gernalisierungen werden nicht erfaßt.
+\item weder in Regeln noch in Kategoriesymbolen
+      \begin{itemize}
+      \item Wo kann eine NP oder NP\_nom stehen?\\
+            Nicht wo kann eine NP\_3\_sg\_nom stehen?
+      \item Gemeinsamkeiten der Regeln sind nicht offensichtlich.
+      \end{itemize}
+\pause
+\item Lösung: Merkmale mit Werten und Identität von Werten\\
+      Kategoriesymbol: NP Merkmal: Per, Num, Kas, \ldots\\
+
+Wir erhalten \zb die Regeln:\\
+
+\begin{tabular}{@{}l@{ }l}
+NP(3,sg,nom)  & $\to$ Det(fem,sg,nom) N(fem,sg,nom)\\
+NP(3,sg,nom)  & $\to$ Det(mas,sg,nom) N(mas,sg,nom)\\
+\end{tabular}
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Merkmale und Regelschemata (I)}
+
+\begin{itemize}
+\item Regeln mit speziellen Werten zu Regelschemata verallgemeinern:
+
+\medskip
+
+\begin{tabular}{@{}l@{ }l@{ }l}
+NP(\blau<3>{3},\blau<2>{Num},\blau<2>{Kas}) & $\to$ & Det(\gruen<2>{Gen},\blau<2>{Num},\blau<2>{Kas}) N(\gruen<2>{Gen},\blau<2>{Num},\blau<2>{Kas})\\
+\end{tabular}
+\pause
+\item Gen-, Num- und Kas-Werte sind egal,\\
+      Hauptsache sie stimmen überein (identische Werte)
+\pause
+\item Der Wert des Personenmerkmals (erste Stelle in NP(3,Num,Kas))\\
+ ist durch die Regel festgelegt: 3.
+\end{itemize}
+}
+
+
+\frame{
+\frametitle{Merkmale und Regelschemata (II)}
+
+\begin{itemize}
+\item Regeln mit speziellen Werten zu Regelschemata verallgemeinern:
+
+\medskip
+\begin{tabular}{@{}l@{ }l@{ }l}
+NP({3},{Num},{Kas}) & $\to$ & Det(Gen,{Num},{Kas}) N(Gen,{Num},{Kas})\\
+S  & $\to$ & NP(\blau<1>{Per1},\blau<1>{Num1},\blau<3>{nom})\\
+   &       & NP(Per2,Num2,\blau<3>{dat})\\
+   &       & NP(Per3,Num3,\blau<3>{akk})\\
+   &       & V(\blau<1>{Per1},\blau<1>{Num1})\\\\
+\end{tabular}
+\item Per1 und Num1 sind beim Verb und Subjekt gleich.
+\pause
+\item Bei anderen NPen sind die Werte egal.\\
+      (Schreibweise für irrelevante Werte: `\_')
+\pause
+\item Die Kasus der NPen sind in der zweiten Regel festgelegt.
+\end{itemize}
+
+}
+
+%% Kommt dann in Theorie anders, deshalb hier raus
+%% \frame{
+
+%% \small
+%% \frametitle{Bündelung von Merkmalen}
+
+%% \begin{itemize}
+%% \item Kann es Regeln geben, in denen nur der Per-Wert oder nur der Num-Wert identisch sein muß?\\[2ex]
+
+%% \begin{tabular}{@{}l@{ }l@{ }l}
+%% S  & $\to$ & NP(Per1,Num1,nom)\\
+%%    &       & NP(Per2,Num2,dat)\\
+%%    &       & NP(Per3,Num3,akk)\\
+%%    &       & V(Per1,Num1)\\\\
+%% \end{tabular}
+%% \pause
+%% \item Gruppierung von Information $\to$ stärkere Generalisierung, stärkere Aussage\\[2ex]
+
+%% \begin{tabular}{@{}l@{ }l@{ }l}
+%% S  & $\to$ & NP(Agr1,nom)\\
+%%    &       & NP(Agr2,dat)\\
+%%    &       & NP(Agr3,akk)\\
+%%    &       & V(Agr1)\\\\
+%% \end{tabular}
+
+%% wobei Agr ein Merkmal mit komplexen Wert ist: \zb agr(1,sg)
+%% \end{itemize}
+
+
+%% }
+
+
+\iftoggle{hpsgvorlesung}{
+\subsubsection{Abstraktion über Regeln: \texorpdfstring{\xbar}{X-Bar}-Theorie}
+
+\frame{
+\frametitle{Abstraktion über Regeln}
+
+\xbar"=Theorie \citep{Jackendoff77a}:
+
+\medskip
+\oneline{\(
+\begin{array}{@{}l@{\hspace{1cm}}l@{\hspace{1cm}}l}
+\xbar\mbox{-Regel} & \mbox{mit Kategorien} & \mbox{Beispiel}\\[2mm]
+\overline{\overline{\mbox{X}}} \rightarrow \overline{\overline{\mbox{Spezifikator}}}~~\xbar & \overline{\overline{\mbox{N}}} \rightarrow \overline{\overline{\mbox{DET}}}~~\overline{\mbox{N}} & \mbox{das [Bild von Maria]} \\
+\xbar \rightarrow \xbar~~\overline{\overline{\mbox{Adjunkt}}}             & \overline{\mbox{N}} \rightarrow \overline{\mbox{N}}~~\overline{\overline{\mbox{REL\_SATZ}}} & \mbox{[Bild von Maria] [das alle kennen]}\\
+\xbar \rightarrow \overline{\overline{\mbox{Adjunkt}}}~~\xbar             & \overline{\mbox{N}} \rightarrow \overline{\overline{\mbox{ADJ}}}~~\overline{\mbox{N}} & \mbox{schöne [Bild von Maria]}\\
+\xbar \rightarrow \mbox{X}~~\overline{\overline{\mbox{Komplement}}}*               & \overline{\mbox{N}} \rightarrow \mbox{N}~~\overline{\overline{\mbox{P}}} & \mbox{Bild [von Maria]}\\\\
+\end{array}
+\)}
+
+X steht für beliebige Kategorie, `*' für beliebig viele Wiederholungen
+
+}
+
+\frame{
+\frametitle{\xbar-Theorie}
+
+\xbar-Theorie wird in vielen verschiedenen Frameworks angenommen:\\
+\begin{itemize}
+\item Government \& Binding (GB): \citew*{Chomsky81a}
+\item Lexical Functional Grammar (LFG): \citew{Bresnan82a-ed,Bresnan2001a}
+\item Generalized Phrase Structure Grammar (GPSG):\\
+      \citew*{GKPS85a}
+\end{itemize}
+
+}
+
+
+
+\subsection{Hausaufgabe}
+
+\frame{
+\frametitle{Hausaufgabe}
+
+\begin{enumerate}
+\item Schreiben Sie eine Phrasenstrukturgrammatik, mit der man u.\,a.\ die Sätze in (\mex{1})
+      analysieren kann, die die Wortfolgen in (\mex{2}) aber nicht zulässt.
+      \eal
+      \ex[]{
+      Der Mann hilft der Frau.
+      }
+      \ex[]{
+      Er gibt ihr das Buch.
+      }
+      \ex[]{
+      Er wartet auf ein Wunder.
+      }
+%       \ex[]{
+%       Er wartet neben dem Bushäuschen auf ein Wunder.
+%       }
+      \zl
+      \eal
+      \ex[*]{
+        Der Mann hilft er.
+      }
+      \ex[*]{
+        Er gibt ihr den Buch.
+      }
+      \zl
+      Dabei sollen Sie nicht für jeden Satz einzeln eigene Regeln für NP usw.\ aufstellen, sondern gemeinsame Regeln für
+      alle aufgeführten Sätze entwickeln.
+
+      Sie können für Ihre Arbeit auch Prolog benutzen: \url{https://swish.swi-prolog.org} zur Syntax
+      für die Grammatiken siehe \url{https://en.wikipedia.org/wiki/Definite_clause_grammar}.
+\end{enumerate}
+
+}
+
+}
+
+
+
+

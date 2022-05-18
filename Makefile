@@ -2,7 +2,7 @@ STYLE-PATH= ${HOME}/Library/texmf/tex/latex/
 LANGSCI-PATH=~/Documents/Dienstlich/Projekte/LangSci/Git-HUB/latex/
 
 
-SOURCE= $(wildcard *.tex)
+SOURCE= $(wildcard *.tex) $(wildcard geteilte-Folien/*.tex)
 
 09-hpsg-handout-konstituentenreihenfolge.pdf:	09-hpsg-handout-konstituentenreihenfolge.tex hpsg-konstituentenreihenfolge.tex
 	xelatex 09-hpsg-handout-konstituentenreihenfolge
