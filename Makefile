@@ -48,6 +48,10 @@ handout: 1-handout
 
 o-public: knoppix o-public-copy
 
+klima-public: 00-Klimakatastrophe-handout.pdf\
+      00-Klimakatastrophe-slides.pdf	
+	scp -p $? hpsg.hu-berlin.de:/home/stefan/public_html/PS/
+
 # hpsg-slides-2.pdf hpsg-handout-2.pdf hpsg-slides.pdf hpsg-handout.pdf 
 o-public-copy: 01-hpsg-handout-einleitung.pdf \
       02-hpsg-handout-formalismus.pdf\
@@ -60,7 +64,9 @@ o-public-copy: 01-hpsg-handout-einleitung.pdf \
       10-hpsg-handout-nla.pdf\
       11-hpsg-handout-lokalitaet.pdf\
       hpsg-slides.pdf\
-      hpsg-handout.pdf 
+      hpsg-handout.pdf \
+      00-Klimakatastrophe-handout.pdf\
+      00-Klimakatastrophe-slides.pdf	
 	scp -p $? hpsg.hu-berlin.de:/home/stefan/public_html/PS/
 
 
