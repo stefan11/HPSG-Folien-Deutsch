@@ -458,21 +458,35 @@ head-dtr      & \highlight<1>{\onems{ loc$|$cat \onems{ head \ms[verb]{vform & f
 \oneline{
 \begin{forest}
 type hierarchy,
- for tree={
-   calign=fixed angles,
-   calign angle=50
- } 
+ % for tree={
+ %   calign=fixed angles,
+ %   calign angle=50
+ % } 
 [sign
   [word]
   [phrase
     [non-headed-phrase]
-    [headed-phrase
-      [head-non-adjunct-phrase%, for current and siblings={l sep*=4}, 
-        [head-argument-phrase]
-        [head-filler-phrase]]
-      [head-non-argument-phrase
-       [,identify=!r2212]
-       [head-adjunct-phrase]]]]]
+    [headed-phrase, l sep*=2, for children={l sep*=4}
+      [head-non-adjunct-phrase, name=non-adjunct, 
+        [head-adjunct-phrase,no edge, name=adjunct]]
+      [head-non-argument-phrase, name=non-arg
+        [head-argument-phrase,no edge, name=argument]]
+      [head-non-filler-phrase, name= non-filler
+        [head-filler-phrase, no edge, name=filler]]
+      [head-non-specifier-phrase, name=non-specifier
+        [head-specifier-phrase, no edge, name=specifier]]]]]
+\draw (non-adjunct.south) to (argument.north);
+\draw (non-adjunct.south) to (filler.north);
+\draw (non-adjunct.south) to (specifier.north);
+\draw (non-arg.south) to (adjunct.north);
+\draw (non-arg.south) to (filler.north);
+\draw (non-arg.south) to (specifier.north);
+\draw (non-filler.south) to (adjunct.north);
+\draw (non-filler.south) to (argument.north);
+\draw (non-filler.south) to (specifier.north);
+\draw (non-specifier.south) to (adjunct.north);
+\draw (non-specifier.south) to (argument.north);
+\draw (non-specifier.south) to (filler.north);
 \end{forest}}
 \vfill
 
@@ -529,7 +543,7 @@ for level={3}{l+=\baselineskip}
          [\ibox{4} \feattab{\textsc{loc} \ibox{1},\\
                             \slasch \sliste{ \ibox{1} } }
          [\trace]]
-       [V\feattab{\subcat \sliste{ \ibox{3} }, \slasch \sliste{ \ibox{1} }}
+       [V\feattab{\subcat \sliste{ \ibox{4} }}
          [{\ibox{3} NP[\type{nom}]}
            [jeder]]
          [V\feattab{\subcat \sliste{ \ibox{3}, \ibox{4} }}

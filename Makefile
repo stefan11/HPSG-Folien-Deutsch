@@ -108,6 +108,8 @@ install:
 	cp -p ${STYLE-PATH}Ling/cgloss.sty               styles/
 	cp -p ${LANGSCI-PATH}langsci-forest-setup.sty    .
 
+mount:
+	/usr/local/bin/bindfs ~/Documents/Dienstlich/Lehre/Folien/HU/geteilte-Folien ~/Documents/Dienstlich/Lehre/Folien/HU/HPSG/geteilte-Folien
 
 clean:
 	find . -name \*\.bak -exec \rm {} \;
