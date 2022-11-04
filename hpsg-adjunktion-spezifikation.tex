@@ -269,18 +269,25 @@ aber:
 
 \centerline{%
 \small
+% visible does not work with tikz
+% \begin{forest}
+% sm edges
+% [{\nbar[\cont \rnode{cont1}{\ibox{1}}]}
+%   [AP\feattab{\textsc{head$|$mod} \highlight<1>{\ibox{2}},\\
+%               \visible<2->{\rnode{cont2}{\cont} \ibox{1} [\textsc{restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]}} [interessantes]]
+%   [{\highlightbox<1>{\ibox{2}} \nbar\visible<2->{[\textsc{cont$|$restr} \highlight<2>{\ibox{4} \nliste{ buch(\ibox{3}) }}]}}
+%     [Buch]]]
+% \end{forest}
 \begin{forest}
 sm edges
 [{\nbar[\cont \rnode{cont1}{\ibox{1}}]}
-  [AP{\begin{tabular}[t]{@{}l@{}}
-      [\textsc{head$|$mod} \highlight<1>{\ibox{2}},\\
-              \visible<2->{\rnode{cont2}{\cont} \ibox{1} [{\sc restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]]}
-      \end{tabular}} [interessantes]]
-  [{\highlightbox<1>{\ibox{2}} \nbar\visible<2->{[{\sc cont$|$restr} \highlight<2>{\ibox{4} \nliste{ buch(\ibox{3}) }}]}}
+  [AP\feattab{\textsc{head$|$mod} \highlight<1>{\ibox{2}},\\
+              {\rnode{cont2}{\cont} \ibox{1} [\textsc{restr} \highlight<2>{\nliste{ interessant(\ibox{3}) } $\oplus$ \ibox{4}}]}} [interessantes]]
+  [{\highlightbox<1>{\ibox{2}} \nbar{[\textsc{cont$|$restr} \highlight<2>{\ibox{4} \nliste{ buch(\ibox{3}) }}]}}
     [Buch]]]
 \end{forest}
-}
 \visible<3->{\highlight<3>{\nccurve[angleA=90,angleB=175,ncurvB=1]{<->}{cont1}{cont2}}}
+}
 
 \begin{itemize}[<+->]
 \item Kopf"=Adjunkt"=Schema identifiziert {\sc mod}"=Wert der Adjunkttochter mit dem Kopf (\ibox{2})
