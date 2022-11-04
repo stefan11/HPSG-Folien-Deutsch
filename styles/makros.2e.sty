@@ -133,7 +133,7 @@
 %% \newcommand{\iafdata}[1]{\index{autind}{#1|fn{\thefootnote}}}
 
 
-%% \newcommand{\is}[1]{\if@noftnote%
+%% \newcommansd{\is}[1]{\if@noftnote%
 %% \index{subind}{#1}%
 %% \else%
 %% \index{subind}{#1|fn{\thefootnote}}%
@@ -182,8 +182,8 @@
 
 \newcommand{\feat}[1]{\textsc{#1}\isfeat{#1}}
 
-\newcommand{\sub}[1]{\(_{\mbox{\scriptsize\textrm{#1}}}\)}
-\newcommand{\ssub}[1]{\(_{\mbox{\tiny\textrm{#1}}}\)}
+\newcommand{\sub}[1]{\textsubscript{\scriptsize\textrm{#1}}}
+\newcommand{\ssub}[1]{\textsubscript{\tiny\textrm{#1}}}
 
 
 
@@ -488,3 +488,7 @@ Abbildung~\ref{#1}\vpageref[]{#1} und Abbildung~\ref{#2} \vpageref{#2}%
 
 % a) hspace over width of something without showing it
 \newcommand*{\hspaceThis}[1]{\settowidth{\stmueTmp}{#1}\hspace*{\stmueTmp}}
+
+
+% for \hyp in references
+\usepackage{hyphenat}

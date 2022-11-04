@@ -102,7 +102,7 @@ install:
 	cp -p ${STYLE-PATH}unified-biblatex/stmue-langsci-unified.cbx styles/
 	cp -p ${STYLE-PATH}Ling/article-ex.sty           styles/
 	cp -p ${STYLE-PATH}Ling/merkmalstruktur.sty      styles/
-	cp -p ${STYLE-PATH}Ling/my-xspace.sty            styles/
+	cp -p ${STYLE-PATH}my-xspace.sty            styles/
 	cp -p ${STYLE-PATH}Ling/forest.sty               styles/
 	cp -p ${STYLE-PATH}Ling/my-gb4e-slides.sty       styles/
 	cp -p ${STYLE-PATH}Ling/cgloss.sty               styles/
