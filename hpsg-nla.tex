@@ -13,7 +13,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item Semantik
 \item Adjunktion und Spezifikation
 \item Das Lexikon: Typen und Lexikonregeln
@@ -36,7 +36,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item Topologie des deutschen Satzes
 \item Konstituentenreihenfolge
 \item \blau{Nichtlokale Abhängigkeiten}
@@ -195,8 +195,8 @@ Zur Nichtlokalität der Extraposition siehe auch \citet{Mueller2004d}.
 linecolor=green,arrows=<->](4.6,4.8)(4.7,4.4)(5.0,4.4)(5.3,5.2)(6.8,7.3)(5.1,9.2)(3,10.2)(1.3,9.6)
 }
 %
-\rput[B](1,1){\rnode{speccp}{\blau<1>{diesen Mann$_i$}}}
-\rput[B](3,1){\rnode{cleer}{{kennt}}}
+\rput[B](1,1){\rnode{speccp}{\blau<1>{diesen Mann}}}
+\rput[B](3,1){\rnode{cleer}{{kennt$_k$}}}
 \rput[B](5,1){\rnode{jeder}{\blau<1>{[ \_ ]$_i$}}}
 \rput[B](7,1){\rnode{ihnmf}{jeder}}
 \rput[B](9,1){\rnode{kennt}{{[ \_ ]$_k$}}}
@@ -214,7 +214,7 @@ linecolor=green,arrows=<->](4.6,4.8)(4.7,4.4)(5.0,4.4)(5.3,5.2)(6.8,7.3)(5.1,9.2
 %
 \rput[B](3,7){\rnode{c}{V}}
 %
-\rput[B](1,9){\rnode{np3}{\blau<1>{NP}}}
+\rput[B](1,9){\rnode{np3}{\blau<1>{NP$_i$}}}
 \rput[B](4.75,9){\rnode{cs}{VP/NP}}
 %
 %
@@ -275,7 +275,7 @@ linecolor=green,arrows=<->](4.6,4.8)(4.7,4.4)(5.0,4.4)(5.3,5.2)(6.8,7.3)(5.1,9.2
 \item Information ist gleichzeitig an jedem Knoten präsent.
 \item Knoten in der Mitte einer Fernabhängigkeit können darauf zugreifen\\
       (\citet*{BMS2001a}: Irisch, Chamorro, Palauan, Isländisch,\\
-      \hspaceThis{(}Kikuyu, Ewe, Thompson Salish, Moore, Französisch, Spanisch, Jiddisch)
+      \hphantom{(}Kikuyu, Ewe, Thompson Salish, Moore, Französisch, Spanisch, Jiddisch)
 \end{itemize}
 
 }
@@ -314,8 +314,8 @@ phon   & list~of~phoneme strings\\
 \ms[nonloc]{
  que & \type{list~of~npros} \\
  \visible<2->{rel & \type{list~of~indices}} \\
- \visible<3->{slash & \type{list~of~local~phrases}} \\ %\\
- %extra & \ms[list~of~local~phrases]{} \\
+ \visible<3->{slash & \type{list~of~local~structures}} \\ %\\
+ %extra & \ms[list~of~local~structrues]{} \\
 }
 \medskip
 

@@ -28,8 +28,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{localpackages.tex}
+\input{localcommands.tex}
 
 \title{Head-Driven Phrase Structure Grammar für das Deutsche}
+
+\bibliography{bib-abbr,biblio,biblio-xdata-en}
 
 \begin{document}
 \hypersetup{bookmarksopen=false}
@@ -45,20 +48,19 @@
 
 
 \include{hpsg-organisatorisches}
-\include{geteilte-Folien/00-klimakatastrophe}
+%\include{geteilte-Folien/00-klimakatastrophe}
 
 \include{geteilte-Folien/einleitung-syntax}
 \iftoggle{hpsglight}{
  \include{hpsg-light}
 }
-\include{hpsg-formalismus}
+\include{geteilte-Folien/hpsg-formalismus}
 \include{hpsg-valenz-grammatikregeln}
 \include{hpsg-komplementation}
 \include{hpsg-semantik}
-\include{hpsg-adjunktion-spezifikation}
+\exewidth{(235)}
 \include{hpsg-lexikon}
 \include{hpsg-topologie}
-\exewidth{(235)}
 \include{hpsg-konstituentenreihenfolge}
 \include{hpsg-nla}
 %\include{hpsg-relativsaetze}

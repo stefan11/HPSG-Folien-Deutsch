@@ -783,6 +783,49 @@ X kann links oder rechts in Regeln stehen
 }
 
 
+\frame{
+\frametitle{NP-Strukturen mit allen Projektionsstufen}
+
+\centerline{
+\scalebox{.7}{%
+\begin{forest}
+sm edges
+[NP
+  [DetP
+    [\detbar
+      [Det [das] ] ] ]
+  [\nbar
+    [N [Bild] ] ] ]
+\end{forest}}
+\hspace{5mm}
+\scalebox{.7}{%
+\begin{forest}
+sm edges
+[NP
+  [DetP
+    [\detbar
+      [Det [das] ] ] ]
+  [\nbar
+    [AP
+      [\abar
+        [A [schöne] ] ] ]
+    [\nbar
+      [N [Bild] ]
+      [PP 
+        [\pbar
+          [P [von] ]
+          [NP
+            [\nbar
+              [N [Paris] ] ] ] ] ] ] ] ]
+\end{forest}}}
+%
+%
+%\hfill\mbox{}
+
+
+}
+
+
 \if 0
 \begin{figure}[htb]
 \hfill

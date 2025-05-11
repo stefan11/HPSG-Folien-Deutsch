@@ -13,14 +13,14 @@
 \begin{forest}
 sm edges
 [S
-  [NP [er] ]
-  [NP
-    [Det [das] ]
-    [N [Buch] ] 
-  ]
+  [NP [Aicke] ]
   [NP
     [Det [dem] ]
-    [N [Mann] ] 
+    [N [Affen] ] 
+  ]
+  [NP
+    [Det [den] ]
+    [N [Stock] ] 
   ]
   [V [gibt] ]
 ]
@@ -29,15 +29,15 @@ sm edges
 \begin{forest}
 sm edges
 [V
-  [NP [er] ]
+  [NP [Aicke] ]
   [V
     [NP
-      [Det [das] ]
-      [N [Buch] ] ]
+      [Det [dem] ]
+      [N [Affen] ] ]
     [V
       [NP
-        [Det [dem] ]
-        [N [Mann] ] ]
+        [Det [den] ]
+        [N [Stock] ] ]
       [V [gibt] ] ] ] ]
 \end{forest}}
 \\
@@ -58,7 +58,7 @@ Das Eigentliche sind die Ersetzungsregeln! Die Bäume sind nur die Visualisierun
 \pause%
 %
 Aus Platzgründen auch Klammerschreibweise:\\
-{}[\sub{S} [\sub{NP} er] [\sub{NP} [\sub{Det} das] [\sub{N} Buch]]  [\sub{NP} [\sub{Det} dem] [\sub{N} Mann]] [\sub{V} gibt]]
+{}[\sub{S} [\sub{NP} Aicke] [\sub{NP} [\sub{Det} dem] [\sub{N} Affen]]  [\sub{NP} [\sub{Det} den] [\sub{N} Stock]] [\sub{V} gibt]]
 
 \handoutspace
 }
@@ -205,12 +205,12 @@ wenn es eine ausschließlich abwärts führende Linie von A nach B gibt.
 \psset{xunit=5mm,yunit=5mm,nodesep=8pt}
 \hspace{1cm}
 \begin{pspicture}(0,0)(7.4,7.4)
-\rput(3,7){\rnode{xp}{A}}
-\rput(1,4){\rnode{up}{B}}\rput(5,4){\rnode{xs1}{C}}
-\rput(5,1){\rnode{vp}{D}}
+\rput(3,7){\rnode{A}{A}}
+\rput(1,4){\rnode{B}{B}}\rput(5,4){\rnode{C}{C}}
+\rput(5,1){\rnode{D}{D}}
 
 \psset{angleA=-90,angleB=90,arm=0pt}
-\ncdiag{xs1}{xs2}%
+\ncdiag{C}{xs2}%
 \ncdiag{xs2}{wp}\ncdiag{xs2}{x}%
 \ncdiag{wp}{yp}\ncdiag{wp}{ws}%
 
@@ -218,17 +218,18 @@ wenn es eine ausschließlich abwärts führende Linie von A nach B gibt.
 \mode<beamer>{
 \psset{linecolor=red}
 }
-\ncdiag{->}{xp}{up}\ncdiag{->}{xp}{xs1}
+\ncdiag{->}{A}{B}\ncdiag{->}{A}{C}
 }{
-\ncdiag{xp}{up}\ncdiag{xp}{xs1}%
+\ncdiag{A}{B}\ncdiag{A}{C}%
 }
 \alt<4>{
 \mode<beamer>{
 \psset{linecolor=red}
 }
-\ncdiag{->}{xs1}{vp}
+\ncdiag{->}{C}{D}
 }{
-\ncdiag{->}{xs1}{vp}
+\psset{linecolor=black}
+\ncdiag{C}{D}
 }
 %\psgrid
 \end{pspicture}
@@ -277,25 +278,25 @@ A B dominiert und es keinen Knoten C zwischen A und B gibt.
 \highlight{S}<10>  & \highlight{$\to$ NP NP NP V}<10>
 \end{tabular}\hspace{2cm}%
 \begin{tabular}[t]{@{}l@{ }l}
-\highlight{NP}<2> & \highlight{$\to$ er}<2>\\
-\highlight{Det}<3>  & \highlight{$\to$ das}<3>\\
-\highlight{Det}<6>  & \highlight{$\to$ dem}<6>\\
+\highlight{NP}<2> & \highlight{$\to$ Aicke}<2>\\
+\highlight{Det}<3>  & \highlight{$\to$ dem}<3>\\
+\highlight{Det}<6>  & \highlight{$\to$ den}<6>\\
 \end{tabular}\hspace{8mm}
 \begin{tabular}[t]{@{}l@{ }l}
-\highlight{N}<4> & \highlight{$\to$ Buch}<4>\\
-\highlight{N}<7> & \highlight{$\to$ Mann}<7>\\
+\highlight{N}<4> & \highlight{$\to$ Affen}<4>\\
+\highlight{N}<7> & \highlight{$\to$ Stock}<7>\\
 \highlight{V}<9> & \highlight{$\to$ gibt}<9>\\
 \end{tabular}
 \vfill
 
 \begin{tabular}{@{}llllll@{\hspace{2.5cm}}l}
-er            & das          & Buch          & dem          & Mann & gibt                \pause\\
-\highlight{NP}<2> & das          & Buch          & dem          & Mann & gibt & \only<handout>{NP $\to$ er}  \pause\\
-NP            & \highlight{Det}<3> & Buch          & dem          & Mann & gibt & \only<handout>{Det $\to$ das}  \pause\\
-NP            & Det            & \highlight{N}<4>  & dem          & Mann & gibt & \only<handout>{N $\to$ Buch} \pause\\
-NP            &              & \highlight{NP}<5> & dem          & Mann & gibt & \only<handout>{NP $\to$ Det N}\pause\\
-NP            &              & NP            & \highlight{Det}<6> & Mann & gibt & \only<handout>{Det $\to$ dem}  \pause\\
-NP            &              & NP            & Det            & \highlight{N}<7>    & gibt & \only<handout>{N $\to$ Mann} \pause\\
+Aicke            & dem          & Affen          & den          & Stock & gibt                \pause\\
+\highlight{NP}<2> & dem          & Affen          & den          & Stock & gibt & \only<handout>{NP $\to$ Aicke}  \pause\\
+NP            & \highlight{Det}<3> & Affen          & den          & Stock & gibt & \only<handout>{Det $\to$ das}  \pause\\
+NP            & Det            & \highlight{N}<4>  & den          & Stock & gibt & \only<handout>{N $\to$ Buch} \pause\\
+NP            &              & \highlight{NP}<5> & den          & Stock & gibt & \only<handout>{NP $\to$ Det N}\pause\\
+NP            &              & NP            & \highlight{Det}<6> & Stock & gibt & \only<handout>{Det $\to$ den}  \pause\\
+NP            &              & NP            & Det            & \highlight{N}<7>    & gibt & \only<handout>{N $\to$ Stock} \pause\\
 NP            &              & NP            &              & \highlight{NP}<8>       & gibt & \only<handout>{NP $\to$ Det N}\pause\\
 NP            &              & NP            &              & NP       & \highlight{V}<9>   & \only<handout>{V $\to$ gibt}  \pause\\
               &              &               &              &      & \highlight{S}<10>   & \only<handout>{S $\to$ NP NP NP V}\\
@@ -316,14 +317,14 @@ Sie können solche Grammatiken selbst ausprobieren.
 \begin{verbatim}
 s --> np, v, np, np.
 np --> det, n.
-np --> [er].
-det --> [das].
+np --> [Aicke].
 det --> [dem].
-n --> [buch].
-n --> [kind].
+det --> [den].
+n --> [affen].
+n --> [stock].
 v --> [gibt].
 \end{verbatim}
-\item Geben Sie in die untere rechte Box folgendes ein: \texttt{s([er,gibt,das,buch,dem,kind],[]).}
+\item Geben Sie in die untere rechte Box folgendes ein: \texttt{s([Aicke,gibt,dem,affen,den,stock],[]).}
 \item Wenn in der Box darüber "`true"' erscheint, feiern Sie!
 \end{itemize}
 
@@ -372,21 +373,21 @@ S  & $\to$ NP NP NP V\\
 \end{tabular}
 \eal
 \ex[]{
-er das Buch dem Mann gibt
+Aicke dem Affen den Stock gibt
 }
 \ex[*]{
-ich das Buch dem Mann gibt\\
+ich dem Affen den Stock gibt\\
 \pause
 (Subjekt"=Verb"=Kongruenz {\em ich\/}, {\em gibt\/})}
 \pause
 \ex[*]{
-er das Buch den Mann gibt\\\pause
-(Kasusanforderungen des Verbs {\em gibt\/} verlangt Dativ)
+Aicke dem Affen dem Stock gibt\\\pause
+(Kasusanforderungen des Verbs {\em gibt} verlangt Akkusativ)
 }
 \pause
 \ex[*]{
-er den Buch dem Mann gibt\\\pause
-(Determinator"=Nomen"=Kongruenz {\em den\/}, {\em Buch\/})
+er dem Affen das Stock gibt\\\pause
+(Determinator"=Nomen"=Kongruenz {\em das}, {\em Stock})
 }
 \zl
 \end{itemize}
@@ -482,7 +483,7 @@ NP\_3\_pl\_nom  & $\to$ Det\_mas\_pl\_nom N\_mas\_pl\_nom & NP\_gen  & $\to$ Det
 NP\_3\_pl\_nom  & $\to$ Det\_neu\_pl\_nom N\_neu\_pl\_nom & NP\_gen  & $\to$ Det\_neu\_pl\_gen N\_neu\_pl\_gen\\[2mm]
 
 
-\ldots & \hspaceThis{$\to$} Dativ                                                             & \ldots & \hspaceThis{$\to$} Akkusativ\\[2mm]
+\ldots & \hphantom{$\to$} Dativ                                                             & \ldots & \hphantom{$\to$} Akkusativ\\[2mm]
 \end{tabular}
 }
 \item 24 Symbole für Determinatoren, 24 Symbole für Nomen

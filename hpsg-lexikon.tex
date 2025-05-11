@@ -21,7 +21,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item Semantik
 \item Adjunktion und Spezifikation
 \item \blau{Das Lexikon: Typen und Lexikonregeln}
@@ -64,23 +64,30 @@
 \subsection{Vertikale Generalisisierungen: Typhierarchien}
 
 \frame{
-
 \frametitle{Die Komplexität eines Lexikoneintrags für ein Zählnomen}
+
+\ea
 \ms{
- phon & \phonliste{ \highlight{Frau} } \\
- cat  & \ms{ head & \ms[noun]{ } \\
-             subcat & \liste{ det } \\
-             \ldots & \ldots\\
+ phon & \phonliste{ \highlight{Buch} } \\[2mm]
+ cat  & \ms{ head & noun \\
+%             spr  & \nliste{ Det } \\
+%             comps & \eliste{ }\\
+             arg-st & \nliste{ Det } \\
+               \ldots & \ldots\\
            } \\
  cont & \ms{
-           ind   & \ibox{1} \ms{ per & 3 \\
+           ltop & \ibox{1}\\
+           ind  & \ibox{2} \ms[referential]{ per & 3 \\
 % kommt aus der Morphologie            num & sg \\
-                                       gen & fem \\
-                                     } \\
-           restr & \liste{ \ms[\highlight{frau}]{ inst & \ibox{1} \\ }} \\
-}\\
- \ldots & \ldots\\
+                                gen & \highlight{neu} \\
+                              } \\
+           rels & \liste{ \ms[\highlight{buch}]{ lbl & \ibox{1}\\
+                                                 arg0 & \ibox{2} \\ }} \\
+           hcons & \eliste\\
+           } \\
+\ldots & \ldots\\
 }
+\z 
 
 nur kleiner Teil idiosynkratisch
 }
@@ -91,24 +98,36 @@ nur kleiner Teil idiosynkratisch
 \frametitle{Zerlegung der Information}
 
 \begin{itemize}
-\item[a.] alle Nomina\\[2mm]
-    \scalebox{0.8}{\onems{ cat$|$head \type{noun} \\
-             cont {\it nom-obj\/} \\
-        }}\medskip
+\item[a.] Alle relationalen Lexikonelemente bis auf Quantoren (\type{relational-le}):\\
+\avm{
+[ cont & [ ltop & \1\\
+           ind  & \2\\
+           rels & < [\type{relation}\\
+                     lbl  & \1\\
+                     arg0 & \2], \ldots > ] ]
+}
+
 \pause
-\item[b.] alle referentiellen nichtpronominalen Nomina, die einen Determinator verlangen
-    (zusätzlich zu a) \nopagebreak[4]\\[2mm]
-    \scalebox{0.8}{\onems{ cat$|$subcat \liste{ det } \\
-          cont  \ms{ ind & \ibox{1} \ms{ per & 3 \\ }\\
-           restr & \liste{ \ms[psoa]{ inst & \ibox{1} \\ }, \ldots } \\
-          } \\ 
-        }}\medskip
-\begin{samepage}
+
+\item[b.] Alle nicht-skopenden Lexikonelemente (\type{non-scopal-le}):\\
+\avm{
+[ cont|hcons & < > ]
+}
+
 \pause
-\item[c.] alle femininen Nomina (zusätzlich zu a)\\[2mm]
-    \scalebox{0.8}{\ms{ cont$|$ind$|$gen & fem \\
-        }}
-\end{samepage}
+\item[c.]
+Alle nominalen Elemente (Nomina, Pronomina, \type{noun-le}):\\
+\onems{ cat$|$head \type{noun} \\
+%            cont \type{nom-obj} \\
+        }
+
+\pause
+\item[d.] Alle Nomina, die einen Determinator verlangen (\type{det-noun-root}):\\
+\avm{
+[ cat &  [ spr    & \nliste{ [] }\\
+           arg-st & < Det >]\\
+  cont & [ ind|per & 3 ]]
+}
 \end{itemize}
 
 
@@ -118,44 +137,55 @@ nur kleiner Teil idiosynkratisch
 
 \frametitle{Die Komplexität eines Lexikoneintrags für ein Verb}
 
-\mbox{{\it helf-\/} (Lexikoneintrag (Wurzel)):}\\
+\mbox{\stem{helf} (Lexikoneintrag (Wurzel)):}\\
 \ms{
 phon & \phonliste{ \highlight{helf} }\\
-cat  & \ms{ head   & verb \\
-            subcat & \liste{ NP[{\it nom\/}]\ind{1}, NP[{\it dat}]\ind{2}  } \\
+cat  & \ms{ head & verb \\
+            spr    & \eliste\\
+            comps  & \ibox{1}\\
+            arg-st & \ibox{1} \liste{ NP[\type{nom}]\ind{2}, NP[\type{dat}]\ind{3}  } \\
           } \\
-cont &  \ms[\highlight{helfen}]{ agens       & \ibox{1} \\
-                                 experiencer & \ibox{2} \\
-                               } \\
+cont &  \ms{ 
+             ltop & \ibox{4}\\
+             ind  & \ibox{5} event\\
+             rels & \liste{ \ms[\highlight{helfen}]{ 
+                                 lbl  & \ibox{4}\\
+                                 arg0 & \ibox{5}\\
+                                 arg1 & \ibox{2}\\
+                                 arg2 & \ibox{3}\\
+                               } } }
 }
+
 
 
 }
 
 \frame{
-
-\frametitle{\normalsize Zerlegung der Information}
+\frametitle{Zerlegung der Information}
 
 \begin{itemize}
-\item[a.] alle Verben \\[2mm]
-            \scalebox{0.8}{\onems{ cat$|$head \type{verb} \\
-                                   cont       \type{psoa} \\
-           }}
-\pause
-\item[b.] bivalente Verben mit Dativobjekt 
-           (zusätzlich zu a) \\[2mm]
-           \scalebox{0.8}{\onems{ cat$|$subcat \liste{ NP[{\it nom\/}], NP[{\it dat\/}] } \\
-           }}
-\pause
-\item[c.] \begin{minipage}[t]{\linewidth}alle bivalenten Verben mit {\sc agens} und {\sc experiencer} \\ 
-           (zusätzlich zu a) \\[2mm]
-           \scalebox{0.8}{\ms{ cat$|$subcat & \liste{ \onems{ cont$|$ind \ibox{1}\\}, \onems{ cont$|$ind \ibox{2}\\}
-                                          } \\ 
-                cont & \ms[agens-exp-rel]{
-                         agens & \ibox{1} \\
-                         experiencer & \ibox{2} \\
-                        } \\
-           }}\end{minipage}
+\item[a.] Alle Verben (\type{verb-root}):\\
+\onems{  cat \ms{ head \type{verb} \\
+                  spr \eliste\\
+                }\\
+         cont|ind \type{event}}
+\item[b.] Alle Verben mit Subjekt und Dativobjekt:
+\onems{ 
+cat$|$arg-st \liste{ NP[\type{nom}], NP[\type{dat}] } \\
+}
+
+\item[c.] Alle mindestens einstelligen Verben mit \argone zusätzlich:
+\ms{ cat & \ms{ arg-st & \sliste{ [ cont$|$ind \ibox{1} ] } $\oplus$ \etag\\
+              } \\
+     cont & \ms{
+            rels & \sliste{ [ \argone \ibox{1} ] } }
+}
+\item[d.] Alle mindestens zweistelligen Verben mit \argone und \argtwo zusätzlich:
+\ms{ cat & \ms{ arg-st & \sliste{ [ ], [ cont$|$ind \ibox{1} ] } $\oplus$ \etag\\ 
+              } \\
+     cont & \ms{
+            rels & \nliste{ [ \argtwo \ibox{1} ] } }
+}
 \end{itemize}
 %
 }
@@ -194,98 +224,56 @@ cont &  \ms[\highlight{helfen}]{ agens       & \ibox{1} \\
 
 \frametitle{Auszug aus einer möglichen Typhierarchie}
 
-
-% \hfill\resizebox{0.8\linewidth}{!}{%
-% \begin{tabular}{@{}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{\hspace{3mm}}c@{}}
-% \multicolumn{8}{c}{\rnode{lo}{\it sign}}\\[18ex]
-% \rnode{root}{\it root} & \rnode{verb}{\it verb-sign} & \rnode{noun}{\it noun-sign} &
-% \rnode{saturated}{\it saturated} & \multicolumn{3}{c}{\rnode{unsaturated}{\it unsaturated}} &  
-% \multicolumn{3}{c}{\rnode{nominal}{\it nominal-sem-sign}} & & \multicolumn{2}{c}{\rnode{verbal}{\it verbal-sem-sign}}\\
-%                       & \rnode{verb-c}{[ {\sc head} {\it verb} ]} & \rnode{noun-c}{[ {\sc head} {\it noun} ]} &
-% [ {\sc subcat} \sliste{} ] & \multicolumn{3}{c}{\rnode{unsaturated-c}{[ {\sc subcat} \sliste{ { [], \ldots} } ]}} & \multicolumn{3}{c}{\rnode{nominal-c}{[ {\sc cont} {\it nom-obj} ]}} & & \multicolumn{2}{c}{\rnode{verbal-c}{[ {\sc cont} {\it psoa} ]}}\\[6ex]
-% &&&\multicolumn{2}{c}{\rnode{det-sc}{\it det-sc}} & \rnode{trans}{\it nom-arg} & \rnode{ditrans}{\it nom-dat-arg} &&
-% \rnode{1}{\it 1} & \rnode{2}{\it 2} & \rnode{3}{\it 3} & \rnode{agent}{\it agent} & \rnode{exp}{\it experiencer}\\
-% &&&\multicolumn{2}{c}{\rnode{det-sc-c}{[{\sc subcat} \sliste{ { det }} ]}}&\rnode{acc-o-c}{[ {\sc subcat} \sliste{ { NP[{\it nom}]} } ]} &\rnode{dat-o-c}{[ {\sc subcat} \sliste{ { NP[{\it nom}], NP[{\it dat}]} } ]}&&&& \rnode{3-c}{[{\sc ind$|$per} 3]} & \rnode{agent-c}{[{\sc cont} agent-rel]} & \rnode{exp-c}{[{\sc cont} exp-rel]}\\[6ex]
-% &&&&&&&&&&&\multicolumn{2}{c}{\rnode{ag-exp}{agent-exp}}\\
-% &&&&& & &&&&\rnode{3-aux-n}{}&\multicolumn{2}{c}{\rnode{ag-exp-aux-n}{}}\\[24ex]
-% &\rnode{tr-dat-v-root}{\it trans-dat-verb-root~} & \rnode{cn-root}{\it count-noun-root}\\[12ex]
-% &\rnode{helf}{helf-}&\rnode{frau}{Frau-}\\
-% \end{tabular}
-% \ncline{lo}{root}%
-% \ncline{lo}{noun}\ncline{lo}{verb}%
-% \ncline{lo}{saturated}\ncline{lo}{unsaturated}%
-% \ncline{lo}{nominal}\ncline{lo}{verbal}%
-% \ncline{unsaturated-c}{det-sc}\ncline{unsaturated-c}{trans}\ncline{unsaturated-c}{ditrans}%
-% \ncline{nominal-c}{1}\ncline{nominal-c}{2}\ncline{nominal-c}{3}%
-% \ncline{verbal-c}{agent}\ncline{verbal-c}{exp}%
-% \ncline{root}{cn-root}\ncline{noun-c}{cn-root}\ncline{det-sc-c}{cn-root}%
-% % todo \ncline{3-c}[b]{3-aux-n}\ncline{3-aux-n}{cn-root}%
-% \ncline{3-c}{3-aux-n}\ncline{3-aux-n}{cn-root}%
-% \ncline{agent-c}{ag-exp}\ncline{exp-c}{ag-exp}%
-% %todo \ncline{root}{tr-dat-v-root}\ncline{verb-c}{tr-dat-v-root}\ncline{dat-o-c}{tr-dat-v-root}\ncline{ag-exp}[b]{ag-exp-aux-n}\ncline{ag-exp-aux-n}{tr-dat-v-root}%
-% \ncline{root}{tr-dat-v-root}\ncline{verb-c}{tr-dat-v-root}\ncline{dat-o-c}{tr-dat-v-root}\ncline{ag-exp}{ag-exp-aux-n}\ncline{ag-exp-aux-n}{tr-dat-v-root}%
-% {\makedash{4pt}%
-% \ncline{tr-dat-v-root}{helf}\ncline{cn-root}{frau}}%
-% }\hfill\hfill\mbox{}
-
 ~\vfill
 \oneline{%
 \begin{forest}
-type hierarchy
-[sign, l sep*=3
-  [root,name=root]
-  [{\begin{tabular}[t]{@{}c@{}}
-   verb-sign\\
-   \upshape [\head \type{verb}]\end{tabular}}, l sep+=8\baselineskip
-    [nom-dat-verb-root, edge to= root, edge to=nom-dat-arg, edge to=agens-exp, l sep+=2\baselineskip
-      [helf, instance]]]
-  [{\begin{tabular}[t]{@{}c@{}}
-   noun-sign\\
-   \upshape [\head \type{noun}]\end{tabular}}, l sep+=8\baselineskip
-    [count-noun-root, edge to=root, edge to=det-sc, edge to=3rd, l sep+=2\baselineskip
-      [Frau, instance]]]
-  [{\begin{tabular}[t]{@{}c@{}}
-    saturated\\
-   \upshape [\subcat \eliste]\end{tabular}}]
-  [{\begin{tabular}[t]{@{}c@{}}
-    unsaturated\\
-   \upshape [\subcat \sliste{ [], \ldots }]\end{tabular}}
-    [{\begin{tabular}[t]{@{}c@{}}
-     det-sc\\
-     \upshape [\subcat \sliste{ Det }]\end{tabular}},name=det-sc]
-    [{\begin{tabular}[t]{@{}c@{}}
-     nom-arg\\
-     \upshape [\subcat \sliste{ NP[\type{nom}] }]\end{tabular}}]
-    [{\begin{tabular}[t]{@{}c@{}}
-     nom-dat-arg\\
-     \upshape [\subcat \sliste{ NP[\type{nom}], NP[\type{acc}] }]\end{tabular}},name=nom-dat-arg]]
-  [nominal-sem-sign
-    [1]
-    [2]
-    [{\begin{tabular}[t]{@{}c@{}}
-     3\\
-     \upshape [\textsc{ind|per} \type{3}]\end{tabular}},name=3rd]]
-  [{\begin{tabular}[t]{@{}c@{}}
-    verbal-sem-sign\\
-    \upshape [\cont \type{psoa}]\end{tabular}}
-    [{\begin{tabular}[t]{@{}c@{}}
-     agens\\
-    \upshape [\cont \type{agens-rel}]\end{tabular}}
-    [agens-exp, edge to=!un, name=agens-exp %before drawing tree={x/.option=!r.x}
-    ]]
-    [{\begin{tabular}[t]{@{}c@{}}
-     experiencer\\
-    \upshape [\cont \type{exp-rel}]\end{tabular}}
-      ]]]
-\end{forest}}
+type hierarchy=\vphantom{dp}, % adds vertical space so that lines meet
+for level=3{l*=1.5}, % increases the distance to the third level by a factor of 1.5
+[sign
+  [phrase]
+  [lexical-sign
+    [root, name=root
+      [verb-r, name=verb-r, for children={l sep*=3}
+        [intr-v-r
+          [strict-intr-v-r, name=strict-intr-verb-r
+            [lach-,instance]]
+          [nom-dat-v-r, name=nom-dat-verb-r
+            [helf-, instance]]
+          [nom-pp-v-r, name=nom-pp-verb-r
+            [denk-, instance]]
+          [nom-s-v-r,tier=pre-instance
+            [glaub-, instance]]]
+        [trans-v-r, name=trans-verb-r
+          [strict-trans-v-r,tier=pre-instance
+             [kenn-, instance]]
+          [ditrans-v-r,tier=pre-instance
+             [geb-,instance]]]]]
+    [relational-le, name=relational-le, before computing xy={s+=7em}]
+    [non-scopal-le, name=non-scopal-le, before computing xy={s+=7em}]
+    [noun-le
+      [det-noun-r,name=det-noun-r
+        [simple-noun-r, tier=pre-instance, name=simple-noun-r
+          [Delfin-,instance]]
+        [relational-noun-r, tier=pre-instance
+          [Tochter-,instance]]]
+      [pronoun, name=pronoun-le
+         [\ldots]]]
+    [word, name=word]]]
+\draw (root.south) to (det-noun-r.north);
+\draw (word.south) to (pronoun-le.north);
+\draw (relational-le.south) to (verb-r.north);
+\draw (relational-le.south) to (det-noun-r.north);
+\draw (non-scopal-le.south) to (det-noun-r.north);
+\draw (non-scopal-le.south) to (trans-verb-r.north);
+\draw (non-scopal-le.south) to (strict-intr-verb-r.north);
+\draw (non-scopal-le.south) to (nom-dat-verb-r.north);
+\draw (non-scopal-le.south) to (nom-pp-verb-r.north);
+\end{forest}
+}
 
-
-%\centerline{\includegraphics[width=.8\linewidth]{typehierarchie-lexikon}}
 \vfill
 
 \begin{itemize}[<+->]
-\item bei Merkmalsspezifikationen entsprechende Pfade dazudenken:\\
-      {}[ {\sc subcat} \liste{}] steht für [{\sc cat$|$subcat} \liste{} ]
 \item Beschränkungen für Typen gelten auch für Untertypen (Vererbung)
 \item Instanzen mit Strichlinie verbunden
 \end{itemize}
@@ -296,18 +284,23 @@ type hierarchy
 \frame{
 \frametitle{Beispiele für Lexikoneinträge}
 
-
-
-\onems[count-noun-root]{
- phon   \phonliste{ Frau } \\
-cont$|$restr  \liste{ \ms[frau]{}} \\
+\eal
+\ex
+\avm{
+[\type*{simple-noun-root}
+% \phon* < Buch > \\
+ phon & \phonliste{ Buch }\\
+ cont & [ ind$|$gen & neu \\
+          rels  & < \type{buch} > ] ]
 }
-
-
-\ms[nom-dat-verb-root]{
-phon & \phonliste{ helf } \\
-cont & helfen \\
+\ex
+\avm{
+[\type*{nom-dat-verb-root}
+% \phon*  < helf > \\ does not work bug
+ phon & \phonliste{ helf }\\
+ cont & [ rels & \sliste{ \type{helfen} } ]]
 }
+\zl
 
 
 
@@ -338,7 +331,7 @@ cont & helfen \\
       \end{itemize}
 \pause
 \item Die Wörter könnten ebenfalls in der Hierarchie repräsentiert werden\\ (als Untertypen von intransitiv und transitiv),
-      aber dann wäre nicht erfaßt,\\ dass die Valenzänderung durch denselben Prozeß ausgelöst wird.
+      aber dann wäre nicht erfasst,\\ dass die Valenzänderung durch denselben Prozess ausgelöst wird.
 \end{itemize}
 }
 
@@ -374,17 +367,15 @@ Description Level Lexical Rules (DLR)\\
 
 \mbox{Lexikonregel für persönliches Passiv nach \citet{Kiss92}:} \\
 \onems[stem]{
-           cat~ \ms{ head & verb \\
-                     subcat & \liste{ NP[{\it nom\/}], NP[{\it acc\/}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
-                   } \\
-}   $\mapsto$ \\
+  cat~ \ms{ head   & verb  \\ 
+            arg-st & \liste{ NP[\type{nom}], NP[\type{acc}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
+          } \\
+} $\mapsto$ \\
 \hfill\onems[word]{
-  cat \ms{ head & \ms{ vform & passiv-part \\
-                              } \\
-           subcat & \liste{ NP[{\it nom\/}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
+  cat \ms{ head   & \ms{ vform & passiv-part } \\
+           arg-st & \liste{ NP[\type{nom}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
          } \\
 }
-
 
 \eal
 \ex Judit schlägt den Weltmeister.
@@ -409,20 +400,24 @@ Description Level Lexical Rules (DLR)\\
 \begin{tabular}{@{}ll@{}}
 Aktiv: & Passiv:\\
       \scalebox{0.8}{\ms{
-      cat & \onems{ subcat      \liste{ NP[{\it nom\/}]\ind{1}, NP[{\it acc\/}]\ind{2} } \\
-             }\\
-      cont & \ms[schlagen]{
-            agens       & \ibox{1}\\
-            patients & \ibox{2}\\
-            }\\ 
-      }} & \scalebox{0.8}{\ms{
-      cat  & \onems{ subcat      \liste{ NP[{\it nom\/}]\ind{2} }
-             }\\
-      cont & \ms[schlagen]{
-            agens       & \ibox{1}\\
-            patients & \ibox{2}\\
-            }\\ 
-      }}\\
+cat & \onems{ arg-st     \liste{ NP[\type{nom}]\ind{1}, NP[\type{acc}]\ind{2} } \\
+       }\\
+cont & \onems{
+       rels \liste{ \ms[schlagen]{
+            arg1       & \ibox{1}\\
+            arg2 & \ibox{2}\\
+            } }
+      }\\ 
+}} & \scalebox{0.8}{\ms{
+cat  & \onems{ arg-st      \liste{ NP[\type{nom}]\ind{2} } \\
+       }\\
+cont & \onems{
+       rels \liste{ \ms[schlagen]{
+                    arg1 & \ibox{1}\\
+                    arg2 & \ibox{2}\\
+                  } }
+      }\\ 
+}}\\
 \end{tabular}
 \end{itemize}
 
@@ -434,12 +429,13 @@ Aktiv: & Passiv:\\
 
 \savespace
 \onems[acc-passive-lexical-rule]{
-     cat \onems{ head$|$vform \type{passiv-part} \\
-              subcat  \liste{ NP[{\it nom\/}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
+     cat \ms{ head & \ms{ vform & passiv-part \\
+                        } \\
+              arg-st & \liste{ NP[\type{nom}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
             } \\
 lex-dtr \onems[stem]{
-        cat~ \ms{ head & verb\\
-                  subcat & \liste{ NP[{\it nom\/}], NP[{\it acc\/}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
+        cat~ \ms{ head & verb \\ 
+                  arg-st & \liste{ NP[\type{nom}], NP[\type{acc}]$_{\ibox{1}}$ } $\oplus$ \ibox{2} \\
                 } \\
      }\\
 }
@@ -464,13 +460,16 @@ lex-dtr \onems[stem]{
 \savespace
 \scalebox{1}{
 \onems[acc-passive-lexical-rule]{
-phon $f(\ibox{1})$\\
-cat \onems{ head$|$vform \type{passiv-part} \\
-         subcat \liste{ NP[{\it nom\/}]$_{\ibox{2}}$ } $\oplus$ \ibox{3} \\
+phon $f\iboxb{1}$\\
+cat \ms{ head & \ms{ vform & passiv-part \\
+                   } \\
+         arg-st & \liste{ NP[\type{nom}]$_{\ibox{2}}$ } $\oplus$ \ibox{3} \\
         } \\
 lex-dtr \onems[stem]{
            phon  \ibox{1}\\
-           cat$|$subcat  \liste{ NP[{\it nom\/}], NP[{\it acc\/}]$_{\ibox{2}}$ } $\oplus$ \ibox{3} \\
+           cat  \ms{ head & verb \\ 
+                     arg-st & \liste{ NP[\type{nom}], NP[\type{acc}]$_{\ibox{2}}$ } $\oplus$ \ibox{3} \\
+                     } \\
      }\\
 }
 }
@@ -536,34 +535,46 @@ lizenziert.
 cat & \ms{ head   & \ms[adj]{
                     mod & none\\
                     }\\
-           subcat & \liste{ NP\ind{1} }\\
+           arg-st & \liste{ NP\ind{1} }\\
          }\\
-cont & \ms[reif]{
-       thema & \ibox{1}\\
-       }\\
+cont & \ms{ ltop & \ibox{2}\\
+            ind  & \ibox{1}\\
+            rels & \liste{ \ms[reif]{
+                           lbl  & \ibox{2}\\
+%                           arg0 & \ibox{3}\\
+                           arg1 & \ibox{1}\\
+                           } }\\
+            hcons & \eliste }\\
 }\hspace{2ex}%
 \ms{
 cat & \ms{ head   & \ms[adj]{
                     cas & nom $\vee$ acc\\
-                    mod & {\rm $\overline{\mbox{\rm N}}$:} \ms{ ind   & \ibox{1} \\
-                                                                restr & \ibox{2} \\
-                                                              } \\
+                    mod & \normalfont{\nbar:} \ms{ ltop & \ibox{1} \\
+                                                   ind  & \ibox{2} \\
+                                                 } \\
                     }\\
-           subcat & \liste{ }\\
+           arg-st & \liste{ NP\ind{1} }\\
          }\\
-cont & \ms{ ind & \ibox{1} \ms{ per & 3 \\
-                                num & sg\\
-                                gen & neu\\
-                              } \\
-            restr & \liste{ \ms[reif]{ 
-                             theme & \ibox{1} \\ 
-                          }} $\oplus$ \ibox{2}  \\
-              } \\
+cont & \ms{ ltop & \ibox{1}\\
+            ind  & \ibox{2}\\
+            rels & \liste{ \ms[reif]{
+                           lbl  & \ibox{1}\\
+%                           arg0 & \ibox{4}\\
+                           arg1 & \ibox{2}\\
+                          } }\\
+            hcons & \eliste}\\
 }}
 
 \medskip
-Die \phonwe können dabei unberücksichtigt bleiben. Wichtig ist, dass die
+Die \phon-, Kasus-, Numerus- und Genus"=Werte können dabei unberücksichtigt bleiben. Wichtig ist, dass die
 Regel für alle Adjektivstämme funktioniert, also \zb auch für \stem{groß}/""\emph{großem}.
+
+\item Überlegen Sie, ob Ihre Lexikonregel auch für Adjektive wie \emph{stolz} in (\mex{1})
+  funktioniert.
+\ea
+der auf seinen Sohn stolze Mann
+\z
+Sollte das nicht der Fall sein, formulieren Sie Ihre Regel um.
 \end{enumerate}
 
 }

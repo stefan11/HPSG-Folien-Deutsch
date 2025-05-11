@@ -57,12 +57,12 @@ o-public-copy: 01-hpsg-handout-einleitung.pdf \
       02-hpsg-handout-formalismus.pdf\
       03-hpsg-handout-valenz-komplementation.pdf \
       05-hpsg-handout-semantik.pdf \
-      06-hpsg-handout-adjunktion-spezifikation.pdf \
-      07-hpsg-handout-lexicon.pdf \
-      08-hpsg-handout-topologie.pdf \
-      09-hpsg-handout-konstituentenreihenfolge.pdf\
-      10-hpsg-handout-nla.pdf\
-      11-hpsg-handout-lokalitaet.pdf\
+#      06-hpsg-handout-adjunktion-spezifikation.pdf \
+#      07-hpsg-handout-lexicon.pdf \
+#      08-hpsg-handout-topologie.pdf \
+#      09-hpsg-handout-konstituentenreihenfolge.pdf\
+#      10-hpsg-handout-nla.pdf\
+#      11-hpsg-handout-lokalitaet.pdf\
       hpsg-slides.pdf\
       hpsg-handout.pdf \
       00-Klimakatastrophe-handout.pdf\
@@ -105,6 +105,7 @@ install:
 	cp -p ${STYLE-PATH}my-xspace.sty            styles/
 	cp -p ${STYLE-PATH}Ling/my-gb4e-slides.sty       styles/
 	cp -p ${STYLE-PATH}Ling/cgloss.sty               styles/
+	cp -p ${STYLE-PATH}Ling/tikz-mrs.sty 		styles/
 	cp -p ${STYLE-PATH}Ling/forest*.sty              .
 	cp -p ${LANGSCI-PATH}langsci-forest-setup.sty    .
 
@@ -114,7 +115,8 @@ mount:
 clean:
 	find . -name \*\.bak -exec \rm {} \;
 	find . -name \*~ -exec \rm {} \;
-	rm -f *.bak *.toc *.bbl *.blg *~ *.log *.aux *.*pk *.cut *.tmp *.out *.nav *.snm
+	rm -f *.bak *.toc *.bbl *.blg *~ *.log *.aux *.*pk *.cut *.tmp *.out *.nav *.snm *.bcf
+	rm geteilte-Folien/*.aux
 
 
 realclean: clean

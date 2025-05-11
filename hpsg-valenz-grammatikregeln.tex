@@ -22,7 +22,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item \blau{Valenz und Grammatikregeln}
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item Semantik
 \item Adjunktion und Spezifikation
 \item Das Lexikon: Typen und Lexikonregeln
@@ -44,7 +44,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item \blau{Valenz und Grammatikregeln}
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item Semantik
 \item Topologie des deutschen Satzes
 \item Konstituentenreihenfolge
@@ -66,42 +66,9 @@
 \frametitle{Literaturhinweise}
 %
 \begin{itemize}
-\item Literatur: \citew[Kapitel~3.1]{MuellerLehrbuch3}
+\item Literatur: \citew[Kapitel~3]{MuellerLehrbuch4}
 \end{itemize}
 
-\pause
-
-Damit alles kompatibel zum Lehrbuch bleibt,\\
-nehmen wir hier auch das \subcatm für die Valenz an.
-
-\subcat = \spr + \comps
-
-Zu neueren Versionen der HPSG, die \subcat in \spr und \comps unterteilen,\\ siehe
-\citew{Sag97a,HPSGHandbook,MuellerGermanic}.
-
-Deutsch: Argumente von finiten Verben sind alle auf \comps,\\
-so dass die Verwendung von \subcat hier keinen Unterschied macht.
-
-\pause
-Ebenfalls aus Kompatibilitätsgründen:\\
-Reihenfolge in der \subcatl: \type{nom}, \type{acc}, \type{dat}.
-
-In neueren Arbeiten \citep{MuellerLFGphrasal,MuellerGermanic}: \type{nom}, \type{dat},
-\type{acc}.
-
-
-% \vspace{1cm}
-% \vspace{1cm}
-% \rotbf{Bitte zum nächsten Mal lesen}
-% \vspace{1cm}
-
-% \iftoggle{hpsglight}{%
-% Damit alles kompatibel zum Lehrbuch bleibt,\\
-% nehmen wir hier auch das \subcatm für die Valenz an.
-
-% \subcat = \spr + \comps
-
-% }
 
 %% \rotbf{Achtung, wichtiger Hinweis: Diese Literaturangabe hier bedeutet,\\dass Sie die Literatur zum
 %%   nächsten Mal lesen sollen!!!!}
@@ -186,7 +153,7 @@ In neueren Arbeiten \citep{MuellerLFGphrasal,MuellerGermanic}: \type{nom}, \type
       (wie Kategorialgrammatik)
 \pause
 \item \begin{tabular}[t]{@{}lll}
-      Verb             & \subcat\\
+      Verb             & \comps\\
       \emph{schlafen} & \sliste{ NP }\\
       \emph{lieben}   & \sliste{ NP, NP }\\
       \emph{sprechen} & \sliste{ NP, PP[\type{über}] }\\
@@ -202,14 +169,14 @@ In neueren Arbeiten \citep{MuellerLFGphrasal,MuellerGermanic}: \type{nom}, \type
 \vfill
 \hfill\begin{forest}
 sm edges
-[{V[\subcat \sliste{}]}
+[{V[\comps \sliste{}]}
   [{\ibox{1} NP[\type{nom}]}
     [Aicke]]
-  [{V[\subcat \sliste{ \ibox{1} }]}
+  [{V[\comps \sliste{ \ibox{1} }]}
     [schläft]]]
 \end{forest}\hfill\hfill\mbox{}
 \vfill
-V[\subcat \sliste{ }] entspricht hierbei einer vollständigen Phrase\\
+V[\comps \sliste{ }] entspricht hierbei einer vollständigen Phrase\\
 (VP oder auch S)
 \vfill
 }
@@ -221,13 +188,13 @@ V[\subcat \sliste{ }] entspricht hierbei einer vollständigen Phrase\\
 \centerline{%
 \begin{forest}
 sm edges
-[{V[\subcat \sliste{}]},visible on=4-
+[{V[\comps \sliste{}]},visible on=4-
   [{\ibox{1} NP[\type{nom}]},visible on=3-
     [Aicke,visible on=3-]]
-  [{V[\subcat \sliste{ \ibox{1} }] },visible on=2-
+  [{V[\comps \sliste{ \ibox{1} }] },visible on=2-
     [{\ibox{2} NP[\type{acc}]} 
       [Conny]]
-    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }] }
+    [{V[\comps \sliste{ \ibox{1}, \ibox{2} }] }
       [erwartet]]]]
 \end{forest}}
 \vfill
@@ -241,13 +208,13 @@ sm edges
 \centerfit{
 \begin{forest}
 sm edges
-[{V[\subcat \sliste{}]},visible on=4-
+[{V[\comps \sliste{}]},visible on=4-
   [{NP[\type{nom}]},visible on=3- 
     [Aicke,visible on=3-] ]
-  [{V[\subcat \sliste{ NP[\type{nom}] }] },visible on=4-
+  [{V[\comps \sliste{ NP[\type{nom}] }] },visible on=4-
     [{NP[\type{acc}]},visible on=5- 
       [Conny,visible on=5-] ]
-    [{V[\subcat \sliste{ NP[\type{nom}], NP[\type{acc}] } ] },visible on=6- [erwartet,visible on=7-]] ] ]
+    [{V[\comps \sliste{ NP[\type{nom}], NP[\type{acc}] } ] },visible on=6- [erwartet,visible on=7-]] ] ]
 \end{forest}}
 
 \begin{itemize}
@@ -274,7 +241,7 @@ Sehr wichtig aus psycholinguistischer Sicht, denn Verarbeitung ist inkrementell.
 \begin{itemize}
 \item spezifische Regeln für Kopf-Argument-Kombination:\\
       \begin{tabular}[t]{@{}lll}
-      V[SUBCAT \ibox{A}] & $\to$ & \ibox{B}\hspace{2em} V[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      V[COMPS \ibox{A}] & $\to$ & \ibox{B}\hspace{2em} V[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
       \end{tabular}
 \pause
 \item Dabei ist $\oplus$ eine Relation zur Verknüpfung zweier Listen:\\
@@ -292,20 +259,20 @@ Sehr wichtig aus psycholinguistischer Sicht, denn Verarbeitung ist inkrementell.
 \centerline{
 \begin{forest}
 sm edges, for tree={l sep+=\baselineskip}
-[{V[\subcat \sliste{}]}
+[{V[\comps \sliste{}]}
   [\ibox{1} NP
     [Aicke]]
-  [{V[\subcat \sliste{ \ibox{1} }]},name=v2
+  [{V[\comps \sliste{ \ibox{1} }]},name=v2
     [\ibox{2} NP 
       [Conny]]
-    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]},name=v3
+    [{V[\comps \sliste{ \ibox{1}, \ibox{2} }]},name=v3
       [erwartet]]]]
 \node()[above right of=v2,xshift=12em,yshift=0\baselineskip]{\small \begin{tabular}{@{}l}
-                                    V[SUBCAT \ibox{A}] $\to$ \ibox{B} V[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ] \\ 
+                                    V[COMPS \ibox{A}] $\to$ \ibox{B} V[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ] \\ 
                                     A = \sliste{ }, B = \ibox{1}
                                     \end{tabular}};
 \node()[above right of=v3,xshift=12em,yshift=0\baselineskip]{\small \begin{tabular}{@{}l}
-                                    V[SUBCAT \ibox{A}] $\to$ \ibox{B} V[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ] \\ 
+                                    V[COMPS \ibox{A}] $\to$ \ibox{B} V[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ] \\ 
                                     A = \sliste{ \ibox{1} }, B = \ibox{2}
                                     \end{tabular}};
 \end{forest}}
@@ -320,23 +287,23 @@ sm edges, for tree={l sep+=\baselineskip}
 \begin{itemize}
 \item spezifische Regeln für Kopf-Komplement-Kombination:\\
       \begin{tabular}[t]{@{}lll}
-      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{V}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
-      \blau{A}[SUBCAT \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{A}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
-      \blau{N}[SUBCAT \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{N}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
-      \blau{P}[SUBCAT \ibox{A}] & $\to$ & \blau{P}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{V}[COMPS \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{V}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      \blau{A}[COMPS \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{A}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      \blau{N}[COMPS \ibox{A}] & $\to$ & \blau{\ibox{B}}\hspace{2em} \blau{N}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\\
+      \blau{P}[COMPS \ibox{A}] & $\to$ & \blau{P}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
       \end{tabular}
 \pause
 \item Abstraktion von der Abfolge:
       \begin{tabular}[t]{@{}lll}
-      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{V}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
-      \blau{A}[SUBCAT \ibox{A}] & $\to$ & \blau{A}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
-      \blau{N}[SUBCAT \ibox{A}] & $\to$ & \blau{N}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
-      \blau{P}[SUBCAT \ibox{A}] & $\to$ & \blau{P}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{V}[COMPS \ibox{A}] & $\to$ & \blau{V}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{A}[COMPS \ibox{A}] & $\to$ & \blau{A}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{N}[COMPS \ibox{A}] & $\to$ & \blau{N}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{P}[COMPS \ibox{A}] & $\to$ & \blau{P}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
       \end{tabular}
 \pause
 \item generalisiertes, abstraktes Schema (H = Kopf):\\
       \begin{tabular}[t]{@{}lll}
-      \blau{H}[SUBCAT \ibox{A}] & $\to$ & \blau{H}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
+      \blau{H}[COMPS \ibox{A}] & $\to$ & \blau{H}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]\hspace{2em} \blau{\ibox{B}}\\
       \end{tabular}
 
 \end{itemize}
@@ -349,19 +316,19 @@ sm edges, for tree={l sep+=\baselineskip}
 \begin{itemize}
 \item generalisiertes, abstraktes Schema (H = Kopf):\\
       \begin{tabular}[t]{@{}lll}
-      \blau{H}[SUBCAT \ibox{A}] & $\to$ & \blau{H}[SUBCAT \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]~~~~ \blau{\ibox{B}}\\
+      \blau{H}[COMPS \ibox{A}] & $\to$ & \blau{H}[COMPS \ibox{A} $\oplus$ \sliste{ \ibox{B} } ]~~~~ \blau{\ibox{B}}\\
       \end{tabular}
 \pause
 \item mögliche Instantiierungen des Schemas:
       \begin{tabular}[t]{@{}llll@{}}
-      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{V}[SUBCAT \ibox{A} \eliste{} $\oplus$ \sliste{ \ibox{B} NP } ] & \blau{\ibox{B} NP}\\
+      \blau{V}[COMPS \ibox{A}] & $\to$ & \blau{V}[COMPS \ibox{A} \eliste{} $\oplus$ \sliste{ \ibox{B} NP } ] & \blau{\ibox{B} NP}\\
                                 &       & Conny erwartet & Aicke\\
                                 &       & schläft        & Aicke\\\\
 \pause
-      \blau{V}[SUBCAT \ibox{A}] & $\to$ & \blau{V}[SUBCAT \ibox{A} \sliste{ NP } $\oplus$ \sliste{ \ibox{B} NP } ] & \blau{\ibox{B} NP}\\
+      \blau{V}[COMPS \ibox{A}] & $\to$ & \blau{V}[COMPS \ibox{A} \sliste{ NP } $\oplus$ \sliste{ \ibox{B} NP } ] & \blau{\ibox{B} NP}\\
                                 &       & erwartet       & Conny\\\\
 \pause
-      \blau{N}[SUBCAT \ibox{A}] & $\to$ & \blau{N}[SUBCAT \ibox{A} \eliste{} $\oplus$ \sliste{ \ibox{B} Det } ] & \blau{\ibox{B} Det}\\
+      \blau{N}[COMPS \ibox{A}] & $\to$ & \blau{N}[COMPS \ibox{A} \eliste{} $\oplus$ \sliste{ \ibox{B} Det } ] & \blau{\ibox{B} Det}\\
                                 &       & Kind & das\\
       \end{tabular}
 \end{itemize}
@@ -378,23 +345,23 @@ sm edges, for tree={l sep+=\baselineskip}
 
 % \begin{tabular}{@{}lp{4cm}@{\hspace{8mm}}l@{}p{4cm}}
 % DET    & $\ms{ head & \ms[det]{} \\
-%                subcat & \liste{} \\                     
+%                comps & \liste{} \\                     
 %              }$ & 
 % VP     & $\ms{ head & \ms[verb]{ subj & \liste{ $[~]$ } \\ 
 %                                } \\
-%                subcat & \liste{ } \\
+%                comps & \liste{ } \\
 %              }$\\ \\
 % $\overline{\mbox{N}}$ & $\ms{ head & \ms[noun]{} \\
-%                               subcat & \liste{ DET }\\
+%                               comps & \liste{ DET }\\
 %              }$ &
 % S      & $\ms{ head & \ms[verb]{ vform & fin \\ } \\
-%                subcat & \liste{} \\
+%                comps & \liste{} \\
 %              }$\\ \\
 % NP & $\ms{ head & \ms[noun]{} \\
-%            subcat & \liste{} \\
+%            comps & \liste{} \\
 %              }$ &
 % NP[\type{nom}]~~ & $\ms{ head & \ms[noun]{cas & nom \\ } \\
-%                       subcat & \liste{ } \\
+%                       comps & \liste{ } \\
 %              }$ \\
 % \end{tabular}
 
@@ -411,36 +378,359 @@ sm edges, for tree={l sep+=\baselineskip}
 \mbox{\emph{gibt} (finite Form):}\\
 \ms{ phon & \phonliste{ gibt } \\
      part-of-speech & verb\\
-     subcat & \liste{ NP[\type{nom}], NP[\type{acc}], NP[\type{dat}]   } \\
+     comps & \liste{ NP[\type{nom}], NP[\type{dat}], NP[\type{acc}]   } \\
 }
 
 \medskip
 
-NP[\type{nom}], NP[\type{acc}] und NP[\type{dat}] stehen für komplexe Merkmalsbeschreibungen.
+NP[\type{nom}], NP[\type{dat}] und NP[\type{acc}] stehen für komplexe Merkmalsbeschreibungen.
 
 % \(
 % \ms{ phon & \phonliste{ gibt } \\
 %      p-o-s & verb\\
-%              subcat & \liste{ \onems{ head   \ms[noun]{cas & nom \\ } \\
-%                                       subcat \liste{ } \\
+%              comps & \liste{ \onems{ head   \ms[noun]{cas & nom \\ } \\
+%                                       comps \liste{ } \\
 %                                  }, 
 %                               \onems{ head \ms[noun]{cas & acc \\ } \\
-%                                    subcat \liste{ } \\
+%                                    comps \liste{ } \\
 %                               }, 
 %                               \onems{ head \ms[noun]{cas & dat \\ } \\
-%                                       subcat \liste{ } \\
+%                                       comps \liste{ } \\
 %                                  }   } \\
 % }
 % \)
 
 }
 
+
+\subsection{Sepzifikatoren}
+
+\frame{
+\frametitle{Spezifikatoren}
+
+\begin{itemize}
+\item Neben \comps gibt es noch \spr als Valenzmerkmal.\\
+      \spr für Analyse von Nominalstrukturen:
+\eal
+\ex die Tochter eines Mitarbeiters
+\ex das Bild vom Gleimtunnel
+\ex das Vorlesen von Büchern
+\zl 
+
+\pause
+
+\centerfit{%
+\begin{forest}
+sm edges
+[{N[\spr \eliste, \comps \eliste]}
+   [Det [die] ]
+   [N\feattab{
+      \spr \nliste{ Det }, \comps \sliste{}}
+     [N\feattab{
+         \spr \nliste{ Det },\\
+         \comps \nliste{ NP[\type{gen}] }} [Tochter] ]
+        [{NP[\type{gen}]} [eines Mitarbeiters,roof] ] ] ]
+\end{forest}}
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Spezifikator-Schema}
+
+Parallel zum Kopf-Komplement-Schema:
+\ea
+\label{regelschema-psg-spr}
+\begin{tabular}[t]{@{}lll}
+H[\spr \ibox{1}] & $\to$ & \ibox{2}~~~ H[\spr \ibox{1}  $\oplus$ \sliste{ \ibox{2} }  ]\\
+\end{tabular}
+\z
+
+}
+
+\frame{
+\frametitle{Spezifikatoren in SVO-Sprachen}
+
+Englisch: Subjekt vor dem Verb (\spr), andere Argumente folgen ihm (\comps):
+
+\centerfit{%
+\begin{forest}
+sm edges
+[{V[\spr \eliste, \comps \eliste]}
+   [{NP[\type{nom}]} [Aicke] ]
+   [V\feattab{
+      \spr \sliste{ NP[\type{nom}] }, \comps \sliste{}}
+     [V\feattab{
+         \spr \sliste{ NP[\type{nom}] },\\
+         \comps \sliste{ NP[\type{acc}] }} [expects] ]
+        [{NP[\type{acc}]} [Conny] ] ] ]
+\end{forest}}
+
+
+}
+
+\frame{
+\frametitle{Die Argumentstruktur}
+
+\begin{itemize}
+\item \argst als Repräsentation aller Argumente. 
+\item Verteilung der Argumente auf die Valenzmerkmale in Abhängigkeit von der Sprache.
+\end{itemize}
+
+\ea
+\label{ex-spr-comps-arg-st-Englisch}
+\oneline{%
+\begin{tabular}[t]{@{}ll@{~~}l@{~~}l@{}}
+Verb          & \spr                      & \comps                                     & \argst\\
+\emph{sleep}  & \sliste{ NP[\type{nom}] } & \sliste{}                                  & \sliste{ NP[\type{nom}] }\\
+\emph{expect} & \sliste{ NP[\type{nom}] } & \sliste{ NP[\type{acc}] }                  & \sliste{ NP[\type{nom}], NP[\type{acc}] }\\
+\emph{speak}  & \sliste{ NP[\type{nom}] } & \sliste{ PP[\type{about}] }                & \sliste{ NP[\type{nom}], PP[\type{about}] }\\
+\emph{give}   & \sliste{ NP[\type{nom}] } & \sliste{ NP[\type{acc}], NP[\type{acc}] }  & \sliste{ NP[\type{nom}], NP[\type{acc}], NP[\type{acc}] }\\
+\emph{serve}  & \sliste{ NP[\type{nom}] } & \sliste{ NP[\type{acc}], PP[\type{with}] } & \sliste{ NP[\type{nom}], NP[\type{acc}], PP[\type{with}] }\\  
+\end{tabular}}
+\z
+
+\pause
+\ea
+\label{ex-spr-comps-arg-st-Deutsch}
+\oneline{%
+\begin{tabular}[t]{@{}ll@{~~}l@{~~}l@{}}
+Verb            & \spr                      & \comps                                      & \argst\\
+\emph{schlafen}  & \sliste{ } & \sliste{ NP[\type{nom}] }                                  & \sliste{ NP[\type{nom}] }\\
+\emph{erwarten} & \sliste{ } & \sliste{ NP[\type{nom}], NP[\type{acc}] }                  & \sliste{ NP[\type{nom}], NP[\type{acc}] }\\
+\emph{sprechen} & \sliste{ } & \sliste{ NP[\type{nom}], PP[\type{über}] }                 & \sliste{ NP[\type{nom}], PP[\type{about}] }\\
+\emph{geben}    & \sliste{ } & \sliste{ NP[\type{nom}], NP[\type{dat}], NP[\type{acc}] }  & \sliste{ NP[\type{nom}], NP[\type{dat}], NP[\type{acc}] }\\
+\emph{dienen}   & \sliste{ } & \sliste{ NP[\type{nom}], NP[\type{dat}], PP[\type{with}] } & \sliste{ NP[\type{nom}], NP[\type{dat}], PP[\type{with}] }\\  
+\end{tabular}}
+\z
+
+}
+
+\frame{
+\frametitle{Argumentrealisierungsprinzip}
+
+\ea
+\label{Prinzip-Argumentrealisierung-einfach}%
+Argumentrealisierungsprinzip\is{Prinzip!Argumentrealisierungs-} (vereinfachte Version):\\
+\type{word} \impl
+\avm{
+[spr    & \1\\
+ comps  & \2\\
+ arg-st & \1 \+ \2]
+}
+%\itdopt{This allows non-cannonicals in \ibox{1}. Not sure this is what is intended.} 
+\z
+
+}
+
+\subsection{Adjunkte}
+
+\frame{
+
+\frametitle{Adjunkte}
+
+\begin{itemize}
+\item Die Form von Adjunkten ist eher frei. 
+\item Wortgruppen ganz verschiedener Kategorien können Köpfe modifizieren.
+\item Andererseits haben Adjunkte genau Vorstellungen, wie der modifizierte Kopf aussehen muss.
+
+
+\eal
+\ex[]{
+der laute Gesang
+}
+\ex[*]{
+Aicke singt laute.
+}
+\ex[]{
+Aicke singt laut.
+}
+\zl
+
+\item Analog zu \spr und \comps selegieren Adjunkte ihren Kopf über \textsc{modified}.
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Attributive Adjektive}
+
+\begin{itemize}
+\item Adjektive, Nomina modifizierende Präpositionalphrasen und Relativsätze
+selegieren \nbar = fast vollständige Nominalprojektion, \dash ein Nomen, das
+nur noch mit einem Determinierer kombiniert werden muss, um eine vollständige
+NP zu bilden. 
+
+\ea\is{Adjektiv}
+\label{le-interessantes}
+\emph{interessantes}:\\
+\ms{ 
+   phon & \phonliste{ interessantes }\\
+   p-o-s & adj\\
+   mod &  \nbar\\
+   spr   & \eliste\\
+   comps & \liste{} \\
+}
+\z
+
+\end{itemize}
+
+}
+
+
+\frame{
+\frametitle{Adjektive mit Komplementen}
+
+\begin{itemize}
+\item Adjektive können Komplemente haben:
+\ea
+ein dem König treues Mädchen
+\z
+
+\ea
+\label{le-treue}
+\emph{treues}:\\
+\ms{ 
+   phon & \phonliste{ treues }\\
+   p-o-s & adj\\ %prd & $-$ \\
+   mod &  \nbar\\
+   spr   & \eliste\\
+   comps & \liste{ NP[\type{dat}] } \\
+}
+\z
+\pause
+\item \emph{dem König treues} bildet Adjektivphrase, die \emph{Mädchen} modifiziert.
+
+\pause
+\item \modw muss bei Kombination nach oben gegeben werden.
+
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Projektion des \modwes}
+
+\begin{itemize}
+\item 
+Die Adjektivphrase \emph{dem König treues} hat dieselben syntaktischen Eigenschaften wie \emph{interessantes}:
+\ea
+\label{avm-dem-koenig-treues}
+\emph{dem König treues}:\\
+\ms{ 
+   phon & \phonliste{ dem König treues }\\
+   p-o-s & adj\\ %prd & $-$ \\
+   mod &  \nbar\\
+   spr & \eliste\\
+   comps & \eliste{ } \\
+}
+\z
+
+\item Darauf kommen wir im nächsten Kapitel zurück. \textsc{mod} ist ein Kopfmerkmal.
+\item Das Kopfmerkmalsprinzip sorgt dafür, dass der \modw der gesamten Projektion mit dem
+\modw des Lexikoneintrags für \emph{treues} identisch ist. 
+
+\end{itemize}
+}
+
+\frame[shrink=4]{
+\frametitle{Selektion in Kopf"=Adjunkt"=Strukturen}
+
+\centerline{
+\begin{forest}
+sm edges
+[\nbar
+  [{AP[\textsc{mod} \ibox{1}]}
+    [interessantes]]
+  [\ibox{1} \nbar
+    [Buch]]]
+\end{forest}
+}
+
+\begin{itemize}
+\item In Kopf-Argument-Strukturen bestimmt der Kopf die Form der Argumente. 
+\item kann in der \compsl festlegen, dass eine Argument-NP vollständig sein muss, \dash, dass die \sprl und die \compsl des
+entsprechenden Arguments leer sein muss. 
+\item Bei Adjunkten hat der Kopf keinen Zugriff auf das Adjunkt. 
+\item Deshalb muss in der Grammatikregel, die Kopf und Adjunkt kombiniert, festgelegt werden,
+dass das Adjunkt gesättigt ist, \dash, dass \sprl und \compsl der Adjunkttochter leer sind. 
+\ea
+\label{regelschema-psg-adjunct}
+\oneline{\begin{tabular}[t]{@{}lll@{}}
+H[\spr \ibox{1}, \comps \ibox{2}] & $\to$ & [\textsc{mod} \ibox{3}, \spr \eliste, \comps \eliste]~~~ \ibox{3}~H[\spr \ibox{1}, \comps \ibox{2} ]\\
+\end{tabular}}
+\z
+\end{itemize}
+
+}
+% In (\mex{0}) wählt die Adjunkttochter über \ibox{3} den Kopf, den sie modifizieren will. \spr und
+% \comps der Adjunkttochter müssen leer sein. Der \sprw und der \compsw der Kopftochter werden mit dem
+% \sprw und dem \compsw der Mutter identifiziert (\ibox{1} und \ibox{2}).
+
+\frame[shrink=4]{
+\frametitle{Präpositionalphrasen}
+
+Schema schließt Phrasen wie (\mex{1}b) korrekt aus:
+\eal
+\label{ex-die-Wurst-in}
+\ex[]{
+die Wurst in der Speisekammer
+}
+\ex[*]{
+die Wurst in
+}
+\zl
+
+\pause
+
+\ea
+Lexikoneintrag für \emph{in}:\\
+\ms{
+phon & \phonliste{ in } \\
+p-o-s & prep\\
+mod &   \nbar\\
+spr & \eliste\\
+comps & \sliste{ NP[\type{dat}] } \\
+}
+\z
+\pause
+Nach der Kombination mit der Nominalphrase \emph{der Speisekammer} bekommt man:
+\ea
+Repräsentation für \emph{in der Speisekammer}:\\
+\ms{
+phon & \phonliste{ in der Speisekammer } \\
+p-o-s & prep\\
+mod &   \nbar\\
+spr & \eliste\\
+comps & \eliste{ } \\
+}
+\z
+Diese Repräsentation entspricht der des Adjektivs \emph{interessantes} und kann 
+-- abgesehen von der Stellung der PP -- auch genauso verwendet
+werden: Die PP modifiziert eine \nbar.
+}
+
+\frame{
+\frametitle{Köpfe, die keine Adjunkte sind}
+
+\begin{itemize}
+\item Köpfe, die nur als Argumente verwendet werden können und nicht selbst modifizieren,
+haben als \modw \type{none}. 
+\item Dadurch können sie in Kopf"=Adjunkt"=Strukturen nicht an die Stelle
+der Nicht"=Kopf"|tochter treten, da der \modw der Nicht"=Kopf"|tochter mit der Kopf"|tochter kompatibel
+sein muss.
+\end{itemize}
+
+}
+
+
 \iftoggle{hpsglight}{}{
 
 %% \iftoggle{teil1}{
 %% \frame{
 
-%% \frametitle{Reihenfolge der Elemente in der Subcat-Liste}
+%% \frametitle{Reihenfolge der Elemente in der Comps-Liste}
 
 %% Obliqueness-Hierarchie:\\
 %% \citet{KC77a}\ia{Keenan}\ia{Comrie}, \citet{Pullum77a}\ia{Pullum},

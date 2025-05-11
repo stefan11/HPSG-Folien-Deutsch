@@ -1,4 +1,4 @@
-\section{Komplementation}
+\section{Dominanzstrukturen und Prinzipien}
 
 \iftoggle{teil1}{
 \outline{
@@ -7,7 +7,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item \blaubf{Komplementation}
+\item \blaubf{Dominanzstrukturen und Prinzipien}
 \item Semantik
 \item Adjunktion und Spezifikation
 \item Das Lexikon: Typen und Lexikonregeln
@@ -29,7 +29,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item \blau{Komplementation}
+\item \blau{Dominanzstrukturen und Prinzipien}
 \item Semantik
 \item Topologie des deutschen Satzes
 \item Konstituentenreihenfolge
@@ -47,28 +47,15 @@
 } % \end{teil2}
 
 \frame{
-\frametitle{Komplementation}
+\frametitle{Dominanzstrukturen und Prinzipien}
 %
 \begin{itemize}
-\item Literatur: \citew[Kapitel~4]{MuellerLehrbuch3}
+\item Literatur: \citew[Kapitel~4]{MuellerLehrbuch4}
 \end{itemize}
 
 \vspace{1cm}
 
 \rotbf{Bitte zum nächsten Mal lesen}
-
-\vspace{1cm}
-
-Damit alles kompatibel zum Lehrbuch bleibt,\\
-nehmen wir hier auch das \subcatm für die Valenz an.
-
-\subcat = \spr + \comps
-
-Zu neueren Versionen der HPSG, die \subcat in \spr und \comps unterteilen,\\ siehe
-\citew{Sag97a,HPSGHandbook,MuellerGermanic}.
-
-Deutsch: Argumente von finiten Verben sind alle auf \comps, so
-dass die Verwendung von \subcat hier keinen Unterschied macht.
 
 }
 
@@ -90,8 +77,9 @@ dass die Verwendung von \subcat hier keinen Unterschied macht.
 \item Trennung von unmittelbarer Dominanz (ID) und linearer Präzedenz (LP)
 \pause
 \item Dominanz in \textsc{dtr}"=Merkmalen (Kopftochter und Nicht-Kopftöchter)
+\textsc{headdtr} und \textsc{non-head-dtr}
 \pause
-\item Präzedenz implizit in \phon
+\item Präzedenz in \dtrs und sich daraus ergebend in \phon
 \end{itemize}
 
 }
@@ -107,9 +95,9 @@ dass die Verwendung von \subcat hier keinen Unterschied macht.
 sm edges
 [NP
   [Det,baseline
-    [das]]
+    [dem]]
   [N
-    [Kind]]]
+    [Eichhörnchen]]]
 \end{forest} &%
 \ms{ 
                                                   phon     & \phonliste{ dem Eichhörnchen }\\
@@ -126,80 +114,97 @@ sm edges
         \emph{Bild von Maria} ist die Kopftochter, da \emph{Bild} der Kopf ist.
 \pause
 \item Es kann mehrere Nicht-Kopftöchter geben\\
-      (bei Annahme von flachen Strukturen oder bei binär verzweigenden Strukturen ohne Kopf).
+      (bei Annahme von flachen Strukturen).
 \end{itemize}
 }
-
-%% \frame{
-%% \frametitle{Baum mit \textsc{dtrs}"=Werten (I)}
-
-%% \vfill
-%% \centerline{\epsfxsize=0.5\textwidth\mbox{\epsffile{dem-mann-dtrs.eps}}}
-%% \vfill
-%% }
-
-
 
 \frame{
+\frametitlefit{Mit entsprechend der sichtbaren Reihenfolge geordneten \dtrs}
 
-\small
-\frametitle{Repräsentation von Grammatikregeln (II)}
-
-\begin{itemize}
-\item Dominanzregel:
-
-\type{head-argument-phrase} \impl\\*
-\onems{
-      subcat \ibox{1} \\
-      head-dtr$|$subcat \ibox{1} $\oplus$ \sliste{ \ibox{2} } \\
-      non-head-dtrs \sliste{ \ibox{2} }\\
-      } \\
-
-Pfeil bedeutet Implikation
-\item alternative Schreibweise, angelehnt an \xbar-Schema:
-      \begin{tabular}[t]{@{}lll}
-      H[SUBCAT \ibox{1}] & $\to$ & H[SUBCAT \ibox{1} $\oplus$ \sliste{ \ibox{2} } ]~~ \ibox{2}\\
-      \end{tabular}
-
-Pfeil bedeutet Ersetzung
-\medskip
-\pause
-\item mögliche Instantiierungen:
-      \begin{tabular}[t]{@{}lll}
-      N[SUBCAT \ibox{1}] & $\to$ & Det N[SUBCAT \ibox{1} \eliste{} $\oplus$ \sliste{ Det } ]\\
-      V[SUBCAT \ibox{1}] & $\to$ & V[SUBCAT \ibox{1} \eliste{} $\oplus$ \sliste{ NP } ]~~ NP\\
-      V[SUBCAT \ibox{1}] & $\to$ & V[SUBCAT \ibox{1} \sliste{ NP } $\oplus$ \sliste{ NP } ]~~ NP\\
-      \end{tabular}
-\end{itemize}
+\ea
+\onems{ 
+  phon      \phonliste{ dem Eichhörnchen }\\[1mm]
+  head-dtr  \ibox{1} \\
+  non-head-dtrs  \nliste{ \ibox{2} }\\
+  dtrs  \liste{ \ibox{2} \onems{ phon \phonliste{ dem } }, \ibox{1} \onems{ phon \phonliste{ Eichhörnchen } } }\\
+}
+\z
 
 }
+
+\frame{
+\frametitle{Regelschemata als Merkmalbeschreibungen}
+
+\ea
+\begin{tabular}[t]{@{}l@{~}lll}
+a. & H[\spr \ibox{1}] & $\to$ & \ibox{2} H[\spr \ibox{1}  $\oplus$ \sliste{ \ibox{2} }  ]\\
+b. & H[\comps \ibox{1}] & $\to$ & H[\comps \ibox{1} $\oplus$ \sliste{ \ibox{2} } ] \ibox{2}\\
+\end{tabular}
+\z
+
+\begin{schema}[Kopf-Spezifikator-Schema (vorläufige Version)]
+\label{schema-head-specifier-prel}
+\type{head-specifier-phrase}\istype{head"=specifier"=phrase} \impl\\
+\onems{
+      spr \ibox{1} \\
+      head-dtr$|$spr \ibox{1} $\oplus$ \sliste{ \ibox{2} } \\
+      non-head-dtrs \sliste{ \ibox{2} }\\
+      }
+\end{schema}
+Pfeil bedeutet Implikation.
+
+\pause
+\begin{schema}[Kopf-Komplement-Schema (vorläufige Version)]
+\label{schema-bin-prel}
+\type{head-complement-phrase}\istype{head"=complement"=phrase} \impl\\
+\onems{
+      comps \ibox{1} \\
+      head-dtr$|$comps \ibox{1} $\oplus$ \sliste{ \ibox{2} } \\
+      non-head-dtrs \sliste{ \ibox{2} }\\
+      }
+\end{schema}
+
+}
+
 
 \frame{
 \frametitle{Ein Beispiel}
 
+
+\ea
+\begin{tabular}[t]{@{}l@{~}lll}
+a. & N[\spr \ibox{1}] & $\to$ & Det N[\spr \ibox{1} $\oplus$ \nliste{ Det } ]\\
+b. & V[\comps \ibox{1}] & $\to$ & V[\comps \ibox{1} $\oplus$ \nliste{ NP } ]~~ NP\\
+\end{tabular}
+\z
+
+\pause
+
 \centerline{%
 \begin{forest}
 sm edges
-[{V[\subcat \sliste{} ]}
-  [{\ibox{1} NP[\type{nom}]}
+[V
+  [NP
     [Aicke]]
-  [{V[\subcat \sliste{ \ibox{1} }]}
-    [{\ibox{2} NP[\type{acc}]} 
-      [die Nuss, roof]]
-    [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]}
-      [{\ibox{3} NP[\type{dat}]}
-        [dem Eichhörnchen,roof]]
-      [{V[\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]}
+  [V
+    [NP
+      [Det [dem]]
+      [N [Eichhörnchen]]]
+    [V
+      [NP
+        [Det [die]]
+        [N [Nuss]]]
+      [V
         [gibt]]]]]
 \end{forest}}
-
 }
+
 
 \iftoggle{teil1}{
 \frame[shrink]{
 
 \small
-\frametitlefit{Teilstruktur in Merkmalstrukturrepräsentation -- \phonw{}e (I)}
+\frametitlefit{Teilstruktur in Merkmalstrukturrepräsentation -- \phonw{}e}
 
 \vfill
 \centerline{\begin{forest}
@@ -208,45 +213,34 @@ sm edges
   [{NP[\type{nom}]}
     [Aicke]]
   [V
-    [{NP[\type{acc}]} 
-      [die Nuss, roof]]
-    [V
-      [{NP[\type{dat}]}
+    [{NP[\type{dat}]}
         [dem Eichhörnchen,roof]]
+    [V
+      [{NP[\type{acc}]} 
+        [die Nuss, roof]]
       [V
         [gibt]]]]]
 \end{forest}}
 
 \vfill
-\centerline{\(
+\centerline{
 \ms{
-      phon     & \phonliste{ dem Eichhörnchen gibt }\\
+      phon     & \phonliste{ die Nuss gibt }\\
       head-dtr & \onems{ phon \phonliste{ gibt }\\
                        } \\
       non-head-dtrs & \liste{ \ms{ 
-                                                  phon     & \phonliste{ dem Eichhörnchen }\\
-                                                  head-dtr & \onems{ phon \phonliste{ Eichhörnchen }  \\
+                                                  phon     & \phonliste{ die Nuss }\\
+                                                  head-dtr & \onems{ phon \phonliste{ Nuss }  \\
                                                                  }\\
-                                                  non-head-dtrs & \liste{ \onems{ phon \phonliste{ dem } \\
+                                                  non-head-dtrs & \liste{ \onems{ phon \phonliste{ die } \\
                                                                               }}\\
                                                   }
                        }\\
 }
-\)
 }
 \vfill
 }
 
-\mode<handout>{
-%% \frame{
-
-%% \small
-%% \frametitle{\normalsize Baum mit \textsc{dtrs}"=Werten (II)}
-
-%% \vfill
-%% \centerline{\epsfxsize=0.6\textwidth\mbox{\epsffile{er-das-buch-dem-mann-gibt-simple-phon-dtr.eps}}}
-%% \vfill
-%% }
 
 \frame{
 
@@ -254,62 +248,22 @@ sm edges
 \frametitlefit{Teilstruktur in Merkmalstrukturrepräsentation -- \phonw{}e (II)}
 
 \vfill
-\resizebox{\linewidth}{!}{\(
-\onems{
-phon      \phonliste{ er die Nuss dem Eichhörnchen gibt }\\
-head-dtr \onems{
-phon     \phonliste{ die Nuss dem Eichhörnchen gibt }\\
-head-dtr \onems{
-      phon     \phonliste{ dem Eichhörnchen gibt }\\
+%\resizebox{\linewidth}{!}{
+\label{ms-die-Nuss-gibt}
+\onems[head-complement-phrase~]{
+      phon    \phonliste{ die Nuss gibt }\\
+%      spr \liste{}\\
+      comps \ibox{1} \liste{ NP[\type{nom}], NP[\type{dat}]} \\
       head-dtr \onems{ phon \phonliste{ gibt }\\
+%                                     spr \liste{}\\
+                                     comps \ibox{1}  $\oplus$ \liste{ \ibox{2} } \\
                        } \\
-      non-head-dtrs \liste{ \onems{ 
-                                                  phon     \phonliste{ dem Eichhörnchen }\\
-                                                  head-dtr \onems{ phon \phonliste{ Eichhörnchen }  \\
-                                                                 }\\
-                                                  non-head-dtrs \liste{ \onems{ phon \phonliste{ dem } \\
-                                                                              }}\\
-                                                  }
-                       }\\
-}\\
-non-head-dtrs \liste{ \onems{ 
-                                                  phon     \phonliste{ die Nuss }\\
-                                                  head-dtr \onems{ phon \phonliste{ Nuss }  \\
-                                                                 }\\
-                                                  non-head-dtrs \liste{ \onems{ phon \phonliste{ die } \\
-                                                                              }}\\
-                                                  }
-                       }\\
-} \\
-non-head-dtrs \liste{ \onems{phon \phonliste{ er }\\
-                       } \\
-}\\
-}
-\)
-}
-\vfill
-}
-}%handout
-
-\frame{
-
-
-\frametitle{Teilstruktur in Merkmalstrukturrepräsentation}
-
-\vfill
-
-{\small
-\centerline{
-\onems[head-argument-phrase~]{
-      phon    \phonliste{ dem Eichhörnchen gibt }\\
-      subcat \ibox{1} \liste{ NP[\type{nom}], NP[\type{acc}]} \\
-      head-dtr \onems{ phon \phonliste{ gibt }\\
-                                     subcat \ibox{1}  $\oplus$ \liste{ \ibox{2} } \\
-                       } \\
-      non-head-dtrs \liste{ \ibox{2} \onems[head-argument-phrase~]{ 
-                                                  phon  \phonliste{ dem Eichhörnchen }\\
+      non-head-dtrs \liste{ \ibox{2} \onems[head-specifier-phrase~]{ 
+                                                  phon  \phonliste{ die Nuss }\\
                                                   p-o-s \type{noun}\\
-                                                  subcat \liste{} \\
+                                                  % acc
+%                                                  spr \liste{}\\
+%                                                  comps \liste{} \\
                                                   head-dtr \ldots \\
                                                   non-head-dtrs \ldots \\
                                                   }
@@ -317,66 +271,7 @@ non-head-dtrs \liste{ \onems{phon \phonliste{ er }\\
 }
 }
 \vfill
-% \(
-% \onems[head-argument-phrase~]{
-%       phon    \phonliste{ dem Eichhörnchen gibt }\\
-%       subcat \liste{ NP[\type{nom}], NP[\type{acc}]} \\
-%       head-dtr \onems[word]{ phon \phonliste{ gibt }\\
-%                                      subcat \liste{ NP[\type{nom}], NP[\type{acc}]}  $\oplus$ \liste{ \ibox{1} } \\
-%                        } \\
-%       non-head-dtrs \liste{ \ibox{1} \onems[head-argument-phrase~]{ 
-%                                                   phon  \phonliste{ dem Eichhörnchen }\\
-%                                                   head  \ms[noun]{ cas & dat\\
-%                                                                  } \\
-%                                                   subcat \liste{} \\
-%                                                   head-dtr \ms{ phon & \phonliste{ Eichhörnchen }\\
-%                                                                 head & \ms[noun]{ cas & dat\\
-%                                                                                 } \\
-%                                                                 subcat & \liste{ \ibox{2} } \\
-%                                                               }\\
-%                                                   non-head-dtrs \liste{ \ms{ phon & \phonliste{ dem }\\
-%                                                                              head & \ms[det]{ cas & dat\\
-%                                                                                             } \\
-%                                                                              subcat & \liste{ } \\
-%                                                                            } 
-%                                                                       } \\
-%                                                   }
-%                        }\\
-% }
-% \)
-
-
-% \medskip
-% Selektion von \type{synsem}"=Objekten $\to$ Selektion ist lokal (\textsc{phon} und Töchter nicht selegierbar)
-}
-}
-
-\mode<handout>{
-\frame{
-
-\small
-\frametitle{Teilstruktur in Merkmalstrukturrepräsentation}
-
-
-\vfill
-\centerline{
-\onems[head-argument-phrase~]{
-      phon    \phonliste{ er die Nuss dem Eichhörnchen gibt }\\
-      subcat \ibox{1} \liste{ } \\
-      head-dtr \onems[head-argument-phrase]{ phon \phonliste{ die Nuss dem Eichhörnchen gibt }\\
-                                       subcat \ibox{1}  $\oplus$ \liste{ \ibox{2} } \\
-                       } \\
-      non-head-dtrs \liste{ \ibox{2} \onems[word]{ 
-                                       phon \phonliste{ er }\\
-                                       p-o-s \type{noun}\\
-                                       subcat  \liste{} \\
-                                      }
-                       }\\
-}}
-\vfill
-}
-
-}%handout
+%}
 }{}%teil1
 
 \subsection{Projektion von Kopfeigenschaften}
@@ -385,25 +280,28 @@ non-head-dtrs \liste{ \onems{phon \phonliste{ er }\\
 
 \frametitle{Projektion von Eigenschaften des Kopfes}
 
-\centerline{%
+\settowidth{\offset}{V[\type{fi}}
+\settowidth{\offsetup}{V[\type{fin}}
+\centerline{
+\scalebox{.9}{%
 \begin{forest}
-sm edges
-[{V[\rnode{1fin}{\type{fin}}, \subcat \sliste{} ]}
-  [{\ibox{1} NP[\type{nom}]}
-    [Aicke]]
-  [{V[\rnode{2fin}{\type{fin}}, \subcat \sliste{ \ibox{1} }]}
-    [{\ibox{2} NP[\type{acc}]} 
-      [die Nuss, roof]]
-    [{V[\rnode{3fin}{\type{fin}}, \subcat \sliste{ \ibox{1}, \ibox{2} }]}
-      [{\ibox{3} NP[\type{dat}]}
-        [dem Eichhörnchen,roof]]
-      [{V[\rnode{4fin}{\type{fin}}, \subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]}
-        [gibt]]]]]
-\end{forest}}
-\blau{\ncline[angleA=-90]{<->}{1fin}{2fin}
-\ncline{<->}{2fin}{3fin}
-\ncline{<->}{3fin}{4fin}}
-% tl
+sm edges, for tree={l+=\baselineskip}
+[V{[\type{fin}, \comps \eliste]}, name=fin1
+	[\ibox{1} NP{[\type{nom}]}
+		[Aicke]]
+	[V{[\type{fin}, \comps \sliste{ \ibox{1} }]}, name=fin2
+		[\ibox{2} NP{[\textit{dat}]}
+			[dem Eichhörnchen,roof]]
+		[V{[\type{fin}, \comps \sliste{ \ibox{1}, \ibox{2} }]}, name=fin3
+			[\ibox{3} NP{[\textit{acc}]}
+				[die Nuss,roof]]
+			[V{[\type{fin}, \comps \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]}, name=fin4
+				[gibt]]]]]	
+tikz={\draw[<->] ($(fin1.south west)+(\offsetup,0)$) to ($(fin2.north west)+(\offset,0)$);
+      \draw[<->] ($(fin2.south west)+(\offsetup,0)$) to ($(fin3.north west)+(\offset,0)$);
+      \draw[<->] ($(fin3.south west)+(\offsetup,0)$) to ($(fin4.north west)+(\offset,0)$);}
+\end{forest}
+}}
 
 
 \medskip
@@ -421,7 +319,9 @@ Kopf ist finites Verb
       \ms{ phon   & list~of~phoneme strings\\
            \blau<2->{p-o-s}  & \blau<2->{p-o-s} \\
            \blau<2->{vform} & \blau<2->{vform} \\ 
-           subcat & list\\
+           spr    & list~of~signs\\
+           comps  & list~of~signs\\
+           arg-st & list~of~signs\\
          }\\
 \pause
 \item mehr Struktur, Bündelung der Information, die projiziert werden soll:\\
@@ -430,7 +330,9 @@ Kopf ist finites Verb
                   \blau<2->{p-o-s} & \blau<2->{p-o-s}\\
                   \blau<2->{vform} & \blau<2->{vform}\\
                   } \\
-           subcat & list\\
+           spr    & list~of~signs\\
+           comps  & list~of~signs\\
+           arg-st & list~of~signs\\
          }\\
 \end{itemize}
 }
@@ -442,7 +344,7 @@ Kopf ist finites Verb
 \begin{itemize}
 \item \textsc{vform} ist nur für Verben sinnvoll
 \item pränominale Adjektive und Nomina projizieren Kasus
-\item Mögliche Struktur: Eine Struktur mit allen Merkmalen:\\
+\item Mögliche Struktur: eine Struktur mit allen Merkmalen:\\
       \ms{
                   p-o-s & p-o-s\\
                   vform & vform\\
@@ -451,7 +353,7 @@ Kopf ist finites Verb
 
       Bei Verben hat \textsc{case} keinen Wert, bei Nomina \textsc{vform} keinen Wert
 \pause
-\item Besser: Verschiedene Typen von Merkmalstrukturen
+\item Besser: verschiedene Typen von Merkmalstrukturen
       \begin{itemize}
       \item für Verben:
 
@@ -480,7 +382,7 @@ Kopf ist finites Verb
 
 \ms{ \visible<2->{phon}   & \visible<2->{\phonliste{ gibt }}\\
      \visible<3->{head}   & \visible<3->{\ms[verb]{ vform & fin \\}} \\
-     \visible<4->{subcat} & \visible<4->{\liste{ NP[\type{nom}], NP[\type{acc}], NP[\type{dat}] }} \\
+     \visible<4->{arg-st} & \visible<4->{\liste{ NP[\type{nom}], NP[\type{dat}], NP[\type{acc}] }} \\
 }
 \pause
 \begin{itemize}
@@ -488,7 +390,11 @@ Kopf ist finites Verb
 \pause
 \item Kopfinformation (part of speech, Verbform, \ldots)
 \pause
-\item Valenzinformation: einer Liste von Merkmalsbeschreibungen
+\item Argumentstruktur: einer Liste von Merkmalsbeschreibungen
+\pause
+\item Wegen Argumentrealisierungsprinzip wird \argst auf \spr und \comps gemappt.
+\pause
+\item \spr ist für alle finiten Verben die leere Liste. Also: \comps = \argst.
 \end{itemize}
 
 \end{itemize}
@@ -515,10 +421,10 @@ head-dtr$|$head \ibox{1}\\
 
 \pause
 %\item Kodierung der Prinzipien im Typsystem: \citet{Krieger94a} und \citet{Sag97a}
-\item \type{head-argument-phrase} ist Untertyp von \type{headed-phrase}\\
+\item \type{head-complement-phrase} ist Untertyp von \type{headed-phrase}\\
       $\to$ Beschränkungen gelten auch
 \pause
-\item \type{head-argument-phrase} erbt Eigenschaften von \type{headed-phrase}.
+\item \type{head-complement-phrase} erbt Eigenschaften von \type{headed-phrase}.
 \end{itemize}
 
 
@@ -533,28 +439,22 @@ head-dtr$|$head \ibox{1}\\
 
 \vfill
 %\oneline{%
-\hfill
-\begin{tabular}{cccc}
-\multicolumn{4}{c}{\mynode{ed}{\type{elektrisches Gerät}}}\\[6ex]
-\mynode{p}{\type{druckendes Gerät}} & & \mynode{sc}{\type{scannendes Gerät}} & \mynode{other}{\rule[-0.5ex]{0cm}{2.5ex}\ldots}\\[6ex]
-\mynode{printer}{\type{Drucker}}   & \mynode{copy}{\type{Kopierer}}  & \mynode{scanner}{\type{Scanner}}\\[6ex]
-\mynode{l-p}{\type{Laserdrucker}}  & \mynode{other-p}{\rule[-0.5ex]{0cm}{2.5ex}\ldots}  & \mynode{negscan}{\type{Negativscanner}} & \mynode{other-sc}{\rule[-0.5ex]{0cm}{2.5ex}\ldots}\\
-\end{tabular}
-\begin{tikzpicture}[overlay,remember picture,shorten <=2pt,shorten >=2pt] 
-\draw(ed.south)--(p.north)
-     (ed.south)--(sc.north)
-     (ed.south)--(other.north)
-     (p.south)--(copy.north)
-     (p.south)--(printer.north)
-     (printer.south)--(l-p.north)
-     (printer.south)--(other-p.north)
-     (sc.south)--(copy.north)
-     (sc.south)--(scanner.north)
-     (scanner.south)--(negscan.north)
-     (scanner.south)--(other-sc.north);
-\end{tikzpicture}
-%}
-\hfill\hfill\mbox{}
+\centerline{%
+\begin{forest} 
+type hierarchy
+[elektrisches Gerät, calign=midpoint, calign children={1}{2},
+  [druckendes Gerät,calign=first
+    [Drucker,calign=first
+      [Laser-Drucker]
+      [\ldots]]
+    [Kopierer]]
+  [scannendes Gerät,calign=last
+    [,identify=!r12]
+    [Scanner,calign=first
+      [Negativ-Scanner]
+      [\ldots]]]
+  [\ldots]]
+\end{forest}}
 \vfill
 
 }
@@ -566,7 +466,7 @@ head-dtr$|$head \ibox{1}\\
 \begin{itemize}[<+->]
 \item Subtypen erben Eigenschaften und Beschränkungen\\von ihre(n) Supertypen.
 
-\item Generalisierungen können erfaßt werden:\\
+\item Generalisierungen können erfasst werden:\\
       Allgemeine Beschränkungen werden an oberen Typen repräsentiert.
 
 \item Speziellere Typen erben diese Information von ihren Obertypen.
@@ -592,7 +492,8 @@ head-dtr$|$head \ibox{1}\\
 \item Beispiel: Lexikoneintrag in Meyers Lexikon. Verweise auf übergeordnete Konzepte, keine
       Wiederholung der bereits beim übergeordneten Konzept aufgeführten Information\\
 \pause
-\item Der obere Teil der Typhierarchie ist für alle Sprachen relevant (Universalgrammatik).
+\item Der obere Teil der Typhierarchie ist für alle Sprachen relevant (Universalgrammatik oder
+  CoreGram; \citealt{MuellerCoreGram}).
 \pause
 \item Spezifischere Typen können sprachklassen- oder sprachspezifisch sein.
 \end{itemize}
@@ -608,14 +509,16 @@ head-dtr$|$head \ibox{1}\\
 \centerline{%
 \begin{forest}
 type hierarchy
-[sign
+[sign,
+   calign=fixed angles,
+   calign angle=60
   [word]
   [phrase
-    [non-headed-phrase]
+    [\ldots]
     [headed-phrase
-      [\ldots]
-      [head-argument-phrase]
-      [\ldots]]]]
+      [head-specifier-phrase]
+      [head-complement-phrase]
+      [head-adjunct-phrase]]]]
 \end{forest}}
 \vfill
 \centerline{alle Untertypen von \type{headed-phrase} erben Beschränkung}
@@ -627,16 +530,16 @@ type hierarchy
 \frametitle{Kopf-Komplement-Schema + Kopfmerkmalsprinzip}
 
 
-\ms[head-argument-phrase~]{
+\ms[head-complement-phrase~]{
 \blau{head}   & \blau{\ibox{1}} \\
-subcat & \ibox{2} \\[2mm]
+comps & \ibox{2} \\[2mm]
 \blau{head-dtr}  & \ms{ \blau{head}   & \blau{\ibox{1}} \\
-                 subcat & \ibox{2} $\oplus$ \sliste{ \ibox{3} } \\
+                 comps & \ibox{2} $\oplus$ \sliste{ \ibox{3} } \\
                } \\
 non-head-dtrs  & \sliste{ \ibox{3} } \\
 }
 
-Typ \type{head-argument-phrase} mit \blau{von \type{headed-phrase} ererbter Information}
+Typ \type{head-complement-phrase} mit \blau{von \type{headed-phrase} ererbter Information}
 
 
 }
@@ -651,20 +554,20 @@ Typ \type{head-argument-phrase} mit \blau{von \type{headed-phrase} ererbter Info
 
 \centering
 \scalebox{0.7}{%
-\onems[head-argument-phrase~]{
-      phon  \phonliste{ dem Eichhörnchen gibt }\\
-      head  \ibox{1}\\
-      subcat \ibox{2} \sliste{ NP[\type{nom}], NP[\type{acc}] } \\
+\onems[head-complement-phrase~]{
+      phon  \phonliste{ die Nuss gibt }\\
+      head  \blau{\ibox{1}}\\
+      comps \ibox{2} \sliste{ NP[\nom], NP[\dat]} \\
       head-dtr \onems[word]{ phon \phonliste{ gibt }\\
-                                     head \ibox{1} \ms[verb]{vform & fin \\
-                                                            }\\
-                                     subcat \ibox{2}  $\oplus$ \sliste{ \ibox{3} } \\
+                                     head \blau{\ibox{1} \ms[verb]{vform & fin \\
+                                                            }}\\
+                                     comps \ibox{2}  $\oplus$ \sliste{ \ibox{3} } \\
                        } \\
-      non-head-dtrs \liste{ \ibox{3} \onems[head-argument-phrase~]{ 
-                                        phon \phonliste{ dem Eichhörnchen }\\
-                                        head \ms[noun]{ cas & dat\\
+      non-head-dtrs \liste{ \ibox{3} \onems[head-specifier-phrase~]{ 
+                                        phon \phonliste{ die Nuss }\\
+                                        head \ms[noun]{ cas & acc\\
                                                       } \\
-                                        subcat   \sliste{} \\
+%                                        comps   \eliste \\
                                         head-dtr \ldots\\
                                         non-head-dtrs \ldots\\
                                      }
@@ -672,6 +575,201 @@ Typ \type{head-argument-phrase} mit \blau{von \type{headed-phrase} ererbter Info
 }}
 }
 
+\frame{
+\frametitle{\textsc{mod} als Kopfmerkmal}
+
+\ea
+\label{le-treue-head-mod}
+\emph{treues}:\\
+\ms{ 
+   phon & \phonliste{ treues }\\
+   head & \ms[adj]{ %prd & $-$ \\
+                        mod &  \nbar\\
+                      } \\
+   spr & \eliste\\
+   comps & \liste{ NP[\type{dat}] } \\
+}
+\z
+\begin{itemize}
+\item Bei \emph{dem König treues} wird \headw zur Mutter nach oben gegeben.
+\item Deshalb \modw von \emph{dem König treues} mit dem von \emph{treues} identisch.
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Kopf-Adjunkt-Schema}
+
+
+\begin{schema}[Kopf-Adjunkt-Schema (vorläufige Version)]
+\label{ha-schema-prel}
+\textit{head"=adjunct"=phrase} \impl\\
+\is{Schema!Kopf"=Adjunkt"=}
+\ms{ 
+head"=dtr      & \ibox{1} \\[2mm]
+non-head"=dtrs & \liste{ \ms{ head$|$mod & \ibox{1} \\
+                              spr & \eliste\\
+                              comps   & \eliste \\
+                           }}\\
+}
+\end{schema}
+
+\begin{itemize}
+\item \modw von Nicht-Kopftochter mit Kopftochter identifiziert.
+\pause
+\item \sprl und die \compsl der Nicht"=Kopf"|tochter leere Liste $\to$ nur vollständig gesättigte Adjunkte 
+zugelassen
+\ea[*]{
+die Wurst in
+}
+\z
+\pause
+\item Keine Spezifikatoren oder Komplemente abgebunden. \\
+Müssen zur Mutter weitergereicht werden.
+\end{itemize}
+}
+
+\subsection{Das Valenzprinzip}
+\label{Abschnitt-Valenzprinzip}
+
+\frame{
+\frametitle{Das Valenzprinzip}
+
+\ea
+\label{type-head-non-specifier-phrase}
+\type{head-non-specifier-phrase}\istype{head"=non"=specifier"=phrase} \impl\\
+\onems{
+      spr \ibox{1} \\
+      head-dtr$|$spr \ibox{1} \\
+      }
+\z
+Der \sprw der Mutter wird mit dem der Kopftochter identifiziert.
+
+\pause
+
+\ea
+\label{type-head-non-complement-phrase}
+\type{head-non-complement-phrase}\istype{head"=non"=complement"=phrase} \impl\\
+\onems{
+      comps \ibox{1} \\
+      head-dtr$|$comps \ibox{1} \\
+      }
+\z
+
+}
+
+\frame{
+\frametitle{Typhierachie mit negierten Typen}
+
+
+\centerline{%
+\scalebox{.8}{%
+\begin{forest}
+type hierarchy
+[sign,
+ for tree={
+   calign=fixed angles,
+   calign angle=60
+ } 
+  [word]
+  [phrase
+    [\ldots]
+    [headed-phrase
+      [head-non-specifier-phrase,name=non-specifier
+        [head-complement-phrase,name=complement]]
+      [head-non-complement-phrase,name=non-complement
+        [head-adjunct-phrase, no edge,name=head-adjunct-phrase]
+        [head-specifier-phrase,name=specifier]]]]]
+\draw (non-specifier.south) to (head-adjunct-phrase.north);
+\draw (non-complement.south) to (head-adjunct-phrase.north);
+\end{forest}}}
+
+
+
+\begin{prinzip-break}[Valenzprinzip]
+In Strukturen mit Kopf entspricht jedes Valenzmerkmal des Mutterknotens dem Wert des Valenzmerkmals der Kopf"|tochter
+minus den als Nicht"=Kopf"|töchter realisierten Argumenten.
+\end{prinzip-break}
+
+}
+
+\frame{
+\frametitle{Klammerung in Nominalphrasen}
+
+\vfill
+\hfill
+\begin{forest}
+sm edges
+[{N[\spr \eliste, \comps \eliste]}
+  [Det [das]]
+  [{N[\spr \nliste{ Det }, \comps \eliste]} 
+    [N\feattab{\spr \nliste{ Det },\\ \comps \nliste{ NP }} [Bild]]
+    [NP
+      [des Gleimtunnels, roof]]]]
+\end{forest}
+\hfill
+\begin{forest}
+sm edges
+[{N[\spr \eliste, \comps \eliste]}, s sep+=3ex
+  [{N[\spr \eliste, \comps \nliste{ NP }]} 
+    [Det [das]]
+    [N\feattab{\spr \nliste{ Det },\\ \comps \nliste{ NP }} [Bild]]]
+  [NP
+    [des Gleimtunnels, roof]]]
+\end{forest}\hfill\mbox{}
+
+\pause
+\ea
+alle [[großen Seeelefanten] und [grauen Eichhörnchen]]\\
+\z
+\begin{itemize}
+\item Der Quantor \emph{alle} bezieht sich auf \emph{großen Seeelefanten und grauen Eichhörnchen}. 
+\item Würde man erst \emph{alle} mit \emph{große Seeelefanten} verbinden,\\
+ hätte man mit \emph{grauen Eichhörnchen} (Dativ) einen unintegrierbaren Rest. 
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Das Kopf-Spezifikator-Schema}
+
+Auch in SVO-Sprachen wird erst VP gebildet und dann das Subjekt dazugenommen.
+
+\begin{schema}[Kopf-Spezifikator-Schema (vorläufige Version)]
+\label{schema-head-specifier-prel-comps-leer}
+\type{head-specifier-phrase}\istype{head"=specifier"=phrase} \impl\\
+\onems{
+      spr \ibox{1} \\
+      head-dtr \ms{ spr   & \ibox{1} $\oplus$ \sliste{ \ibox{2} } \\
+                    comps & \eliste\\}\\
+      non-head-dtrs \sliste{ \ibox{2} }\\
+      }
+\end{schema}
+
+Also: \compsl der Kopftochter muss leer sein.
+
+}
+
+\frame{
+\frametitle{Startbedingung}
+
+\begin{itemize}
+\item Struktur für
+\ea
+Aicke dem Eichhörnchen die Nuss gibt
+\z
+\ea
+\ms{
+head  & \ms[verb]{vform & fin \\
+              }\\
+spr   & \eliste\\
+comps & \eliste\\
+}
+\z
+
+\end{itemize}
+
+}
 
 \subsection{Übungsaufgaben}
 

@@ -15,7 +15,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item \blaubf{Semantik}
 \item Adjunktion und Spezifikation
 \item Das Lexikon: Typen und Lexikonregeln
@@ -37,7 +37,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item \blau{Semantik}
 \item Topologie des deutschen Satzes
 \item Konstituentenreihenfolge
@@ -62,7 +62,7 @@
 \item Außerdem: 
 \begin{itemize}
 \item Überblickskapitel Semantik im HPSG-Handbuch \citep{KoenigRichter2021a}
-\item Überblickskapitel Linking im HPSG-Handbuch \citep{DavisKoenigWechsler2021a}
+\item Überblickskapitel Linking im HPSG-Handbuch \citep*{DKW2021a}
 \end{itemize}
 \end{itemize}
 
@@ -82,148 +82,351 @@
 \item \citet{ps} und \citet{GSag2000a-u} nehmen Situationssemantik an
       \citep*{BP83a,CMP90,Devlin92}\nocite{BP87a}.
 \pause
+\item Ab den frühen 1990ern gab es Arbeiten zur Unterspezifikationssemantik
+\citep*{Nerbonne93a,CFMRS95a-u}.
+\pause
+\item \emph{Discourse Representation Theory} (DRT, \citealt{KR93a}) mit Underspecified Discourse Representation Structures (UDRS, \citealt{FR95a-u})
+\pause
 \item aktuellere Arbeiten verwenden:
 \begin{itemize}
-\item \emph{Minimal Recursion Semantics} \citep*{CFPS2005a}
-\item \emph{Lexical Resource Semantics} \citep*{RichterSailer2004a-u}
+\item \emph{Minimal Recursion Semantics} (MRS; \citealt*{CFPS2005a})
+\item \emph{Lexical Resource Semantics} (LRS; \citealt*{RichterSailer2004a-u})
 \end{itemize}
 \pause
-\item Im Folgenden werden wir Situationssemantik nutzen.
+\item Im Folgenden werden wir MRS nutzen.
 \end{itemize}
 
 }
 } % \end{teil1}
 
-\subsection{Die Situationssemantik}
+\iftoggle{teil1}{
+
+\subsection{Minimal Recursion Semantics}
 
 
 \frame{
+\frametitle{Warum MRS? Warum Unterspezifikation?}
 
-\frametitle{Individuen, Sachverhalte und Situationen}
-
-\begin{itemize}[<+->]
-\item beschreiben Situationen
-\item Situationen sind durch Sachverhalte charakterisiert
-\item Dinge von einer gewissen zeitlichen Dauer, die zur kausalen Ordnung der
-Welt gehö\-ren, die man wahrnehmen kann, auf die man reagieren kann: Individuen ({\em Karl\/}, {\em die Frau\/},
-{\em die Angst\/}, {\em das Versprechen\/})
-\item Sachverhalte = Relationen zwischen Individuen
-\end{itemize}
+\begin{itemize}
+\item Mit MRS kann man Formeln beschreiben.
+\pause
+\item Beschreibungen können unspezifiziert und dadurch mehrdeutig sein.
+\pause
+\item Man muss die Mehrdeutigkeiten dann nicht ausbuchstabieren.
+\pause
+\item Beispiele für Mehrdeutigkeiten auf verschiedenen Sprachebenen:
+\eal
+\ex Spracherkennung
+\ex Unbekannte haben Mittwochabend bei einer %FDP-Wahlkampfveranstaltung\\
+FDP-Wahlkampfveranstaltung mit FDP-Chef Guido Westerwelle Farbbeutel geworfen.\footnote{
+taz, 21.5.2004, S.\,7
 }
+\ex
+\label{ex-Jede-Tochter-eines-Mitarbeiters-schläft}
+Jede Tochter eines Mitarbeiters schläft.
+\zl 
+
+\end{itemize}
+
+
+
+
+}
+
+\frame{
+\frametitle{Massive Mehrdeutigkeit durch Quantoren}
+
+Ca.\ 200 Lesarten:
+\ea
+Many people feel that most sentences exhibit too few quantifier scope ambiguities for much effort to be devoted
+to this problem, but a casual inspection of several sentences from any text should convince almost everyone
+otherwise.\footnote{%
+  Aus dem Haupttext von \citew[\page 57]{Hobbs1983a-u}.
+}
+\z
+
+
+
+}
+
 
 \frame{
 \frametitle{Relationen und semantische Rollen}
 
 \begin{itemize}
-\item Relationen
-      \begin{itemize}
-      \item nullstellig: {\em regnen\/} ({\em Es regnet.\/}) \citep[Kapitel~2.8]{Kunze93}
-\pause
-      \item einstellig: {\em  schnarchen\/} ({\em Es schnarcht.\/})
-\pause
-      \item zweistellig: {\em lesen\/}  ({\em Es liest ihn.\/})
-\pause
-      \item dreistellig: {\em geben\/}   ({\em Es gibt ihr den Aufsatz.\/})
-\pause
-      \item vierstellig: {\em kaufen\/}  ({\em Es kauft den Mantel vom Händler für fünf Mark.\/})
-      \end{itemize}
-\pause
-\item semantische Rollen:  \citet{Fillmore68,Fillmore77}, \citet*{Kunze91}\\
-      {\sc agens}, {\sc patiens}, {\sc experiencer}, {\sc source}, {\sc goal}, 
-      {\sc thema}, {\sc location}, {\sc trans-obj}, {\sc instrument}, {\sc means} und {\sc proposition}
-\pause
-\item Rollen wichtig für Generalisierungen:\\
-      Verbindung zwischen Syntax und Semantik (\emph{Linking})
-\pause
-\item Rollentheorien sind problematisch, deswegen oft Bündelung in Proto-Rollen:
-      \citep{Dowty91a,VanValin99a-u}
-\end{itemize}
-}
-
-\frame{
-\frametitle{Sachverhalte}
-
-
+\item Die Flexion von Wörtern ist für die Bedeutung irrelevant:
+\eal
+\label{ex-Alle-Delfine}
+\ex Jeder Delfin liebt ein Känguru.
+\ex Alle Delfine lieben ein Känguru.
+\zl
+Deshalb einheitliche Form, die Nennform, für semantische Relationen.
 
 \begin{itemize}
-\item Sachverhalt: {\it state of affairs\/} ({\it soa\/})\\
-\begin{tabular}{@{}ll}
-Verb:     & $\ll schlagen, agens:~X, patiens:~Y\gg$\\
-Adjektiv: & $\ll interessant, thema:~X\gg$\\
-Nomen:    & $\ll frau, instance:~X\gg$\\
-\end{tabular}
+\item einstellig:  \relation{regnen}   (\emph{Es regnet.}) 
+\item zweistellig: \relation{sterben}  (\emph{Aicke stirbt.})
+\item dreistellig: \relation{lieben}   (\emph{Aicke liebt Conny.})
+\item vierstellig: \relation{geben}    (\emph{Aicke gibt Conny den Aufsatz.})
+\item fünfstellig: \relation{kaufen}   (\emph{Aicke kauft den gebrauchten Mantel vom Conny für fünf Euro.})
+\end{itemize}
+
+\item $e$ für Ereignis:
+\eal
+\ex Aicke liebt Conny.
+\ex \relation{lieben}(e, Aicke$'$, Conny$'$)
+\zl
+
 \end{itemize}
 
 }
 
 \frame{
-\frametitle{Parametrisierte Sachverhalte}
+\frametitle{Diskursuniversum}
 
-\begin{itemize}
-\item parametrisierter Sachverhalt: {\it parmetrized state of affairs\/} ({\it psoa\/})
-\begin{itemize}
-\item Verb:
+Individuen können Individuenkonstanten zugeordnet sein:
+
+	\begin{tikzpicture}[scale=0.75]
+		\draw (0,0) rectangle (8,5);
+		%
+		\node[anchor=west] at (1.5,0.5) {Kirby};
+		\node[anchor=west] at (2.3,1.7) {Aicke};
+		\node[anchor=east] at (1.8,3) {sweety};
+		\node[anchor=west] at (3.5,3.5) {Conny};
+		%
+		\draw (1,1) -- (1.6,0.7); %Kirby
+		\draw (2,2) -- (2.4,1.9); %Aicke
+		\draw (2,2) -- (1.4,2.7); %sweety
+		\draw (3,3) -- (3.6,3.3); %Conny
+		%
+		\draw[fill=fugreen, draw=black] (1,1) circle (0.1);
+		\draw[fill=fugreen, draw=black] (2,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (3,3) circle (0.1);
+		\draw[fill=fugreen, draw=black] (4,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (7,4) circle (0.1);
+	\end{tikzpicture}
+
+}
+
+\frame{
+\frametitle{Diskursuniversum mit der Menge der blonden Individuen}
+
+
+	\begin{tikzpicture}[scale=0.75]
+		\draw (0,0) rectangle (8,5);
+		\draw (1.5,1.5) circle (1);
+		\draw[fill=fugreen, draw=black] (1,1) circle (0.1);
+		\draw[fill=fugreen, draw=black] (2,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (3,3) circle (0.1);
+		\draw[fill=fugreen, draw=black] (4,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (7,4) circle (0.1);
+		%
+		\node[anchor=west] at (3,0.5) {blond};
+		\draw (2.3,0.9) -- (3,0.7);
+	\end{tikzpicture}
+
+
+}
+
+\frame{
+\frametitle{Blonde Personen und Kinder}
+
+	\begin{tikzpicture}[scale=0.75]
+		\draw (0,0) rectangle (8,5);
+		% 
+		\begin{scope}
+			\clip (3,2) circle (1.5);
+			\fill[pattern=north east lines] (1.5,1.5) circle (1);
+		\end{scope}
+		% 
+		\draw (1.5,1.5) circle (1);
+		\draw (3,2) circle (1.5);
+		% 
+		\draw[fill=fugreen, draw=black] (1,1) circle (0.1);
+		\draw[fill=fugreen, draw=black] (2,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (3,3) circle (0.1);
+		\draw[fill=fugreen, draw=black] (4,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (7,4) circle (0.1);
+		% 
+		\node[anchor=east] at (1.5,3.5) {blond};
+		\draw (0.8,3.3) -- (1.1,2.4);
+		% 
+		\node[anchor=west] at (5,3) {Kind};
+		\draw (4.1,3) -- (5,3);
+	\end{tikzpicture}
+
+}
+
+\frame{
+\frametitle{Schnittmenge aus Blonden, Schlafenden und Kindern}
+
+Beide Sätze im vorliegenden Diskursuniversum wahr.
+\eal
+\ex Alle blonden Kinder schlafen.
+\ex Ein blondes Kind schläft.
+\zl
+
+\begin{tikzpicture}[scale=0.75]
+		\draw (0,0) rectangle (8,5);
+		\draw (1.5,1.5) circle (1); %klug
+		\draw (3,2) circle (1.5);  %Kind
+		\draw[rotate around={50:(2.4,2.4)}] (2.5,2.5) ellipse (1.5 and 0.9); %schlafen 
+		%
+		\begin{scope}
+			\clip (1.5,1.5) circle (1);
+			\clip (3,2) circle (1.5);
+			\clip[rotate around={50:(2.4,2.4)}] (2.5,2.5) ellipse (1.5 and 0.9);
+			\fill[pattern=north east lines] (0,0) rectangle (8,5);
+		\end{scope}
+		%
+		\draw[fill=fugreen, draw=black] (1,1) circle (0.1);
+		\draw[fill=fugreen, draw=black] (2,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (3,3) circle (0.1);
+		\draw[fill=fugreen, draw=black] (4,2) circle (0.1);
+		\draw[fill=fugreen, draw=black] (7,4) circle (0.1);
+		%
+		\node[anchor=east] at (1.5,3.5) {blond};
+		\draw (0.8,3.3) -- (1.1,2.4);
+		%
+		\node[anchor=west] at (5,3) {Kind};
+		\draw (4.1,3) -- (5,3);
+		%
+		\node[anchor=west] at (3,4.4) {schlafen};
+		\draw (2.8,3.8) -- (3,4.3);
+	\end{tikzpicture}
+
+
+
+}
+
+\frame{
+\frametitle{Was muss der Fall sein, damit ein Satz wahr wird?}
+
+\eal
+\label{ex-Alle-Kinder-schlafen}
+\ex Alle Kinder schlafen.
+\ex Für alle x, für die gilt, dass sie Kind sind, gilt auch, dass sie schlafen.
+\ex \blau{$\forall$}x kind(x) \blau{$\to$} schlafen(x)
+\zl
+\pause
+\eal
+\ex Ein Kind schläft.
+\ex Es gibt mindestens ein Kind und für dieses Kind gilt, dass es schläft.
+\ex \blau{$\exists$}x kind(x) \blau{$\wedge$} schlafen(x)
+\zl
+\pause
+\eal
+\label{ex-Das-Kind-schläft}
+\ex Das Kind schläft.
+\ex Es gibt ein (bestimmtes) Kind und für dieses Kind gilt, dass es schläft.
+\ex \blau{$\iota$}x kind(x) \blau{$\wedge$} schlafen(x)
+\zl
+
+}
+
+\frame{% [shrink=10]{
+\frametitle{Repräsentation von Relationen mit Merkmalbeschreibungen}
+
+%\small
+Möglichkeit:
 \ea
-Die Frau schlägt den Weltmeister.
+\ms[schlafen]{
+ event & e\\ 
+ agens & x \\
+}
 \z
-$\ll schlagen, agens:~X, patiens:~Y\gg$\\
-$X|\ll frau, instance:~X\gg,$\\
-$Y|\ll weltmeister, instance:~Y\gg$
+
+Semantische Rollen: \textsc{agens}, 
+\textsc{patiens}, 
+\textsc{experiencer}, 
+\textsc{source}, 
+\textsc{goal}, 
+\textsc{thema}, \ldots
+% \textsc{location}, 
+% \textsc{trans-obj}, 
+% \textsc{instrument}, 
+% \textsc{means} und 
+% \textsc{proposition}.
+
 \pause
-\medskip
-\item Adjektiv:
+
+\oneline{Generalisierungen: Passiv unterdrückt Agens-Rolle \parencites{Haider86}{Wunderlich87c}.}
+
+\pause
+
+Aber:
 \ea
-Das Buch ist interessant.
+eine radioaktive Wolke, die vom Wind nach Skandinavien getrieben wurde\footnote{
+  Mannheimer Morgen, 30.04.1986, S.\,1. Zitiert nach \citew[126]{Mueller2002b}.
+}
 \z
-$\ll interessant, thema:~X\gg$\\
-$X|\ll buch, instance:~X\gg$
-\end{itemize}
-\end{itemize}
+Ist der Wind ein Agens?
+\pause
+
+Ist Subjekt von \emph{sehen} nicht Experiencer? \parencites{Devlin92}{Dowty2000a}
+
+\ea
+Der Einbrecher wurde am frühen Morgen gesehen.
+\z
 
 }
-
-\subsection{Die Repräsentation parametrisierter Sachverhalte mit Hilfe von Merkmalbeschreibungen}
 
 \frame{
-\frametitlefit{Sachverhalte und Repräsentation mit Merkmalbeschreibungen}
+\frametitle{Kodierung mit \argzero, \argone, \ldots}
 
 
-$\ll schlagen, agens:~X, patiens:~Y\gg$\\
-\ms[schlagen]
-{ 
- agens & X \\
- patiens & Y\\
-}
-
+Besser: 
+\begin{itemize}
+\item Rollen wie Proto"=Agens und Proto"=Patiens \citet{Dowty91a} oder 
+\item Actor und Undergoer \citep*{VanVL97a-u} %Davis2001a-u,KD2003a-u,DKW2024a,
+\item Oder ganz radikal \argzero, \argone, \argtwo \citep{mrs}
+\end{itemize}
 \pause
-$\ll frau, instance:~X\gg$\\
-\ms[frau]
-{ 
- inst & X \\
+
+
+
+schlafen(e, x), helfen(e, x, y) und kleinkind(x):
+\ea
+\ms[schlafen~]{ 
+ arg0 & e \\
+ arg1 & x \\
+}\hspace{2em}
+\ms[helfen]{ 
+ arg0 & e \\
+ arg1 & x \\
+ arg2 & y \\
+}
+\hspace{2em}
+\ms[kleinkind]{ 
+ arg0 & x \\
+}
+\z
+
+
 }
 
-
-}
-
-\subsection{Repräsentation des CONT-Wertes}
+\subsection{Repräsentation des \contwes}
 
 \frame[shrink]{
 \frametitlefit{Repräsentation mit Merkmalsbeschreibungen: der \contw}
 
 \begin{itemize}
-\item mögliche Datenstruktur ({\sc cont} = {\sc content}):\\
+\item mögliche Datenstruktur (\textsc{cont} = \textsc{content}):\\
       \ms{ phon   & list~of~phoneme strings\\
-           head   & head \\
-           subcat & list\\
+           \blau{head}   & \blau{head}\\
+           \blau{spr}    & \blau{list}\\
+           \blau{comps}  & \blau{list}\\
+           \blau{arg-st} & \blau{list}\\
            cont   & cont\\
          }\\
 \pause
 \item stärkere Gliederung, Unterteilung in syntaktische und semantische Information
       ({\sc cat} = {\sc category})\\
       \ms{ phon & list~of~phoneme strings\\
-           cat  & \ms[cat]{ head   & head\\
-                            subcat & list\\
-                          } \\
+           cat  & \blau{\ms[cat]{ head & head\\
+                            spr  & list\\
+                            comps & list\\
+                            arg-st & list\\
+                          }} \\
            cont & cont\\
          }
 \item $\to$ möglich, nur syntaktische Information zu teilen
@@ -237,16 +440,18 @@ $\ll frau, instance:~X\gg$\\
 \item symmetrische Koordination: der \catw ist identisch
       \ms{ phon & list~of~phoneme strings\\
            cat  & \ms[cat]{ head   & head\\
-                            subcat & list\\
+                            spr  & list\\
+                            comps & list\\
+                            arg-st & list\\
                           } \\
            cont & cont\\
          }
 \item Beispiele:
-      \eal
-      \ex {}[der Mann und die Frau]
-      \ex Er [kennt und liebt] diese Schallplatte.
-      \ex Er ist [dumm und arrogant].
-      \zl
+\eal
+\ex {}[der Delfin] und [der Hund]
+\ex Aicke [kennt] und [liebt] dieses Lied.
+\ex Der Delphin ist [schnell] und [wendig].
+\zl
 \end{itemize}
 }
 
@@ -259,17 +464,18 @@ $\ll frau, instance:~X\gg$\\
 \begin{itemize}
 \item semantischer Index + zugehörige Restriktionen
 
-\mbox{{\it Buch\/}:}\\
-\ms
-{ cat & \ms{ head   & noun \\
-             subcat & \liste{ det } \\
+Lexikoneintrag für \emph{Buch}:\\
+\ms{ 
+  cat & \ms{ head & noun\\
+             spr   & \nliste{ Det } \\
+             comps & \eliste \\
            } \\
   cont &  \ms
            { ind & \ibox{1} \ms{ per & 3 \\
                                  num & sg \\
                                  gen & neu \\
                                } \\
-             restr & \liste{ \ms[buch]{ inst & \ibox{1} \\ }} \\
+             rels & \liste{ \ms[buch]{ arg0 & \ibox{1} \\ }} \\
            } \\
 }
 \pause
@@ -281,112 +487,16 @@ $\ll frau, instance:~X\gg$\\
 
 }
 
-\begin{comment}
-\frame{
 
-\frametitle{Typen nominaler Objekte}
-
-\bigskip
-\begin{figure}[htbp]
-\epsfxsize=0.5\textwidth
-\centerline{\mbox{\epsffile{types-nom-obj.eps}}}
-\end{figure}
-{\footnotesize
-\begin{itemize}
-\item nom-obj
-\begin{itemize}
-\item npro = nicht-pronominal ({\em Frau\/}, {\em Hütte\/})
-\item pro = pronominal
-\begin{itemize}
-\item ppro = Personalpronomina ({\em er\/}, {\em sie\/})
-\item ana = Anaphren
-\begin{itemize}
-\item refl = Reflexiva ({\em sich\/})
-\item recp = Reziprok ({\em einander\/})
-\end{itemize}
-\end{itemize}
-\end{itemize}
-\end{itemize}
-}
-
-}
-
-\frame{
-
-\frametitle{Referentielle und expletive Indizes}
-
-\bigskip
-\begin{itemize}
-\item ind
-\begin{itemize}
-\item expl = Expletiva ({\em es\/}, {\em das\/})
-\item ref = referentiell
-\end{itemize}
-\end{itemize}
-Expletiva sind bedeutungsleer, ohne Referenz
-
-expletives {\em es\/}:
-\eal
-\label{bsp-expletiva-subcat}
-\ex Es regnet.
-\ex Es gibt einen Weihnachtsmann.
-\ex Es trug ihn aus der Kurve. \citep{Uszkoreit87a}
-\ex Es schüttelte mich vor Ekel.
-\ex Er hat es weit / zum Professor gebracht. \citep{Puetz82a}
-\ex Er nimmt es mit zehn Gegnern auf.
-%\item Beim Hören diese Gitarrensolos lief es mir kalt den Rücken hinunter.
-%\item Es kam zu Handgreiflichkeiten.
-\zl
-
-auch {\em das\/}:
-\ea
-Das regnet ja wieder.
-\z
-}
 
 \frame{
 \frametitle{Abkürzungen}
 
 
-\begin{tabular}{@{}lp{3.5cm}@{~~~}l@{}p{4cm}@{}}
+\begin{tabular}{@{}lp{3.5cm}@{\hspace{14mm}}lp{4cm}@{}}
 NP$_{[3,sg,fem]}$     & \onems{ cat \onems{ head \type{noun} \\
-                                            subcat \liste{} \\
-                                          } \\
-                                cont$|$ind \ms{ per & 3 \\
-                                                num & sg \\
-                                                gen & fem \\
-                                              } \\
-                              }  &
-NP$_{\ibox{1}}$ & \ms{ cat & \onems{ head \type{noun} \\
-		                     subcat \liste{} \\
-                                   } \\
-                       cont & \ms
-                              { ind & \ibox{1} {\it ref\/} \\
-                              } \\
-                     }\\\\
-NP$_{expl}$ & \ms{ cat & \ms{ head & noun \\
-                              subcat & \liste{} \\
-                            } \\
-                   cont & \ms{ ind & \ms[expl]{} \\
-                             }\\
-                 } &
-\is{:}%
-\baro{N}: \ibox{1} & \ms{ cat & \ms{ head & noun \\
-                                     subcat & \sliste{ det} \\
-                                   } \\
-                          cont & \ibox{1} \\
-                        } \\
-\end{tabular}
-
-}
-\end{comment}
-\frame{
-\frametitle{Abkürzungen}
-
-
-\begin{tabular}{@{}lp{3.5cm}@{\hspace{14mm}}l@{}p{4cm}@{}}
-NP$_{[3,sg,fem]}$     & \onems{ cat \onems{ head \type{noun} \\
-                                            subcat \liste{} \\
+                                           spr \eliste \\
+                                           comps \eliste \\
                                           } \\
                                 cont$|$ind \ms{ per & 3 \\
                                                 num & sg \\
@@ -395,7 +505,8 @@ NP$_{[3,sg,fem]}$     & \onems{ cat \onems{ head \type{noun} \\
                               }  &
 \pause
 NP$_{\ibox{1}}$ & \ms{ cat & \onems{ head \type{noun} \\
-		                     subcat \liste{} \\
+                                           spr \eliste \\
+                                           comps \eliste \\
                                    } \\
                        cont & \ms
                               { ind & \ibox{1}\\
@@ -403,7 +514,8 @@ NP$_{\ibox{1}}$ & \ms{ cat & \onems{ head \type{noun} \\
                      }\\\\
 \pause
 \baro{N}: \ibox{1} & \ms{ cat & \ms{ head & noun \\
-                                     subcat & \liste{ det} \\
+                                     spr & \nliste{ Det } \\
+                                     comps \eliste \\
                                    } \\
                           cont & \ibox{1} \\
                         } \\
@@ -411,312 +523,951 @@ NP$_{\ibox{1}}$ & \ms{ cat & \onems{ head \type{noun} \\
 
 }
 
-\subsection{Repräsentation parametrisierter Sachverhaltet mit Merkmalbeschreibungen}
 
-\frame[shrink]{
-\frametitlefit{Sachverhalte und Repräsentation mit Merkmalbeschreibungen}
-
-\vfill
-
-\medskip
-$\ll schlagen, agens:~X, patiens:~Y\gg$\\
-$X|\ll frau, instance:~X\gg,$\\
-$Y|\ll weltmeister, instance:~Y\gg$\\
-\bigskip
-\ms[schlagen]
-{ 
- agens & \ibox{1} \\
- patiens & \ibox{2} \\
-}
-\medskip
-
-\ms{
-ind & \ibox{1} \ms{ per & 3 \\
-                    num & sg \\
-                    gen & fem \\
-                  } \\
-restr & \liste{ \ms[frau]{ 
-                inst & \ibox{1} \\
-                }
-        }\\
-}
-\hspace{1.5cm}
-\ms{
-ind & \ibox{2} \ms{ per & 3 \\
-                    num & sg \\
-                    gen & mas \\
-                  }\\
-restr & \liste{ \ms[weltmeister]{
-                inst & \ibox{2} \\
-                }
-        } \\
-}
-
-\vfill
-
-}
-
-\subsection{Linking}
+\subsection{Der semantische Beitrag von Verben und Linking}
+\label{sec-Linking}
 
 \frame{
-\frametitle{Repräsentation mit Merkmalsbeschreibungen und Linking}
+\frametitle{Der semantische Beitrag von Verben und Linking}
 
-\begin{itemize}
-\item Linking zwischen Valenz und semantischem Beitrag\\
-
-\psset{nodesep=1pt}
-
-\label{le-geben}
-\mbox{{\it gibt\/} (finite Form):}\\
+\eas
+\label{le-gibt}%
+\emph{gibt}:\\
 \ms
 { cat & \ms{ head & \ms[verb]
                      { vform & fin \\} \\
-             subcat & \liste{ NP[{\it nom\/}]\rnode{11}{\ind{1}}, NP[{\it acc}]\rnode{21}{\ind{2}}, NP[{\it dat}]\rnode{31}{\ind{3}}   } \\
+             arg-st & \liste{ NP[\type{nom}]\tikzmarknode{i1}{\ind{1}}, NP[\type{dat}]\tikzmarknode{i2}{\ind{2}}, NP[\type{acc}]\tikzmarknode{i3}{\ind{3}}   } \\
            } \\
-  cont &  \ms[geben]{ agens & \rnode{12}{\ibox{1}} \\
-                      thema & \rnode{22}{\ibox{2}} \\
-                      goal  & \rnode{32}{\ibox{3}} \\
-           } \\
+  cont &  \ms{
+          ind & \ibox{4} event\\
+          rels & \liste{ \ms[geben]{ 
+                          arg0 & \ibox{4}\\
+                          arg1 & \tikzmarknode{r1}{\ibox{1}} \\
+                          arg2 & \tikzmarknode{r2}{\ibox{2}} \\
+                          arg3 & \tikzmarknode{r3}{\ibox{3}} \\
+                          } } }\\
 }
-\pause
-\item Referentielle Indizes der NPen sind mit den semantischen Rollen identifiziert.
-
-\rot<beamer>{
-\ncdiag[arm=0,angleA=-135]{<->}{11}{12}
-\ncdiag[arm=0,angleA=-135]{<->}{21}{22}
-\ncdiag[arm=0,angleA=-135]{<->}{31}{32}
-}
-\end{itemize}
-
+%
+\visible<2->{
+\begin{tikzpicture}[remember picture,overlay,<->]
+\draw[brown] (i1) to (r1);
+\draw[brown] (i2) to (r2);
+\draw[brown] (i3.south west) to (r3);
+\end{tikzpicture}
+\zs
 }
 
-\iftoggle{teil1}{
+\visible<3>{
+No more $\lambda$s! Die $\lambda$s sind in \argst bzw.\ den Valenzmerkmalen.
+}
+
+}
+
+
 \frame{
+\frametitle{Linking allgemein}
 
-\frametitle{Generalisierungen für Verbklassen}
-
-\begin{itemize}
-\item typbasiert: Verben mit Agens, mit Agens und Thema, mit Agens und Patiens
-\item verschiedene Valenz/Linking-Muster\\
-\ea
+\eas
 \onems
-{ cat$|$subcat \liste{ []\ind{1}, []\ind{2}, []\ind{3}  }\\[1mm]
-  cont  \ms[agens-thema-goal-rel~]{ agens & \ibox{1} \\
-                      thema & \ibox{2} \\
-                      goal  & \ibox{3} \\
-           } \\
+{ cat|arg-st \liste{ []\tikzmarknode{i1}{\ind{1}}, []\tikzmarknode{i2}{\ind{2}}, []\tikzmarknode{i3}{\ind{3}}   } \\
+  cont|rels  \liste{ \ms{ 
+%                          arg0 & \ibox{4}\\
+                          arg1 & \tikzmarknode{r1}{\ibox{1}} \\
+                          arg2 & \tikzmarknode{r2}{\ibox{2}} \\
+                          arg3 & \tikzmarknode{r3}{\ibox{3}} \\
+                          } }\\
+}
+%
+% \begin{tikzpicture}[remember picture,overlay,<->]
+% \draw[brown] (i1) to (r1);
+% \draw[brown] (i2) to (r2);
+% \draw[brown] (i3.south west) to (r3);
+% \end{tikzpicture}
+\zs
+
+
+Linking"=Theorien im Rahmen der HPSG: \citew{Davis96a-u,Wechsler95a-u}
+
+Überblick: \citew{HPSGHandbookLinking}.
+
+
+}
+
+\subsection{Komposition}
+
+\frame{
+\frametitle{Komposition}
+
+\ea
+Der kleine Affe schläft.
+\z
+
+\begin{forest}
+sm edges
+[{V$_e$[\nliste{ def\_q(x, \ldots), klein(x), affe(x), schlafen(x) }]}
+  [{NP$_x$[\nliste{ def\_q(x, \ldots), klein(x), affe(x) }]}
+    [{Det$_x$[\nliste{ def\_q(x, \ldots) }]} [der]]
+    [{N$_x$[\nliste{ klein(x), affe(x) }]}
+      [{Adj$_x$[\nliste{ klein(x) }]} [kleine]]
+      [{N$_x$[\nliste{ affe(x) }]} [Affe]]]]
+  [{V$_e$[\nliste{ schlafen(e,x) }]} [schläft]]]
+\end{forest}
+
+\vfill
+
+Index wird hochgegeben: x bei nominalen Projektionen, e bei verbalen
+
+\rels werden einfach verknüpft.
+
+\vfill
+
+}
+
+\frame{
+\frametitle{Index und Relationen}
+
+Weitergabe des semantischen Indexes:
+
+\ea
+\label{Semantik-Index-headed-phrase}
+\type{headed-phrase} \impl\\
+\ms{
+cont|ind & \ibox{1}\\
+head-dtr|cont|ind & \ibox{1}\\
 }
 \z
+
 \pause
-\item Der Typ für die Relation {\it geben\/} ist Untertyp von {\it agens-thema-goal-rel\/}.\\
-      Lexikoneintrag für \stem{geb} hat das Linking-Muster in (\mex{0}).
-\pause
-\item Generalisierungen darüber, wie welche Argumente realisiert werden können,
-      lassen sich ebenfalls erfassen.
-%\item zu Linkingtheorien in HPSG siehe 
-\nocite{Davis96a-u,Wechsler91a-u}
-\end{itemize}
+
+\rels für Phrasen:
+\ea
+\label{constraint-RELS}
+\type{phrase} \impl\\
+\onems{
+cont|rels  \ibox{1} $\oplus$ \ibox{2}\\
+dtrs  \sliste{ [cont|rels \ibox{1} ], [cont|rels \ibox{2} ] }\\
 }
-} % \end{teil1}
+\z
 
-\subsection{Der semantische Beitrag von Phrasen}
+}
+
 \frame{
+\frametitle{Allgemeinere Berechnung des \relswes}
 
-\frametitle{Projektion des semantischen Beitrags des Kopfes}
 
-\centerline{
+Ganz allgemein, unabhängig von der Anzahl der Töchter.
+\ea
+\type{phrase} \impl\\
+\onems{
+cont|rels  \texttt{collect-rels}(\ibox{1})\\
+dtrs  \ibox{1} \\
+}
+\z
+
+\pause
+
+\ea
+\label{constraint-collect-rels}
+\texttt{collect-rels}([],[]).\\
+\texttt{collect-rels}([[\textsc{cont|rels} Rels1]|Dtrs],Rels) :=\\
+\hfill \texttt{collect-rels}(Dtrs,Rels2), \texttt{append}(Rels1,Rels2,Rels).
+\z
+
+}
+
+\subsection{Quantoren}
+
+\frame{
+\frametitle{Quantoren: Notation}
+
+
+\eal
+\label{ex-Alle-Kinder-schlafen-zwei}
+\ex Alle Kinder schlafen.
+\ex $\forall$x \relationunmarked{kind}(x) $\to$ \relationunmarked{schlafen}(x)
+\ex Für jede Entität x in unserem Diskursuniversum, für die gilt, dass sie ein Kind ist, gilt auch,
+dass sie schläft.
+\zl
+
+Notation für Quant, die 
+\ea
+\label{ex-every-kind-schlafen}
+every\_q(x, kind(x), schlafen(x))
+\z
+
+
+}
+
+\frame{
+\frametitle{Töchter und Mitarbeiter}
+
+
+\ea
+\label{ex-Jede-Tochter-eines-Mitarbeiters-schläft-zwei}
+Jede Tochter eines Mitarbeiters schläft.
+\z
+
+\pause
+
+\eal
+\ex $\forall$x ($\exists$y \relationunmarked{mitarbeiter}(y) $\wedge$ \relationunmarked{tochter}(x,y)) $\to$
+\relationunmarked{schlafen}(x)
+\ex Für jede Entität x in unserem Diskursuniversum für die gilt, dass es im Diskursuniversum eine Entität y gibt, die
+Mitarbeiter ist und deren Tochter x ist, gilt auch, dass sie (x) schläft.
+\zl
+
+\pause
+
+\eal
+\ex $\exists$y \relationunmarked{mitarbeiter}(y) $\wedge$ ($\forall$x \relationunmarked{tochter}(x,y) $\to$
+\relationunmarked{schlafen}(x))
+\ex Es gibt im Diskursuniversum eine Entität y, für die gilt, dass sie ein Mitarbeiter ist und dass für alle Entitäten
+x im Diskursuniversum, für die gilt, dass sie die Tochter von y sind, auch gilt, dass sie schlafen.
+\zl
+
+\pause
+
+\eal
+\label{ex-Quantoren-Mitarbeiter-Tochter}
+\ex every\_q(x, exist\_q(y, mitarbeiter(y), tochter(x,y)), schlafen(x))
+\ex exist\_q(y, mitarbeiter(y), every\_q(x, tochter(x,y), schlafen(x)))
+\zl 
+
+}
+
+\frame{
+\frametitle{Wohlgeformtheitsbedingungen und Unterspzifikation}
+
+Variablen müssen von Quantor gebunden werden.
+
+(\mex{1}) nicht wohlgeformt, weil das
+$x$ von schlafen(x) außerhalb des Skopus des Allquantors ist, der x einführt und binden muss. \citep[131]{Kratzer95a}.
+\ea
+exist\_q(y, \rot{every\_q(x, tochter(x,y), mitarbeiter(y))},  schlafen(\rot{x}))
+\z
+
+\pause
+
+Man kann nun Beschreibungen entwickeln, die die Skopusbeziehungen unterspezifiziert lassen.
+
+\eal
+\label{ex-Quantoren-Mitarbeiter-Tochter}
+\ex \blau<2>{every\_q(x, \rot<3>{exist\_q(y, mitarbeiter(y)}, tochter(x,y))}, schlafen(x))
+\ex \rot<3>{exist\_q(y, mitarbeiter(y)}, \blau<2>{every\_q(x, tochter(x,y)}, schlafen(x)))
+\zl 
+
+tochter(x,y) muss sich in der Restriktion des Allquantors befinden.
+
+\pause
+mitarbeiter(y) in der Restriktion des Existenzquantors.
+
+}
+
+\frame{
+\frametitle{Handels und Labels}
+
+
+
+\eal
+\ex $\forall$x \relationunmarked{kind}(x) $\to$ \relationunmarked{schlafen}(x)
+\ex every\_q(x, kind(x), schlafen(x))
+\ex h1:every\_q(x, h2, h3), h2:kind(x), h3:schlafen(x))
+\zl
+
+Nicht die Ausdrücke selbst werden beim Quantor eingesetzt,\\
+sondern Zeiger auf diese.
+
+
+}
+
+
+\frame{
+\frametitle{Konjunktion ist Identifikation von Labels}
+
+\eal
+\ex Alle kleinen Kinder schlafen.
+\ex\label{ex-Aussagenlogik-Alle kleinen Kinder schlafen}
+$\forall$x (\relationunmarked{klein}(x) $\wedge$ \relationunmarked{kind}(x)) $\to$ \relationunmarked{schlafen}(x)
+\ex Für jede Entität x in unserem Diskursuniversum, für die gilt,\\
+    dass sie klein und ein Kind ist, gilt auch, dass sie schläft.
+\zl
+
+\pause
+
+(\mex{1}a) oder (\mex{1}b)?
+\eal
+\ex h1:every\_q(x, h2, h3), h2:und(h4:klein(x), h5:kind(x)), h3:schlafen(x)
+\ex h1:every\_q(x, h2, h3), h2:klein(x), h2:kind(x), h3:schlafen(x)
+\zl
+
+\citet[\page 284]{CFPS2005a} Schachtelungen tragen nicht zur Bedeutung bei. Teilen der Labels reicht.
+
+}
+
+\frame{
+\frametitle{Grafische Darstellung der Dominanz}
+
+
+\centerline{%
+\begin{tikzpicture}[scoped mrs]
+\node(every)    at (2,6)   {h1:every\_q(\subnode{x}{x}, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(kind)     at (0.5,4) {h2:klein(x), h2:kind(x)};
+\node(schlafen) at (4,4)   {h3:schlafen(x)};
+%
+\draw (h2) to (kind);
+\draw (h3) to (schlafen);
+\end{tikzpicture}}
+
+}
+
+\frame{
+\frametitle{Unterspezifikation}
+
+\eal
+\ex Alle Kinder schlafen.
+% \ex \oneline{\textmrs{ h0, \{ h1:every\_q(x, h2, h3), h4:kind(x),
+%               h5:schlafen(x) \}, \{ h2 \qeq h4 \}  }}
+\ex \{ h1:every\_q(x, h2, h3), h4:kind(x), h5:schlafen(x) \}, \{ h2 \qeq h4 \}
+\zl
+
+\centerline{%
+\begin{tikzpicture}[mrs]
+\node(every)  at (2,6) {h1:every\_q(\subnode{x}{x}, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(kind) at (0.5,4)  {h4:kind(x)};
+\node(schlafen)    at (4,4) {h5:schlafen(x)};
+%
+\draw (h2) to (kind);
+%\draw[color=RED] (x) to (schlafen);
+\end{tikzpicture}}
+
+kind(x) ist in der Restriktion des Quantors.
+
+Die Variable x von schlafen(x) muss durch einen Quantor gebunden werden.
+
+Das ist alles.
+
+}
+
+\frame{
+\frametitle{Dominanzbeschränkungen wegen Variablenbindung}
+
+\hfill%
+\begin{tikzpicture}[mrs]
+\node(every)  at (2,6) {h1:every\_q(\subnode{x}{x}, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(kind) at (0.5,4)  {h4:kind(x)};
+\node(schlafen)    at (4,4) {h5:schlafen(x)};
+%
+\draw (h2) to (kind);
+\draw[color=RED] (x) to (schlafen);
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[mrs]
+\node(every)  at (2,6) {h1:every\_q(\subnode{x}{x}, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(kind) at (0.5,4)  {h4:kind(x)};
+\node(schlafen)    at (4,4) {h5:schlafen(x)};
+%
+\draw (h2) to (kind);
+\draw (h3) to (schlafen);
+\end{tikzpicture}\hfill\mbox{}
+
+Variable muss gebunden werden, also muss schlafen(x) irgendwie unter dem Ausdruck sein, der x
+einführt.
+
+Da h2 schon vergeben ist (Dort dürfen nur Quantoren noch dazwischentreten.),\\
+muss schlafen(x) von h3 dominiert werden.
+
+}
+
+\frame{
+\frametitle{Nur ein Quantor und nur eine Lösung}
+
+\hfill
+\begin{tikzpicture}[mrs]
+\node(every)  at (2,6) {h1:every\_q(\subnode{x}{x}, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(kind) at (0.5,4)  {h4:kind(x)};
+\node(schlafen)    at (4,4) {h5:schlafen(x)};
+%
+\draw (h2) to (kind);
+\draw (h3) to (schlafen);
+\end{tikzpicture}\hfill
+\begin{tikzpicture}[scoped mrs]
+\node(every)  at (2,6) {h1:every\_q(\subnode{x}{x}, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(kind) at (0.5,4)  {h4:kind(x)};
+\node(schlafen)    at (4,4) {h5:schlafen(x)};
+%
+\draw (h2) to (kind);
+\draw (h3) to (schlafen);
+\end{tikzpicture}\hfill\mbox{}
+
+Links: Dominanzbeschränkungen aus MRS + Variablenbindung
+
+Rechts: geskopte MRS
+
+}
+
+\frame{
+\frametitle{Unterspezifikation mit mehreren Quantoren}
+
+\ea
+\{ h1:every\_q(x, h2, h3), h4:tochter(x,y), h5:exist\_q(y, h6, h7), 
+\hphantom{\textlangle~}h8:mitarbeiter(y), h9:schlafen(x) \}, \{ h2 \qeq h4, h6 \qeq h8 \}
+\z
+
+
+Das Handle auf der rechten Seite wird mit dem
+auf der linken identifiziert, wobei aber noch Quantoren dazwischentreten können. 
+
+Genauer: Wenn h \qeq l gilt, dann muss entweder h = l sein, oder\\
+es muss eine Folge Q$_1$, \ldots, Q$_n$ von Quantoren geben, für die gilt, \\
+dass h identisch mit dem Label von Q$_1$ ist und l identisch mit dem
+Body-Argument von Q$_n$ und für alle Paare in der Folge Q$_m$, Q$_{m+1}$ ist das Label von Q$_{m+1}$
+identisch mit dem Body-Argument des Quantors Q$_m$ \citep[\page 297]{MRS}. 
+
+}
+
+
+\frame{
+\frametitle{Dominanzgraph für MRS}
+
+\vfill
+\begin{tikzpicture}[mrs]
+\node(exists)  at (-2,6) {h5:exist\_q(\subnode{y}{y}, \subnode{h6}{h6}, \subnode{h7}{h7})};
+\node(tochter) at (0.5,4)  {h4:tochter(x,y)};
+\node(every)   at (2,6)  {h1:every\_q(\subnode{x}{x}, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(mitarbeiter) at (-3,4) {h8:mitarbeiter(y)};
+\node(schlafen)    at (4,4) {h9:schlafen(x)};
+%
+\draw[color=RED] (y) to (tochter);
+\draw (h2) to (tochter);
+\draw (h6) to (mitarbeiter);
+\draw[color=RED] (x) to (schlafen);
+\end{tikzpicture}
+\pause
+\vfill
+\begin{tikzpicture}[mrs]
+\node(exists)  at (-2,6) {h5:exist\_q(y, \subnode{h6}{h6}, \subnode{h7}{h7})};
+\node(tochter) at (0.5,4)  {h4:tochter(x,y)};
+\node(every)   at (2,6)  {h1:every\_q(x, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(mitarbeiter) at (-3,4) {h8:mitarbeiter(y)};
+\node(schlafen)    at (4,4) {h9:schlafen(x)};
+\draw[color=RED] (h7) to (tochter);
+\draw (h2) to (tochter);
+\draw (h6) to (mitarbeiter);
+\draw[color=RED] (h3) to (schlafen);
+\end{tikzpicture}\vfill
+
+
+}
+
+\frame{
+\frametitle{Geskopte MRSen}
+
+\vfill
+\begin{tikzpicture}[scoped mrs]
+%\draw (-5,-1) to[grid with coordinates] (5,3);
+\node(exists)  at (-2,2) {h5:exist\_q(y, \subnode{h6}{h6}, \subnode{h7}{h7})};
+\node(tochter) at (0.5,0)  {h4:tochter(x,y)};
+\node(every)   at (2,2)  {h1:every\_q(x, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(mitarbeiter) at (-3,0) {h8:mitarbeiter(y)};
+\node(schlafen)    at (4,0) {h9:schlafen(x)};
+\draw (h7) to (tochter);
+\draw (h2) .. controls +(-.5,-3) and +(.5,2).. (exists.north);
+\draw (h6) to (mitarbeiter);
+\draw (h3) to (schlafen);
+\end{tikzpicture}
+\pause
+\vfill
+\begin{tikzpicture}[scoped mrs]
+%\draw (-5,-1) to[grid with coordinates] (5,3);
+\node(exists)  at (-2,2) {h5:exist\_q(y, \subnode{h6}{h6}, \subnode{h7}{h7})};
+\node(tochter) at (0.5,0)  {h4:tochter(x,y)};
+\node(every)   at (2,2)  {h1:every\_q(x, \subnode{h2}{h2}, \subnode{h3}{h3})};
+\node(mitarbeiter) at (-3,0) {h8:mitarbeiter(y)};
+\node(schlafen)    at (4,0) {h9:schlafen(x)};
+\draw   (h7) .. controls +(.5,-1.5) and +(-1.5,2).. (every.north);
+\draw   (h2) to (tochter);
+\draw   (h6) to (mitarbeiter);
+\draw   (h3) to (schlafen);
+\end{tikzpicture}
+\vfill
+
+
+}
+
+\frame{
+\frametitle{Lexikoneintrag von \emph{Tochter}}
+
+\ms{
+cat & \ms{ head & \ms[noun]{
+                  case & \type{nom}\\
+                  }\\
+           spr   & \nliste{ Det }\\
+           comps & \nliste{ NP[\type{gen}]\ind{1} }\\
+         }\\
+cont & \ms{
+       ltop & \ibox{2}\\
+       ind  & \ibox{3}\\
+       rels & \liste{ \ms[tochter\_rel]{
+                      lbl  & \ibox{2}\\ 
+                      arg0 & \ibox{3}\\ 
+                      arg1 & \ibox{1}\\ 
+                      } }\\
+       hcons & \eliste
+       }
+}
+
+\ltop zeigt auf das local top. Das jeweils aktuelle Label.
+
+Der \ltopw von \emph{Tochter} ist das Label der \relation{tochter}-Relation.
+
+Der Index \iboxb{3} ist \argzero.
+
+}
+
+\frame{
+\frametitle{Quantoren in Merkmal-Wert-Darstellung}
+
+\eal
+\ex \ms[every\_q]{
+                      arg0 & \ibox{2}\\ 
+                      rstr & \ibox{3}\\ 
+                      body & \etag\\
+                      }
+\ex every\_q(\ibox{2}, \ibox{3}, \etag)
+\zl
+
+\body wird nie angegeben. Wird dann bei Skopusauflösung der MRS gefüllt.
+
+}
+
+\frame{
+\frametitle{Lexikoneintrag für \emph{jede}}
+
+\ea
+\scalebox{.9}{%
+\ms{
+cat & \ms{ head & \ms[det~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]{
+                  case  \type{nom}\\
+                  spec|cont \ms{ \visible<2>{ltop} & \visible<2>{\blau{\ibox{1}}}\\
+                                 ind  & \blau<1>{\ibox{2}}\\
+                               }
+                  }\\
+           spr   & \eliste\\
+           comps & \eliste\\
+         }\\
+cont & \ms{
+       rels & \liste{ \ms[every\_q]{
+                      arg0 & \blau<1>{\ibox{2}}\\ 
+                      rstr & \blau<2>{\ibox{3}}\\ 
+%                      body &\\
+                      } }\\[5mm]
+       \visible<2>{hcons} & \visible<2>{\liste{ \blau{\ms[qeq]{
+                       harg & \ibox{3}\\
+                       larg & \ibox{1}\\
+                       }}
+               }}\\
+       }
+}}
+\z
+
+Quantor greift über \spec auf zugehöriges Nomen zu und teilt Variable \iboxb{2}\pause und fügt
+Skopus-Beschränkung (\ibox{3} \qeq \ibox{1}) ein.
+
+}
+
+\frame{
+\frametitle{Jede Tochter eines Mitarbeiter schläft.}
+
+\oneline{%
 \begin{forest}
-sm edges, for tree={l sep+=\baselineskip}
-[{V[\type{fin}, \subcat \sliste{ } ]}, name=1
-  [ {\ibox{1} NP[\type{nom}]}
-    [Aicke]]
-  [{V[\type{fin}, \subcat \sliste{ \ibox{1} } ]}, name=2
-    [ {\ibox{2} NP[\type{acc}]}
-      [die Nuss, roof]]
-    [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2} } ]}, name=3
-      [ {\ibox{3} NP[\type{dat}]}
-        [dem Eichhörnchen, roof]]
-      [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} } ]}, name=4
-        [gibt]]]]]
-\draw[<->] (4) to[out=east,in=east] (3);
-\draw[<->] (3) to[out=east,in=east] (2);
-\draw[<->] (2) to[out=east,in=east] (1);
-\node()[above right of=4,xshift=6em,yshift=\baselineskip]{$geben(a,n,e)$};
+sm edges
+[V\feattab{\rels \nliste{ h1:every(x,h2,h3), h4:tochter(x,y), h5:exist(y,h6,h7), h8:mitarbeiter(y),
+    h9:schlafen(x) },\\
+               \hcons \nliste{ h2 \qeq h4, h6 \qeq h8 }}
+  [NP\feattab{\rels \nliste{ h1:every(x,h2,h3), h4:tochter(x,y), h5:exist(y,h6,h7), h8:mitarbeiter(y) },\\
+               \hcons \nliste{ h2 \qeq h4, h6 \qeq h8 }}
+    [Det\feattab{\rels \nliste{ h1:every(x,h2,h3) },\\
+               \hcons \nliste{ h2 \qeq h4 }} [jede] ]
+    [N\feattab{\rels \nliste{ h4:tochter(x,y), h5:exist(y,h6,h7), h8:mitarbeiter(y) },\\
+               \hcons \nliste{ h6 \qeq h8 }}
+      [N\feattab{\rels \nliste{ h4:tochter(x,y) },\\
+                 \hcons \eliste} [Tochter] ]
+      [NP\feattab{\rels \nliste{ h5:exist(y,h6,h7), h8:mitarbeiter(y) },\\
+                  \hcons \nliste{ h6 \qeq h8 }} 
+         [Det\feattab{\rels \nliste{ h5:exist(y,h6,h7) },\\
+                      \hcons \nliste{ h6 \qeq h8 }} [eines]]
+         [N\feattab{\rels \nliste{ h8:mitarbeiter(y) },\\
+                    \hcons \eliste} [Mitarbeiters]] ] ] ]
+   [V\feattab{\rels \nliste{ h9:schlafen(x) },\\
+              \hcons \eliste} [schläft]]]
 \end{forest}
 }
 
 }
 
-\iftoggle{teil1}{
+\frame{
+\frametitle{Das Spezifikatorprinzip}
+
+\begin{prinzip-break}[Spezifikatorprinzip (\textsc{spec}-Principle)] 
+\label{prinzip-spec}\is{Prinzip!Spezifikator-}
+Wenn eine Tochter, die keine Kopf"|tochter ist, in einer Kopf"|struktur
+einen von \type{none} verschiedenen \textsc{spec}-Wert besitzt, so ist dieser token-identisch mit
+%dem \textsc{synsem}-Wert 
+der Kopf"|tochter.
+\end{prinzip-break}
+
+\pause
+
+Formal:
+\ea
+\ms{ non-head-dtrs & \liste{ [\textsc{cat|head|spec} \type{sign}] } } \impl\\
+\hfill\onems{ head-dtr \ibox{1}\\
+        non-head-dtrs  \nliste{ [\textsc{cat|head|spec} \ibox{1}] } }
+\z
+
+}
+
+\exewidth{(235)}
 
 \frame{
-\frametitle{Semantikprinzip (Ausschnitt)}
+\frametitle{Possessivpronomina}
 
+\ea
+ihr Buch
+\z
 
-% In Strukturen mit Kopf, die keine Kopf-Adjunkt-Strukturen sind, ist der
-% semantische Beitrag der Mutter identisch mit dem der Kopftochter.
-
-In Strukturen, in denen es eine Kopftochter gibt,\\
-ist der semantische Beitrag der Mutter identisch mit dem der Kopftochter.
-
-\(
-\ms{
-cont & \ibox{1} \\
-head-dtr$|$cont & \ibox{1} \\
-}
-\)
-
-Anmerkung:\\
-Diese Beschränkung gilt nicht für Kopf-Adjunkt-Strukturen.
-Kopf-Adjunkt-Strukturen werden später behandelt.
-
-}
-} % \end{teil1}
-
-\iftoggle{teil2}{
-\frame{
-
-\frametitle{Semantikprinzip (Ausschnitt)}
-
-
-% In Strukturen mit Kopf, die keine Kopf-Adjunkt-Strukturen sind, ist der
-% semantische Beitrag der Mutter identisch mit dem der Kopftochter.
-
-In Strukturen, in denen es eine Kopftochter gibt, ist der
-semantische Beitrag der Mutter identisch mit dem der Kopftochter.
-
-\(
-\ms{
-cont & \ibox{1} \\
-head-dtr$|$cont & \ibox{1} \\
-}
-\)
-
-%% Anmerkung:\\
-%% Diese Beschränkung gilt nicht für Kopf-Adjunkt-Strukturen.
-%% Kopf-Adjunkt-Strukturen werden später behandelt.
-
-}
-} % \end{teil2}
-
-
-\iftoggle{teil1}{
-\frame{
-\frametitle{Typhierarchie für {\it sign\/}}
-
-
-\centerline{
-\begin{forest}
-type hierarchy
-[sign,
- for tree={
-   calign=fixed angles,
-   calign angle=60
- } 
-  [word]
-  [phrase
-    [non-headed-phrase]
-    [headed-phrase, l sep+=\baselineskip
-      [\ldots]
-      [head-non-adjunct-phrase, calign with current
-        [head-argument-phrase]]
-      [\ldots]]]]
-\end{forest}}
-
-\medskip
-\centerline{%
-\type{head-non-adjunct-phrase} \impl 
-\(
-\ms{
-cont & \ibox{1} \\
-head-dtr$|$cont & \ibox{1} \\
-}
-\)
-}
-
-}
-} % \end{teil1}
-
-\begin{comment}
-\frame{
-\frametitle{Typhierarchie für {\it sign\/} (Überblick)}
-
-
-
-\epsfxsize=0.9\textwidth
-\centerline{\mbox{\epsffile{types-sign-hc-hna.eps}}}
-
-
-\centerline{Betrachteter Ausschnitt {\bf fett} markiert}
-
-
-}
-\end{comment}
-
-
-\iftoggle{teil1}{
-\frame{
-\frametitle{Kopf-Komplement-Schema + HFP + SemP}
-
-
-\onems[head-argument-phrase~]{
-cat  \ms{ head   & \ibox{1} \\
-           subcat & \ibox{2} \\ 
-         }\\
-\blau{cont  \ibox{3}}\\[2mm]
-head-dtr   \ms{ cat & \ms{ head   & \ibox{1} \\
-                            subcat & \ibox{2} $\oplus$ \sliste{ \ibox{4} } \\
-                          } \\
-                 \blau{cont} & \blau{\ibox{3}} \\
+\ea
+Lexikoneintrag für das Possessivpronomen \emph{ihr}:\\
+\scalebox{.4}{%
+\ms{ 
+  cat & \ms{ head  & \ms[det]{
+                     case & nom\\
+                     spec & \ms{ cont & \ms{ \visible<2->{ltop} & \visible<2->{\blau<2,4>{\ibox{1}}}\\
+                                             ind  & \blau<1,3>{\ibox{2}}\\
+                                           }}\\
+                     }\\
+             spr   & \eliste\\
+             comps & \eliste \\
+           } \\
+  cont &  \ms{
+%       ltop & \ibox{3}\\
+       ind  & \blau<3>{\ibox{3} \ms{
+                       per & 3\\
+                       num & sg\\
+                       gen & fem\\
+                      }}\\ 
+       rels & \liste{ \blau<1>{\ms[def\_q]{
+                      arg0 & \ibox{2}\\ 
+                      rstr & \ibox{4}\\ 
+%                      body &\\
+                      }}\visible<3->{, \blau<3>{\ms[besitzen\_rel]{
+                            lbl  & \blau<4>{\ibox{1}}\\     % pronoun_q(x,h, h) h1:pronoun_rel(x),
+                                % h1:besitzen(x,y) ^ h1:buch(y)
+%                           arg0 & event\\
+                            arg1 & \ibox{3}\\
+                            arg2 & \ibox{2}
+                      }}} }\\
+       \visible<2->{hcons} & \visible<2->{\liste{ \blau<2>{\ms[qeq]{
+                       harg & \ibox{4}\\
+                       larg & \ibox{1}\\
+                       }}}
                }\\
-non-head-dtrs  \sliste{ \ibox{4} } \\
-} 
+           } \\
+}}
+\z
 
-Typ {\it head-argument-phrase\/} mit von {\it headed-phrase\/} und 
-{\it head-non-adjunct-phrase\/} ererbter Information
+Possessivum führt Quantor ein. Quantor bindet Variable des Nomens \iboxb{2}.
 
+\pause
+
+Quantor skopt über Nomen (\ibox{4} \qeq \ibox{1}).
+
+\pause
+
+Possessivum führt \relation{besitzen}-Relation ein: besitzen(\ibox{3}, \ibox{2})
+
+\pause
+
+Diese teilt Label mit Nomen.
 
 }
 
-\if 0
 \frame{
+\frametitle{MRS für \emph{ihr Buch}}
 
-\frametitle{Perkolation der Indizes}
 
 
-\begin{itemize}
-\item Bisher ist nur Semantik des Kopfes am obersten Knoten repräsentiert.
+\ea
+\label{MRS ihr Buch}
+\{ h1:def\_q(x, h2, h3), h4:besitzen(e1, i1, x), h4:buch(x) \},
+\{ h2 \qeq h4 \}
+\z
+
+i1 ist der referentielle Index für \emph{ihr}.
+
+
+}
+
+
+
+\frame{
+\frametitle{Tucholsky und \emph{potentielle Mörder}}
+
+\eal
+%% Darin heißt es, dass "Soldaten nicht nur potentielle Mörder sind, sondern im wahrsten Sinne des Wortes bezahlte Killer".21.10.1994 taz Inland 97 Zeilen, hans-hermann kotte S. 5
+%% Augst hatte 1989 bei einer Diskussion Soldaten als "potentielle Mörder" bezeichnet. 10.10.1994 taz Aktuelles 14 Zeilen, S. 2
+
+%% Er hatte sich in einem Leserbrief mit dem Ausspruch "Alle Soldaten sind potentielle Mörder" solidarisiert.22.9.1994 taz Tagesthema 91 Zeilen, kotte S. 3
+\ex Gewalt provoziere immer Gegengewalt und:\\
+    "`Soldaten sind potentielle Mörder."'\footnote{
+23.12.1993, taz berlin, S.\,18.
+}
+
+\ex
+Soldaten sind Mörder.\footnote{
+  Tucholsky, Kurt, (1931), "`Der bewachte Kriegsschauplatz"', \emph{Die Weltbühne}, S.\,31.
+}
+\ex
+\relationunmarked{mörder}(x)
+\zl
+
+
+}
+
+
+\frame{
+\frametitle{Vorläufiger Lexikoneiontrag für \emph{kleinen}}
+
+\ea
+\scalebox{.7}{%
+\ms{
+cat & \ms{ head & \ms[adj]{
+                  mod & \ms{ cat & \ms{ head & noun\\
+                                        spr  & \nliste{ Det }\\
+                                        comps & \eliste }\\
+                             cont & \ms{ ltop & \blau{\ibox{1}}\\
+                                         ind  & \ibox{2}\\
+                                       }}}\\
+           spr & \eliste\\
+           comps & \eliste\\
+         }\\
+cont & \ms{ ltop & \blau{\ibox{1}}\\
+%            ind  & \ibox{2}\\
+            rels & \liste{ \ms[klein]{
+                           lbl  & \blau{\ibox{1}}\\ 
+                           arg1 & \ibox{2}\\
+                           } }\\
+            hcons & \eliste\\
+          }\\
+}}
+\z
+
+Das würde das Label des Nomens mit dem des Adjektivs identifizieren.
+
 \pause
-\item Jede NP führt einen Index/Quantor ein.
-\scalebox{0.85}{\onems
-{   cont \blau<1>{\ibox{1}} \ms{ ind & \ibox{2} \ms{  per & 3 \\
-                                            num & sg \\
-                                            gen & mas \\
-                                         } \\
-                       restr & \liste{\ms[mann]{
-                                      instance & \ibox{2} \\
-                                      }} \\
-                              } \\
-   \blau<1>{context$|$inds   {\rm \sliste{ \ibox{1} }}} \\
- }
-}
+
+\eal
+\ex \textmrs{ h1, \{ h1:klein(x), h1:mörder(x) \}, \{  \} }
 \pause
-\item Indizes werden projiziert.
-
-\type{headed-phrase} $\to$\\
-\scalebox{0.85}{\onems{
-context$|$inds  \ibox{1} $\oplus$ \ibox{2} \\
-head-dtr$|$context$|$inds \ibox{1} \\
-non-head-dtrs \liste{ \onems{
-                       context$|$inds \ibox{2} \\
-                      }}\\
-}
-}
-
-\end{itemize}
+\ex \textmrs{ h1, \{ h1:potentiell(x), h1:mörder(x) \}, \{  \} } \pause (falsch!)
+\ex \textmrs{ h1, \{ h1:potentiell(h2), h2:mörder(x) \}, \{  \} } (richtig)
+\zl
 
 }
-\fi
+
+\frame{
+\frametitle{Lexikoneintrag für \emph{potentielle}}
+\ms{
+cat & \ms{ head & \ms[adj]{
+                  mod & \ms{ cat & \ms{ head & noun\\
+                                        spr  & \nliste{ Det }\\
+                                        comps & \eliste }\\
+                             cont & \ms{ ltop & \ibox{1}\\
+                                         ind  & \ibox{2}\\
+                                       }}}\\
+           spr & \eliste\\
+           comps & \eliste\\
+         }\\
+cont & \ms{ ltop & \ibox{3}\\
+%            ind  & \ibox{2}\\
+            rels & \liste{ \ms[potentiell]{
+                           lbl  & \ibox{3}\\
+                           arg1 & \ibox{1}\\
+                           } }\\
+            hcons & \eliste\\
+          }\\
+}
+
+}
+
+\frame{
+\frametitle{Perkolation des \ltopwes}
+
+Bei intersektiven Adjunkten ist \ltop vom Kopf und Adjunkt gleich. 
+
+Bei nicht-intersektiven hat Adjunkt Skopus über Kopf.
+
+\ltopw kann bzw.\ muss also vom Adjunkt kommen.
+
+\ea
+\type{head-adjunct-phrase} \impl
+  \ms{ cont|ltop & \ibox{1}\\
+       non-head-dtrs & \sliste{ [cont|ltop \ibox{1} ] }\\
+     }
+\z
+
+}
+
+
+\subsubsection{\emph{scheinbar einfache Beispiele}}
+
+\frame{
+\frametitle{\emph{scheinbar einfache Beispiele}}
+
+\citet{Kasper97a}:
+\ea
+\label{ex-ein-scheinbar-einfaches-Beispiel}
+ein scheinbar einfaches Beispiel
+\z
+
+Problem: \emph{scheinbar} bezieht sich nur auf \emph{einfaches}, nicht auf \emph{einfaches
+  Beispiel}.
+
+Wenn \emph{einfaches} sein Label mit dem des Nomens identifiziert, wäre das falsch und entspräche:
+\ea
+ein scheinbares einfaches Beispiel
+\z
+
+\pause
+
+\eal
+\ex \{ h1:exist\_q(x,h2,h3),h4:scheinbar(h5),\rotbf{h6}:einfach(x),\rotbf{h6}:beispiel(x) \},\\
+    \{ h2 \qeq h4, h5 \qeq h6 \}   (falsch!)
+\pause
+\ex
+\label{mrs-ein-scheinbar-einfaches-Beispiel} 
+\{ h1:exist\_q(x,h2,h3),\gruenbf{h4}:scheinbar(h5),h6:einfach(x),\gruenbf{h4}:beispiel(x) \},\\
+\{ h2 \qeq h4, h5 \qeq h6 \}  
+\pause
+\ex
+\{ h1:exist\_q(x,h2,h3),\rotbf{h4}:scheinbar(h5),\rotbf{h4}:einfach(x),\rotbf{h4}:beispiel(x) \},\\
+\{ h2 \qeq h4, h5 \qeq h4 \}  (schrecklich falsch!)
+\zl
+
+}
+
+\frame{
+\frametitle{Lexikoneintrag für \emph{kleinen}}
+
+\ms{
+cat & \ms{ head & \ms[adj]{
+                  mod & \ms{ cat & \ms{ head & noun\\
+                                        spr  & \nliste{ Det }\\
+                                        comps & \eliste }\\
+                             cont & \ms{ %ltop & \ibox{1}\\
+                                         ind  & \ibox{2}\\
+                                       }}}\\
+           spr & \eliste\\
+           comps & \eliste\\
+         }\\
+cont & \ms{ ltop & \ibox{1}\\
+%            ind  & \ibox{2}\\
+            rels & \liste{ \ms[klein]{
+                           lbl  & \ibox{1}\\ 
+                           arg1 & \ibox{2}\\
+                           } }\\
+            hcons & \eliste\\
+          }\\
+}
+
+\ltopw nicht mit \ltopw innerhalb von \textsc{mod} geteilt!
+
+}
+
+\frame{
+\frametitle{Erst, wenn wir wissen, was wir tun, tun wir etwas.}
+
+
+\ea
+\label{ex-scopal-ltop}
+\avm{
+[ non-head-dtrs < [ cat|head|scopal & minus ] > ]} \impl\\[2mm]
+\hfill 
+\avm{[ head-dtr|cont|ltop & \1\\
+  non-head-dtrs < [ cont|ltop & \1 ] > ]
+}
+\z
+
+\ea
+scheinbar einfaches Beispiel
+\z
+Nicht im Lexikoneintrag von \emph{einfaches} wird Identifikation der \ltopwe vorgenommen, sondern in
+dem Moment, wo \emph{scheinbar einfaches} mit \emph{Beispiel} kombiniert wird.
+
+Da wird dann das Handel des skopenden Elements \emph{scheinbar} benutzt. 
+
+\emph{scheinbar} ist nicht-intersektiv, aber es ist auch nicht der Kopf. 
+
+Der Kopf ist \emph{einfaches}, weshalb der \textsc{scopal}"=Wert von \emph{scheinbar einfaches} $-$ ist.
+
+\backslash ő/
+
+}
+
+\subsection{Das Semantikprinzip}
+
+\frame{
+\frametitle{Das Semantikprinzip}
+
+Index und Ereignisvariable wird weitergegeben:
+\ea
+\type{headed-phrase} \impl\\
+\ms{
+cont|ind & \ibox{1}\\
+head-dtr|cont|ind & \ibox{1}\\
+}
+\z
+
+\pause
+
+\ltop kommt vom Kopf, außer bei Kopf"=Adjunkt-Phrasen:
+\eal
+\label{Semantikprinzip-LTOP}
+\ex \type{head-non-adjunct-phrase} \impl\\
+\ms{
+cont|ltop & \ibox{1}\\
+head-dtr|cont|ltop & \ibox{1}\\
+}
+\ex
+\label{Beschränkung-Semantik-Kopf-Adjunkt-Strukturen2} 
+\type{head-adjunct-phrase} \impl\\
+  \ms{ cont|ltop & \ibox{1}\\
+       non-head-dtrs & \sliste{ [cont|ltop \ibox{1} ] }\\
+     }
+
+\zl 
+
+}
+
+\frame{
+\frametitle{Identifikation von \ltop von Töchtern}
+
+\ltopw von intersektiven Modifikatoren wird mit \ltopw der Kopftochter identifiziert:
+\ea
+\avm{
+[\type{head-adjunct-phrase}\\
+ non-head-dtrs < [ cat|head|scopal & minus ] > ]} \impl\\[2mm]
+\hfill 
+\avm{[ head-dtr|cont|ltop & \1\\
+  non-head-dtrs < [ cont|ltop & \1 ] > ]
+}
+\z
+
+\pause
+Ansonsten regelt die nicht-intersektive Tochter das und fügt \hcons hinzu.
+
+}
+
 
 } % \end{teil1}
 

@@ -12,7 +12,7 @@
 \item Ziele
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item Semantik
 \item Adjunktion und Spezifikation
 \item Das Lexikon: Typen und Lexikonregeln
@@ -34,7 +34,7 @@
 \item Wozu Syntax? / Phrasenstrukturgrammatiken
 \item Formalismus
 \item Valenz und Grammatikregeln
-\item Komplementation
+\item Dominanzstrukturen und Prinzipien
 \item Semantik
 \item Topologie des deutschen Satzes
 \item \blau{Konstituentenreihenfolge}
@@ -497,6 +497,38 @@ non-head-dtrs \sliste{ \ibox{5} [ \phon \ibox{2} ] }\\
 
 }
 
+\frame{
+\frametitle{Konsequenzen der Linearisierungsregeln: Beispiel}
+
+\small
+nur noch die beiden folgenden Kopf"=Argument"=Strukturen werden lizenziert:
+
+\onems{
+phon \highlightbox{\ibox{1} \phonliste{ schläft } $\oplus$ \ibox{2} \phonliste{ Karl }}\\ 
+cat$|$subcat \ibox{3} $\oplus$ \ibox{4}\\
+head-dtr \ms{ phon & \ibox{1} \phonliste{ schläft }\\
+              cat  & \ms{ head$|$initial \highlightbox{+}\\
+                          subcat \ibox{3} $\oplus$ \sliste{ \ibox{5} } $\oplus$ \ibox{4} \\
+                        }\\
+            }\\
+non-head-dtrs \sliste{ \ibox{5} [ \phon \ibox{2} \phonliste{ Karl }] }\\
+}
+
+\pause
+\onems{
+phon \highlightbox{\ibox{2} \phonliste{ Karl } $\oplus$ \ibox{1} \phonliste{ schläft }}\\ 
+cat$|$subcat \ibox{3} $\oplus$ \ibox{4}\\
+head-dtr \ms{ phon & \ibox{1} \phonliste{ schläft }\\
+              cat  & \ms{ head$|$initial \highlightbox{$-$}\\
+                          subcat \ibox{3} $\oplus$ \sliste{ \ibox{5} } $\oplus$ \ibox{4} \\
+                        }\\
+            }\\
+non-head-dtrs \sliste{ \ibox{5} [ \phon \ibox{2} \phonliste{ Karl } ] }\\
+}
+
+}
+
+
 \subsection{Spezifikator-Kopf-Strukturen}
 
 \frame{
@@ -840,7 +872,7 @@ sm edges
   [\blau<2>{V} [kennt]]
   [{V[\subcat \eliste]}
     [{\ibox{1} NP[\type{nom}]}
-      [niemand]]
+      [jemand]]
     [{V[\subcat \sliste{ \ibox{1} } ]}
       [{\ibox{2} NP[\type{acc}]}
         [den Roman, roof]]
@@ -1147,7 +1179,7 @@ sm edges
 [V{[\textsc{cont} \rnode{c1}{\ibox{2}}\,]}, baseline
 	[V{[\textsc{cont} \rnode{c2}{\ibox{2}}\,]}
 		[V{[\textsc{cont} \rnode{c3}{\ibox{1}} kennen(sie, roman)]}, tier=np,edge label={node[midway,right]{V1-LR}}
-			[kennt]]]
+			[kennt$_j$]]]
 	[V\feattab{\textsc{dsl}|\textsc{cont} \rnode{c4}{\ibox{1}},\\
                    \textsc{cont} \rnode{c5}{\ibox{2}}\,}
 		[NP{[\textit{nom}]}, tier=np
@@ -1158,7 +1190,7 @@ sm edges
 				[den Roman, roof]]
 			[V\feattab{\textsc{dsl}|\textsc{cont} \rnode{c8}{\ibox{1}},\\
                                    \textsc{cont} \rnode{c9}{\ibox{2}} $=$ \ibox{1}\,}
-				[\trace]]]]]
+				[\trace$_j$]]]]]
 \end{forest}
 } & ~\newline\setlength{\fboxsep}{1pt}%
   \raisebox{0.5ex}{\colorbox{red!75!black}{~~~}} Selektion\newline
@@ -1202,7 +1234,7 @@ sm edges
 [V{[\textsc{cont} \ibox{1}\,]}
 	[V{[\textsc{cont} \ibox{1}\,]}
 		[V{[\textsc{cont} \ibox{2} kennen(sie, roman)]}, tier=np,edge label={node[midway,right]{V1-LR}}
-			[kennt]]]
+			[kennt$_j$]]]
 	[V\feattab{\textsc{dsl}|\textsc{cont} \ibox{2},\\
                    \textsc{cont} \ibox{1}\,}
 		[NP{[\textit{nom}]}, tier=np
@@ -1218,7 +1250,7 @@ sm edges
 					[nicht]]
 				[\ibox{3} V\feattab{\textsc{dsl}|\textsc{cont} \ibox{2},\\
                                                     \textsc{cont} \ibox{2}\,}
-					[\trace]]]]]]
+					[\trace$_j$]]]]]]
 \end{forest}
 
 
@@ -1470,11 +1502,11 @@ linecolor=green,arrows=<->](8.7,2.8)(8.9,2.4)(9.2,3.2)(8.3,5.2)(6.9,7.2)(5,8.2)(
 sm edges, for tree={l sep=+2\baselineskip}
 [{V[\type{fin}, \subcat \eliste{}]}
   [{\ibox{1} NP[\type{nom}]} 
-    [der Delphin,roof]]
+    [Aicke,roof]]
   [{\ibox{3} NP[\type{dat}]}
-    [dem Kind, roof]]
+    [dem Affen, roof]]
   [{\ibox{2} NP[\type{acc}]} 
-    [den Ball, roof]]
+    [Futter, roof]]
   [{V[\type{fin}, \subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }] }
     [gibt]]]
 \end{forest}
@@ -1603,10 +1635,10 @@ sm edges
     [Aicke]]
   [{V[\subcat \sliste{ \ibox{1} }]}
     [\blau{\ibox{2} NP[\type{acc}]},ellipse,draw 
-      [die Nuss, roof]]
+      [Futter, roof]]
     [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]}
       [\blau{\ibox{3} NP[\type{dat}]},ellipse,draw
-        [dem Eichhörnchen,roof]]
+        [dem Affen,roof]]
       [\blau{V[\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]},ellipse,draw
         [gibt]]]]]
 \end{forest}}{
@@ -1617,10 +1649,10 @@ sm edges
     [Aicke]]
   [{V[\subcat \sliste{ \ibox{1} }]}
     [\blau{\ibox{2} NP[\type{acc}]}
-      [die Nuss, roof]]
+      [Futter, roof]]
     [{V[\subcat \sliste{ \ibox{1}, \ibox{2} }]}
       [\blau{\ibox{3} NP[\type{dat}]}
-        [dem Eichhörnchen,roof]]
+        [dem Affen,roof]]
       [\blau{V[\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} }]}
         [gibt]]]]]
 \end{forest}}
@@ -1718,22 +1750,21 @@ $\phonliste{ a, b } \bigcirc \phonliste{ c, d } =
 \begin{forest}
 sm edges
 [V\feattab{\subcat \sliste{},\\
-           \textsc{dom} \phonliste{ der Delphin, den Ball, dem Kind, gibt }}
+           \textsc{dom} \phonliste{ Aicke, dem Affen, den Stock, gibt }}
   [{\ibox{1} NP[\type{nom}]}
-    [der Delphin,roof]]
+    [Aicke,roof]]
   [V\feattab{\subcat \sliste{ \ibox{1} },\\
-             \textsc{dom} \phonliste{ den Ball, dem Kind, gibt }}
-    [{\ibox{2} NP[\type{acc}]} 
-      [den Ball, roof]]
+             \textsc{dom} \phonliste{ dem Affen, den Stock, gibt }}
+    [{\ibox{2} NP[\type{dat}]} 
+      [dem Affen, roof]]
     [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
-               \textsc{dom} \phonliste{ dem Kind, gibt }}
-      [{\ibox{3} NP[\type{dat}]}
-        [dem Kind,roof]]
+               \textsc{dom} \phonliste{ den Stock, gibt }}
+      [{\ibox{3} NP[\type{acc}]}
+        [den Stock,roof]]
       [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
         \textsc{dom} \phonliste{ gibt }}
         [gibt]]]]]
 \end{forest}
-
 
 }
 
@@ -1744,17 +1775,17 @@ sm edges
 \begin{forest}
 sm edges
 [V\feattab{\subcat \sliste{},\\
-           \textsc{dom} \phonliste{ der Delphin, \blau{dem Kind}, den Ball, \blau{gibt} }}
+           \textsc{dom} \phonliste{ Aicke, \blau{den Stock}, dem Affen, \blau{gibt} }}
   [{\ibox{1} NP[\type{nom}]}
-    [der Delphin,roof]]
+    [Aicke,roof]]
   [V\feattab{\subcat \sliste{ \ibox{1} },\\
-             \textsc{dom} \phonliste{ \blau{dem Kind}, den Ball, \blau{gibt} }}
-    [{\ibox{2} NP[\type{acc}]} 
-      [den Ball, roof]]
+             \textsc{dom} \phonliste{ \blau{den Stock}, dem Affen, \blau{gibt} }}
+    [{\ibox{2} NP[\type{dat}]} 
+      [dem Affen, roof]]
     [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
-               \textsc{dom} \phonliste{ dem Kind, gibt }}
-      [{\ibox{3} NP[\type{dat}]}
-        [dem Kind,roof]]
+               \textsc{dom} \phonliste{ \blau{den Stock, gibt} }}
+      [{\ibox{3} NP[\type{acc}]}
+        [den Stock,roof]]
       [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
         \textsc{dom} \phonliste{ gibt }}
         [gibt]]]]]
@@ -1765,20 +1796,21 @@ sm edges
 
 \frametitlefit{Beispiel: Diskontinuierliche Konstituenten / Verberststellung}
 
+
 \begin{forest}
 sm edges
 [V\feattab{\subcat \sliste{},\\
-           \textsc{dom} \phonliste{ \blau{gibt}, der Delphin, den Ball, \blau{dem Kind} }}
+           \textsc{dom} \phonliste{ \blau{gibt}, Aicke, dem Affen, \blau{den Stock} }}
   [{\ibox{1} NP[\type{nom}]}
-    [der Delphin,roof]]
+    [Aicke,roof]]
   [V\feattab{\subcat \sliste{ \ibox{1} },\\
-             \textsc{dom} \phonliste{ \blau{gibt}, den Ball, \blau{dem Kind} }}
-    [{\ibox{2} NP[\type{acc}]} 
-      [den Ball, roof]]
+             \textsc{dom} \phonliste{ \blau{gibt}, dem Affen, \blau{den Stock} }}
+    [{\ibox{2} NP[\type{dat}]} 
+      [dem Affen, roof]]
     [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
-               \textsc{dom} \phonliste{ gibt, dem Kind }}
-      [{\ibox{3} NP[\type{dat}]}
-        [dem Kind,roof]]
+               \textsc{dom} \phonliste{ \blau{gibt, den Stock} }}
+      [{\ibox{3} NP[\type{acc}]}
+        [den Stock,roof]]
       [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
         \textsc{dom} \phonliste{ gibt }}
         [gibt]]]]]
@@ -1852,6 +1884,67 @@ sm edges
 \vfill
 \centerline{\includegraphics[scale=.7]{Figures/fig-domains-discont}}
 \vfill
+
+% \forestset{
+% %  default preamble'={}, % The default preamble makes a mess in this situation.
+%   % 
+%   % This style visually relates a complement to some subcat node. The argument
+%   % should be the intended SISTER.
+%   funky complement/.style={
+%     %tier=NP, % Horizontally align NPs ... not needed because they are all of the same height.
+%     for children={tier=word}, % Align the NP content with "gibt".
+%     for nodewalk/.process=Ow{#1.id}{id=##1}{% This monstrosity converts a relative node name (e.g. "!r1") to the id of that node.
+%       edge label={node[pos=0.5,left]{H}}, % Put "H" on the edge from the sister subcat.
+%     },
+%     % Draw the funky edge from a complement to its visual parent. The line is
+%     % broken at the north of the sister subcat, and also marked with "C" there.
+%     edge path'={(#1u.south) -- (.north |- {#1.north}) node[above]{C} -- (.north)},
+%   },
+% }
+% \begin{forest}
+%   % sn edges,   % note the s*n*, not s*m* // Can live without, as we draw the funky edges manually.
+%   for tree={l sep*=2}, % Let this tree be taller.
+% delay={where tier={word}{inner xsep=0}{}}, % unclear why it has to happen here with delay.
+%   [V\feattab{\subcat \sliste{},\\
+%       \textsc{dom} \phonliste{ gibt, Aicke, dem Affen, den Stock }}, s sep+=7ex
+%     [V\feattab{\subcat \sliste{ \ibox{1} },\\
+%         \textsc{dom} \phonliste{ gibt, dem Affen, den Stock }},
+%       [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2} },\\
+%           \textsc{dom} \phonliste{ gibt, den Stock }}
+%         [V\feattab{\subcat \sliste{ \ibox{1}, \ibox{2}, \ibox{3} },\\
+%             \textsc{dom} \phonliste{ gibt }},
+%           [gibt]]]]
+%     [,% This empty node holds all the complements. The idea is to put it next
+%       % to the subcat node that should determine the x (s) position of the
+%       % complements (so I put it next to the second subcat node). How does this
+%       % work? On its own, Forest squashes the complements close to "gibt", but
+%       % then the funky edge from NP [1] overlaps the second subcat node. But
+%       % then we adjust the "s" of this empty complement holder (in "before
+%       %   computing xy") to avoid that.
+%       no edge, % Phantom does not work here, because we need the empty
+%                % complement holder to be physically present.
+%       calign=first, % Put this empty node directly above the leftmost NP ...
+%       before computing xy={% ... and set its position manually:
+%         %s/.option={!s.max x}, % to the (right) width of its sibling (the second subcat)
+%         %s+/.option=!u.s sep,  % plus a bit more
+%       },
+%       tier=lowest subcat, % Vertically align it to the lowest subcat node (gibt).
+%       for parent={calign=first}, % The sister subcat (Buch, Frau) should be
+%                                  % directly below its parent.
+%       for sibling={where n children=0{% This finds "gibt".
+%           for parent={tier=lowest subcat}, % Mark the lowest subcat for alignment with the empty complement holder.
+%           tier=word, % Align "gibt" with the content of NPs.
+%           %inner xsep=0, % Remove space otherwise the triangles get too big.
+%           % Does not work here, has to be done with delay at the top. St. Mü. 21.06.2024
+%         }{}},
+%       [{\ibox{1} NP[\type{nom}]}, funky complement=!r1 % the first child of the root
+%         [Aicke,roof]]
+%       [{\ibox{2} NP[\type{dat}]}, funky complement=!r11  % the first child of the first child of the root
+%         [dem Affen,roof]]
+%       [{\ibox{3} NP[\type{acc}]}, funky complement=!r111
+%         [den Stock,roof]]]
+%   ]
+% \end{forest}
 
 }
 
